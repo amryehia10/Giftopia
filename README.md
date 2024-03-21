@@ -1,3 +1,13 @@
+Packages:
+    Bootstrap, 
+    Json-server,
+
+===========================================================================
+Terminals:
+    to run Json File ==> npm run json
+    to run Angular Project ==> npm run proj
+
+===========================================================================
                                 Giftopia                                         
 
 products - {
