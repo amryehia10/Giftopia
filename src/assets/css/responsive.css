@@ -1,0 +1,521 @@
+/*---------------------------------------------------------------------------------
+    Responsive css
+-----------------------------------------------------------------------------------*/
+@media only screen and (max-width: 1399px) {
+  .section-title h2, .section-title-2 h2 {
+    font-size: 25px;
+  }
+  .padding-tb-80 {
+    padding: 60px 0;
+  }
+  .m-t-80 {
+    margin-top: 60px;
+  }
+  .p-t-80 {
+    padding-top: 60px;
+  }
+  .p-tb-80 {
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+  .ms-compare-box .ms-compare-col {
+    width: 279px;
+    min-width: 279px;
+  }
+  .ms-compare-box .ms-compare-col:not(:last-child) {
+    margin-right: -1px;
+    width: 280px;
+    min-width: 280px;
+  }
+  .ms-ofr-banners .ms-bnr-body .ms-bnr-detail h5 {
+    font-size: 28px;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  .ms-col-5 {
+    width: 20%;
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 20%;
+    flex: 0 0 20%;
+  }
+}
+@media only screen and (max-width: 1199px) {
+  .d-n-1199 {
+    display: none;
+  }
+  .mt-1199-40 {
+    margin-top: 40px;
+  }
+  .ms-about .ms-about-img img {
+    max-width: 600px;
+    margin-bottom: 30px;
+  }
+  .ms-blogs-sidebar .ms-sidebar-block .ms-sidebar-block-item {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .ms-blogs-sidebar .ms-sidebar-block .ms-sidebar-block-item .ms-sidebar-block-img {
+    margin-bottom: 15px;
+  }
+  .ms-shop-sidebar .ms-sb-title h3, .ms-blogs-sidebar .ms-sb-title h3, .ms-sidebar-wrap .ms-sb-title h3 {
+    font-size: 18px;
+  }
+  .ms-ofr-banners .ms-bnr-body .ms-bnr-detail {
+    max-width: 160px;
+    right: 15px;
+  }
+  .ms-ofr-banners .ms-bnr-body .ms-bnr-detail h5 {
+    font-size: 22px;
+  }
+  .width-50 {
+    width: 100% !important;
+  }
+  .ms-single-product .single-pro-content .ms-single-title {
+    font-size: 20px;
+    line-height: 33px;
+  }
+  .ms-single-product .single-pro-content .ms-single-price .final-price {
+    font-size: 20px;
+  }
+  .ms-category .ms-category-block .ms-cat-box .ms-cat-icon .ms-cat-title {
+    font-size: 15px;
+  }
+}
+@media only screen and (max-width: 991px) {
+  .section-title h2, .section-title-2 h2 {
+    font-size: 24px;
+  }
+  .section-title-3 h2 {
+    font-size: 20px;
+  }
+  .ms-cursor, .ms-cursor-2, .ms-hover-cursor, .ms-cursorinnerhover {
+    display: none;
+  }
+  .ms-about .ms-about-detail .section-title p {
+    font-size: 17px;
+  }
+  .ms-facts-section .ms-facts-inner .counter {
+    font-size: 38px;
+  }
+  .ms-team-section .ms-team-box .ms-team-imag .ms-team-socials {
+    bottom: 15px;
+    opacity: 1;
+  }
+  .m-t-991 {
+    margin-top: 30px;
+  }
+  .ms-sidebar-res {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    width: 100%;
+    height: 100%;
+    display: block;
+    text-align: right;
+  }
+  .ms-compare-box .ms-compare-col {
+    width: 250px;
+    min-width: 250px;
+  }
+  .ms-compare-box .ms-compare-col:first-child {
+    width: 150px !important;
+    min-width: 150px !important;
+  }
+  .ms-compare-box .ms-compare-col:not(:last-child) {
+    margin-right: -1px;
+    width: 251px;
+    min-width: 251px;
+  }
+  .ms-compare-box .ms-compare-col .ms-action {
+    opacity: 1;
+    bottom: 3px;
+    top: auto;
+    -webkit-transform: none;
+            transform: none;
+  }
+  .ms-login-content {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .ms-login-content .ms-login-box {
+    width: 100%;
+    padding: 0;
+  }
+  .d-n-991 {
+    display: none;
+  }
+  .ms-blogs-sidebar .ms-sidebar-block .ms-sidebar-block-item {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+  .ms-blogs-sidebar .ms-sidebar-block .ms-sidebar-block-item .ms-sidebar-block-img {
+    margin-bottom: 0;
+  }
+  .ms-product-inner .ms-pro-image .ms-pro-actions {
+    opacity: 1;
+    right: 10px;
+  }
+  .ms-product-inner .ms-pro-image .image .label {
+    display: none;
+  }
+  .ms-ofr-banners .ms-bnr-body .ms-bnr-detail {
+    max-width: 110px;
+  }
+  .ms-ofr-banners .ms-bnr-body .ms-bnr-detail p {
+    display: none;
+  }
+  .ms-ofr-banners .ms-bnr-body .ms-bnr-detail h5 {
+    font-size: 16px;
+  }
+  .ms-single-product .single-pro-desc, .ms-single-product .single-pro-img {
+    width: 100%;
+  }
+  .ms-single-product .single-pro-img {
+    width: 100%;
+    max-width: 500px;
+    margin: auto;
+  }
+  .ms-category-menu .ms-category-toggle {
+    border: 0;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .section-title h2, .section-title-2 h2 {
+    font-size: 22px;
+  }
+  .section-title-3 h2 {
+    font-size: 18px;
+  }
+  .mt-767-40 {
+    margin-top: 40px;
+  }
+  .padding-tb-30 {
+    padding: 25px 0;
+  }
+  .padding-tb-60 {
+    padding: 50px 0;
+  }
+  .d-n-1199 {
+    display: block;
+  }
+  .m-t-767 {
+    margin-top: 30px;
+  }
+  .ms-search-detail form input {
+    width: 100%;
+    font-size: 25px;
+  }
+  .ms-search-detail form button .svg_img {
+    width: 20px;
+    height: 20px;
+  }
+  .ms-breadcrumb .ms-breadcrumb-title {
+    margin-bottom: 5px;
+    text-align: center;
+  }
+  .ms-breadcrumb .ms-breadcrumb-list {
+    text-align: center;
+  }
+  .ms-about .ms-about-detail .section-title p {
+    font-size: 16px;
+  }
+  .ms-facts-section .ms-facts-inner .counter {
+    font-size: 36px;
+  }
+  .ms-contact form {
+    margin-top: 50px;
+  }
+  .ms-cart-content .table-content table thead {
+    border: none;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+  }
+  .ms-cart-content .table-content table tbody > tr {
+    border: 1px solid #eee;
+    display: block;
+    margin-bottom: 15px;
+  }
+  .ms-cart-content .table-content table tbody > tr td.ms-cart-pro-name {
+    width: 100%;
+  }
+  .ms-cart-content .table-content table tbody > tr td {
+    border-bottom: 1px solid #eee;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    font-size: 14px;
+    padding: 8px 10px;
+  }
+  .ms-cart-content .table-content table tbody > tr td:before {
+    content: attr(data-label);
+    float: left;
+    font-weight: bold;
+    text-transform: capitalize;
+    font-size: 16px;
+    color: #777;
+    min-width: 90px;
+    text-align: left;
+    font-weight: 500;
+  }
+  .ms-cart-content .table-content table tbody > tr td .cart-qty-plus-minus {
+    margin: 0;
+  }
+  .ms-accordion .ms-accordion-item .ms-accordion-header {
+    font-size: 15px !important;
+  }
+  .ms-register-wrapper .ms-register-container .ms-register-form .ms-register-btn {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .ms-register-wrapper .ms-register-container .ms-register-form .ms-register-btn button {
+    margin-top: 15px;
+  }
+  .m-b-767 {
+    margin-bottom: 24px;
+  }
+  .ms-track .ms-steps-header {
+    display: none;
+  }
+  .ms-track .ms-steps-body,
+  .ms-track .ms-step {
+    display: block;
+    font-size: 14px;
+  }
+  .ms-track .ms-step {
+    border-right: 0;
+    border-bottom: 1px solid #e9ecef;
+  }
+  .ms-track .ms-step:last-child {
+    border-bottom: 0;
+  }
+  .ms-track .has-indicator {
+    padding: 1rem 0.75rem;
+  }
+  .ms-track .has-indicator .ms-step-indicator {
+    display: inline-block;
+    position: static;
+    margin: 0;
+    margin-right: 0.75rem;
+  }
+  .ms-terms-conditions .ms-cms-block h5 {
+    line-height: 28px;
+  }
+  .ms-single-blog-item .single-blog-info .single-blog-detail h3 {
+    font-size: 20px;
+  }
+  .list-view .ms-product-inner, .list-view-50 .ms-product-inner {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .list-view .ms-product-inner .ms-pro-content, .list-view-50 .ms-product-inner .ms-pro-content {
+    border: 0;
+  }
+  .list-view .ms-product-inner .ms-pro-image-outer, .list-view-50 .ms-product-inner .ms-pro-image-outer {
+    max-width: 100%;
+  }
+  .list-view .ms-product-content, .list-view-50 .ms-product-content {
+    max-width: 50%;
+    margin: auto;
+  }
+  .ms-ofr-banners .ms-bnr-body .ms-bnr-detail {
+    max-width: 198px;
+  }
+  .ms-ofr-banners .ms-bnr-body .ms-bnr-detail p {
+    display: block;
+    font-size: 14px;
+  }
+  .ms-ofr-banners .ms-bnr-body .ms-bnr-detail h5 {
+    font-size: 20px;
+  }
+  .ms-category .ms-category-block .ms-cat-box .ms-cat-icon .ms-cat-title {
+    font-size: 14px;
+  }
+  .ms-single-product .single-pro-content .ms-single-title {
+    font-size: 18px;
+    line-height: 31px;
+  }
+  .ms-newsletter .ms-shape-1, .ms-newsletter .ms-shape-2 {
+    display: none;
+  }
+  .ms-back-to-top {
+    bottom: 15px;
+    right: 15px;
+  }
+}
+@media only screen and (max-width: 575px) {
+  .section-title h2, .section-title-2 h2 {
+    font-size: 20px;
+  }
+  .padding-tb-80 {
+    padding: 50px 0;
+  }
+  .m-t-80 {
+    margin-top: 50px;
+  }
+  .p-t-80 {
+    padding-top: 50px;
+  }
+  .p-tb-80 {
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+  .ms-facts-section .ms-facts-inner .counter {
+    font-size: 32px;
+  }
+  .ms-about .ms-about-detail .section-title p {
+    font-size: 15px;
+  }
+  .ms-checkout-wrap .ms-check-bill-form .ms-bill-wrap.ms-bill-half {
+    width: 100%;
+  }
+  .ms-checkout-wrap h3 {
+    font-size: 18px;
+  }
+  .m-minus-15 {
+    margin: 0;
+  }
+  .ms-login-wrapper .ms-login-container {
+    padding: 15px;
+  }
+  .ms-register-wrapper .ms-register-container {
+    padding: 15px;
+  }
+  .ms-register-wrapper .ms-register-container .ms-register-form .ms-register-wrap.ms-register-half {
+    width: 100%;
+  }
+  .ms-pro-pagination {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .ms-pro-pagination span {
+    margin-bottom: 10px;
+  }
+  .ms-single-blog-item .single-blog-info .single-blog-detail h3 {
+    font-size: 19px;
+  }
+  .ms-product-content {
+    width: 50%;
+    margin: auto;
+  }
+  .ms-new-product .ms-product-content {
+    width: 100% !important;
+    margin: auto;
+  }
+  .list-view .ms-product-inner, .list-view-50 .ms-product-inner {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .list-view .ms-product-inner .ms-pro-content, .list-view-50 .ms-product-inner .ms-pro-content {
+    border: 0;
+  }
+  .list-view .ms-product-inner .ms-pro-image-outer, .list-view-50 .ms-product-inner .ms-pro-image-outer {
+    max-width: 100%;
+  }
+  .list-view .ms-product-content, .list-view-50 .ms-product-content {
+    max-width: 350px;
+  }
+  .ms-single-product .ms-single-pro-tab-content .ms-single-pro-tab-moreinfo li {
+    margin-bottom: 10px !important;
+  }
+  .ms-single-product .ms-single-pro-tab-content .ms-single-pro-tab-moreinfo li span {
+    width: 100%;
+  }
+  .ms-service-desc h3 {
+    font-size: 16px;
+  }
+}
+@media only screen and (max-width: 420px) {
+  .ms-home .ms-hero-slider .ms-slide-content {
+    padding: 30px;
+  }
+  .section-title h2, .section-title-2 h2 {
+    font-size: 20px;
+  }
+  .ms-bill-option span {
+    margin: 0;
+  }
+  .ms-blog-comments .sub-cmt {
+    margin-left: 30px;
+  }
+  .ms-product-content {
+    width: 100%;
+    max-width: 360px;
+    margin: auto;
+  }
+  .ms-ofr-banners .ms-bnr-body .ms-bnr-detail {
+    max-width: 150px;
+  }
+  .ms-ofr-banners .ms-bnr-body .ms-bnr-detail h5 {
+    font-size: 16px;
+  }
+  .ms-ofr-banners .ms-bnr-body .ms-bnr-detail p {
+    font-size: 13px;
+    line-height: 17px;
+  }
+}
+@media (max-width: 360px) {
+  .ms-wish-notify, .ms-compare-notify {
+    max-width: 280px;
+  }
+  .svg_img.test_svg.top {
+    left: 15px;
+  }
+  .svg_img.test_svg.bottom {
+    right: 15px;
+  }
+  .ms-blogs-sidebar .ms-sidebar-block .ms-sidebar-block-item {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .ms-blogs-sidebar .ms-sidebar-block .ms-sidebar-block-item .ms-sidebar-block-img {
+    margin-bottom: 15px;
+  }
+  .ms-ofr-banners .ms-bnr-body .ms-bnr-detail {
+    max-width: 110px;
+    top: auto;
+    bottom: 30px;
+    right: 15px;
+    -webkit-transform: none;
+            transform: none;
+  }
+  .ms-ofr-banners .ms-bnr-body .ms-bnr-detail p {
+    display: none;
+  }
+  .ms-ofr-banners .ms-bnr-body .ms-bnr-detail a {
+    padding: 3px 10px;
+    font-size: 13px;
+  }
+  .ms-ofr-banners .ms-bnr-body .ms-bnr-img .lbl {
+    font-size: 12px;
+  }
+}
+/*# sourceMappingURL=responsive.css.map */
