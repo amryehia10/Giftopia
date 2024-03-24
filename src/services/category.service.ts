@@ -1,15 +1,16 @@
-import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { BaseService } from './Base.service';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
 })
-export class CategoryService {
-  private DB_URL = 'http://localhost:3000/categories'
+export class CategoryService extends BaseService {
+   private  URL = `${this.Base_URL}/categories`
   
-  constructor(private http: HttpClient) { }
+  constructor(http: HttpClient) {super(http);}
 
   getCategory() {
-    return this.http.get(this.DB_URL);
+    return this.http.get(this.URL);
   }
 }
