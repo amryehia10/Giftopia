@@ -1,28 +1,50 @@
 <div class="w-50 mx-auto">
 
     <div class="ms-2">
-        <h3 class="text-dark">Discover <span class="text-success">Items</span></h3>
+        <span>
+            <h3 class="text-dark DiscoverHead">Discover <span class="text-success">Items</span></h3>
+            <a class="discover">Discover All</a>
+        </span>
+        
     </div>
     
     <div class="container mt-5">
         <div class="row">
             @for (cat of categories; track cat.categoryId; let i = $index) {
                 @if(i < 3) {
-                    <div class="col-md-3">
+                    <div class="col-lg-4">
                         <h6>{{cat.categoryName}}</h6>
                     </div>
                 }
             }
         </div>
         <div class="row">
-            <div class="col-md-3 mt-4">
+            <div class="col-lg-4 mt-4">
                 @for (prd of products; track prd.id; let i = $index) {
-                    @if(catID[0] == prd.cat) { 
-                        @if(i < 6) {
-                            <div class="alert alert-secondary">
-                                <span ><img src="{{prd.img}}" width="30"><p>{{prd.name}}</p></span>
-                            </div>
-                        }
+                    @if(catID[0] == prd.cat) {  
+                        <div class="alert alert-secondary prdsDisc">
+                            <span ><img src="{{prd.img}}" width="40" height="40"><p class="d-inline ms-2">{{prd.name}}</p><p class="price">{{prd.price | currency: "L.E"}}</p></span>
+                        </div>
+                    }
+                }
+            </div>
+
+            <div class="col-lg-4 mt-4">
+                @for (prd of products; track prd.id; let i = $index) {
+                    @if(catID[1] == prd.cat) {  
+                        <div class="alert alert-secondary prdsDisc">
+                            <span ><img src="{{prd.img}}" width="40" height="40"><p class="d-inline ms-2">{{prd.name}}</p><p class="price">{{prd.price | currency: "L.E"}}</p></span>
+                        </div>
+                    }
+                }
+            </div>
+
+            <div class="col-lg-4 mt-4">
+                @for (prd of products; track prd.id; let i = $index) {
+                    @if(catID[2] == prd.cat) {  
+                        <div class="alert alert-secondary prdsDisc">
+                            <span ><img src="{{prd.img}}" width="40" height="40"><p class="d-inline ms-2">{{prd.name}}</p><p class="price">{{prd.price | currency: "L.E"}}</p></span>
+                        </div>
                     }
                 }
             </div>

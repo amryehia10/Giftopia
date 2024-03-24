@@ -2,11 +2,12 @@ import { Component, OnInit } from '@angular/core';
 import { ProductsService } from '../../services/products.service';
 import { HttpClientModule } from '@angular/common/http';
 import { CategoryService } from '../../services/category.service';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-discover-items',
   standalone: true,
-  imports: [HttpClientModule],
+  imports: [HttpClientModule, CommonModule],
   providers: [ProductsService, CategoryService],
   templateUrl: './discover-items.component.html',
   styleUrl: './discover-items.component.css'
@@ -43,6 +44,8 @@ export class DiscoverItemsComponent implements OnInit {
     for (let i = 0; i < 3; i++) {
       this.catID.push(this.categories[i].categoryId);
     }
+    console.log(this.catID)
+
     
   }
 
