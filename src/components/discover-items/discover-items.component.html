@@ -3,7 +3,7 @@
     <div class="ms-2">
         <span>
             <h3 class="text-dark DiscoverHead">Discover <span class="text-success">Items</span></h3>
-            <a class="discover">Discover All</a>
+            <a class="discover" routerLink="/discoverAll">Discover All</a>
         </span>
         
     </div>
@@ -20,32 +20,32 @@
         </div>
         <div class="row">
             <div class="col-lg-4 mt-4">
-                @for (prd of products; track prd.id; let i = $index) {
-                    @if(catID[0] == prd.cat) {  
-                        <div class="alert alert-secondary prdsDisc">
-                            <span ><img src="{{prd.img}}" width="40" height="40"><p class="d-inline ms-2">{{prd.name}}</p><p class="price">{{prd.price | currency: "L.E"}}</p></span>
+                @for (prd of firstprdList; track prd.id; let i = $index) {
+                    <a routerLink="product/{{prd.id}}" class="link-offset-2 link-underline link-underline-opacity-0">
+                        <div class="alert alert-secondary prdsDisc" appstyle>
+                            <span><img src="{{prd.img}}" width="40" height="40"><p class="d-inline ms-2">{{prd.name}}</p><p class="price">{{prd.price | currency: "L.E"}}</p></span>
                         </div>
-                    }
+                    </a>
                 }
             </div>
 
             <div class="col-lg-4 mt-4">
-                @for (prd of products; track prd.id; let i = $index) {
-                    @if(catID[1] == prd.cat) {  
-                        <div class="alert alert-secondary prdsDisc">
-                            <span ><img src="{{prd.img}}" width="40" height="40"><p class="d-inline ms-2">{{prd.name}}</p><p class="price">{{prd.price | currency: "L.E"}}</p></span>
+                @for (prd of secondprdList; track prd.id; let i = $index) {
+                    <a routerLink="product/{{prd.id}}" class="link-offset-2 link-underline link-underline-opacity-0">
+                        <div class="alert alert-secondary prdsDisc" appstyle>
+                            <span><img src="{{prd.img}}" width="40" height="40"><p class="d-inline ms-2">{{prd.name}}</p><p class="price">{{prd.price | currency: "L.E"}}</p></span>
                         </div>
-                    }
+                    </a>
                 }
             </div>
 
             <div class="col-lg-4 mt-4">
-                @for (prd of products; track prd.id; let i = $index) {
-                    @if(catID[2] == prd.cat) {  
-                        <div class="alert alert-secondary prdsDisc">
-                            <span ><img src="{{prd.img}}" width="40" height="40"><p class="d-inline ms-2">{{prd.name}}</p><p class="price">{{prd.price | currency: "L.E"}}</p></span>
+                @for (prd of thirdprdList; track prd.id; let i = $index) {
+                    <a routerLink="product/{{prd.id}}" class="link-offset-2 link-underline link-underline-opacity-0">
+                        <div class="alert alert-secondary prdsDisc" appstyle>
+                            <span><img src="{{prd.img}}" width="40" height="40"><p class="d-inline ms-2">{{prd.name}}</p><p class="price">{{prd.price | currency: "L.E"}}</p></span>
                         </div>
-                    }
+                    </a>
                 }
             </div>
         </div>

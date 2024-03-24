@@ -2,7 +2,7 @@
 {
     "products": [
         {
-            "id": "1",
+            "id": 1,
             "name": "ring",
             "price": 250,
             "desc": "Lorem ipsum dolor sit amet consectetur adipisicing elit",
@@ -10,88 +10,113 @@
             "img": "https://images.pexels.com/photos/1232931/pexels-photo-1232931.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
         },
         {
-            "id": "2",
-            "name": "A7aaaa2",
+            "id": 2,
+            "name": "watch",
             "price": 250,
             "desc": "Lorem ipsum dolor sit amet consectetur adipisicing elit",
             "cat":3,
             "img": "https://images.pexels.com/photos/8327950/pexels-photo-8327950.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
         },
         {
-            "id": "2",
-            "name": "A7aaaa2",
+            "id": 2,
+            "name": "watch",
             "price": 250,
             "desc": "Lorem ipsum dolor sit amet consectetur adipisicing elit",
             "cat":3,
             "img": "https://images.pexels.com/photos/8327950/pexels-photo-8327950.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
         },
         {
-            "id": "3",
-            "name": "A7aaaa3",
+            "id": 3,
+            "name": "controller",
             "price": 250,
             "desc": "Lorem ipsum dolor sit amet consectetur adipisicing elit",
             "cat":2,
             "img": "https://images.pexels.com/photos/275033/pexels-photo-275033.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
         },
         {
-            "id": "4",
-            "name": "A7aaaa4",
+            "id": 4,
+            "name": "ring",
             "price": 250,
             "desc": "Lorem ipsum dolor sit amet consectetur adipisicing elit",
             "cat":5,
             "img": "https://images.pexels.com/photos/1232931/pexels-photo-1232931.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
         },
         {
-            "id": "5",
-            "name": "A7aaaa5",
+            "id": 5,
+            "name": "watch",
             "price": 250,
             "desc": "Lorem ipsum dolor sit amet consectetur adipisicing elit",
             "cat":3,
             "img": "https://images.pexels.com/photos/8327950/pexels-photo-8327950.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
         },
         {
-            "id": "6",
-            "name": "A7aaaa6",
+            "id": 6,
+            "name": "controller",
             "price": 250,
             "desc": "Lorem ipsum dolor sit amet consectetur adipisicing elit",
             "cat":2,
             "img": "https://images.pexels.com/photos/275033/pexels-photo-275033.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
         },
         {
-            "id": "7",
-            "name": "A7aaaa7",
+            "id": 7,
+            "name": "ring",
             "price": 250,
             "desc": "Lorem ipsum dolor sit amet consectetur adipisicing elit",
             "cat":5,
             "img": "https://images.pexels.com/photos/1232931/pexels-photo-1232931.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
         },
         {
-            "id": "8",
-            "name": "A7aaaa8",
+            "id": 13,
+            "name": "ring",
             "price": 250,
             "desc": "Lorem ipsum dolor sit amet consectetur adipisicing elit",
             "cat":5,
             "img": "https://images.pexels.com/photos/1232931/pexels-photo-1232931.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
         },
         {
-            "id": "9",
-            "name": "A7aaaa9",
+            "id": 8,
+            "name": "ring",
+            "price": 250,
+            "desc": "Lorem ipsum dolor sit amet consectetur adipisicing elit",
+            "cat":5,
+            "img": "https://images.pexels.com/photos/1232931/pexels-photo-1232931.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+        },
+        {
+            "id": 9,
+            "name": "controller",
             "price": 250,
             "desc": "Lorem ipsum dolor sit amet consectetur adipisicing elit",
             "cat":2,
             "img": "https://images.pexels.com/photos/275033/pexels-photo-275033.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
         },
         {
-            "id": "9",
-            "name": "A7aaaa9",
+            "id": 9,
+            "name": "controller",
             "price": 250,
             "desc": "Lorem ipsum dolor sit amet consectetur adipisicing elit",
             "cat":2,
             "img": "https://images.pexels.com/photos/275033/pexels-photo-275033.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
         },
         {
-            "id": "10",
-            "name": "A7aaaa10",
+            "id": 12,
+            "name": "controller",
+            "price": 250,
+            "desc": "Lorem ipsum dolor sit amet consectetur adipisicing elit",
+            "cat":2,
+            "img": "https://images.pexels.com/photos/275033/pexels-photo-275033.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+        },
+        {
+            "id": 10,
+            "name": "watch",
+            "price": 250,
+            "desc": "Lorem ipsum dolor sit amet consectetur adipisicing elit",
+            "cat":3,
+            "img": "https://images.pexels.com/photos/8327950/pexels-photo-8327950.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+        },
+
+        {
+            "id": 11,
+            "name": "watch",
             "price": 250,
             "desc": "Lorem ipsum dolor sit amet consectetur adipisicing elit",
             "cat":3,
