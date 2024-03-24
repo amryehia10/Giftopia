@@ -3,64 +3,98 @@
     "products": [
         {
             "id": "1",
-            "name": "A7aaaa1",
+            "name": "ring",
             "price": 250,
-            "desc": "Lorem ipsum dolor sit amet consectetur adipisicing elit"
+            "desc": "Lorem ipsum dolor sit amet consectetur adipisicing elit",
+            "cat":5,
+            "img": "https://images.unsplash.com/photo-1605100804763-247f67b3557e?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
         },
         {
             "id": "2",
             "name": "A7aaaa2",
             "price": 250,
-            "desc": "Lorem ipsum dolor sit amet consectetur adipisicing elit"
+            "desc": "Lorem ipsum dolor sit amet consectetur adipisicing elit",
+            "cat":3,
+            "img": "https://images.unsplash.com/photo-1652804407270-9b2b6a24b51d?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
         },
         {
             "id": "3",
             "name": "A7aaaa3",
             "price": 250,
-            "desc": "Lorem ipsum dolor sit amet consectetur adipisicing elit"
+            "desc": "Lorem ipsum dolor sit amet consectetur adipisicing elit",
+            "cat":2,
+            "img": "https://plus.unsplash.com/premium_photo-1684623605109-263925d88106?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
         },
         {
             "id": "4",
             "name": "A7aaaa4",
             "price": 250,
-            "desc": "Lorem ipsum dolor sit amet consectetur adipisicing elit"
+            "desc": "Lorem ipsum dolor sit amet consectetur adipisicing elit",
+            "cat":5,
+            "img": "https://images.unsplash.com/photo-1605100804763-247f67b3557e?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
         },
         {
             "id": "5",
             "name": "A7aaaa5",
             "price": 250,
-            "desc": "Lorem ipsum dolor sit amet consectetur adipisicing elit"
+            "desc": "Lorem ipsum dolor sit amet consectetur adipisicing elit",
+            "cat":3,
+            "img": "https://images.unsplash.com/photo-1652804407270-9b2b6a24b51d?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
         },
         {
             "id": "6",
             "name": "A7aaaa6",
             "price": 250,
-            "desc": "Lorem ipsum dolor sit amet consectetur adipisicing elit"
+            "desc": "Lorem ipsum dolor sit amet consectetur adipisicing elit",
+            "cat":2,
+            "img": "https://plus.unsplash.com/premium_photo-1684623605109-263925d88106?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
         },
         {
             "id": "7",
             "name": "A7aaaa7",
             "price": 250,
-            "desc": "Lorem ipsum dolor sit amet consectetur adipisicing elit"
+            "desc": "Lorem ipsum dolor sit amet consectetur adipisicing elit",
+            "cat":5,
+            "img": "https://images.unsplash.com/photo-1605100804763-247f67b3557e?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
         },
         {
             "id": "8",
             "name": "A7aaaa8",
             "price": 250,
-            "desc": "Lorem ipsum dolor sit amet consectetur adipisicing elit"
+            "desc": "Lorem ipsum dolor sit amet consectetur adipisicing elit",
+            "cat":5,
+            "img": "https://images.unsplash.com/photo-1605100804763-247f67b3557e?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
         },
         {
             "id": "9",
             "name": "A7aaaa9",
             "price": 250,
-            "desc": "Lorem ipsum dolor sit amet consectetur adipisicing elit"
+            "desc": "Lorem ipsum dolor sit amet consectetur adipisicing elit",
+            "cat":2,
+            "img": "https://plus.unsplash.com/premium_photo-1684623605109-263925d88106?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
         },
         {
             "id": "10",
             "name": "A7aaaa10",
             "price": 250,
-            "desc": "Lorem ipsum dolor sit amet consectetur adipisicing elit"
+            "desc": "Lorem ipsum dolor sit amet consectetur adipisicing elit",
+            "cat":3,
+            "img": "https://images.unsplash.com/photo-1652804407270-9b2b6a24b51d?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
         }
     ],
-    "users": []
+    "users": [],
+    "categories": [
+        {
+            "categoryId": 5,
+            "categoryName": "Accessories"
+        },
+        {
+            "categoryId": 2,
+            "categoryName": "Games"
+        },
+        {
+            "categoryId": 3,
+            "categoryName": "Antiques"
+        }
+    ]
 }
