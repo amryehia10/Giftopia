@@ -8,4 +8,8 @@ import { HttpClient } from '@angular/common/http';
 export class CatProductsService extends BaseService {
   private  URL = `${this.Base_URL}/categories`
   constructor(http: HttpClient) { super(http) }
+
+  getCategoryProducts(id:string){
+   return this.http.get(`${this.URL}/${id}`);
+  }
 }
