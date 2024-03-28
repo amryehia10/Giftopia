@@ -10,8 +10,8 @@ export const routes: Routes = [
     {path: '', component:HomeComponent},
     {path: 'home', component:HomeComponent},
     {path: 'discoverAll', component:DiscoverAllComponent},
-    {path: 'product/:id', component:ProductComponent},
-    {path: 'category/:id',component:CategoryProductsComponent},
+    {path: 'products/:id', component:ProductComponent},
+    {path: 'categories/:id',component:CategoryProductsComponent},
     {path: 'about',component:AboutUsComponent},
     {path: 'login',component:LoginComponent},
 ];

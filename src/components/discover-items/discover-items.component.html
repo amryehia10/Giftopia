@@ -1,54 +1,56 @@
-<div class="w-50 mx-auto">
-
-    <div class="ms-2">
-        <span>
-            <h3 class="text-dark DiscoverHead">Discover <span class="text-success">Items</span></h3>
-            <a class="discover" routerLink="/discoverAll">Discover All</a>
-        </span>
-        
-    </div>
-    
-    <div class="container mt-5">
+@if(categories && products) {
+<section class="ms-listing-section listing padding-tb-30">
+    <div class="container">
         <div class="row">
-            @for (cat of categories; track cat.categoryId; let i = $index) {
-                @if(i < 3) {
-                    <div class="col-lg-4">
-                        <h6>{{cat.categoryName}}</h6>
+            <div class="section-title">
+                <h2>Discover <span> Items</span></h2>
+                <span class="title-link">
+                    <a routerLink="/discoverAll">Discover All<i class="msicon msi-angle-double-right"></i></a>
+                </span>
+            </div>
+            <div class="ms-listing">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="ms-list-block">
+                            <h4 class="ms-list-title">{{categories[0].categoryName}}
+                                <span class="label veg">
+                                    <span class="dot"></span>
+                                </span>
+                            </h4>
+                            <ul>
+                                @for (prd of firstprdList; track prd.id; let i = $index) {
+
+                                <li class="ms-list-item"><a routerLink="products/{{prd.id}}">{{prd.name}}<span>: {{prd.discount}}
+                                            Off</span></a><img class="ms-list-img"
+                                            src="{{prd.img}}" alt="product"></li>
+                                }
+                            </ul>
+                        </div>
                     </div>
-                }
-            }
-        </div>
-        <div class="row">
-            <div class="col-lg-4 mt-4">
-                @for (prd of firstprdList; track prd.id; let i = $index) {
-                    <a routerLink="product/{{prd.id}}" class="link-offset-2 link-underline link-underline-opacity-0">
-                        <div class="alert alert-secondary prdsDisc" appstyle>
-                            <span><img src="{{prd.img}}" width="40" height="40"><p class="d-inline ms-2">{{prd.name}}</p><p class="price">{{prd.price | currency: "L.E"}}</p></span>
-                        </div>
-                    </a>
-                }
-            </div>
+                    <div class="col-md-6 m-t-767">
+                        <div class="ms-list-block">
+                            <h4 class="ms-list-title">{{categories[1].categoryName}}
+                                <span class="label veg">
+                                    <span class="dot"></span>
+                                </span>
+                            </h4>
+                            <ul>
+                                @for (prd of secondprdList; track prd.id; let i = $index) {
 
-            <div class="col-lg-4 mt-4">
-                @for (prd of secondprdList; track prd.id; let i = $index) {
-                    <a routerLink="product/{{prd.id}}" class="link-offset-2 link-underline link-underline-opacity-0">
-                        <div class="alert alert-secondary prdsDisc" appstyle>
-                            <span><img src="{{prd.img}}" width="40" height="40"><p class="d-inline ms-2">{{prd.name}}</p><p class="price">{{prd.price | currency: "L.E"}}</p></span>
+                                    <li class="ms-list-item"><a routerLink="products/{{prd.id}}">{{prd.name}}<span>: {{prd.discount}}
+                                                Off</span></a><img class="ms-list-img"
+                                                src="{{prd.img}}" alt="product"></li>
+                                }
+                            </ul>
                         </div>
-                    </a>
-                }
-            </div>
-
-            <div class="col-lg-4 mt-4">
-                @for (prd of thirdprdList; track prd.id; let i = $index) {
-                    <a routerLink="product/{{prd.id}}" class="link-offset-2 link-underline link-underline-opacity-0">
-                        <div class="alert alert-secondary prdsDisc" appstyle>
-                            <span><img src="{{prd.img}}" width="40" height="40"><p class="d-inline ms-2">{{prd.name}}</p><p class="price">{{prd.price | currency: "L.E"}}</p></span>
-                        </div>
-                    </a>
-                }
+                    </div>
+                </div>
             </div>
         </div>
     </div>
-    
+</section>
+} @else {
+<div class="alert alert-danger">
+    <p>Loading...........</p>
 </div>
+}

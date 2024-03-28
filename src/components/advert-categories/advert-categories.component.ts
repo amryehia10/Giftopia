@@ -22,10 +22,11 @@ export class AdvertCategoriesComponent implements OnInit{
     this.categoryService.getCategory().subscribe({
       next:(data)=>{
         this.categories=data;
-        console.log(data);
         this.category1=this.categories[0];
         this.category2=this.categories[1];
         this.category3=this.categories[2];
+        console.log(this.category3);
+
       },
       error:(e)=>{console.log(e)}
     });
