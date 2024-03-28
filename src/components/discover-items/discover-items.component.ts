@@ -19,9 +19,8 @@ export class DiscoverItemsComponent implements OnInit {
   products: any;
   categories: any;
   catID: number[] = [];
-  firstprdList: {id:number, name: string, price:number, desc:string, cat:number, img:string}[] = [];
-  secondprdList: {id:number, name: string, price:number, desc:string, cat:number, img:string}[] = [];
-  thirdprdList: {id:number, name: string, price:number, desc:string, cat:number, img:string}[] = [];
+  firstprdList: {id:number, name: string, price:number, desc:string, cat:number, img:string, discount:string}[] = [];
+  secondprdList: {id:number, name: string, price:number, desc:string, cat:number, img:string, discount:string}[] = [];
   constructor(private productService:ProductsService, private categoryService: CategoryService) {}
 
   ngOnInit(): void { 
@@ -48,7 +47,7 @@ export class DiscoverItemsComponent implements OnInit {
   }
 
   populateCatIDs(): void {
-    for (let i = 0; i < 3; i++) {
+    for (let i = 0; i < 2; i++) {
       this.catID.push(this.categories[i].id);
     }
   }
@@ -56,7 +55,7 @@ export class DiscoverItemsComponent implements OnInit {
   getProductsOfCat() {
     let counter = 0; 
     for(let prd of this.products) {
-      if(this.catID[0] == prd.cat && counter < 5) {
+      if(this.catID[0] == prd.cat && counter < 8) {
         counter++;
         this.firstprdList.push(prd);
       }
@@ -65,18 +64,9 @@ export class DiscoverItemsComponent implements OnInit {
     counter = 0;
 
     for(let prd of this.products) {
-      if(this.catID[1] == prd.cat && counter < 5) {
+      if(this.catID[1] == prd.cat && counter < 8) {
         counter++;
         this.secondprdList.push(prd);
-      }
-    }
-    
-    counter = 0;
-    
-    for(let prd of this.products) {
-      if(this.catID[2] == prd.cat && counter < 5) {
-        this.thirdprdList.push(prd);
-        counter++;
       }
     }
   }
