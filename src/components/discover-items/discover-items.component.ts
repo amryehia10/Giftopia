@@ -39,6 +39,7 @@ export class DiscoverItemsComponent implements OnInit {
         this.categories = data;
         this.populateCatIDs();
         this.getProductsOfCat();
+        console.log(this.firstprdList)
       },
       error: (err) => {
         console.log(err);
@@ -48,7 +49,7 @@ export class DiscoverItemsComponent implements OnInit {
 
   populateCatIDs(): void {
     for (let i = 0; i < 3; i++) {
-      this.catID.push(this.categories[i].categoryId);
+      this.catID.push(this.categories[i].id);
     }
   }
 
@@ -74,7 +75,6 @@ export class DiscoverItemsComponent implements OnInit {
     
     for(let prd of this.products) {
       if(this.catID[2] == prd.cat && counter < 5) {
-        console.log(counter)
         this.thirdprdList.push(prd);
         counter++;
       }

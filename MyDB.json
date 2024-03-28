@@ -2,143 +2,144 @@
 {
     "products": [
         {
-            "id": 1,
             "name": "ring",
             "price": 250,
             "desc": "Lorem ipsum dolor sit amet consectetur adipisicing elit",
             "cat":5,
-            "img": "https://images.pexels.com/photos/1232931/pexels-photo-1232931.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+            "img": "https://images.pexels.com/photos/1232931/pexels-photo-1232931.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+            "id": "1"
         },
         {
-            "id": 2,
             "name": "watch",
             "price": 250,
             "desc": "Lorem ipsum dolor sit amet consectetur adipisicing elit",
-            "cat":3,
-            "img": "https://images.pexels.com/photos/8327950/pexels-photo-8327950.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+            "cat":"3",
+            "img": "https://images.pexels.com/photos/8327950/pexels-photo-8327950.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+            "id": "2"
         },
         {
-            "id": 2,
             "name": "watch",
             "price": 250,
             "desc": "Lorem ipsum dolor sit amet consectetur adipisicing elit",
-            "cat":3,
-            "img": "https://images.pexels.com/photos/8327950/pexels-photo-8327950.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+            "cat":"3",
+            "img": "https://images.pexels.com/photos/8327950/pexels-photo-8327950.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+            "id": "3"
+
         },
         {
-            "id": 3,
             "name": "controller",
             "price": 250,
             "desc": "Lorem ipsum dolor sit amet consectetur adipisicing elit",
-            "cat":2,
-            "img": "https://images.pexels.com/photos/275033/pexels-photo-275033.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+            "cat":"2",
+            "img": "https://images.pexels.com/photos/275033/pexels-photo-275033.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+            "id": "4"
         },
         {
-            "id": 4,
             "name": "ring",
             "price": 250,
             "desc": "Lorem ipsum dolor sit amet consectetur adipisicing elit",
-            "cat":5,
-            "img": "https://images.pexels.com/photos/1232931/pexels-photo-1232931.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+            "cat":"5",
+            "img": "https://images.pexels.com/photos/1232931/pexels-photo-1232931.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+            "id": "5"
         },
         {
-            "id": 5,
             "name": "watch",
             "price": 250,
             "desc": "Lorem ipsum dolor sit amet consectetur adipisicing elit",
-            "cat":3,
-            "img": "https://images.pexels.com/photos/8327950/pexels-photo-8327950.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+            "cat":"3",
+            "img": "https://images.pexels.com/photos/8327950/pexels-photo-8327950.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+            "id": "6"
         },
         {
-            "id": 6,
             "name": "controller",
             "price": 250,
             "desc": "Lorem ipsum dolor sit amet consectetur adipisicing elit",
-            "cat":2,
-            "img": "https://images.pexels.com/photos/275033/pexels-photo-275033.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+            "cat":"2",
+            "img": "https://images.pexels.com/photos/275033/pexels-photo-275033.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+            "id": "7"
         },
         {
-            "id": 7,
             "name": "ring",
             "price": 250,
             "desc": "Lorem ipsum dolor sit amet consectetur adipisicing elit",
-            "cat":5,
-            "img": "https://images.pexels.com/photos/1232931/pexels-photo-1232931.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+            "cat":"5",
+            "img": "https://images.pexels.com/photos/1232931/pexels-photo-1232931.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+            "id": "8"
         },
         {
-            "id": 13,
             "name": "ring",
             "price": 250,
             "desc": "Lorem ipsum dolor sit amet consectetur adipisicing elit",
-            "cat":5,
-            "img": "https://images.pexels.com/photos/1232931/pexels-photo-1232931.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+            "cat":"5",
+            "img": "https://images.pexels.com/photos/1232931/pexels-photo-1232931.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+            "id": "9"
         },
         {
-            "id": 8,
             "name": "ring",
             "price": 250,
             "desc": "Lorem ipsum dolor sit amet consectetur adipisicing elit",
-            "cat":5,
-            "img": "https://images.pexels.com/photos/1232931/pexels-photo-1232931.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+            "cat":"5",
+            "img": "https://images.pexels.com/photos/1232931/pexels-photo-1232931.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+            "id": "10"
         },
         {
-            "id": 9,
             "name": "controller",
             "price": 250,
             "desc": "Lorem ipsum dolor sit amet consectetur adipisicing elit",
-            "cat":2,
-            "img": "https://images.pexels.com/photos/275033/pexels-photo-275033.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+            "cat":"2",
+            "img": "https://images.pexels.com/photos/275033/pexels-photo-275033.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+            "id": "11"
         },
         {
-            "id": 9,
             "name": "controller",
             "price": 250,
             "desc": "Lorem ipsum dolor sit amet consectetur adipisicing elit",
-            "cat":2,
-            "img": "https://images.pexels.com/photos/275033/pexels-photo-275033.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+            "cat":"2",
+            "img": "https://images.pexels.com/photos/275033/pexels-photo-275033.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+            "id": "12"
         },
         {
-            "id": 12,
             "name": "controller",
             "price": 250,
             "desc": "Lorem ipsum dolor sit amet consectetur adipisicing elit",
-            "cat":2,
-            "img": "https://images.pexels.com/photos/275033/pexels-photo-275033.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+            "cat":"2",
+            "img": "https://images.pexels.com/photos/275033/pexels-photo-275033.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+            "id": "13"
         },
         {
-            "id": 10,
             "name": "watch",
             "price": 250,
             "desc": "Lorem ipsum dolor sit amet consectetur adipisicing elit",
-            "cat":3,
-            "img": "https://images.pexels.com/photos/8327950/pexels-photo-8327950.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+            "cat":"3",
+            "img": "https://images.pexels.com/photos/8327950/pexels-photo-8327950.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+            "id": "14"
         },
 
         {
-            "id": 11,
             "name": "watch",
             "price": 250,
             "desc": "Lorem ipsum dolor sit amet consectetur adipisicing elit",
-            "cat":3,
-            "img": "https://images.pexels.com/photos/8327950/pexels-photo-8327950.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+            "cat":"3",
+            "img": "https://images.pexels.com/photos/8327950/pexels-photo-8327950.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+            "id": "15"
         }
     ],
     "users": [],
     "categories": [
         {
-            "categoryId": 5,
             "categoryName": "Accessories",
-            "categoryImage":"https://sassytownhouseliving.com/wp-content/uploads/2021/07/How-To-Style-Any-Outfit-With-Beautiful-Fashion-Accessories.jpeg"
+            "categoryImage":"https://sassytownhouseliving.com/wp-content/uploads/2021/07/How-To-Style-Any-Outfit-With-Beautiful-Fashion-Accessories.jpeg",
+            "id" : "5"
         },
         {
-            "categoryId": 2,
             "categoryName": "Games",
-            "categoryImage":"https://miro.medium.com/v2/resize:fit:1400/1*5um9WLqV5UHYt4I0JQfqRA.jpeg"
+            "categoryImage":"https://miro.medium.com/v2/resize:fit:1400/1*5um9WLqV5UHYt4I0JQfqRA.jpeg",
+            "id" : "2"
         },
         {
-            "categoryId": 3,
             "categoryName": "Antiques",
-            "categoryImage":"https://jerrysantiquesandestates.com/wp-content/uploads/2023/07/The-History-and-Significance-of-Antiques_-What-Makes-Them-Valuable.jpg"
+            "categoryImage":"https://jerrysantiquesandestates.com/wp-content/uploads/2023/07/The-History-and-Significance-of-Antiques_-What-Makes-Them-Valuable.jpg",
+            "id" : "3"
         }
     ]
 }

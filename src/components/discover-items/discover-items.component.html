@@ -10,7 +10,7 @@
     
     <div class="container mt-5">
         <div class="row">
-            @for (cat of categories; track cat.categoryId; let i = $index) {
+            @for (cat of categories; track cat.id; let i = $index) {
                 @if(i < 3) {
                     <div class="col-lg-4">
                         <h6>{{cat.categoryName}}</h6>
@@ -21,7 +21,7 @@
         <div class="row">
             <div class="col-lg-4 mt-4">
                 @for (prd of firstprdList; track prd.id; let i = $index) {
-                    <a routerLink="product/{{prd.id}}" class="link-offset-2 link-underline link-underline-opacity-0">
+                    <a routerLink="products/{{prd.id}}" class="link-offset-2 link-underline link-underline-opacity-0">
                         <div class="alert alert-secondary prdsDisc" appstyle>
                             <span><img src="{{prd.img}}" width="40" height="40"><p class="d-inline ms-2">{{prd.name}}</p><p class="price">{{prd.price | currency: "L.E"}}</p></span>
                         </div>
@@ -31,7 +31,7 @@
 
             <div class="col-lg-4 mt-4">
                 @for (prd of secondprdList; track prd.id; let i = $index) {
-                    <a routerLink="product/{{prd.id}}" class="link-offset-2 link-underline link-underline-opacity-0">
+                    <a routerLink="products/{{prd.id}}" class="link-offset-2 link-underline link-underline-opacity-0">
                         <div class="alert alert-secondary prdsDisc" appstyle>
                             <span><img src="{{prd.img}}" width="40" height="40"><p class="d-inline ms-2">{{prd.name}}</p><p class="price">{{prd.price | currency: "L.E"}}</p></span>
                         </div>
@@ -41,7 +41,7 @@
 
             <div class="col-lg-4 mt-4">
                 @for (prd of thirdprdList; track prd.id; let i = $index) {
-                    <a routerLink="product/{{prd.id}}" class="link-offset-2 link-underline link-underline-opacity-0">
+                    <a routerLink="products/{{prd.id}}" class="link-offset-2 link-underline link-underline-opacity-0">
                         <div class="alert alert-secondary prdsDisc" appstyle>
                             <span><img src="{{prd.img}}" width="40" height="40"><p class="d-inline ms-2">{{prd.name}}</p><p class="price">{{prd.price | currency: "L.E"}}</p></span>
                         </div>
