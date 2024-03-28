@@ -8,5 +8,12 @@ import { Component } from '@angular/core';
   styleUrl: './about-us.component.css'
 })
 export class AboutUsComponent {
-
+  members = [
+    "Abdelrahman Salah",
+    "Ahmed Amgad",
+    "Ahmed Ebrahim Elgamal",
+    "Ahmed Ibrahiem Elghabour",
+    "Amr Yehia",
+    "Muhammed Gamal"
+  ];
 }

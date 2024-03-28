@@ -8,19 +8,26 @@ import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-root',
-  standalone:true,
-  imports: [RouterOutlet, HeaderComponent, HomeComponent, FooterComponent, LoginComponent, CommonModule],
+  standalone: true,
+  imports: [
+    RouterOutlet, 
+    HeaderComponent, 
+    HomeComponent, 
+    FooterComponent, 
+    LoginComponent, 
+    CommonModule,
+  ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
 export class AppComponent {
   title = 'Giftopia';
 
-  constructor(private router: Router) {}
+  constructor(private router: Router) { }
 
   isLoginPage(): boolean {
-    console.log('Current route:', this.router.url);
+    // console.log('Current route:', this.router.url);
     return this.router.url === '/login';
   }
-  
+
 }
