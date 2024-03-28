@@ -1,3 +1,5 @@
+@if(category1 && category2 && category3) {
+
 <section class="section ms-hero m-t-30">
     <div class="container">
         <div class="ms-main-content">
@@ -7,7 +9,8 @@
                     <div class="ms-slider swiper-container main-slider-nav main-slider-dot">
                         <!-- Main slider  -->
                         <div class="swiper-wrapper">
-                            <div class="ms-slide-item swiper-slide d-flex slide-1" style="background: url('{{ category1.categoryImage }}') no-repeat center center; background-size: cover;">
+                            <div class="ms-slide-item swiper-slide d-flex slide-1"
+                                style="background: url('{{ category1.categoryImage }}') no-repeat center center; background-size: cover;">
                                 <div class="ms-slide-content slider-animation">
                                     <h1 class="ms-slide-title" style="color: azure;">{{category1.categoryName}}</h1>
                                     <div class="ms-slide-desc">
@@ -22,21 +25,25 @@
             </div>
             <!-- Hero Banner 1 Start -->
             <div class="ms-banner-content align-self-center">
-                <div class="ms-slider-grid-item grid-img-4" style="background: url('{{ category2.categoryImage }}') no-repeat center center; background-size: cover;">
+                <div class="ms-slider-grid-item grid-img-4"
+                    style="background: url('{{ category2.categoryImage }}') no-repeat center center; background-size: cover;">
                     <div class="ms-detail">
-                        <h3 class="grid-animation" style="color: azure;"><span class="ms-grid-sub-title">{{category2.categoryName}}</span></h3>
-                        <a routerLink="category/{{category2.id}}" class="ms-btn-2">Shop Now <i class="msicon msi-angle-double-right"
-                                aria-hidden="true"></i></a>
+                        <h3 class="grid-animation" style="color: azure;"><span
+                                class="ms-grid-sub-title">{{category2.categoryName}}</span></h3>
+                        <a routerLink="category/{{category2.id}}" class="ms-btn-2">Shop Now <i
+                                class="msicon msi-angle-double-right" aria-hidden="true"></i></a>
                     </div>
                 </div>
             </div>
             <!-- Hero Banner 2 Start -->
             <div class="ms-banner-content align-self-center">
-                <div class="ms-slider-grid-item grid-img-5" style="background: url('{{ category3.categoryImage }}') no-repeat center center; background-size: cover;">
+                <div class="ms-slider-grid-item grid-img-5"
+                    style="background: url('{{ category3.categoryImage }}') no-repeat center center; background-size: cover;">
                     <div class="ms-detail">
-                        <h3 class="grid-animation" style="color: azure;"><span class="ms-grid-sub-title">{{category3.categoryName}}</span></h3>
-                        <a routerLink="category/{{category3.id}}" class="ms-btn-2">Shop Now <i class="msicon msi-angle-double-right"
-                                aria-hidden="true"></i></a>
+                        <h3 class="grid-animation" style="color: azure;"><span
+                                class="ms-grid-sub-title">{{category3.categoryName}}</span></h3>
+                        <a routerLink="category/{{category3.id}}" class="ms-btn-2">Shop Now <i
+                                class="msicon msi-angle-double-right" aria-hidden="true"></i></a>
                     </div>
                 </div>
             </div>
@@ -44,3 +51,8 @@
     </div>
 </section>
 <br>
+} @else {
+    <div class="alert alert-danger">
+        <p>Loading.............</p>
+    </div>
+}
