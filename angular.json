@@ -21,7 +21,6 @@
             "assets": ["src/favicon.ico", "src/assets"],
             "styles": [
               "src/assets/css/vendor/msicons.min.css",
-              "src/assets/css/plugins/animate.css",
               "src/assets/css/plugins/swiper-bundle.min.css",
               "src/assets/css/plugins/bootstrap.css",
               "src/assets/css/plugins/bootstrap-select.min.css",

@@ -127,15 +127,18 @@
     "categories": [
         {
             "categoryId": 5,
-            "categoryName": "Accessories"
+            "categoryName": "Accessories",
+            "categoryImage":"https://sassytownhouseliving.com/wp-content/uploads/2021/07/How-To-Style-Any-Outfit-With-Beautiful-Fashion-Accessories.jpeg"
         },
         {
             "categoryId": 2,
-            "categoryName": "Games"
+            "categoryName": "Games",
+            "categoryImage":"https://miro.medium.com/v2/resize:fit:1400/1*5um9WLqV5UHYt4I0JQfqRA.jpeg"
         },
         {
             "categoryId": 3,
-            "categoryName": "Antiques"
+            "categoryName": "Antiques",
+            "categoryImage":"https://jerrysantiquesandestates.com/wp-content/uploads/2023/07/The-History-and-Significance-of-Antiques_-What-Makes-Them-Valuable.jpg"
         }
     ]
 }

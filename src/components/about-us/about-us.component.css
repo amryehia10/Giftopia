@@ -1,0 +1,17 @@
+/* about-us.component.css */
+.card {
+    transition: transform .2s; /* Animation */
+  }
+  
+  .card:hover {
+    transform: scale(1.05); /* (150% zoom - Note: if the zoom is too much, it will go outside of the viewport) */
+  }
+  
+  .card-title {
+    color: #007bff; /* Bootstrap primary color */
+  }
+  
+  .lead {
+    color: #6c757d; /* Bootstrap secondary color */
+  }
+  
