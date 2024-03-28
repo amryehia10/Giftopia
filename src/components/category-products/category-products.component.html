@@ -2,18 +2,16 @@
     <div class="row">
         <div class="col-12">
             <button class="btn btn-primary my-3" (click)="sortByPrice()">Sort by Price: Low to High</button>
-            <div class="row">
-                <div class="d-flex flex-wrap col-sm-4">
-                    @for (prd of products; track prd.id) {
-                    <div class="card mb-4">
-                        <img [src]="prd.img" class="card-img-top" alt="{{ prd.name }}">
-                        <div class="card-body">
-                            <h5 class="card-title">{{ prd.name }}</h5>
-                            <p class="card-text">${{ prd.price }}</p>
-                        </div>
+            <div class="d-flex flex-wrap row bg-dark">
+                @for (prd of products; track prd.id) {
+                <div class="card mb-4 col-sm-4">
+                    <img [src]="prd.img" class="card-img-top" alt="{{ prd.name }}">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ prd.name }}</h5>
+                        <p class="card-text">${{ prd.price }}</p>
                     </div>
-                    }
                 </div>
+                }
             </div>
         </div>
     </div>

@@ -16,15 +16,12 @@
                     </div>
                     <div class="col-sm-12 col-lg-2 ms-footer-info">
                         <div class="ms-footer-widget">
-                            <h4 class="ms-footer-heading">Category</h4>
+                            <h4 class="ms-footer-heading">Categories</h4>
                             <div class="ms-footer-links ms-footer-dropdown">
                                 <ul class="align-items-center">
-                                    <li class="ms-footer-link"><a >Dairy & Milk</a></li>
-                                    <li class="ms-footer-link"><a>Snack & Spice</a></li>
-                                    <li class="ms-footer-link"><a>Fast Food</a></li>
-                                    <li class="ms-footer-link"><a>Juice & Drinks</a></li>
-                                    <li class="ms-footer-link"><a>Bakery</a></li>
-                                    <li class="ms-footer-link"><a>Seafood</a></li>
+                                    @for (cat of Categories; track cat.id) {
+                                    <li class="ms-footer-link"><a routerLink="/category/{{cat.categoryName}}">{{cat.categoryName}}</a></li>
+                                    }
                                 </ul>
                             </div>
                         </div>
@@ -35,8 +32,8 @@
                             <div class="ms-footer-links ms-footer-dropdown">
                                 <ul class="align-items-center">
                                     <li class="ms-footer-link"><a routerLink="/about">About us</a></li>
-                                    <li class="ms-footer-link"><a routerLink="/terms-conditions">Terms & conditions</a></li>
                                     <li class="ms-footer-link"><a routerLink="/contact">Contact us</a></li>
+                                    <li class="ms-footer-link"><a routerLink="/terms-conditions">Terms & conditions</a></li>
                                 </ul>
                             </div>
                         </div>
