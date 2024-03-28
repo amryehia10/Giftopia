@@ -1,1 +1,34 @@
-<p>discover-all works!</p>
+<section class="ms-listing-section listing padding-tb-30">
+    <div class="container">
+        <div class="row">
+            <div class="section-title">
+                <h2>Discover <span> Items</span></h2>
+            </div>
+            <div class="ms-listing">
+                <div class="ms-list-block">
+                    @for(cat of categories; track cat.id; let i = $index){
+
+                    <h4 class="ms-list-title">{{cat.categoryName}}
+                        <span class="label veg">
+                            <span class="dot"></span>
+                        </span>
+                    </h4>
+                    <ul>
+                        @for (prd of products; track prd.id) {
+
+                        @if(prd.cat == cat.id) {
+
+                        <li class="ms-list-item"><a href="shop-left-sidebar-col-3.html"><span>{{prd.name}}:
+                                    {{prd.discount}}
+                                    Off</span></a><img class="ms-list-img" src="{{prd.img}}" alt="product"></li>
+                        }
+                        
+                        }
+                    </ul>
+                    }
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
