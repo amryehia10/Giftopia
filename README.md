@@ -100,4 +100,5 @@ orders {
 shipping {
     userId,
     orderId,
+    status
 }
