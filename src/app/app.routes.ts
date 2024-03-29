@@ -11,11 +11,14 @@ import { TermsConditionsComponent } from '../components/terms-conditions/terms-c
 export const routes: Routes = [
     {path: '', component:HomeComponent},
     {path: 'home', component:HomeComponent},
+    {path: 'home/:name',component:CategoryProductsComponent},
     {path: 'discoverAll', component:DiscoverAllComponent},
     {path: 'products/:id', component:ProductComponent},
-    {path: 'categories/:id',component:CategoryProductsComponent},
+    {path: 'category/:name',component:CategoryProductsComponent},
     {path: 'about',component:AboutUsComponent},
     {path: 'contact',component:ContactUsComponent},
     {path: 'terms-condition',component:TermsConditionsComponent},
+    {path: ':name',component:CategoryProductsComponent},/** any data goto same page */
+
     {path: 'login',component:LoginComponent},
 ];

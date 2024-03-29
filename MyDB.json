@@ -5,7 +5,7 @@
             "name": "ring",
             "price": 250,
             "desc": "Lorem ipsum dolor sit amet consectetur adipisicing elit",
-            "cat":5,
+            "cat":["accessories"],
             "img": "https://cdn11.bigcommerce.com/s-t4k1ukevvr/images/stencil/1280w/products/2446/7947/TW10-973-1__96255.1696950533.jpg",
             "id": "1",
             "discount" : "30%"
@@ -14,7 +14,7 @@
             "name": "watch",
             "price": 250,
             "desc": "Lorem ipsum dolor sit amet consectetur adipisicing elit",
-            "cat":"3",
+            "cat":["antiques"],
             "img": "https://images.pexels.com/photos/8327950/pexels-photo-8327950.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
             "id": "2",
             "discount" : "30%"
@@ -23,7 +23,7 @@
             "name": "watch",
             "price": 250,
             "desc": "Lorem ipsum dolor sit amet consectetur adipisicing elit",
-            "cat":"3",
+            "cat":["antiques"],
             "img": "https://images.pexels.com/photos/8327950/pexels-photo-8327950.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
             "id": "3",
             "discount" : "30%"
@@ -33,7 +33,7 @@
             "name": "controller",
             "price": 250,
             "desc": "Lorem ipsum dolor sit amet consectetur adipisicing elit",
-            "cat":"2",
+            "cat":["games"],
             "img": "https://media.istockphoto.com/id/641123366/photo/joystick-on-white-background.jpg?s=612x612&w=0&k=20&c=t51G-NaM9pO-f0wqf7unzUFhK-DeaH8_W6ZIYeiGqx4=",
             "id": "4",
             "discount" : "30%"
@@ -42,7 +42,7 @@
             "name": "ring",
             "price": 250,
             "desc": "Lorem ipsum dolor sit amet consectetur adipisicing elit",
-            "cat":"5",
+            "cat":["accessories"],
             "img": "https://cdn11.bigcommerce.com/s-t4k1ukevvr/images/stencil/1280w/products/2446/7947/TW10-973-1__96255.1696950533.jpg",
             "id": "5",
             "discount" : "30%"
@@ -51,7 +51,7 @@
             "name": "watch",
             "price": 250,
             "desc": "Lorem ipsum dolor sit amet consectetur adipisicing elit",
-            "cat":"3",
+            "cat":["antiques"],
             "img": "https://images.pexels.com/photos/8327950/pexels-photo-8327950.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
             "id": "6",
             "discount" : "30%"
@@ -60,7 +60,7 @@
             "name": "controller",
             "price": 250,
             "desc": "Lorem ipsum dolor sit amet consectetur adipisicing elit",
-            "cat":"2",
+            "cat":["games"],
             "img": "https://media.istockphoto.com/id/641123366/photo/joystick-on-white-background.jpg?s=612x612&w=0&k=20&c=t51G-NaM9pO-f0wqf7unzUFhK-DeaH8_W6ZIYeiGqx4=",
             "id": "7",
             "discount" : "30%"
@@ -69,7 +69,7 @@
             "name": "ring",
             "price": 250,
             "desc": "Lorem ipsum dolor sit amet consectetur adipisicing elit",
-            "cat":"5",
+            "cat":["accessories"],
             "img": "https://cdn11.bigcommerce.com/s-t4k1ukevvr/images/stencil/1280w/products/2446/7947/TW10-973-1__96255.1696950533.jpg",
             "id": "8",
             "discount" : "30%"
@@ -78,7 +78,7 @@
             "name": "ring",
             "price": 250,
             "desc": "Lorem ipsum dolor sit amet consectetur adipisicing elit",
-            "cat":"5",
+            "cat":["accessories"],
             "img": "https://cdn11.bigcommerce.com/s-t4k1ukevvr/images/stencil/1280w/products/2446/7947/TW10-973-1__96255.1696950533.jpg",
             "id": "9",
             "discount" : "30%"
@@ -87,7 +87,7 @@
             "name": "ring",
             "price": 250,
             "desc": "Lorem ipsum dolor sit amet consectetur adipisicing elit",
-            "cat":"5",
+            "cat":["accessories"],
             "img": "https://cdn11.bigcommerce.com/s-t4k1ukevvr/images/stencil/1280w/products/2446/7947/TW10-973-1__96255.1696950533.jpg",
             "id": "10",
             "discount" : "30%"
@@ -96,7 +96,7 @@
             "name": "controller",
             "price": 250,
             "desc": "Lorem ipsum dolor sit amet consectetur adipisicing elit",
-            "cat":"2",
+            "cat":["games"],
             "img": "https://media.istockphoto.com/id/641123366/photo/joystick-on-white-background.jpg?s=612x612&w=0&k=20&c=t51G-NaM9pO-f0wqf7unzUFhK-DeaH8_W6ZIYeiGqx4=",
             "id": "11",
             "discount" : "30%"
@@ -105,7 +105,7 @@
             "name": "controller",
             "price": 250,
             "desc": "Lorem ipsum dolor sit amet consectetur adipisicing elit",
-            "cat":"2",
+            "cat":["games"],
             "img": "https://media.istockphoto.com/id/641123366/photo/joystick-on-white-background.jpg?s=612x612&w=0&k=20&c=t51G-NaM9pO-f0wqf7unzUFhK-DeaH8_W6ZIYeiGqx4=",
             "id": "12",
             "discount" : "30%"
@@ -114,7 +114,7 @@
             "name": "controller",
             "price": 250,
             "desc": "Lorem ipsum dolor sit amet consectetur adipisicing elit",
-            "cat":"2",
+            "cat":["games"],
             "img": "https://media.istockphoto.com/id/641123366/photo/joystick-on-white-background.jpg?s=612x612&w=0&k=20&c=t51G-NaM9pO-f0wqf7unzUFhK-DeaH8_W6ZIYeiGqx4=",
             "id": "13",
             "discount" : "30%"
@@ -123,17 +123,16 @@
             "name": "watch",
             "price": 250,
             "desc": "Lorem ipsum dolor sit amet consectetur adipisicing elit",
-            "cat":"3",
+            "cat":["antiques"],
             "img": "https://images.pexels.com/photos/8327950/pexels-photo-8327950.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
             "id": "14",
             "discount" : "30%"
         },
-
         {
             "name": "watch",
             "price": 250,
             "desc": "Lorem ipsum dolor sit amet consectetur adipisicing elit",
-            "cat":"3",
+            "cat":["antiques"],
             "img": "https://images.pexels.com/photos/8327950/pexels-photo-8327950.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
             "id": "15",
             "discount" : "30%"
@@ -142,7 +141,7 @@
             "name": "ring",
             "price": 250,
             "desc": "Lorem ipsum dolor sit amet consectetur adipisicing elit",
-            "cat":"5",
+            "cat":["accessories"],
             "img": "https://cdn11.bigcommerce.com/s-t4k1ukevvr/images/stencil/1280w/products/2446/7947/TW10-973-1__96255.1696950533.jpg",
             "id": "16",
             "discount" : "30%"
@@ -151,7 +150,7 @@
             "name": "ring",
             "price": 250,
             "desc": "Lorem ipsum dolor sit amet consectetur adipisicing elit",
-            "cat":"5",
+            "cat":["accessories"],
             "img": "https://cdn11.bigcommerce.com/s-t4k1ukevvr/images/stencil/1280w/products/2446/7947/TW10-973-1__96255.1696950533.jpg",
             "id": "17",
             "discount" : "30%"
@@ -160,37 +159,34 @@
             "name": "ring",
             "price": 250,
             "desc": "Lorem ipsum dolor sit amet consectetur adipisicing elit",
-            "cat":"5",
+            "cat":["accessories"],
             "img": "https://cdn11.bigcommerce.com/s-t4k1ukevvr/images/stencil/1280w/products/2446/7947/TW10-973-1__96255.1696950533.jpg",
             "id": "18",
             "discount" : "30%"
         },
-
         {
             "name": "watch",
             "price": 250,
             "desc": "Lorem ipsum dolor sit amet consectetur adipisicing elit",
-            "cat":"3",
+            "cat":["antiques"],
             "img": "https://images.pexels.com/photos/8327950/pexels-photo-8327950.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
             "id": "19",
             "discount" : "30%"
         },
-
         {
             "name": "watch",
             "price": 250,
             "desc": "Lorem ipsum dolor sit amet consectetur adipisicing elit",
-            "cat":"3",
+            "cat":["antiques"],
             "img": "https://images.pexels.com/photos/8327950/pexels-photo-8327950.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
             "id": "20",
             "discount" : "30%"
         },
-
         {
             "name": "watch",
             "price": 250,
             "desc": "Lorem ipsum dolor sit amet consectetur adipisicing elit",
-            "cat":"3",
+            "cat":["antiques"],
             "img": "https://images.pexels.com/photos/8327950/pexels-photo-8327950.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
             "id": "21",
             "discount" : "30%"
@@ -199,7 +195,7 @@
             "name": "controller",
             "price": 250,
             "desc": "Lorem ipsum dolor sit amet consectetur adipisicing elit",
-            "cat":"2",
+            "cat":["games"],
             "img": "https://media.istockphoto.com/id/641123366/photo/joystick-on-white-background.jpg?s=612x612&w=0&k=20&c=t51G-NaM9pO-f0wqf7unzUFhK-DeaH8_W6ZIYeiGqx4=",
             "id": "22",
             "discount" : "30%"
@@ -208,7 +204,7 @@
             "name": "controller",
             "price": 250,
             "desc": "Lorem ipsum dolor sit amet consectetur adipisicing elit",
-            "cat":"2",
+            "cat":["games"],
             "img": "https://media.istockphoto.com/id/641123366/photo/joystick-on-white-background.jpg?s=612x612&w=0&k=20&c=t51G-NaM9pO-f0wqf7unzUFhK-DeaH8_W6ZIYeiGqx4=",
             "id": "23",
             "discount" : "30%"
@@ -217,7 +213,7 @@
             "name": "controller",
             "price": 250,
             "desc": "Lorem ipsum dolor sit amet consectetur adipisicing elit",
-            "cat":"2",
+            "cat":["games"],
             "img": "https://media.istockphoto.com/id/641123366/photo/joystick-on-white-background.jpg?s=612x612&w=0&k=20&c=t51G-NaM9pO-f0wqf7unzUFhK-DeaH8_W6ZIYeiGqx4=",
             "id": "24",
             "discount" : "30%"
@@ -228,17 +224,17 @@
         {
             "categoryName": "Accessories",
             "categoryImage":"https://sassytownhouseliving.com/wp-content/uploads/2021/07/How-To-Style-Any-Outfit-With-Beautiful-Fashion-Accessories.jpeg",
-            "id" : "5"
+            "id" : "accessories"
         },
         {
             "categoryName": "Games",
             "categoryImage":"https://miro.medium.com/v2/resize:fit:1400/1*5um9WLqV5UHYt4I0JQfqRA.jpeg",
-            "id" : "2"
+            "id" : "games"
         },
         {
             "categoryName": "Antiques",
             "categoryImage":"https://jerrysantiquesandestates.com/wp-content/uploads/2023/07/The-History-and-Significance-of-Antiques_-What-Makes-Them-Valuable.jpg",
-            "id" : "3"
+            "id" : "antiques"
         }
     ]
 }
