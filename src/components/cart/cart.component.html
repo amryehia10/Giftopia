@@ -1,0 +1,122 @@
+ <!-- cart section -->
+    <section class="ms-cart-section padding-tb-30">
+        <h2 class="d-none">Cart Page</h2>
+        <div class="container">
+            <div class="row">
+                <div class="ms-cart-leftside col-lg-8 col-md-12 ">
+                    <!-- cart content Start -->
+                    <div class="ms-cart-content">
+                        <div class="ms-cart-inner">
+                            <div class="row">
+                                <form action="#">
+                                    <div class="table-content cart-table-content">
+                                        <table>
+                                            <thead>
+                                                <tr>
+                                                    <th>Product</th>
+                                                    <th>Price</th>
+                                                    <th style="text-align: center;">Quantity</th>
+                                                    <th>Total</th>
+                                                    <th></th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td data-label="Product" class="ms-cart-pro-name"><a
+                                                            href="product-left-sidebar.html"><img
+                                                                class="ms-cart-pro-img mr-4"
+                                                                src="assets/img/product-images/1_1.jpg"
+                                                                alt="">Crunchy Triangle Chips Snacks </a></td>
+                                                    <td data-label="Price" class="ms-cart-pro-price"><span
+                                                            class="amount">$56.00</span></td>
+                                                    <td data-label="Quantity" class="ms-cart-pro-qty"
+                                                        style="text-align: center;">
+                                                        <div class="cart-qty-plus-minus"><input
+                                                                class="cart-plus-minus" type="text"
+                                                                name="cartqtybutton" value="1"></div>
+                                                    </td>
+                                                    <td data-label="Total" class="ms-cart-pro-subtotal">$56.00</td>
+                                                    <td data-label="Remove" class="ms-cart-pro-remove"><a
+                                                            href="#"><i class="msicon msi-trash-o"></i></a></td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-lg-12">
+                                            <div class="ms-cart-update-bottom"><a href="#">Continue
+                                                    Shopping</a><button class="ms-btn-2">Check Out</button></div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <!--cart content End -->
+                </div>
+
+                <!-- Sidebar Area Start -->
+                <div class="ms-cart-rightside col-lg-4 col-md-12 m-t-991">
+                    <div class="ms-sidebar-wrap">
+                        <!-- Sidebar Summary Block -->
+                            <div class="ms-sidebar-block">
+                                <div class="ms-sb-title">
+                                    <h3 class="ms-sidebar-title">Summary</h3>
+                                </div>
+                                <div class="ms-sb-block-content">
+                                    <h4 class="ms-ship-title">Estimate Shipping</h4>
+                                    <div class="ms-cart-form">
+                                        <p>Enter your destination to get a shipping estimate</p>
+                                        <form action="#" method="post"><span class="ms-cart-wrap"><label>Country
+                                                    *</label><span class="ms-cart-select-inner"><select
+                                                        name="ms_cart_country" id="ms-cart-select-country"
+                                                        class="ms-cart-select">
+                                                        <option selected="" disabled="">Please select country</option>
+                                                        <option value="1">Egypt</option>
+                                                    </select></span></span><span
+                                                class="ms-cart-wrap"><label>State/Province</label><span
+                                                    class="ms-cart-select-inner"><select name="ms_cart_state"
+                                                        id="ms-cart-select-state" class="ms-cart-select">
+                                                        <option selected="" disabled="">Please Select a region,
+                                                            state </option>
+                                                        <option value="1">Cairo</option>
+                                                        <option value="1">Alexandria</option>
+                                                        <option value="1">Kafr elsheikh</option>
+                                                        <option value="1">Ismailia</option>
+                                                    </select></span></span><span
+                                                class="ms-cart-wrap"><label>Zip/Postal Code</label><input
+                                                    type="text" name="postalcode"
+                                                    placeholder="Zip/Postal Code"></span></form>
+                                    </div>
+                                </div>
+                            <div class="ms-sb-block-content">
+                                <div class="ms-cart-summary-bottom">
+                                    <div class="ms-cart-summary">
+                                        <div><span class="text-left">Sub-Total</span><span
+                                                class="text-right">$80.00</span></div>
+                                        <div><span class="text-left">Delivery Charges</span><span
+                                                class="text-right">$80.00</span></div>
+                                        <div><span class="text-left">Coupan Discount</span><span
+                                                class="text-right"><a class="ms-cart-coupan">Apply
+                                                    Coupan</a></span></div>
+
+                                        <!-- <div class="ms-cart-coupan-content"> -->
+                                        <div class="">
+                                            <form class="ms-cart-coupan-form" name="ms-cart-coupan-form"
+                                                method="post" action="#"><input class="ms-coupan" type="text"
+                                                    required="" placeholder="Enter Your Coupan Code"
+                                                    name="ms-coupan" value=""><button class="ms-btn-2"
+                                                    type="submit" name="subscribe" value="">Apply</button>
+                                            </form>
+                                        </div>
+                                        <div class="ms-cart-summary-total"><span class="text-left">Total
+                                                Amount</span><span class="text-right">$80.00</span></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>

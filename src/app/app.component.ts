@@ -6,6 +6,7 @@ import { FooterComponent } from '../components/footer/footer.component';
 import { LoginComponent } from '../components/login/login.component';
 import { CommonModule } from '@angular/common';
 import { CategoryProductsComponent } from '../components/category-products/category-products.component';
+import { CartComponent } from '../components/cart/cart.component';
 
 @Component({
   selector: 'app-root',
@@ -17,7 +18,8 @@ import { CategoryProductsComponent } from '../components/category-products/categ
     FooterComponent, 
     LoginComponent, 
     CommonModule,
-    CategoryProductsComponent
+    CategoryProductsComponent,
+    CartComponent
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'

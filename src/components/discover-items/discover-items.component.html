@@ -19,10 +19,11 @@
                             </h4>
                             <ul>
                                 @for (prd of firstprdList; track prd.id; let i = $index) {
-
-                                <li class="ms-list-item"><a routerLink="products/{{prd.id}}">{{prd.name}}<span>: {{prd.discount}}
-                                            Off</span></a><img class="ms-list-img"
-                                            src="{{prd.img}}" alt="product"></li>
+                                    <li class="ms-list-item">
+                                        <a routerLink="products/{{prd.id}}">
+                                            {{prd.name}}<span>: {{prd.discount}} Off</span>
+                                        </a><img class="ms-list-img"src="{{prd.img}}" alt="product">
+                                    </li>
                                 }
                             </ul>
                         </div>

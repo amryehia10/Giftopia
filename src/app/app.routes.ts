@@ -8,6 +8,7 @@ import { LoginComponent } from '../components/login/login.component';
 import { ContactUsComponent } from '../components/contact-us/contact-us.component';
 import { TermsConditionsComponent } from '../components/terms-conditions/terms-conditions.component';
 import { TrackOrderComponent } from '../components/track-order/track-order.component';
+import { CartComponent } from '../components/cart/cart.component';
 
 export const routes: Routes = [
     {path: '', component:HomeComponent},
@@ -22,4 +23,5 @@ export const routes: Routes = [
     // {path: ':name',component:CategoryProductsComponent},/** any data goto same page */
     {path: 'login',component:LoginComponent},
     {path: 'track-order',component:TrackOrderComponent},
+    {path: 'cart',component:CartComponent},
 ];
