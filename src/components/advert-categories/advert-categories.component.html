@@ -1,4 +1,4 @@
-@if(category1 && category2 && category3) {
+@if(adsCategories) {
 
 <section class="section ms-hero m-t-30">
     <div class="container">
@@ -10,11 +10,11 @@
                         <!-- Main slider  -->
                         <div class="swiper-wrapper">
                             <div class="ms-slide-item swiper-slide d-flex slide-1"
-                                style="background: url('{{ category1.categoryImage }}') no-repeat center center; background-size: cover;">
+                                style="background: url('{{ adsCategories[0].categoryImage }}') no-repeat center center; background-size: cover;">
                                 <div class="ms-slide-content slider-animation">
-                                    <h1 class="ms-slide-title" style="color: azure;">{{category1.categoryName}}</h1>
+                                    <h1 class="ms-slide-title">{{adsCategories[0].categoryName}}</h1>
                                     <div class="ms-slide-desc">
-                                        <a routerLink="category/{{category1.id}}" class="ms-btn-2">Shop Now <i
+                                        <a routerLink="{{adsCategories[0].categoryName|lowercase}}" class="ms-btn-2">Shop Now <i
                                                 class="msicon msi-angle-double-right" aria-hidden="true"></i></a>
                                     </div>
                                 </div>
@@ -24,13 +24,14 @@
                 </div>
             </div>
             <!-- Hero Banner 1 Start -->
+
             <div class="ms-banner-content align-self-center">
                 <div class="ms-slider-grid-item grid-img-4"
-                    style="background: url('{{ category2.categoryImage }}') no-repeat center center; background-size: cover;">
+                    style="background: url('{{ adsCategories[1].categoryImage }}') no-repeat center center; background-size: cover;">
                     <div class="ms-detail">
-                        <h3 class="grid-animation" style="color: azure;"><span
-                                class="ms-grid-sub-title">{{category2.categoryName}}</span></h3>
-                        <a routerLink="category/{{category2.id}}" class="ms-btn-2">Shop Now <i
+                        <h3 class="grid-animation"><span
+                                class="ms-grid-sub-title">{{adsCategories[1].categoryName}}</span></h3>
+                        <a routerLink="{{adsCategories[1].categoryName|lowercase}}" class="ms-btn-2">Shop Now <i
                                 class="msicon msi-angle-double-right" aria-hidden="true"></i></a>
                     </div>
                 </div>
@@ -38,11 +39,11 @@
             <!-- Hero Banner 2 Start -->
             <div class="ms-banner-content align-self-center">
                 <div class="ms-slider-grid-item grid-img-5"
-                    style="background: url('{{ category3.categoryImage }}') no-repeat center center; background-size: cover;">
+                    style="background: url('{{ adsCategories[2].categoryImage }}') no-repeat center center; background-size: cover;">
                     <div class="ms-detail">
-                        <h3 class="grid-animation" style="color: azure;"><span
-                                class="ms-grid-sub-title">{{category3.categoryName}}</span></h3>
-                        <a routerLink="category/{{category3.id}}" class="ms-btn-2">Shop Now <i
+                        <h3 class="grid-animation"><span
+                                class="ms-grid-sub-title">{{adsCategories[2].categoryName}}</span></h3>
+                        <a routerLink="{{adsCategories[2].categoryName|lowercase}}" class="ms-btn-2">Shop Now <i
                                 class="msicon msi-angle-double-right" aria-hidden="true"></i></a>
                     </div>
                 </div>
@@ -52,7 +53,7 @@
 </section>
 <br>
 } @else {
-    <div class="alert alert-danger">
-        <p>Loading.............</p>
-    </div>
+<div class="alert alert-danger">
+    <p>Loading.............</p>
+</div>
 }

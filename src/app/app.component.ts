@@ -5,24 +5,36 @@ import { HomeComponent } from '../components/home/home.component';
 import { FooterComponent } from '../components/footer/footer.component';
 import { LoginComponent } from '../components/login/login.component';
 import { CommonModule } from '@angular/common';
+import { CategoryProductsComponent } from '../components/category-products/category-products.component';
+import { CartComponent } from '../components/cart/cart.component';
 import { RegisterComponent } from '../components/register/register.component';
 
 @Component({
   selector: 'app-root',
-  standalone:true,
-  imports: [RouterOutlet, HeaderComponent, HomeComponent, FooterComponent, LoginComponent, RegisterComponent, CommonModule],
+  standalone: true,
+  imports: [
+    RouterOutlet, 
+    HeaderComponent, 
+    HomeComponent, 
+    FooterComponent, 
+    LoginComponent,
+    RegisterComponent, 
+    CommonModule,
+    CategoryProductsComponent,
+    CartComponent
+  ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
 export class AppComponent {
   title = 'Giftopia';
 
-  constructor(private router: Router) {}
+  constructor(private router: Router) { }
 
   isLoginPage(): boolean {
     console.log('Current route:', this.router.url);
     var pageLogin = this.router.url === '/login' || this.router.url === '/register';
     return pageLogin;
   }
-  
+
 }

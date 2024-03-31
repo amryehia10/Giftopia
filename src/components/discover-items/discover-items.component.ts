@@ -18,9 +18,9 @@ import { of } from 'rxjs';
 export class DiscoverItemsComponent implements OnInit {
   products: any;
   categories: any;
-  catID: number[] = [];
-  firstprdList: {id:number, name: string, price:number, desc:string, cat:number, img:string, discount:string}[] = [];
-  secondprdList: {id:number, name: string, price:number, desc:string, cat:number, img:string, discount:string}[] = [];
+  catNames: string[] = [];
+  firstprdList: {id:string, name: string, price:number, desc:string, cat:string[], img:string, discount:number}[] = [];
+  secondprdList: {id:string, name: string, price:number, desc:string, cat:string[], img:string, discount:number}[] = [];
   constructor(private productService:ProductsService, private categoryService: CategoryService) {}
 
   ngOnInit(): void { 
@@ -36,9 +36,8 @@ export class DiscoverItemsComponent implements OnInit {
     this.categoryService.getCategory().subscribe({
       next: (data) => {
         this.categories = data;
-        this.populateCatIDs();
+        this.populatecatNamess();
         this.getProductsOfCat();
-        console.log(this.firstprdList)
       },
       error: (err) => {
         console.log(err);
@@ -46,16 +45,16 @@ export class DiscoverItemsComponent implements OnInit {
     });
   }
 
-  populateCatIDs(): void {
+  populatecatNamess(): void {
     for (let i = 0; i < 2; i++) {
-      this.catID.push(this.categories[i].id);
+      this.catNames.push(this.categories[i].categoryName);
     }
   }
 
   getProductsOfCat() {
     let counter = 0; 
     for(let prd of this.products) {
-      if(this.catID[0] == prd.cat && counter < 8) {
+      if(this.catNames[0] == prd.cat && counter < 8) {
         counter++;
         this.firstprdList.push(prd);
       }
@@ -64,7 +63,7 @@ export class DiscoverItemsComponent implements OnInit {
     counter = 0;
 
     for(let prd of this.products) {
-      if(this.catID[1] == prd.cat && counter < 8) {
+      if(this.catNames[1] == prd.cat && counter < 8) {
         counter++;
         this.secondprdList.push(prd);
       }

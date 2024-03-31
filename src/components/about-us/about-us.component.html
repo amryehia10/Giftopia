@@ -1,4 +1,3 @@
-<!-- about-us.component.html -->
 <div class="container my-5">
     <div class="row">
       <div class="col-12 text-center">
@@ -7,48 +6,15 @@
       </div>
     </div>
     <div class="row text-center mt-5">
-      <div class="col-lg-4 col-md-6 mb-4">
-        <div class="card h-100">
-          <div class="card-body">
-            <h5 class="card-title">Abdelrahman Salah</h5>
+      @for (member of members; track $index) {
+        <div class="col-lg-4 col-md-6 mb-4">
+          <div class="card h-100">
+            <div class="card-body">
+              <h5 class="card-title">{{member}}</h5>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="col-lg-4 col-md-6 mb-4">
-        <div class="card h-100">
-          <div class="card-body">
-            <h5 class="card-title">Ahmed Amgad</h5>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-4 col-md-6 mb-4">
-        <div class="card h-100">
-          <div class="card-body">
-            <h5 class="card-title">Ahmed Ebrahim Elgamal</h5>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-4 col-md-6 mb-4">
-        <div class="card h-100">
-          <div class="card-body">
-            <h5 class="card-title">Ahmed Ibrahiem Elghabour</h5>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-4 col-md-6 mb-4">
-        <div class="card h-100">
-          <div class="card-body">
-            <h5 class="card-title">Amr Yehia</h5>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-4 col-md-6 mb-4">
-        <div class="card h-100">
-          <div class="card-body">
-            <h5 class="card-title">Mohammed Gamal</h5>
-          </div>
-        </div>
-      </div>
+      }
     </div>
   </div>
   

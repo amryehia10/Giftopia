@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { DiscoverItemsComponent } from '../discover-items/discover-items.component';
 import { AdvertCategoriesComponent } from '../advert-categories/advert-categories.component';
+import { DiscoverItemsComponent } from '../discover-items/discover-items.component';
 
 @Component({
   selector: 'app-home',

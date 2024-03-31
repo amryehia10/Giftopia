@@ -13,4 +13,8 @@ export class ProductsService extends BaseService {
   getproducts() {
     return this.http.get(this.URL);
   }
+  
+  getCategoryproducts(catID:string) {
+    return this.http.get(`${this.URL}/${catID}`);
+  }
 }

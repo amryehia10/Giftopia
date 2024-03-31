@@ -9,13 +9,13 @@
           <div class="header-top-social">
             <ul class="mb-0">
               <li class="list-inline-item">
-                <a href="javascript:void(0)"><i class="msicon msi-phone"></i></a
-                >+91 987 654 3210
+                <a target="_blank" href=""><i class="msicon msi-phone"></i></a
+                >+20 123 456 7891
               </li>
               <li class="list-inline-item">
-                <a href="javascript:void(0)"
+                <a
                   ><i class="msicon msi-whatsapp"></i></a
-                >+91 987 654 3210
+                >+201234567891
               </li>
             </ul>
           </div>
@@ -38,27 +38,27 @@
               </button>
               <ul class="dropdown-menu">
                 <li class="active">
-                  <a class="dropdown-item" href="#">English</a>
+                  <a class="dropdown-item">English</a>
                 </li>
-                <li><a class="dropdown-item" href="#">Italiano</a></li>
+                <li><a class="dropdown-item">Italiano</a></li>
               </ul>
             </div>
             <!-- Language End -->
             <!-- Currency Start -->
             <div class="header-top-lan-curr header-top-curr dropdown">
               <button class="dropdown-toggle" data-bs-toggle="dropdown">
-                Dollar <i class="msicon msi-angle-down" aria-hidden="true"></i>
+                Egyptian Pound <i class="msicon msi-angle-down" aria-hidden="true"></i>
               </button>
               <ul class="dropdown-menu">
                 <li class="active">
-                  <a class="dropdown-item" href="#">USD $</a>
+                  <a class="dropdown-item">USD $</a>
                 </li>
-                <li><a class="dropdown-item" href="#">EUR €</a></li>
+                <li><a class="dropdown-item">EUR €</a></li>
               </ul>
             </div>
             <!-- Currency End -->
-            <a class="ms-help" href="faq.html">Help?</a>
-            <a class="ms-help" href="track-order.html">Track Order?</a>
+            <a class="ms-help" >Help?</a>
+            <a class="ms-help" routerLink="/track-order">Track Order?</a>
           </div>
         </div>
         <!-- Header Top Language Currency -->
@@ -132,7 +132,7 @@
           <div class="align-self-center ms-header-logo">
             <div class="header-logo">
               <a href="index.html"
-                ><img src="assets/img/logo/logo.png" alt="Site Logo"
+                ><img src="assets/img/logo/logo_transparent.png" alt="Site Logo"
               /></a>
             </div>
           </div>
@@ -230,7 +230,7 @@
               <!-- Header wishlist End -->
               <!-- Header Cart Start -->
               <a
-                href="javascript:void(0)"
+                routerLink="cart"
                 class="ms-header-btn ms-cart-toggle"
                 title="Cart"
               >
@@ -469,20 +469,19 @@
                         >Others<i class="msicon msi-angle-right"></i
                       ></a>
                       <ul class="sub-menu">
-                        <li><a href="about-us.html">About Us</a></li>
-                        <li><a href="contact-us.html">Contact Us</a></li>
-                        <li><a href="cart.html">Cart</a></li>
-                        <li><a href="checkout.html">Checkout</a></li>
-                        <li><a href="compare.html">Compare</a></li>
+                        <li><a routerLink="/about">About Us</a></li>
+                        <li><a routerLink="/contact" >Contact Us</a></li>
+                        <li><a routerLink="cart">Cart</a></li>
+                        <li><a href="checkout">Checkout</a></li>
                         <li><a href="faq.html">FAQ</a></li>
-                        <li><a href="login.html">Login</a></li>
-                        <li><a href="register.html">Register</a></li>
-                        <li><a href="track-order.html">Track Order</a></li>
+                        <li><a href="login">Login</a></li>
+                        <li><a href="register">Register</a></li>
+                        <li><a routerLink="/track-order">Track Order</a></li>
                         <li>
-                          <a href="terms-condition.html">Terms Condition</a>
+                          <a routerLink="/terms-condition">Terms Condition</a>
                         </li>
                         <li>
-                          <a href="privacy-policy.html">Privacy Policy</a>
+                          <a href="privacy-policy">Privacy Policy</a>
                         </li>
                       </ul>
                     </li>
@@ -754,14 +753,14 @@
             <a href="javascript:void(0)">Others</a>
             <ul class="sub-menu">
               <li><a href="about-us.html">About Us</a></li>
-              <li><a href="contact-us.html">Contact Us</a></li>
+              <li><a routerLink="/contact">Contact Us</a></li>
               <li><a href="cart.html">Cart</a></li>
               <li><a href="checkout.html">Checkout</a></li>
               <li><a href="compare.html">Compare</a></li>
               <li><a href="faq.html">FAQ</a></li>
               <li><a href="login.html">Login</a></li>
               <li><a href="register.html">Register</a></li>
-              <li><a href="track-order.html">Track Order</a></li>
+              <li><a routerLink="/track-order">Track Order</a></li>
               <li><a href="terms-condition.html">Terms Condition</a></li>
               <li><a href="privacy-policy.html">Privacy Policy</a></li>
             </ul>
