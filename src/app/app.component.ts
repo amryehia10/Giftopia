@@ -5,11 +5,12 @@ import { HomeComponent } from '../components/home/home.component';
 import { FooterComponent } from '../components/footer/footer.component';
 import { LoginComponent } from '../components/login/login.component';
 import { CommonModule } from '@angular/common';
+import { RegisterComponent } from '../components/register/register.component';
 
 @Component({
   selector: 'app-root',
   standalone:true,
-  imports: [RouterOutlet, HeaderComponent, HomeComponent, FooterComponent, LoginComponent, CommonModule],
+  imports: [RouterOutlet, HeaderComponent, HomeComponent, FooterComponent, LoginComponent, RegisterComponent, CommonModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
@@ -20,7 +21,8 @@ export class AppComponent {
 
   isLoginPage(): boolean {
     console.log('Current route:', this.router.url);
-    return this.router.url === '/login';
+    var pageLogin = this.router.url === '/login' || this.router.url === '/register';
+    return pageLogin;
   }
   
 }
