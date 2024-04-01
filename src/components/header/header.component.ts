@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { CartComponent } from '../cart/cart.component';
 import { SideBarCartComponent } from '../side-bar-cart/side-bar-cart.component';
+import { SideBarCategoryComponent } from '../side-bar-category/side-bar-category.component';
 
 @Component({
   selector: 'app-header',
@@ -9,29 +10,33 @@ import { SideBarCartComponent } from '../side-bar-cart/side-bar-cart.component';
   imports: [
     RouterModule,
     CartComponent,
-    SideBarCartComponent
+    SideBarCartComponent,
+    SideBarCategoryComponent,
 ],
   templateUrl: './header.component.html',
   styleUrl: './header.component.css'
 })
 export class HeaderComponent {
-  // isSidebarVisible: boolean = false;
 
-  // openSidebar() {
-  //   this.isSidebarVisible = !this.isSidebarVisible;
-    
-  //   console.log(this.isSidebarVisible);
-  // }
+  isCartSidebarVisible: boolean = false;
+  isCategorySidebarVisible: boolean = false;
 
-
-  isSidebarVisible: boolean = false;
-
-  openSidebar() {
-    this.isSidebarVisible = true;
+  openCartSidebar() {
+    this.isCartSidebarVisible = true;
+    console.log("open cart");
   }
 
-  onCloseSidebar() {
-    this.isSidebarVisible = false;
+  onCloseCartSidebar() {
+    this.isCartSidebarVisible = false;
+  }
+
+  openCategorySidebar() {
+    this.isCategorySidebarVisible = true;
+    console.log("open category");
+  }
+
+  onCloseCategorySidebar() {
+    this.isCategorySidebarVisible = false;
   }
 
 }

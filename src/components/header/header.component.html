@@ -229,12 +229,12 @@
               </a>
               <!-- Header wishlist End -->
               <!-- Header Cart Start -->
-              <a
+              <a (click)="openCartSidebar()"
                 href="javascript:void(0)"
                 class="ms-header-btn ms-cart-toggle"
                 title="Cart"
               >
-                <div class="header-icon" (click)="openSidebar()">
+                <div class="header-icon">
                   <img
                     src="assets/img/icons/cart_5.svg"
                     class="svg_img header_svg"
@@ -265,7 +265,7 @@
         <!-- Category Toggle -->
         <div class="col ms-category-icon-block">
           <div class="ms-category-menu">
-            <div class="ms-category-toggle">
+            <div class="ms-category-toggle" (click)="openCategorySidebar()">
               <img
                 src="assets/img/icons/category-icon.svg"
                 class="svg_img header_svg svg_cat"
@@ -823,6 +823,8 @@
 </header>
 <!-- Header End  -->
 
-<app-side-bar-cart [isSidebarVisible]="isSidebarVisible" (closeSidebar)="onCloseSidebar()">
-  
+<app-side-bar-cart [isCartSidebarVisible]="isCartSidebarVisible" (closeCartSidebar)="onCloseCartSidebar()">
 </app-side-bar-cart>
+
+<app-side-bar-category [isCategorySidebarVisible]="isCategorySidebarVisible" (closeCategorySidebar)="onCloseCategorySidebar()">
+</app-side-bar-category>
