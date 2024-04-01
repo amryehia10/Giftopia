@@ -11,6 +11,7 @@ import { TrackOrderComponent } from '../components/track-order/track-order.compo
 import { CartComponent } from '../components/cart/cart.component';
 import { RegisterComponent } from '../components/register/register.component';
 import { CheckoutComponent } from '../components/checkout/checkout.component';
+import { PrivacyPolicyComponent } from '../components/privacy-policy/privacy-policy.component';
 
 export const routes: Routes = [
     {path: '', component:HomeComponent},
@@ -29,5 +30,6 @@ export const routes: Routes = [
     {path: 'track-order',component:TrackOrderComponent},
     {path: 'cart',component:CartComponent},
     {path: 'checkout',component:CheckoutComponent},
+    {path: 'privacy-policy',component:PrivacyPolicyComponent},
 
 ];

@@ -11,6 +11,7 @@ import { SideBarCartComponent } from '../components/side-bar-cart/side-bar-cart.
 import { RegisterComponent } from '../components/register/register.component';
 import { SideBarCategoryComponent } from '../components/side-bar-category/side-bar-category.component';
 import { CheckoutComponent } from '../components/checkout/checkout.component';
+import { PrivacyPolicyComponent } from '../components/privacy-policy/privacy-policy.component';
 
 @Component({
   selector: 'app-root',
@@ -28,6 +29,7 @@ import { CheckoutComponent } from '../components/checkout/checkout.component';
     CheckoutComponent,
     SideBarCartComponent,
     SideBarCategoryComponent,
+    PrivacyPolicyComponent
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
