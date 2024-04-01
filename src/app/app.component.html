@@ -1,10 +1,13 @@
+<!-- header -->
 <ng-container *ngIf="!isLoginPage()">
-    <app-header></app-header>
-  </ng-container>
-  
-  <router-outlet></router-outlet>
-  
-  <ng-container *ngIf="!isLoginPage()">
-    <app-footer></app-footer>
-  </ng-container>
+  <app-header></app-header>
+</ng-container>
+
+<!-- content -->
+<router-outlet></router-outlet>
+
+<!-- footer -->
+<ng-container *ngIf="!isLoginPage()">
+  <app-footer></app-footer>
+</ng-container>
   
