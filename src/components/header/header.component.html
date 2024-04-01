@@ -102,7 +102,7 @@
               </a>
               <!-- Header Wishlist End -->
               <!-- Header Cart Start -->
-              <a href="javascript:void(0)" class="ms-header-btn ms-cart-toggle">
+              <a routerLink="cart" class="ms-header-btn ms-cart-toggle">
                 <div class="header-icon">
                   <img
                     src="assets/img/icons/pro_cart.svg"
@@ -230,11 +230,11 @@
               <!-- Header wishlist End -->
               <!-- Header Cart Start -->
               <a
-                routerLink="cart"
+                href="javascript:void(0)"
                 class="ms-header-btn ms-cart-toggle"
                 title="Cart"
               >
-                <div class="header-icon">
+                <div class="header-icon" (click)="openSidebar()">
                   <img
                     src="assets/img/icons/cart_5.svg"
                     class="svg_img header_svg"
@@ -822,3 +822,5 @@
   <!-- Header responsive Bottom  End -->
 </header>
 <!-- Header End  -->
+
+<app-side-bar-cart [isSidebarVisible]="isSidebarVisible"></app-side-bar-cart>

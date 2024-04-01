@@ -30,9 +30,8 @@
               "src/assets/css/plugins/nouislider.css",
               "node_modules/bootstrap/dist/css/bootstrap.min.css",
               "src/assets/css/demo-1.css",
-              "src/assets/css/responsive.css",
-
-              "src/styles.css"
+              "src/assets/css/responsive.css"
+              
             ],
             "scripts": [
               "src/assets/js/plugins/jquery-3.5.1.min.js",

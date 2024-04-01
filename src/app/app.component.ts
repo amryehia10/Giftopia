@@ -7,6 +7,7 @@ import { LoginComponent } from '../components/login/login.component';
 import { CommonModule } from '@angular/common';
 import { CategoryProductsComponent } from '../components/category-products/category-products.component';
 import { CartComponent } from '../components/cart/cart.component';
+import { SideBarCartComponent } from '../components/side-bar-cart/side-bar-cart.component';
 
 @Component({
   selector: 'app-root',
@@ -19,7 +20,8 @@ import { CartComponent } from '../components/cart/cart.component';
     LoginComponent, 
     CommonModule,
     CategoryProductsComponent,
-    CartComponent
+    CartComponent,
+    SideBarCartComponent
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
