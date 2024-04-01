@@ -12,6 +12,7 @@ import { RegisterComponent } from '../components/register/register.component';
 import { SideBarCategoryComponent } from '../components/side-bar-category/side-bar-category.component';
 import { CheckoutComponent } from '../components/checkout/checkout.component';
 import { PrivacyPolicyComponent } from '../components/privacy-policy/privacy-policy.component';
+import { OurServicesComponent } from '../components/our-services/our-services.component';
 
 @Component({
   selector: 'app-root',
@@ -29,7 +30,8 @@ import { PrivacyPolicyComponent } from '../components/privacy-policy/privacy-pol
     CheckoutComponent,
     SideBarCartComponent,
     SideBarCategoryComponent,
-    PrivacyPolicyComponent
+    PrivacyPolicyComponent,
+    OurServicesComponent,
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
