@@ -1,12 +1,12 @@
 
 @if(isSidebarVisible){
-    <div class="ms-side-cart-overlay" (click)="closeSidebar()"></div>
+    
     <div id="ms-side-cart" class="ms-side-cart  ms-open-cart">
         <div class="ms-cart-inner">
             <div class="ms-cart-top">
                 <div class="ms-cart-title">
                     <span class="cart_title">My Cart</span>
-                    <a (click)="closeSidebar()" href="javascript:void(0)" class="ms-cart-close"><img src="assets/img/icons/close.svg"
+                    <a (click)="onCloseSidebar()" href="javascript:void(0)" class="ms-cart-close"><img src="assets/img/icons/close.svg"
                             class="svg_img pro_svg" alt="close"></a>
                 </div>
                 <ul class="ms-cart-pro-items">
@@ -75,4 +75,5 @@
         </div>
     </div>
     <!-- Cart sidebar End -->
+    <div class="ms-side-cart-overlay" (click)="onCloseSidebar()"></div>
 }

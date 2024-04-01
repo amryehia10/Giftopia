@@ -15,12 +15,23 @@ import { SideBarCartComponent } from '../side-bar-cart/side-bar-cart.component';
   styleUrl: './header.component.css'
 })
 export class HeaderComponent {
+  // isSidebarVisible: boolean = false;
+
+  // openSidebar() {
+  //   this.isSidebarVisible = !this.isSidebarVisible;
+    
+  //   console.log(this.isSidebarVisible);
+  // }
+
+
   isSidebarVisible: boolean = false;
 
   openSidebar() {
-    this.isSidebarVisible = !this.isSidebarVisible;
-    
-    console.log(this.isSidebarVisible);
+    this.isSidebarVisible = true;
+  }
+
+  onCloseSidebar() {
+    this.isSidebarVisible = false;
   }
 
 }
