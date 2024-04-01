@@ -1,34 +1,43 @@
-<section class="ms-listing-section listing padding-tb-30">
+<section class="section-products">
     <div class="container">
-        <div class="row">
-            <div class="section-title">
-                <h2>Discover <span> Items</span></h2>
-            </div>
-            <div class="ms-listing">
-                <div class="ms-list-block">
-                    @for(cat of categories; track cat.id; let i = $index){
-
-                    <h4 class="ms-list-title">{{cat.categoryName}}
-                        <span class="label veg">
-                            <span class="dot"></span>
-                        </span>
-                    </h4>
-                    <ul>
-                        @for (prd of products; track prd.id) {
-
-                        @if(prd.cat == cat.id) {
-
-                        <li class="ms-list-item"><a href="shop-left-sidebar-col-3.html"><span>{{prd.name}}:
-                                    {{prd.discount}}
-                                    Off</span></a><img class="ms-list-img" src="{{prd.img}}" alt="product"></li>
-                        }
-                        
-                        }
-                    </ul>
-                    }
+        <div class="row justify-content-center text-center">
+            <div class="col-md-8 col-lg-6">
+                <div class="header">
+                    <h3>Featured Products</h3>
+                    <h2>Popular Products</h2>
                 </div>
-
             </div>
+        </div>
+        <div class="row">
+            @for(cat of categories; track cat.id; let i = $index){
+            <h3 class="catprds">{{cat.categoryName}}</h3>
+            @for (prd of discoveredProducts; track prd.id) {
+                @if(prd.cat == cat.categoryName) {
+            <!-- Single Product -->
+            <div class="col-6 col-sm-6 col-md-4 col-lg-4 col-xl-3">
+                <div class="single-product">
+                    <div class="part-1">
+                        <img class="section-products img-fluid" src="{{prd.img}}" alt="product">
+                        <ul>
+                            <!--TODO-->
+                            <li><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
+                            <li><a href="#"><i class="fas fa-heart"></i></a></li>
+                        </ul>
+                    </div>
+                    <div class="part-2">
+                        <h3 class="product-title">{{prd.name}}</h3>
+                        @if(prd.discount > 0){
+                            <h4 class="product-old-price">{{prd.price | currency:"L.E"}}</h4>
+                            <h4 class="product-price">{{prd.price - (prd.price * prd.discount) | currency:"L.E"}}</h4>
+                        } @else {
+                            <h4 class="product-price">{{prd.price | currency:"L.E"}}</h4>
+                        }
+                    </div>
+                </div>
+            </div>
+        }
+    }
+        }
         </div>
     </div>
 </section>

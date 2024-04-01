@@ -20,6 +20,7 @@
             "tsConfig": "tsconfig.app.json",
             "assets": ["src/favicon.ico", "src/assets"],
             "styles": [
+              "@angular/material/prebuilt-themes/deeppurple-amber.css",
               "src/assets/css/vendor/msicons.min.css",
               "src/assets/css/plugins/swiper-bundle.min.css",
               "src/assets/css/plugins/bootstrap.css",
@@ -30,8 +31,9 @@
               "src/assets/css/plugins/nouislider.css",
               "node_modules/bootstrap/dist/css/bootstrap.min.css",
               "src/assets/css/demo-1.css",
-              "src/assets/css/responsive.css"
-              
+              "src/assets/css/responsive.css",
+              "src/assets/css/responsive.css",
+              "src/styles.css"
             ],
             "scripts": [
               "src/assets/js/plugins/jquery-3.5.1.min.js",
@@ -98,7 +100,10 @@
             "polyfills": ["zone.js", "zone.js/testing"],
             "tsConfig": "tsconfig.spec.json",
             "assets": ["src/favicon.ico", "src/assets"],
-            "styles": ["src/styles.css"],
+            "styles": [
+              "@angular/material/prebuilt-themes/deeppurple-amber.css",
+              "src/styles.css"
+            ],
             "scripts": []
           }
         }

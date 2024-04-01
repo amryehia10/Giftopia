@@ -2628,7 +2628,7 @@ i.msicon.msi-star.fill {
   display: flex;
 }
 .ms-features-sidebar .ms-features-block .ms-change-mode.active .ms-mode-on {
-  background: #63b760;
+  background: #C08B5C;
   color: #fff;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -3316,7 +3316,7 @@ i.msicon.msi-star.fill {
   border: 1px solid #eee;
 }
 .bootstrap-select .bs-actionsbox .btn-group button:hover {
-  color: #60bb99;
+  color: #C08B5C;
 }
 .bootstrap-select .bs-ok-default:after {
   content: "✔";
@@ -3884,7 +3884,7 @@ div#ms-main-menu-desk {
   margin-right: 30px;
 }
 .ms-main-menu ul li .mega-menu li ul li.menu_title a {
-  color: #60bb99;
+  color: #C08B5C;
   font-size: 15px;
   font-weight: 500;
   display: block;
@@ -4368,7 +4368,7 @@ div#ms-main-menu-desk {
   fill: #C08B5C;
 }
 .search_submit:hover .search_svg {
-  fill: #60bb99;
+  fill: #C08B5C;
 }
 
 .ms-search-select-inner {

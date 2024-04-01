@@ -8,6 +8,7 @@ import { CommonModule } from '@angular/common';
 import { CategoryProductsComponent } from '../components/category-products/category-products.component';
 import { CartComponent } from '../components/cart/cart.component';
 import { SideBarCartComponent } from '../components/side-bar-cart/side-bar-cart.component';
+import { RegisterComponent } from '../components/register/register.component';
 
 @Component({
   selector: 'app-root',
@@ -17,7 +18,8 @@ import { SideBarCartComponent } from '../components/side-bar-cart/side-bar-cart.
     HeaderComponent, 
     HomeComponent, 
     FooterComponent, 
-    LoginComponent, 
+    LoginComponent,
+    RegisterComponent, 
     CommonModule,
     CategoryProductsComponent,
     CartComponent,
@@ -32,8 +34,9 @@ export class AppComponent {
   constructor(private router: Router) { }
 
   isLoginPage(): boolean {
-    // console.log('Current route:', this.router.url);
-    return this.router.url === '/login';
+    console.log('Current route:', this.router.url);
+    var pageLogin = this.router.url === '/login' || this.router.url === '/register';
+    return pageLogin;
   }
 
 }

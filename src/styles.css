@@ -1,6 +1,10 @@
 
 /*===== Commen css =====*/
-body {
+/* body {
+    margin-top:20px;
+}
+html, body { height: 100%; } */
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; 
   width: 100%;
   height: 100%;
   position: relative;
@@ -2374,10 +2378,10 @@ i.msicon.msi-star.fill {
   border-radius: 50%;
 }
 .ms-product-inner .ms-pro-image .image .veg {
-  border: 1px solid #46c389;
+  border: 1px solid #C08B5C;
 }
 .ms-product-inner .ms-pro-image .image .veg .dot {
-  background-color: #46c389;
+  background-color: #C08B5C;
 }
 .ms-product-inner .ms-pro-image .image .nonveg {
   border: 1px solid #ff9898;
@@ -5347,11 +5351,11 @@ body.ms-menu-open:before {
   border-radius: 50%;
 }
 .ms-listing .ms-list-block .ms-list-title .veg {
-  border: 1px solid #46c389;
+  border: 1px solid #C08B5C;
   border-radius: 3px;
 }
 .ms-listing .ms-list-block .ms-list-title .veg .dot {
-  background-color: #46c389;
+  background-color: #C08B5C;
 }
 .ms-listing .ms-list-block .ms-list-title .non-veg {
   border: 1px solid #ff9898;

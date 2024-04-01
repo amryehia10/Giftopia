@@ -9,6 +9,7 @@ import { ContactUsComponent } from '../components/contact-us/contact-us.componen
 import { TermsConditionsComponent } from '../components/terms-conditions/terms-conditions.component';
 import { TrackOrderComponent } from '../components/track-order/track-order.component';
 import { CartComponent } from '../components/cart/cart.component';
+import { RegisterComponent } from '../components/register/register.component';
 
 export const routes: Routes = [
     {path: '', component:HomeComponent},
@@ -16,12 +17,14 @@ export const routes: Routes = [
     {path: 'home/:name',component:CategoryProductsComponent},
     {path: 'discoverAll', component:DiscoverAllComponent},
     {path: 'products/:id', component:ProductComponent},
+    {path: 'home/products/:id', component:ProductComponent},
     {path: 'category/:name',component:CategoryProductsComponent},
     {path: 'about',component:AboutUsComponent},
     {path: 'contact',component:ContactUsComponent},
     {path: 'terms-condition',component:TermsConditionsComponent},
     // {path: ':name',component:CategoryProductsComponent},/** any data goto same page */
     {path: 'login',component:LoginComponent},
+    {path: 'register',component:RegisterComponent},
     {path: 'track-order',component:TrackOrderComponent},
     {path: 'cart',component:CartComponent},
 ];

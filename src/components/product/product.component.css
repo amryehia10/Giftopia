@@ -1,0 +1,16 @@
+.container {
+    padding: 20px;
+}
+  .img-fluid {
+    max-width: 100%;
+}
+.carousel-image {
+  width: 100%;
+  height: 300px; /* Adjust the desired height */
+  object-fit: cover;
+  border-radius: 10px;
+}
+.rating-value {
+  margin-left: 5px;
+  font-weight: bold;
+}

@@ -16,13 +16,15 @@ import { CategoryService } from '../../services/category.service';
 export class DiscoverAllComponent implements OnInit  {
   products: any;
   categories: any;
-  catID: number[] = [];
+  catNames: string[] = [];
+  discoveredProducts: {id:number, name: string, price:number, desc:string, cat:number, img:string, discount:number}[] = [];
   constructor(private productService:ProductsService, private categoryService: CategoryService) {}
 
   ngOnInit() { 
     this.productService.getproducts().subscribe({
       next: (data) => {
         this.products = data;
+        this.getDiscoveredProducts()
       },
       error: (err) => {
         console.log(err);
@@ -32,8 +34,8 @@ export class DiscoverAllComponent implements OnInit  {
     this.categoryService.getCategory().subscribe({
       next: (data) => {
         this.categories = data;
-        this.populateCatIDs();
-        console.log(this.catID)
+        this.populatecatNames();
+        this.getDiscoveredProducts();
       },
       error: (err) => {
         console.log(err);
@@ -41,9 +43,27 @@ export class DiscoverAllComponent implements OnInit  {
     })
   }
 
-  populateCatIDs(): void {
+  populatecatNames(): void {
     for (let cat of this.categories) {
-      this.catID.push(cat.id);
+      this.catNames.push(cat.categoryName);
+    }
+  }
+
+  getDiscoveredProducts() {
+    if (!this.products || !this.categories || this.catNames.length === 0) {
+      return;
+    }
+    
+    this.products.sort((a: any, b: any) => b.discount - a.discount);
+    let counter = 0;
+    for(let cat = 0; cat < this.catNames.length; cat++) {
+      for(let prd of this.products) {
+        if(this.catNames[cat] == prd.cat && counter < 8){
+          counter++;
+          this.discoveredProducts.push(prd);
+        }
+      }
+      counter = 0;
     }
   }
 }

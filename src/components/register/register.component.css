@@ -1,0 +1,226 @@
+.container {
+  background-image: url('/assets/img/bg/Giftopia_Background.jpg');
+  background-size: 100% 100%;
+  background-attachment: fixed;
+  min-height: 105vh;
+  min-width: 100%;
+  margin-top: -5vh;
+  overflow: hidden;
+}
+
+.loginForm {
+  margin-top: 15vh;
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+  margin-bottom: 10vh;
+}
+
+input, select, textarea{
+  height: auto;
+  margin-bottom: 15px;
+  margin-top: 15px;
+}
+
+.card{
+  background-color: rgba(255, 255, 255, 0.279);
+  border: 3.5px black groove;
+}
+
+.card-header{
+  font-weight: 700;
+  font-size: 25px;
+  color: orangered;
+  font-family: cursive;
+  text-shadow: -1.5px -1.5px 0 #000,  
+                0.5px -0.5px 0 #999b00,
+               -1.5px 1.5px 0 #000,
+                0.5px 0.5px 0 #999b00;
+  letter-spacing: 2px;
+  margin: auto;
+}
+
+.form-group{
+  font-weight: bold;
+  font-size: 20px;
+  color: rgb(255, 149, 0);
+  font-family: cursive;
+  text-shadow: -1.5px -1.5px 0 #000,  
+                1px -1px 0 #000,
+               -1px 1px 0 #000,
+                1px 1px 0 #000;
+  letter-spacing: 3px;
+}
+
+.validation{
+  margin-left: 10px;
+  font-size: 15px;
+  font-family: cursive;
+  color: rgb(113, 0, 0);
+  text-shadow: -0.5px -0.5px 0 #ff5c5c,  
+  0.5px -0.5px 0 #ff5c5c,
+  -0.5px 0.5px 0 #ff5c5c,
+  0.5px 0.5px 0 #ff5c5c;
+  letter-spacing: 1px;
+}
+
+hr {
+  color: black;
+  background-color: rgb(192, 0, 0);
+  height: 2px;
+  width: 90%;
+  margin: 10px auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+
+.foot{
+  font-weight: bold;
+}
+
+.giftBtn {
+  margin-top: 10px;
+  margin-bottom: 15px;
+  font-weight: bold;
+  font-size: medium;
+  background-color: orange;
+  border: 2px red groove;
+  position: relative;
+  min-width: 160px;
+  min-height: 40px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.giftBtn:hover {
+
+  background-color: rgb(255, 190, 39);
+  border: 2px rgb(255, 66, 66) groove;
+  border-top-left-radius: 0%;
+  border-top-right-radius: 0%;
+}
+
+.wrapper {
+  position: absolute;
+  top: 0;
+  left: 8px;
+  height: 30px;
+  width: 71px;
+  pointer-events: none;
+}
+
+.giftBtn:hover .wrapper {
+  opacity: 0;
+}
+
+.button-container {
+  display: flex;
+}
+
+.button-container button {
+  margin-top: 50px;
+  margin-right:120px;
+}
+
+.regBtn{
+  background-color: blue; color: white; border: 2px black solid;
+}
+
+.regBtn:hover{
+  background-color: rgb(69, 69, 255); color: white; border: 2px black solid;
+}
+
+.removeBtn{
+  background-color: rgb(199, 0, 0); color: white; border: 2px black solid;
+  scale: 0.9;
+  margin: auto;
+  margin-bottom: 15px;
+}
+
+.removeBtn:hover{
+  background-color: rgb(228, 1, 1); color: white; border: 2px black solid;
+}
+
+.input-container {
+  display: flex;
+  align-items: center;
+}
+
+.CreditCardBox{
+  background-color: rgba(158, 156, 156, 0.827);
+  border: 3.5px black groove;
+  padding: 15px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+input[type="radio"] {
+  transform: scale(1.5);
+  margin-left: 10px;
+}
+
+
+label.radio-label {
+  font-size: 18px;
+}
+
+.input-with-preview {
+  display: flex;
+  align-items: center;
+}
+
+.input-with-preview input {
+  margin-right: 10px;
+}
+
+.image-preview img {
+  width: 140px;
+  height: 100px;
+  border: 2px solid black;
+}
+
+.enlarge-image {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.enlarge-image img {
+  max-width: 90%;
+  max-height: 90%;
+  cursor: pointer;
+}
+
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: transparent;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+
+@media (max-width: 768px) {
+  .loginForm {
+    width: 80%;
+  }
+}
+
+@media (max-width: 576px) {
+  .loginForm {
+    width: 90%;
+  }
+}
