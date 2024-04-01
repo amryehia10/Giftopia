@@ -209,6 +209,7 @@
               <!-- Header User End -->
               <!-- Header wishlist Start -->
               <a
+                (click)="openWishlistSidebar()"
                 href="javascript:void(0)"
                 class="ms-header-btn ms-wish-toggle"
                 title="Wishlist"
@@ -229,7 +230,8 @@
               </a>
               <!-- Header wishlist End -->
               <!-- Header Cart Start -->
-              <a (click)="openCartSidebar()"
+              <a 
+                (click)="openCartSidebar()"
                 href="javascript:void(0)"
                 class="ms-header-btn ms-cart-toggle"
                 title="Cart"
@@ -828,3 +830,6 @@
 
 <app-side-bar-category [isCategorySidebarVisible]="isCategorySidebarVisible" (closeCategorySidebar)="onCloseCategorySidebar()">
 </app-side-bar-category>
+
+<app-side-bar-wishlist [isWishlistSidebarVisible]="isWishlistSidebarVisible" (closeWishlistSidebar)="onCloseWishlistSidebar()">
+</app-side-bar-wishlist>

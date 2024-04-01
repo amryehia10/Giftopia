@@ -13,6 +13,7 @@ import { SideBarCategoryComponent } from '../components/side-bar-category/side-b
 import { CheckoutComponent } from '../components/checkout/checkout.component';
 import { PrivacyPolicyComponent } from '../components/privacy-policy/privacy-policy.component';
 import { OurServicesComponent } from '../components/our-services/our-services.component';
+import { SideBarWishlistComponent } from '../components/side-bar-wishlist/side-bar-wishlist.component';
 
 @Component({
   selector: 'app-root',
@@ -30,6 +31,7 @@ import { OurServicesComponent } from '../components/our-services/our-services.co
     CheckoutComponent,
     SideBarCartComponent,
     SideBarCategoryComponent,
+    SideBarWishlistComponent,
     PrivacyPolicyComponent,
     OurServicesComponent,
   ],
