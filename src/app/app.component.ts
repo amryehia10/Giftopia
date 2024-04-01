@@ -10,6 +10,7 @@ import { CartComponent } from '../components/cart/cart.component';
 import { SideBarCartComponent } from '../components/side-bar-cart/side-bar-cart.component';
 import { RegisterComponent } from '../components/register/register.component';
 import { SideBarCategoryComponent } from '../components/side-bar-category/side-bar-category.component';
+import { CheckoutComponent } from '../components/checkout/checkout.component';
 
 @Component({
   selector: 'app-root',
@@ -24,8 +25,9 @@ import { SideBarCategoryComponent } from '../components/side-bar-category/side-b
     CommonModule,
     CategoryProductsComponent,
     CartComponent,
+    CheckoutComponent,
     SideBarCartComponent,
-    SideBarCategoryComponent
+    SideBarCategoryComponent,
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
