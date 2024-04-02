@@ -21,25 +21,48 @@
         </form>
       </div>
       <ul>
-        <li><a href="/">Home</a></li>
-
+        <li><a (click)="onCloseMenuSideBar()" routerLink="/">Home</a></li>
         <li>
-          <a href="/category">Categories</a>
+          <a (click)="onCloseMenuSideBar()" routerLink="/category"
+            >Categories</a
+          >
         </li>
         <li>
-          <a href="/discoverAll">Products</a>
+          <a (click)="onCloseMenuSideBar()" routerLink="/discoverAll"
+            >Products</a
+          >
         </li>
         <li class="text-center mt-3">Others</li>
         <hr />
-        <li><a href="/about">About Us</a></li>
-        <li><a routerLink="/contact">Contact Us</a></li>
-        <li><a href="/cart">Cart</a></li>
-        <li><a href="/checkout">Checkout</a></li>
-        <li><a href="/login">Login</a></li>
-        <li><a href="/register">Register</a></li>
-        <li><a routerLink="/track-order">Track Order</a></li>
-        <li><a href="/terms-condition">Terms Condition</a></li>
-        <li><a routerLink="/privacy-policy">Privacy Policy</a></li>
+        <li>
+          <a (click)="onCloseMenuSideBar()" routerLink="/about">About Us</a>
+        </li>
+        <li>
+          <a (click)="onCloseMenuSideBar()" routerLink="/contact">Contact Us</a>
+        </li>
+        <li><a (click)="onCloseMenuSideBar()" routerLink="/cart">Cart</a></li>
+        <li>
+          <a (click)="onCloseMenuSideBar()" routerLink="/checkout">Checkout</a>
+        </li>
+        <li><a (click)="onCloseMenuSideBar()" routerLink="/login">Login</a></li>
+        <li>
+          <a (click)="onCloseMenuSideBar()" routerLink="/register">Register</a>
+        </li>
+        <li>
+          <a (click)="onCloseMenuSideBar()" routerLink="/track-order"
+            >Track Order</a
+          >
+        </li>
+        <li>
+          <a (click)="onCloseMenuSideBar()" routerLink="/terms-condition"
+            >Terms Condition</a
+          >
+        </li>
+        <li>
+          <a (click)="onCloseMenuSideBar()" routerLink="/privacy-policy"
+            >Privacy Policy</a
+          >
+        </li>
       </ul>
     </div>
     <div class="header-res-lan-curr">
@@ -48,16 +71,24 @@
         <div class="header-top-social">
           <ul class="mb-0">
             <li class="list-inline-item">
-              <a href="#"><i class="msicon msi-facebook"></i></a>
+              <a (click)="onCloseMenuSideBar()" routerLink="#"
+                ><i class="msicon msi-facebook"></i
+              ></a>
             </li>
             <li class="list-inline-item">
-              <a href="#"><i class="msicon msi-twitter"></i></a>
+              <a (click)="onCloseMenuSideBar()" routerLink="#"
+                ><i class="msicon msi-twitter"></i
+              ></a>
             </li>
             <li class="list-inline-item">
-              <a href="#"><i class="msicon msi-instagram"></i></a>
+              <a (click)="onCloseMenuSideBar()" routerLink="#"
+                ><i class="msicon msi-instagram"></i
+              ></a>
             </li>
             <li class="list-inline-item">
-              <a href="#"><i class="msicon msi-linkedin"></i></a>
+              <a (click)="onCloseMenuSideBar()" routerLink="#"
+                ><i class="msicon msi-linkedin"></i
+              ></a>
             </li>
           </ul>
         </div>

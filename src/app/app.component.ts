@@ -19,12 +19,12 @@ import { SideBarWishlistComponent } from '../components/side-bar-wishlist/side-b
   selector: 'app-root',
   standalone: true,
   imports: [
-    RouterOutlet, 
-    HeaderComponent, 
-    HomeComponent, 
-    FooterComponent, 
+    RouterOutlet,
+    HeaderComponent,
+    HomeComponent,
+    FooterComponent,
     LoginComponent,
-    RegisterComponent, 
+    RegisterComponent,
     CommonModule,
     CategoryProductsComponent,
     CartComponent,
@@ -36,17 +36,16 @@ import { SideBarWishlistComponent } from '../components/side-bar-wishlist/side-b
     OurServicesComponent,
   ],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  styleUrl: './app.component.css',
 })
 export class AppComponent {
   title = 'Giftopia';
 
-  constructor(private router: Router) { }
+  constructor(private router: Router) {}
 
-  isLoginPage(): boolean {
-    console.log('Current route:', this.router.url);
-    var pageLogin = this.router.url === '/login' || this.router.url === '/register';
-    return pageLogin;
-  }
-
+  // isLoginPage(): boolean {
+  //   console.log('Current route:', this.router.url);
+  //   var pageLogin = this.router.url === '/login' || this.router.url === '/register';
+  //   return pageLogin;
+  // }
 }

@@ -1,9 +1,10 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-side-bar-menu',
   standalone: true,
-  imports: [],
+  imports: [RouterModule],
   templateUrl: './side-bar-menu.component.html',
   styleUrl: './side-bar-menu.component.css',
 })
