@@ -1,96 +1,139 @@
 <footer class="ms-footer m-t-30">
-    <div class="footer-container">
-        <div class="footer-top padding-tb-60">
-            <div class="container">
-                <div class="row m-minus-991">
-                    <div class="col-sm-12 col-lg-3 ms-footer-cat">
-                        <div class="ms-footer-widget ms-footer-company">
-                            <img src="assets/img/logo/logo_transparent.png" class="ms-footer-logo" alt="footer logo">
-                            <p class="ms-footer-detail">Giftopia is the biggest market for gifts. Get your gifts
-                                needs from our store.</p>
-                        </div>
-                    </div>
-                    <div class="col-sm-12 col-lg-2 ms-footer-info">
-                        <div class="ms-footer-widget">
-                            <h4 class="ms-footer-heading">Categories</h4>
-                            <div class="ms-footer-links ms-footer-dropdown">
-                                <ul class="align-items-center">
-                                    @for (cat of Categories; track cat.id) {
-                                    <li class="ms-footer-link"><a routerLink="/category/{{cat.categoryName}}">{{cat.categoryName}}</a></li>
-                                    }
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-12 col-lg-2 ms-footer-account">
-                        <div class="ms-footer-widget">
-                            <h4 class="ms-footer-heading">Company</h4>
-                            <div class="ms-footer-links ms-footer-dropdown">
-                                <ul class="align-items-center">
-                                    <li class="ms-footer-link"><a routerLink="/about">About us</a></li>
-                                    <li class="ms-footer-link"><a routerLink="/terms-condition">Terms & conditions</a></li>
-                                    <li class="ms-footer-link"><a routerLink="/contact">Contact us</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-12 col-lg-2 ms-footer-service">
-                        <div class="ms-footer-widget">
-                            <h4 class="ms-footer-heading">Account</h4>
-                            <div class="ms-footer-links ms-footer-dropdown">
-                                <ul class="align-items-center">
-                                    <li class="ms-footer-link"><a routerLink="/login">Sign In</a></li>
-                                    
-                                    <!-- TODO -->
-                                    <li class="ms-footer-link"><a>View Cart</a></li>
-                                    <li class="ms-footer-link"><a>Payments</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-12 col-lg-3 ms-footer-cont-social">
-                        <div class="ms-footer-contact">
-                            <div class="ms-footer-widget">
-                                <h4 class="ms-footer-heading">Contact</h4>
-                                <div class="ms-footer-links ms-footer-dropdown">
-                                    <ul class="align-items-center">
-                                        <li class="ms-footer-link ms-foo-location"><span><img
-                                                    src="assets/img/icons/foo-location.svg" class="svg_img foo_svg"
-                                                    alt=""></span>
-                                            <p>ITI, Smart Village, 6th October, Egypt</p>
-                                        </li>
-                                        <li class="ms-footer-link ms-foo-call"><span><img
-                                                    src="assets/img/icons/foo-wp.svg" class="svg_img foo_svg"
-                                                    alt=""></span><a >+201099027885</a>
-                                        </li>
-                                        <li class="ms-footer-link ms-foo-mail"><span><img
-                                                    src="assets/img/icons/foo-mail.svg" class="svg_img foo_svg"
-                                                    alt=""></span><a
-                                                >amr.yehia.zakaria&commat;gmail.com</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+  <div class="footer-container">
+    <div class="footer-top padding-tb-60">
+      <div class="container">
+        <div class="row m-minus-991">
+          <div class="col-sm-12 col-lg-3 ms-footer-cat">
+            <div class="ms-footer-widget ms-footer-company">
+              <img
+                src="assets/img/logo/logo_transparent.png"
+                class="ms-footer-logo"
+                alt="footer logo"
+              />
+              <p class="ms-footer-detail">
+                Giftopia is the biggest market for gifts. Get your gifts needs
+                from our store.
+              </p>
             </div>
-        </div>
-        <div class="footer-bottom">
-            <div class="container">
-                <div class="row">
-                    <div class="ms-bottom-info">
-                        <!-- Footer Copyright Start -->
-                        <div class="footer-copy">
-                            <div class="footer-bottom-copy ">
-                                <div class="ms-copy">Copyright © <a class="site-name"
-                                        >Giftopia</a> all
-                                    rights reserved. Powered by Giftopia.</div>
-                            </div>
-                        </div>
-                        <!-- Footer Copyright End -->
-                    </div>
-                </div>
+          </div>
+          <div class="col-sm-12 col-lg-2 ms-footer-info">
+            <div class="ms-footer-widget">
+              <h4 class="ms-footer-heading">Categories</h4>
+              <div
+                class="ms-footer-links ms-footer-dropdown"
+                style="display: block"
+              >
+                <ul class="align-items-center">
+                  @for (cat of Categories; track cat.id) {
+                  <li class="ms-footer-link">
+                    <a routerLink="/category/{{ cat.categoryName }}">{{
+                      cat.categoryName
+                    }}</a>
+                  </li>
+                  }
+                </ul>
+              </div>
             </div>
+          </div>
+          <div class="col-sm-12 col-lg-2 ms-footer-account">
+            <div class="ms-footer-widget">
+              <h4 class="ms-footer-heading">Company</h4>
+              <div
+                class="ms-footer-links ms-footer-dropdown"
+                style="display: block"
+              >
+                <ul class="align-items-center">
+                  <li class="ms-footer-link">
+                    <a routerLink="/about">About us</a>
+                  </li>
+                  <li class="ms-footer-link">
+                    <a routerLink="/terms-condition">Terms & conditions</a>
+                  </li>
+                  <li class="ms-footer-link">
+                    <a routerLink="/contact">Contact us</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-12 col-lg-2 ms-footer-service">
+            <div class="ms-footer-widget">
+              <h4 class="ms-footer-heading">Account</h4>
+              <div
+                class="ms-footer-links ms-footer-dropdown"
+                style="display: block"
+              >
+                <ul class="align-items-center">
+                  <li class="ms-footer-link">
+                    <a routerLink="/login">Sign In</a>
+                  </li>
+
+                  <!-- TODO -->
+                  <li class="ms-footer-link"><a>View Cart</a></li>
+                  <li class="ms-footer-link"><a>Payments</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-12 col-lg-3 ms-footer-cont-social">
+            <div class="ms-footer-contact">
+              <div class="ms-footer-widget">
+                <h4 class="ms-footer-heading">Contact</h4>
+                <div
+                  class="ms-footer-links ms-footer-dropdown"
+                  style="display: block"
+                >
+                  <ul class="align-items-center">
+                    <li class="ms-footer-link ms-foo-location">
+                      <span
+                        ><img
+                          src="assets/img/icons/foo-location.svg"
+                          class="svg_img foo_svg"
+                          alt=""
+                      /></span>
+                      <p>ITI, Smart Village, 6th October, Egypt</p>
+                    </li>
+                    <li class="ms-footer-link ms-foo-call">
+                      <span
+                        ><img
+                          src="assets/img/icons/foo-wp.svg"
+                          class="svg_img foo_svg"
+                          alt="" /></span
+                      ><a>+201099027885</a>
+                    </li>
+                    <li class="ms-footer-link ms-foo-mail">
+                      <span
+                        ><img
+                          src="assets/img/icons/foo-mail.svg"
+                          class="svg_img foo_svg"
+                          alt="" /></span
+                      ><a>amr.yehia.zakaria&commat;gmail.com</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
+      </div>
     </div>
+    <div class="footer-bottom">
+      <div class="container">
+        <div class="row">
+          <div class="ms-bottom-info">
+            <!-- Footer Copyright Start -->
+            <div class="footer-copy">
+              <div class="footer-bottom-copy">
+                <div class="ms-copy">
+                  Copyright © <a class="site-name">Giftopia</a> all rights
+                  reserved. Powered by Giftopia.
+                </div>
+              </div>
+            </div>
+            <!-- Footer Copyright End -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </footer>
