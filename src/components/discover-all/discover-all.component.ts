@@ -17,7 +17,7 @@ export class DiscoverAllComponent implements OnInit  {
   products: any;
   categories: any;
   catNames: string[] = [];
-  discoveredProducts: {id:number, name: string, price:number, desc:string, cat:number, img:string, discount:number}[] = [];
+  discoveredProducts: {id:number, name: string, price:number, desc:string, cat:number, images: { url: string }[], discount:number}[] = [];
   constructor(private productService:ProductsService, private categoryService: CategoryService) {}
 
   ngOnInit() { 
@@ -54,12 +54,18 @@ export class DiscoverAllComponent implements OnInit  {
       return;
     }
     
-    this.products.sort((a: any, b: any) => b.discount - a.discount);
+    this.products.sort((a: any, b: any) => {
+      const discountA = parseInt(a.discount);
+      const discountB = parseInt(b.discount);
+      return discountB - discountA;
+    });
     let counter = 0;
     for(let cat = 0; cat < this.catNames.length; cat++) {
       for(let prd of this.products) {
         if(this.catNames[cat] == prd.cat && counter < 8){
           counter++;
+          let discount = parseInt(prd.discount);
+          prd.discount = discount / 100;
           this.discoveredProducts.push(prd);
         }
       }

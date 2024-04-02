@@ -17,4 +17,8 @@ export class ProductsService extends BaseService {
   getCategoryproducts(catID:string) {
     return this.http.get(`${this.URL}/${catID}`);
   }
+
+  getSingleProduct(Pid:number) {
+    return this.http.get(`${this.URL}/${Pid}`);
+  }
 }

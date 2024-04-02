@@ -20,9 +20,9 @@
                                 <ul>
                                     @for (prd of firstprdList; track prd.id; let i = $index) {
                                         
-                                    <li class="ms-list-item"><a routerLink="products/{{prd.id}}">{{prd.name}}<span>: {{prd.discount}}
+                                    <li class="ms-list-item"><a routerLink="products/{{prd.id}}">{{prd.name}}<span>: {{prd.discount}}%
                                                 Off</span></a><img class="ms-list-img"
-                                                src="{{prd.img}}" alt="product"></li>
+                                                src="{{prd.images[0].url}}" alt="product"></li>
                                     }
                                 </ul>
                             </div>
@@ -37,9 +37,9 @@
                                 <ul>
                                     @for (prd of secondprdList; track prd.id; let i = $index) {
     
-                                        <li class="ms-list-item"><a routerLink="products/{{prd.id}}">{{prd.name}}<span>: {{prd.discount}}
+                                        <li class="ms-list-item"><a routerLink="products/{{prd.id}}">{{prd.name}}<span>: {{prd.discount}}%
                                                     Off</span></a><img class="ms-list-img"
-                                                    src="{{prd.img}}" alt="product"></li>
+                                                    src="{{prd.images[0].url}}" alt="product"></li>
                                     }
                                 </ul>
                             </div>

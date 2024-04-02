@@ -5,27 +5,105 @@
             "price": 250,
             "desc": "Lorem ipsum dolor sit amet consectetur adipisicing elit",
             "cat":["Accessories"],
-            "img": "https://cdn11.bigcommerce.com/s-t4k1ukevvr/images/stencil/1280w/products/2446/7947/TW10-973-1__96255.1696950533.jpg",
+            "images": [
+                {
+                "url": "https://miro.medium.com/v2/resize:fit:1400/1*5um9WLqV5UHYt4I0JQfqRA.jpeg"
+                },
+                {
+                "url": "https://jerrysantiquesandestates.com/wp-content/uploads/2023/07/The-History-and-Significance-of-Antiques_-What-Makes-Them-Valuable.jpg"
+                }
+            ],
             "id": "1",
-            "discount" : 0.03
+            "discount": "30",
+            "reviews": [
+                {
+                "userid": "user123",
+                "stars": 3,
+                "reviewDescription": "Great taste!"
+                },
+                {
+                "userid": "user456",
+                "stars": 2,
+                "reviewDescription": "Ya3 taste!"
+                },
+                {
+                "userid": "user789",
+                "stars": 5,
+                "reviewDescription": "GOAT taste!"
+                }
+            ],
+            "quantity": 10,
+            "ratings": 0
         },
         {
             "name": "watch",
             "price": 250,
             "desc": "Lorem ipsum dolor sit amet consectetur adipisicing elit",
-            "cat":["Antiques"],
-            "img": "https://images.pexels.com/photos/8327950/pexels-photo-8327950.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+            "cat":["Accessories"],
+            "images": [
+                {
+                "url": "https://miro.medium.com/v2/resize:fit:1400/1*5um9WLqV5UHYt4I0JQfqRA.jpeg"
+                },
+                {
+                "url": "https://jerrysantiquesandestates.com/wp-content/uploads/2023/07/The-History-and-Significance-of-Antiques_-What-Makes-Them-Valuable.jpg"
+                }
+            ],
             "id": "2",
-            "discount" : 0.03
+            "discount": "30",
+            "reviews": [
+                {
+                "userid": "user123",
+                "stars": 3,
+                "reviewDescription": "Great taste!"
+                },
+                {
+                "userid": "user456",
+                "stars": 2,
+                "reviewDescription": "Ya3 taste!"
+                },
+                {
+                "userid": "user789",
+                "stars": 5,
+                "reviewDescription": "GOAT taste!"
+                }
+            ],
+            "quantity": 10,
+            "ratings": 0
         },
         {
             "name": "watch",
             "price": 250,
             "desc": "Lorem ipsum dolor sit amet consectetur adipisicing elit",
             "cat":["Antiques"],
-            "img": "https://images.pexels.com/photos/8327950/pexels-photo-8327950.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+            "images": [
+                {
+                "url": "https://miro.medium.com/v2/resize:fit:1400/1*5um9WLqV5UHYt4I0JQfqRA.jpeg"
+                },
+                {
+                "url": "https://jerrysantiquesandestates.com/wp-content/uploads/2023/07/The-History-and-Significance-of-Antiques_-What-Makes-Them-Valuable.jpg"
+                }
+            ],
             "id": "3",
-            "discount" : 0.03
+            "discount": "30",
+            "reviews": [
+                {
+                "userid": "user123",
+                "stars": 3,
+                "reviewDescription": "Great taste!"
+                },
+                {
+                "userid": "user456",
+                "stars": 2,
+                "reviewDescription": "Ya3 taste!"
+                },
+                {
+                "userid": "user789",
+                "stars": 5,
+                "reviewDescription": "GOAT taste!"
+                }
+            ],
+            "quantity": 10,
+            "ratings": 0
 
         },
         {
@@ -33,189 +111,735 @@
             "price": 250,
             "desc": "Lorem ipsum dolor sit amet consectetur adipisicing elit",
             "cat":["Games"],
-            "img": "https://media.istockphoto.com/id/641123366/photo/joystick-on-white-background.jpg?s=612x612&w=0&k=20&c=t51G-NaM9pO-f0wqf7unzUFhK-DeaH8_W6ZIYeiGqx4=",
+            "images": [
+                {
+                "url": "https://miro.medium.com/v2/resize:fit:1400/1*5um9WLqV5UHYt4I0JQfqRA.jpeg"
+                },
+                {
+                "url": "https://jerrysantiquesandestates.com/wp-content/uploads/2023/07/The-History-and-Significance-of-Antiques_-What-Makes-Them-Valuable.jpg"
+                }
+            ],
             "id": "4",
-            "discount" : 0.03
+            "discount": "30",
+            "reviews": [
+                {
+                "userid": "user123",
+                "stars": 3,
+                "reviewDescription": "Great taste!"
+                },
+                {
+                "userid": "user456",
+                "stars": 2,
+                "reviewDescription": "Ya3 taste!"
+                },
+                {
+                "userid": "user789",
+                "stars": 5,
+                "reviewDescription": "GOAT taste!"
+                }
+            ],
+            "quantity": 10,
+            "ratings": 0
         },
         {
             "name": "ring",
             "price": 300,
             "desc": "Lorem ipsum dolor sit amet consectetur adipisicing elit",
             "cat":["Accessories"],
-            "img": "https://cdn11.bigcommerce.com/s-t4k1ukevvr/images/stencil/1280w/products/2446/7947/TW10-973-1__96255.1696950533.jpg",
+            "images": [
+                {
+                "url": "https://miro.medium.com/v2/resize:fit:1400/1*5um9WLqV5UHYt4I0JQfqRA.jpeg"
+                },
+                {
+                "url": "https://jerrysantiquesandestates.com/wp-content/uploads/2023/07/The-History-and-Significance-of-Antiques_-What-Makes-Them-Valuable.jpg"
+                }
+            ],
             "id": "5",
-            "discount" : 0.08
+            "discount": "30",
+            "reviews": [
+                {
+                "userid": "user123",
+                "stars": 3,
+                "reviewDescription": "Great taste!"
+                },
+                {
+                "userid": "user456",
+                "stars": 2,
+                "reviewDescription": "Ya3 taste!"
+                },
+                {
+                "userid": "user789",
+                "stars": 5,
+                "reviewDescription": "GOAT taste!"
+                }
+            ],
+            "quantity": 10,
+            "ratings": 0
         },
         {
             "name": "watch",
             "price": 250,
             "desc": "Lorem ipsum dolor sit amet consectetur adipisicing elit",
             "cat":["Antiques"],
-            "img": "https://images.pexels.com/photos/8327950/pexels-photo-8327950.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+            "images": [
+                {
+                "url": "https://miro.medium.com/v2/resize:fit:1400/1*5um9WLqV5UHYt4I0JQfqRA.jpeg"
+                },
+                {
+                "url": "https://jerrysantiquesandestates.com/wp-content/uploads/2023/07/The-History-and-Significance-of-Antiques_-What-Makes-Them-Valuable.jpg"
+                }
+            ],
             "id": "6",
-            "discount" : 0.03
+            "discount": "30",
+            "reviews": [
+                {
+                "userid": "user123",
+                "stars": 3,
+                "reviewDescription": "Great taste!"
+                },
+                {
+                "userid": "user456",
+                "stars": 2,
+                "reviewDescription": "Ya3 taste!"
+                },
+                {
+                "userid": "user789",
+                "stars": 5,
+                "reviewDescription": "GOAT taste!"
+                }
+            ],
+            "quantity": 10,
+            "ratings": 0
         },
         {
             "name": "controller",
             "price": 250,
             "desc": "Lorem ipsum dolor sit amet consectetur adipisicing elit",
             "cat":["Games"],
-            "img": "https://media.istockphoto.com/id/641123366/photo/joystick-on-white-background.jpg?s=612x612&w=0&k=20&c=t51G-NaM9pO-f0wqf7unzUFhK-DeaH8_W6ZIYeiGqx4=",
+            "images": [
+                {
+                "url": "https://miro.medium.com/v2/resize:fit:1400/1*5um9WLqV5UHYt4I0JQfqRA.jpeg"
+                },
+                {
+                "url": "https://jerrysantiquesandestates.com/wp-content/uploads/2023/07/The-History-and-Significance-of-Antiques_-What-Makes-Them-Valuable.jpg"
+                }
+            ],
             "id": "7",
-            "discount" : 0.03
+            "discount": "30",
+            "reviews": [
+                {
+                "userid": "user123",
+                "stars": 3,
+                "reviewDescription": "Great taste!"
+                },
+                {
+                "userid": "user456",
+                "stars": 2,
+                "reviewDescription": "Ya3 taste!"
+                },
+                {
+                "userid": "user789",
+                "stars": 5,
+                "reviewDescription": "GOAT taste!"
+                }
+            ],
+            "quantity": 10,
+            "ratings": 0
         },
         {
             "name": "ring",
             "price": 250,
             "desc": "Lorem ipsum dolor sit amet consectetur adipisicing elit",
             "cat":["Accessories"],
-            "img": "https://cdn11.bigcommerce.com/s-t4k1ukevvr/images/stencil/1280w/products/2446/7947/TW10-973-1__96255.1696950533.jpg",
+            "images": [
+                {
+                "url": "https://miro.medium.com/v2/resize:fit:1400/1*5um9WLqV5UHYt4I0JQfqRA.jpeg"
+                },
+                {
+                "url": "https://jerrysantiquesandestates.com/wp-content/uploads/2023/07/The-History-and-Significance-of-Antiques_-What-Makes-Them-Valuable.jpg"
+                }
+            ],
             "id": "8",
-            "discount" : 0.03
+            "discount": "30",
+            "reviews": [
+                {
+                "userid": "user123",
+                "stars": 3,
+                "reviewDescription": "Great taste!"
+                },
+                {
+                "userid": "user456",
+                "stars": 2,
+                "reviewDescription": "Ya3 taste!"
+                },
+                {
+                "userid": "user789",
+                "stars": 5,
+                "reviewDescription": "GOAT taste!"
+                }
+            ],
+            "quantity": 10,
+            "ratings": 0
         },
         {
             "name": "ring",
             "price": 250,
             "desc": "Lorem ipsum dolor sit amet consectetur adipisicing elit",
             "cat":["Accessories"],
-            "img": "https://cdn11.bigcommerce.com/s-t4k1ukevvr/images/stencil/1280w/products/2446/7947/TW10-973-1__96255.1696950533.jpg",
+            "images": [
+                {
+                "url": "https://miro.medium.com/v2/resize:fit:1400/1*5um9WLqV5UHYt4I0JQfqRA.jpeg"
+                },
+                {
+                "url": "https://jerrysantiquesandestates.com/wp-content/uploads/2023/07/The-History-and-Significance-of-Antiques_-What-Makes-Them-Valuable.jpg"
+                }
+            ],
             "id": "9",
-            "discount" : 0.03
+            "discount": "30",
+            "reviews": [
+                {
+                "userid": "user123",
+                "stars": 3,
+                "reviewDescription": "Great taste!"
+                },
+                {
+                "userid": "user456",
+                "stars": 2,
+                "reviewDescription": "Ya3 taste!"
+                },
+                {
+                "userid": "user789",
+                "stars": 5,
+                "reviewDescription": "GOAT taste!"
+                }
+            ],
+            "quantity": 10,
+            "ratings": 0
         },
         {
             "name": "ring",
             "price": 250,
             "desc": "Lorem ipsum dolor sit amet consectetur adipisicing elit",
             "cat":["Accessories"],
-            "img": "https://cdn11.bigcommerce.com/s-t4k1ukevvr/images/stencil/1280w/products/2446/7947/TW10-973-1__96255.1696950533.jpg",
+            "images": [
+                {
+                "url": "https://miro.medium.com/v2/resize:fit:1400/1*5um9WLqV5UHYt4I0JQfqRA.jpeg"
+                },
+                {
+                "url": "https://jerrysantiquesandestates.com/wp-content/uploads/2023/07/The-History-and-Significance-of-Antiques_-What-Makes-Them-Valuable.jpg"
+                }
+            ],
             "id": "10",
-            "discount" : 0.03
+            "discount": "30",
+            "reviews": [
+                {
+                "userid": "user123",
+                "stars": 3,
+                "reviewDescription": "Great taste!"
+                },
+                {
+                "userid": "user456",
+                "stars": 2,
+                "reviewDescription": "Ya3 taste!"
+                },
+                {
+                "userid": "user789",
+                "stars": 5,
+                "reviewDescription": "GOAT taste!"
+                }
+            ],
+            "quantity": 10,
+            "ratings": 0
         },
         {
             "name": "controller",
             "price": 250,
             "desc": "Lorem ipsum dolor sit amet consectetur adipisicing elit",
             "cat":["Games"],
-            "img": "https://media.istockphoto.com/id/641123366/photo/joystick-on-white-background.jpg?s=612x612&w=0&k=20&c=t51G-NaM9pO-f0wqf7unzUFhK-DeaH8_W6ZIYeiGqx4=",
+            "images": [
+                {
+                "url": "https://miro.medium.com/v2/resize:fit:1400/1*5um9WLqV5UHYt4I0JQfqRA.jpeg"
+                },
+                {
+                "url": "https://jerrysantiquesandestates.com/wp-content/uploads/2023/07/The-History-and-Significance-of-Antiques_-What-Makes-Them-Valuable.jpg"
+                }
+            ],
             "id": "11",
-            "discount" : 0.03
+            "discount": "30",
+            "reviews": [
+                {
+                "userid": "user123",
+                "stars": 3,
+                "reviewDescription": "Great taste!"
+                },
+                {
+                "userid": "user456",
+                "stars": 2,
+                "reviewDescription": "Ya3 taste!"
+                },
+                {
+                "userid": "user789",
+                "stars": 5,
+                "reviewDescription": "GOAT taste!"
+                }
+            ],
+            "quantity": 10,
+            "ratings": 0
         },
         {
             "name": "controller",
             "price": 250,
             "desc": "Lorem ipsum dolor sit amet consectetur adipisicing elit",
             "cat":["Games"],
-            "img": "https://media.istockphoto.com/id/641123366/photo/joystick-on-white-background.jpg?s=612x612&w=0&k=20&c=t51G-NaM9pO-f0wqf7unzUFhK-DeaH8_W6ZIYeiGqx4=",
+            "images": [
+                {
+                "url": "https://miro.medium.com/v2/resize:fit:1400/1*5um9WLqV5UHYt4I0JQfqRA.jpeg"
+                },
+                {
+                "url": "https://jerrysantiquesandestates.com/wp-content/uploads/2023/07/The-History-and-Significance-of-Antiques_-What-Makes-Them-Valuable.jpg"
+                }
+            ],
             "id": "12",
-            "discount" : 0.03
+            "discount": "30",
+            "reviews": [
+                {
+                "userid": "user123",
+                "stars": 3,
+                "reviewDescription": "Great taste!"
+                },
+                {
+                "userid": "user456",
+                "stars": 2,
+                "reviewDescription": "Ya3 taste!"
+                },
+                {
+                "userid": "user789",
+                "stars": 5,
+                "reviewDescription": "GOAT taste!"
+                }
+            ],
+            "quantity": 10,
+            "ratings": 0
         },
         {
             "name": "controller",
             "price": 250,
             "desc": "Lorem ipsum dolor sit amet consectetur adipisicing elit",
             "cat":["Games"],
-            "img": "https://media.istockphoto.com/id/641123366/photo/joystick-on-white-background.jpg?s=612x612&w=0&k=20&c=t51G-NaM9pO-f0wqf7unzUFhK-DeaH8_W6ZIYeiGqx4=",
+            "images": [
+                {
+                "url": "https://miro.medium.com/v2/resize:fit:1400/1*5um9WLqV5UHYt4I0JQfqRA.jpeg"
+                },
+                {
+                "url": "https://jerrysantiquesandestates.com/wp-content/uploads/2023/07/The-History-and-Significance-of-Antiques_-What-Makes-Them-Valuable.jpg"
+                }
+            ],
             "id": "13",
-            "discount" : 0.03
+            "discount": "30",
+            "reviews": [
+                {
+                "userid": "user123",
+                "stars": 3,
+                "reviewDescription": "Great taste!"
+                },
+                {
+                "userid": "user456",
+                "stars": 2,
+                "reviewDescription": "Ya3 taste!"
+                },
+                {
+                "userid": "user789",
+                "stars": 5,
+                "reviewDescription": "GOAT taste!"
+                }
+            ],
+            "quantity": 10,
+            "ratings": 0
         },
         {
             "name": "watch",
             "price": 250,
             "desc": "Lorem ipsum dolor sit amet consectetur adipisicing elit",
             "cat":["Antiques"],
-            "img": "https://images.pexels.com/photos/8327950/pexels-photo-8327950.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+            "images": [
+                {
+                "url": "https://miro.medium.com/v2/resize:fit:1400/1*5um9WLqV5UHYt4I0JQfqRA.jpeg"
+                },
+                {
+                "url": "https://jerrysantiquesandestates.com/wp-content/uploads/2023/07/The-History-and-Significance-of-Antiques_-What-Makes-Them-Valuable.jpg"
+                }
+            ],
             "id": "14",
-            "discount" : 0.03
+            "discount": "30",
+            "reviews": [
+                {
+                "userid": "user123",
+                "stars": 3,
+                "reviewDescription": "Great taste!"
+                },
+                {
+                "userid": "user456",
+                "stars": 2,
+                "reviewDescription": "Ya3 taste!"
+                },
+                {
+                "userid": "user789",
+                "stars": 5,
+                "reviewDescription": "GOAT taste!"
+                }
+            ],
+            "quantity": 10,
+            "ratings": 0
         },
         {
             "name": "watch",
             "price": 250,
             "desc": "Lorem ipsum dolor sit amet consectetur adipisicing elit",
             "cat":["Antiques"],
-            "img": "https://images.pexels.com/photos/8327950/pexels-photo-8327950.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+            "images": [
+                {
+                "url": "https://miro.medium.com/v2/resize:fit:1400/1*5um9WLqV5UHYt4I0JQfqRA.jpeg"
+                },
+                {
+                "url": "https://jerrysantiquesandestates.com/wp-content/uploads/2023/07/The-History-and-Significance-of-Antiques_-What-Makes-Them-Valuable.jpg"
+                }
+            ],
             "id": "15",
-            "discount" : 0.03
+            "discount": "30",
+            "reviews": [
+                {
+                "userid": "user123",
+                "stars": 3,
+                "reviewDescription": "Great taste!"
+                },
+                {
+                "userid": "user456",
+                "stars": 2,
+                "reviewDescription": "Ya3 taste!"
+                },
+                {
+                "userid": "user789",
+                "stars": 5,
+                "reviewDescription": "GOAT taste!"
+                }
+            ],
+            "quantity": 10,
+            "ratings": 0
         },
         {
             "name": "ring",
             "price": 250,
             "desc": "Lorem ipsum dolor sit amet consectetur adipisicing elit",
             "cat":["Accessories"],
-            "img": "https://cdn11.bigcommerce.com/s-t4k1ukevvr/images/stencil/1280w/products/2446/7947/TW10-973-1__96255.1696950533.jpg",
+            "images": [
+                {
+                "url": "https://miro.medium.com/v2/resize:fit:1400/1*5um9WLqV5UHYt4I0JQfqRA.jpeg"
+                },
+                {
+                "url": "https://jerrysantiquesandestates.com/wp-content/uploads/2023/07/The-History-and-Significance-of-Antiques_-What-Makes-Them-Valuable.jpg"
+                }
+            ],
             "id": "16",
-            "discount" : 0.03
+            "discount": "30",
+            "reviews": [
+                {
+                "userid": "user123",
+                "stars": 3,
+                "reviewDescription": "Great taste!"
+                },
+                {
+                "userid": "user456",
+                "stars": 2,
+                "reviewDescription": "Ya3 taste!"
+                },
+                {
+                "userid": "user789",
+                "stars": 5,
+                "reviewDescription": "GOAT taste!"
+                }
+            ],
+            "quantity": 10,
+            "ratings": 0
         },
         {
             "name": "ring",
             "price": 250,
             "desc": "Lorem ipsum dolor sit amet consectetur adipisicing elit",
             "cat":["Accessories"],
-            "img": "https://cdn11.bigcommerce.com/s-t4k1ukevvr/images/stencil/1280w/products/2446/7947/TW10-973-1__96255.1696950533.jpg",
+            "images": [
+                {
+                "url": "https://miro.medium.com/v2/resize:fit:1400/1*5um9WLqV5UHYt4I0JQfqRA.jpeg"
+                },
+                {
+                "url": "https://jerrysantiquesandestates.com/wp-content/uploads/2023/07/The-History-and-Significance-of-Antiques_-What-Makes-Them-Valuable.jpg"
+                }
+            ],
             "id": "17",
-            "discount" : 0.03
+            "discount": "30",
+            "reviews": [
+                {
+                "userid": "user123",
+                "stars": 3,
+                "reviewDescription": "Great taste!"
+                },
+                {
+                "userid": "user456",
+                "stars": 2,
+                "reviewDescription": "Ya3 taste!"
+                },
+                {
+                "userid": "user789",
+                "stars": 5,
+                "reviewDescription": "GOAT taste!"
+                }
+            ],
+            "quantity": 10,
+            "ratings": 0
         },
         {
             "name": "ring",
             "price": 250,
             "desc": "Lorem ipsum dolor sit amet consectetur adipisicing elit",
             "cat":["Accessories"],
-            "img": "https://cdn11.bigcommerce.com/s-t4k1ukevvr/images/stencil/1280w/products/2446/7947/TW10-973-1__96255.1696950533.jpg",
+            "images": [
+                {
+                "url": "https://miro.medium.com/v2/resize:fit:1400/1*5um9WLqV5UHYt4I0JQfqRA.jpeg"
+                },
+                {
+                "url": "https://jerrysantiquesandestates.com/wp-content/uploads/2023/07/The-History-and-Significance-of-Antiques_-What-Makes-Them-Valuable.jpg"
+                }
+            ],
             "id": "18",
-            "discount" : 0.03
+            "discount": "30",
+            "reviews": [
+                {
+                "userid": "user123",
+                "stars": 3,
+                "reviewDescription": "Great taste!"
+                },
+                {
+                "userid": "user456",
+                "stars": 2,
+                "reviewDescription": "Ya3 taste!"
+                },
+                {
+                "userid": "user789",
+                "stars": 5,
+                "reviewDescription": "GOAT taste!"
+                }
+            ],
+            "quantity": 10,
+            "ratings": 0
         },
         {
             "name": "watch",
             "price": 250,
             "desc": "Lorem ipsum dolor sit amet consectetur adipisicing elit",
             "cat":["Antiques"],
-            "img": "https://images.pexels.com/photos/8327950/pexels-photo-8327950.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+            "images": [
+                {
+                "url": "https://miro.medium.com/v2/resize:fit:1400/1*5um9WLqV5UHYt4I0JQfqRA.jpeg"
+                },
+                {
+                "url": "https://jerrysantiquesandestates.com/wp-content/uploads/2023/07/The-History-and-Significance-of-Antiques_-What-Makes-Them-Valuable.jpg"
+                }
+            ],
             "id": "19",
-            "discount" : 0.03
+            "discount": "30",
+            "reviews": [
+                {
+                "userid": "user123",
+                "stars": 3,
+                "reviewDescription": "Great taste!"
+                },
+                {
+                "userid": "user456",
+                "stars": 2,
+                "reviewDescription": "Ya3 taste!"
+                },
+                {
+                "userid": "user789",
+                "stars": 5,
+                "reviewDescription": "GOAT taste!"
+                }
+            ],
+            "quantity": 10,
+            "ratings": 0
         },
         {
             "name": "watch",
             "price": 250,
             "desc": "Lorem ipsum dolor sit amet consectetur adipisicing elit",
             "cat":["Antiques"],
-            "img": "https://images.pexels.com/photos/8327950/pexels-photo-8327950.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+            "images": [
+                {
+                "url": "https://miro.medium.com/v2/resize:fit:1400/1*5um9WLqV5UHYt4I0JQfqRA.jpeg"
+                },
+                {
+                "url": "https://jerrysantiquesandestates.com/wp-content/uploads/2023/07/The-History-and-Significance-of-Antiques_-What-Makes-Them-Valuable.jpg"
+                }
+            ],
             "id": "20",
-            "discount" : 0.03
+            "discount": "30",
+            "reviews": [
+                {
+                "userid": "user123",
+                "stars": 3,
+                "reviewDescription": "Great taste!"
+                },
+                {
+                "userid": "user456",
+                "stars": 2,
+                "reviewDescription": "Ya3 taste!"
+                },
+                {
+                "userid": "user789",
+                "stars": 5,
+                "reviewDescription": "GOAT taste!"
+                }
+            ],
+            "quantity": 10,
+            "ratings": 0
         },
         {
             "name": "watch",
             "price": 250,
             "desc": "Lorem ipsum dolor sit amet consectetur adipisicing elit",
             "cat":["Antiques"],
-            "img": "https://images.pexels.com/photos/8327950/pexels-photo-8327950.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+            "images": [
+                {
+                "url": "https://miro.medium.com/v2/resize:fit:1400/1*5um9WLqV5UHYt4I0JQfqRA.jpeg"
+                },
+                {
+                "url": "https://jerrysantiquesandestates.com/wp-content/uploads/2023/07/The-History-and-Significance-of-Antiques_-What-Makes-Them-Valuable.jpg"
+                }
+            ],
             "id": "21",
-            "discount" : 0.03
+            "discount": "30",
+            "reviews": [
+                {
+                "userid": "user123",
+                "stars": 3,
+                "reviewDescription": "Great taste!"
+                },
+                {
+                "userid": "user456",
+                "stars": 2,
+                "reviewDescription": "Ya3 taste!"
+                },
+                {
+                "userid": "user789",
+                "stars": 5,
+                "reviewDescription": "GOAT taste!"
+                }
+            ],
+            "quantity": 10,
+            "ratings": 0
         },
         {
             "name": "controller",
             "price": 250,
             "desc": "Lorem ipsum dolor sit amet consectetur adipisicing elit",
             "cat":["Games"],
-            "img": "https://media.istockphoto.com/id/641123366/photo/joystick-on-white-background.jpg?s=612x612&w=0&k=20&c=t51G-NaM9pO-f0wqf7unzUFhK-DeaH8_W6ZIYeiGqx4=",
+            "images": [
+                {
+                "url": "https://miro.medium.com/v2/resize:fit:1400/1*5um9WLqV5UHYt4I0JQfqRA.jpeg"
+                },
+                {
+                "url": "https://jerrysantiquesandestates.com/wp-content/uploads/2023/07/The-History-and-Significance-of-Antiques_-What-Makes-Them-Valuable.jpg"
+                }
+            ],
             "id": "22",
-            "discount" : 0.03
+            "discount": "30",
+            "reviews": [
+                {
+                "userid": "user123",
+                "stars": 3,
+                "reviewDescription": "Great taste!"
+                },
+                {
+                "userid": "user456",
+                "stars": 2,
+                "reviewDescription": "Ya3 taste!"
+                },
+                {
+                "userid": "user789",
+                "stars": 5,
+                "reviewDescription": "GOAT taste!"
+                }
+            ],
+            "quantity": 10,
+            "ratings": 0
         },
         {
             "name": "controller",
             "price": 250,
             "desc": "Lorem ipsum dolor sit amet consectetur adipisicing elit",
             "cat":["Games"],
-            "img": "https://media.istockphoto.com/id/641123366/photo/joystick-on-white-background.jpg?s=612x612&w=0&k=20&c=t51G-NaM9pO-f0wqf7unzUFhK-DeaH8_W6ZIYeiGqx4=",
+            "images": [
+                {
+                "url": "https://miro.medium.com/v2/resize:fit:1400/1*5um9WLqV5UHYt4I0JQfqRA.jpeg"
+                },
+                {
+                "url": "https://jerrysantiquesandestates.com/wp-content/uploads/2023/07/The-History-and-Significance-of-Antiques_-What-Makes-Them-Valuable.jpg"
+                }
+            ],
             "id": "23",
-            "discount" : 0
+            "discount": "30",
+            "reviews": [
+                {
+                "userid": "user123",
+                "stars": 3,
+                "reviewDescription": "Great taste!"
+                },
+                {
+                "userid": "user456",
+                "stars": 2,
+                "reviewDescription": "Ya3 taste!"
+                },
+                {
+                "userid": "user789",
+                "stars": 5,
+                "reviewDescription": "GOAT taste!"
+                }
+            ],
+            "quantity": 10,
+            "ratings": 0
         },
         {
             "name": "controller",
             "price": 250,
             "desc": "Lorem ipsum dolor sit amet consectetur adipisicing elit",
             "cat":["Games"],
-            "img": "https://media.istockphoto.com/id/641123366/photo/joystick-on-white-background.jpg?s=612x612&w=0&k=20&c=t51G-NaM9pO-f0wqf7unzUFhK-DeaH8_W6ZIYeiGqx4=",
+            "images": [
+                {
+                "url": "https://miro.medium.com/v2/resize:fit:1400/1*5um9WLqV5UHYt4I0JQfqRA.jpeg"
+                },
+                {
+                "url": "https://jerrysantiquesandestates.com/wp-content/uploads/2023/07/The-History-and-Significance-of-Antiques_-What-Makes-Them-Valuable.jpg"
+                }
+            ],
             "id": "24",
-            "discount" : 0.03
+            "discount": "30",
+            "reviews": [
+                {
+                "userid": "user123",
+                "stars": 3,
+                "reviewDescription": "Great taste!"
+                },
+                {
+                "userid": "user456",
+                "stars": 2,
+                "reviewDescription": "Ya3 taste!"
+                },
+                {
+                "userid": "user789",
+                "stars": 5,
+                "reviewDescription": "GOAT taste!"
+                }
+            ],
+            "quantity": 10,
+            "ratings": 0
         }
     ],
     "users": [],

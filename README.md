@@ -56,12 +56,14 @@ categories {
 products {
     name,
     id,
-    category: array,
+    category,
     image: array,
     describtion,
-    rate: object,
+    reviews: object{userID,stars,comment},
     price,
-    discount
+    discount,
+    quantity,
+    ratings
 }
 
 Discount (cart) {

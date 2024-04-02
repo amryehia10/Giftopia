@@ -5,7 +5,7 @@
             <div class="d-flex flex-wrap row bg-dark">
                 @for (prd of products; track prd.id) {
                 <div class="card mb-4 col-sm-4">
-                    <img [src]="prd.img" class="card-img-top" alt="{{ prd.name }}">
+                    <img [src]="prd.images[0].url" class="card-img-top" alt="{{ prd.name }}">
                     <div class="card-body">
                         <h5 class="card-title">{{ prd.name }}</h5>
                         <p class="card-text">${{ prd.price }}</p>
