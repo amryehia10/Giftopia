@@ -4,6 +4,7 @@ import { CartComponent } from '../cart/cart.component';
 import { SideBarCartComponent } from '../side-bar-cart/side-bar-cart.component';
 import { SideBarCategoryComponent } from '../side-bar-category/side-bar-category.component';
 import { SideBarWishlistComponent } from '../side-bar-wishlist/side-bar-wishlist.component';
+import { SideBarMenuComponent } from '../side-bar-menu/side-bar-menu.component';
 
 @Component({
   selector: 'app-header',
@@ -14,19 +15,19 @@ import { SideBarWishlistComponent } from '../side-bar-wishlist/side-bar-wishlist
     SideBarCartComponent,
     SideBarCategoryComponent,
     SideBarWishlistComponent,
-],
+    SideBarMenuComponent,
+  ],
   templateUrl: './header.component.html',
-  styleUrl: './header.component.css'
+  styleUrl: './header.component.css',
 })
 export class HeaderComponent {
-
   isCartSidebarVisible: boolean = false;
   isCategorySidebarVisible: boolean = false;
   isWishlistSidebarVisible: boolean = false;
+  isMenuSideBarVisible: boolean = false;
 
   openCartSidebar() {
     this.isCartSidebarVisible = true;
-    console.log("open cart");
   }
 
   onCloseCartSidebar() {
@@ -35,7 +36,6 @@ export class HeaderComponent {
 
   openCategorySidebar() {
     this.isCategorySidebarVisible = true;
-    console.log("open category");
   }
 
   onCloseCategorySidebar() {
@@ -44,11 +44,13 @@ export class HeaderComponent {
 
   openWishlistSidebar() {
     this.isWishlistSidebarVisible = true;
-    console.log("open wishlist");
   }
 
   onCloseWishlistSidebar() {
     this.isWishlistSidebarVisible = false;
   }
 
+  togelMenuSideBar() {
+    this.isMenuSideBarVisible = !this.isMenuSideBarVisible;
+  }
 }

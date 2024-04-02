@@ -34,22 +34,7 @@
               "src/assets/css/responsive.css",
               "src/styles.css"
             ],
-            "scripts": [
-              "src/assets/js/plugins/jquery-3.5.1.min.js",
-              "src/assets/js/plugins/popper.min.js",
-              "src/assets/js/plugins/bootstrap.bundle.min.js",
-              "src/assets/js/plugins/bootstrap-select.min.js",
-              "src/assets/js/plugins/swiper-bundle.min.js",
-              "src/assets/js/plugins/fontawesome.js",
-              "src/assets/js/plugins/owl.carousel.min.js",
-              "src/assets/js/plugins/countdownTimer.js",
-              "src/assets/js/plugins/infiniteslidev2.js",
-              "src/assets/js/plugins/jquery.zoom.min.js",
-              "src/assets/js/plugins/slick.min.js",
-              "src/assets/js/plugins/nouislider.js",
-              "src/assets/js/main.js",
-              "src/assets/js/demo-1.js"
-            ]
+            "scripts": []
           },
           "configurations": {
             "production": {
