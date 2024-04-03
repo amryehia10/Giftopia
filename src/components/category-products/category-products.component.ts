@@ -21,7 +21,7 @@ export class CategoryProductsComponent implements OnInit {
   ngOnInit(): void {
     this.service.getProductsByCategory(this.router.snapshot.params["name"]).subscribe({
       next: (data) => this.products = GeneralMethods.CastProducts(data),
-      error: (error) => console.error('There was an error!', error)
+      error: (error) => console.error(error)
     });
   }
 
