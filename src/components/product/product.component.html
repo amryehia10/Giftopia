@@ -1,164 +1,956 @@
 <section class="ms-single-product padding-b-30">
-    <div class="container">
-        <div class="row">
-            <div class="ms-pro-rightside ms-common-rightside col-lg-9 order-lg-last col-md-12 order-md-first">
-                <div class="single-pro-block">
-                    <div class="single-pro-inner">
-                        <div class="row">
-                            <div class="single-pro-img">
-                                <div class="col-md-12">
-                                    <div id="productImageCarousel" class="carousel slide" data-bs-ride="carousel">
-                                    <div class="carousel-inner">
-                                        <div *ngFor="let image of product.images; let i = index" class="carousel-item" [ngClass]="{ 'active': i === 0 }">
-                                        <img [src]="image.url" class="img-fluid carousel-image" [alt]="'Product Image ' + (i + 1)">
-                                        </div>
-                                    </div>
-                                    <button class="carousel-control-prev" type="button" data-bs-target="#productImageCarousel" data-bs-slide="prev">
-                                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                        <span class="visually-hidden">Previous</span>
-                                    </button>
-                                    <button class="carousel-control-next" type="button" data-bs-target="#productImageCarousel" data-bs-slide="next">
-                                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                        <span class="visually-hidden">Next</span>
-                                    </button>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="single-pro-desc m-t-991">
-                                <div class="single-pro-content">
-                                    <h5 class="ms-single-title">{{product.name}}</h5>
-                                    <div class="ms-single-rating-wrap">
-                                        <div class="ms-single-rating">
-                                        <ng-container *ngFor="let star of filledStarsArray">
-                                            <i class="msicon msi-star fill"></i>
-                                        </ng-container>
-                                    
-                                        <ng-container *ngFor="let star of emptyStarsArray">
-                                            <i class="msicon msi-star-o"></i>
-                                        </ng-container>
-                                        <span class="rating-value">({{ product.ratings }} of 5 Stars)</span>
-                                        </div>
-                                            <span class="ms-read-review" (click)="scrollToReviews()">
-                                                |&nbsp;&nbsp;<a>{{ product.reviews.length }} Ratings</a>
-                                            </span>
-                                    </div>
-                                    <div class="ms-single-price-stoke">
-                                        @if(product.discount > 0){
-                                            <div class="ms-single-price">
-                                                <div class="final-price">£{{product.price - (product.price * discount)}}<span class="price-des">-{{product.discount}}%</span></div>
-                                                <div class="mrp">P.B.S. : <span>£{{product.price}}</span></div>
-                                            </div>
-                                        } @else {
-                                            <div class="ms-single-price">
-                                                <div class="final-price">£{{product.price}}</div>
-                                            </div>
-                                        }
-                                        <div class="ms-single-stoke">                                                
-                                            <span class="ms-single-sku">{{product.quantity}} Pieces Left</span>
-                                            <span class="ms-single-ps-title" style="margin-top: 6px;">IN STOCK</span>
-                                        </div>
-                                        <div class="ms-single-stoke">                                                
-                                            <span class="ms-single-sku">Category: <a [routerLink]="['/category', product.cat[0]|lowercase]">{{product.cat[0]}}</a></span>
-                                        </div>
-                                    </div>
-                                    <div class="ms-single-qty">
-                                        <div class="qty-plus-minus">
-                                            <input class="qty-input" type="text" name="ms_qtybtn" value="1">
-                                        </div>
-                                        <div class="ms-single-cart">
-                                            <button class="btn btn-primary ms-btn-2">Add To Cart</button>
-                                        </div>
-                                        <div class="ms-single-wishlist">
-                                            <a class="ms-btn-group wishlist" title="Wishlist">
-                                                <img src="assets/img/icons/wishlist.svg" class="svg_img pro_svg" alt="">
-                                            </a>
-                                        </div>
-                                        <div class="ms-single-quickview">
-                                            <a href="#" class="ms-btn-group quickview" data-link-action="quickview" title="Quick view" data-bs-toggle="modal" data-bs-target="#ms_quickview_modal">
-                                                <img src="assets/img/icons/quickview.svg" class="svg_img pro_svg" alt="">
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+  <div class="container">
+    <div class="row">
+      <div
+        class="ms-pro-rightside ms-common-rightside col-lg-9 order-lg-last col-md-12 order-md-first"
+      >
+        <div class="single-pro-block">
+          <div class="single-pro-inner">
+            <div class="row">
+              <div class="single-pro-img">
+                <div class="col-md-12">
+                  <div
+                    id="productImageCarousel"
+                    class="carousel slide"
+                    data-bs-ride="carousel"
+                  >
+                    <div class="carousel-inner">
+                      <div
+                        *ngFor="let image of product?.images; let i = index"
+                        class="carousel-item"
+                        [ngClass]="{ active: i === 0 }"
+                      >
+                        <img
+                          [src]="image.url"
+                          class="img-fluid carousel-image"
+                          [alt]="'Product Image ' + (i + 1)"
+                        />
+                      </div>
                     </div>
+                    <button
+                      class="carousel-control-prev"
+                      type="button"
+                      data-bs-target="#productImageCarousel"
+                      data-bs-slide="prev"
+                    >
+                      <span
+                        class="carousel-control-prev-icon"
+                        aria-hidden="true"
+                      ></span>
+                      <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button
+                      class="carousel-control-next"
+                      type="button"
+                      data-bs-target="#productImageCarousel"
+                      data-bs-slide="next"
+                    >
+                      <span
+                        class="carousel-control-next-icon"
+                        aria-hidden="true"
+                      ></span>
+                      <span class="visually-hidden">Next</span>
+                    </button>
+                  </div>
                 </div>
+              </div>
+              <div class="single-pro-desc m-t-991">
+                <div class="single-pro-content">
+                  <h5 class="ms-single-title">{{ product?.name }}</h5>
+                  <div class="ms-single-rating-wrap">
+                    <div class="ms-single-rating">
+                      <ng-container *ngFor="let star of filledStarsArray">
+                        <i class="msicon msi-star fill"></i>
+                      </ng-container>
 
-                
-                
-                <div class="ms-single-pro-tab">
-                    <div class="ms-single-pro-tab-wrapper">
-                        <div class="ms-single-pro-tab-nav">
-                            <ul class="nav nav-tabs">
-                                <li class="nav-item">
-                                    <a class="nav-link active" data-bs-toggle="tab" data-bs-target="#ms-spt-nav-details" role="tab" type="button" aria-controls="ms-spt-nav-details" aria-selected="true">Detail</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" data-bs-toggle="tab" data-bs-target="#ms-spt-nav-review" role="tab" aria-controls="ms-spt-nav-review" aria-selected="true">Reviews</a>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="tab-content  ms-single-pro-tab-content">
-                            <div id="ms-spt-nav-details" class="tab-pane fade show active">
-                                <div class="ms-single-pro-tab-desc">
-                                    <p>{{product.desc}}</p>
-                                </div>
-                            </div>
-                            <div id="ms-spt-nav-review" class="tab-pane fade">
-                                <div class="row">
-                                <div class="ms-t-review-wrapper">
-                                    <div class="ms-t-review-item" *ngFor="let review of product.reviews">
-                                    <div class="ms-t-review-avtar">
-                                        <img src="https://media.istockphoto.com/id/1495088043/vector/user-profile-icon-avatar-or-person-icon-profile-picture-portrait-symbol-default-portrait.jpg?s=1024x1024&w=is&k=20&c=oGqYHhfkz_ifeE6-dID6aM7bLz38C6vQTy1YcbgZfx8=" alt="user">
-                                    </div>
-                                    <div class="ms-t-review-content">
-                                        <div class="ms-t-review-top">
-                                        <div class="ms-t-review-name">{{ review.userid }}</div>
-                                        <div class="ms-t-review-rating">
-                                            <i class="msicon msi-star fill" *ngFor="let star of [].constructor(review.stars)"></i>
-                                            <i class="msicon msi-star-o" *ngFor="let star of [].constructor(5 - review.stars)"></i>
-                                        </div>
-                                        </div>
-                                        <div class="ms-t-review-bottom">
-                                        <p>{{ review.reviewDescription }}</p>
-                                        </div>
-                                    </div>
-                                    </div>
-                                </div>
-                                <div class="ms-ratting-content">
-                                    <h3>Add a Review</h3>
-                                    <div class="ms-ratting-form">
-                                    <form action="#">
-                                        <div class="ms-ratting-star">
-                                        <span>Your rating:</span>
-                                        <div class="ms-t-review-rating">
-                                            <i class="msicon msi-star fill"></i>
-                                            <i class="msicon msi-star fill"></i>
-                                            <i class="msicon msi-star-o"></i>
-                                            <i class="msicon msi-star-o"></i>
-                                            <i class="msicon msi-star-o"></i>
-                                        </div>
-                                        </div>
-                                        <div class="ms-ratting-input">
-                                        <input name="your-name" placeholder="Name" type="text">
-                                        </div>
-                                        <div class="ms-ratting-input">
-                                        <input name="your-email" placeholder="Email*" type="email" required>
-                                        </div>
-                                        <div class="ms-ratting-input form-submit">
-                                        <textarea name="your-comment" placeholder="Enter Your Comment"></textarea>
-                                        <button class="ms-btn-2" type="submit" value="Submit">Submit</button>
-                                        </div>
-                                    </form>
-                                    </div>
-                                </div>
-                                </div>
-                            </div>
-                        </div>
+                      <ng-container *ngFor="let star of emptyStarsArray">
+                        <i class="msicon msi-star-o"></i>
+                      </ng-container>
+                      <span class="rating-value"
+                        >({{ product?.ratings }} of 5 Stars)</span
+                      >
                     </div>
+                    <span class="ms-read-review" (click)="scrollToReviews()">
+                      |&nbsp;&nbsp;<a>{{ product?.reviews?.length }} Ratings</a>
+                    </span>
+                  </div>
+                  <div class="ms-single-price-stoke">
+                    @if(product?.discount > 0){
+                    <div class="ms-single-price">
+                      <div class="final-price">
+                        £{{ product?.price - product?.price * discount
+                        }}<span class="price-des"
+                          >-{{ product?.discount }}%</span
+                        >
+                      </div>
+                      <div class="mrp">
+                        P.B.S. : <span>£{{ product?.price }}</span>
+                      </div>
+                    </div>
+                    } @else {
+                    <div class="ms-single-price">
+                      <div class="final-price">£{{ product?.price }}</div>
+                    </div>
+                    }
+                    <div class="ms-single-stoke">
+                      <span class="ms-single-sku"
+                        >{{ product?.quantity }} Pieces Left</span
+                      >
+                      <span class="ms-single-ps-title" style="margin-top: 6px"
+                        >IN STOCK</span
+                      >
+                    </div>
+                    <div class="ms-single-stoke">
+                      <span class="ms-single-sku"
+                        >Category:
+                        <a
+                          [routerLink]="[
+                            '/category',
+                            product?.cat[0] | lowercase
+                          ]"
+                          >{{ product?.cat[0] }}</a
+                        ></span
+                      >
+                    </div>
+                  </div>
+                  <div class="ms-single-qty">
+                    <div class="qty-plus-minus">
+                      <input
+                        class="qty-input"
+                        type="text"
+                        name="ms_qtybtn"
+                        value="1"
+                      />
+                    </div>
+                    <div class="ms-single-cart">
+                      <button class="btn btn-primary ms-btn-2">
+                        Add To Cart
+                      </button>
+                    </div>
+                    <div class="ms-single-wishlist">
+                      <a class="ms-btn-group wishlist" title="Wishlist">
+                        <img
+                          src="assets/img/icons/wishlist.svg"
+                          class="svg_img pro_svg"
+                          alt=""
+                        />
+                      </a>
+                    </div>
+                    <div class="ms-single-quickview">
+                      <a
+                        href="#"
+                        class="ms-btn-group quickview"
+                        data-link-action="quickview"
+                        title="Quick view"
+                        data-bs-toggle="modal"
+                        data-bs-target="#ms_quickview_modal"
+                      >
+                        <img
+                          src="assets/img/icons/quickview.svg"
+                          class="svg_img pro_svg"
+                          alt=""
+                        />
+                      </a>
+                    </div>
+                  </div>
                 </div>
+              </div>
             </div>
+          </div>
         </div>
+
+        <div class="ms-single-pro-tab">
+          <div class="ms-single-pro-tab-wrapper">
+            <div class="ms-single-pro-tab-nav">
+              <ul class="nav nav-tabs">
+                <li class="nav-item">
+                  <a
+                    class="nav-link active"
+                    data-bs-toggle="tab"
+                    data-bs-target="#ms-spt-nav-details"
+                    role="tab"
+                    type="button"
+                    aria-controls="ms-spt-nav-details"
+                    aria-selected="true"
+                    >Detail</a
+                  >
+                </li>
+                <li class="nav-item">
+                  <a
+                    class="nav-link"
+                    data-bs-toggle="tab"
+                    data-bs-target="#ms-spt-nav-review"
+                    role="tab"
+                    aria-controls="ms-spt-nav-review"
+                    aria-selected="true"
+                    >Reviews</a
+                  >
+                </li>
+              </ul>
+            </div>
+            <div class="tab-content ms-single-pro-tab-content">
+              <div id="ms-spt-nav-details" class="tab-pane fade show active">
+                <div class="ms-single-pro-tab-desc">
+                  <p>{{ product?.desc }}</p>
+                </div>
+              </div>
+              <div id="ms-spt-nav-review" class="tab-pane fade">
+                <div class="row">
+                  <div class="ms-t-review-wrapper">
+                    <div
+                      class="ms-t-review-item"
+                      *ngFor="let review of product?.reviews"
+                    >
+                      <div class="ms-t-review-avtar">
+                        <img
+                          src="https://media.istockphoto.com/id/1495088043/vector/user-profile-icon-avatar-or-person-icon-profile-picture-portrait-symbol-default-portrait.jpg?s=1024x1024&w=is&k=20&c=oGqYHhfkz_ifeE6-dID6aM7bLz38C6vQTy1YcbgZfx8="
+                          alt="user"
+                        />
+                      </div>
+                      <div class="ms-t-review-content">
+                        <div class="ms-t-review-top">
+                          <div class="ms-t-review-name">
+                            {{ review.userid }}
+                          </div>
+                          <div class="ms-t-review-rating">
+                            <i
+                              class="msicon msi-star fill"
+                              *ngFor="let star of [].constructor(review.stars)"
+                            ></i>
+                            <i
+                              class="msicon msi-star-o"
+                              *ngFor="
+                                let star of [].constructor(5 - review.stars)
+                              "
+                            ></i>
+                          </div>
+                        </div>
+                        <div class="ms-t-review-bottom">
+                          <p>{{ review.reviewDescription }}</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="ms-ratting-content">
+                    <h3>Add a Review</h3>
+                    <div class="ms-ratting-form">
+                      <form action="#">
+                        <div class="ms-ratting-star">
+                          <span>Your rating:</span>
+                          <div class="ms-t-review-rating">
+                            <i class="msicon msi-star fill"></i>
+                            <i class="msicon msi-star fill"></i>
+                            <i class="msicon msi-star-o"></i>
+                            <i class="msicon msi-star-o"></i>
+                            <i class="msicon msi-star-o"></i>
+                          </div>
+                        </div>
+                        <div class="ms-ratting-input">
+                          <input
+                            name="your-name"
+                            placeholder="Name"
+                            type="text"
+                          />
+                        </div>
+                        <div class="ms-ratting-input">
+                          <input
+                            name="your-email"
+                            placeholder="Email*"
+                            type="email"
+                            required
+                          />
+                        </div>
+                        <div class="ms-ratting-input form-submit">
+                          <textarea
+                            name="your-comment"
+                            placeholder="Enter Your Comment"
+                          ></textarea>
+                          <button class="ms-btn-2" type="submit" value="Submit">
+                            Submit
+                          </button>
+                        </div>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
+  </div>
 </section>
+
+<!-- Related product section -->
+<section class="ms-new-product padding-tb-30">
+  <div class="container">
+    <div class="section-title-2">
+      <h2 class="ms-title">Related <span>Products</span></h2>
+      <p>Browse The Collection of Top Products</p>
+    </div>
+
+    <div class="row p-t-15">
+      <div class="ms-new-product col-lg-12">
+        <div class="section-bg-color section-space-p30 main-border-radius">
+          <div class="ms-product-block m-minus-15">
+            <div
+              class="new-product-carousel owl-carousel owl-loaded owl-drag"
+              style="overflow: hidden; position: relative"
+            >
+              <div
+                #reladedComponetContainer
+                class="owl-stage"
+                style="
+                  transform: translate3d(0px, 0px, 0px);
+                  transition: all 1s ease 0s;
+                  width: 3630px;
+                "
+              >
+                <div class="owl-item cloned active" style="width: 242px">
+                  <div class="ms-product-content">
+                    <div class="ms-product-inner">
+                      <div class="ms-pro-image-outer">
+                        <div class="ms-pro-image">
+                          <a href="product-left-sidebar.html" class="image">
+                            <span class="label veg">
+                              <span class="dot"></span>
+                            </span>
+                            <img
+                              class="main-image"
+                              src="assets/img/product-images/30_1.jpg"
+                              alt="Product"
+                            />
+                            <img
+                              class="hover-image"
+                              src="assets/img/product-images/30_1.jpg"
+                              alt="Product"
+                            />
+                          </a>
+                          <span class="flags">
+                            <span class="new">New</span>
+                          </span>
+                          <div class="ms-pro-actions">
+                            <a
+                              href="javascript:void(0)"
+                              class="ms-btn-group wishlist"
+                              title="Wishlist"
+                              ><img
+                                src="assets/img/icons/pro_wishlist.svg"
+                                class="svg_img pro_svg"
+                                alt=""
+                            /></a>
+                            <a
+                              href="#"
+                              class="ms-btn-group quickview"
+                              data-link-action="quickview"
+                              title="Quick view"
+                              data-bs-toggle="modal"
+                              data-bs-target="#ms_quickview_modal"
+                              ><img
+                                src="assets/img/icons/quickview.svg"
+                                class="svg_img pro_svg"
+                                alt=""
+                            /></a>
+                            <a
+                              href="javascript:void(0)"
+                              class="ms-btn-group compare"
+                              title="Compare"
+                              ><img
+                                src="assets/img/icons/compare.svg"
+                                class="svg_img pro_svg"
+                                alt=""
+                            /></a>
+                            <a
+                              href="javascript:void(0)"
+                              title="Add To Cart"
+                              class="ms-btn-group add-to-cart"
+                              ><img
+                                src="assets/img/icons/pro_cart.svg"
+                                class="svg_img pro_svg"
+                                alt=""
+                            /></a>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="ms-pro-content">
+                        <a href="shop-left-sidebar-col-3.html">
+                          <h6 class="ms-pro-stitle">Foods</h6>
+                        </a>
+                        <h5 class="ms-pro-title">
+                          <a href="product-left-sidebar.html"
+                            >Banana Chips Snack</a
+                          >
+                        </h5>
+                        <div class="ms-pro-rat-price">
+                          <span class="ms-pro-rating">
+                            <i class="msicon msi-star fill"></i>
+                            <i class="msicon msi-star fill"></i>
+                            <i class="msicon msi-star"></i>
+                            <i class="msicon msi-star"></i>
+                            <i class="msicon msi-star"></i>
+                            <span class="qty">2 pack</span>
+                          </span>
+                          <span class="ms-price">
+                            <span class="new-price">$45.00</span>
+                            <span class="old-price">$50.00</span>
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="owl-item cloned active" style="width: 242px">
+                  <div class="ms-product-content">
+                    <div class="ms-product-inner">
+                      <div class="ms-pro-image-outer">
+                        <div class="ms-pro-image">
+                          <a href="product-left-sidebar.html" class="image">
+                            <span class="label veg">
+                              <span class="dot"></span>
+                            </span>
+                            <img
+                              class="main-image"
+                              src="assets/img/product-images/13_1.jpg"
+                              alt="Product"
+                            />
+                            <img
+                              class="hover-image"
+                              src="assets/img/product-images/13_1.jpg"
+                              alt="Product"
+                            />
+                          </a>
+                          <span class="flags">
+                            <span class="sale">Sale</span>
+                          </span>
+                          <div class="ms-pro-actions">
+                            <a
+                              href="javascript:void(0)"
+                              class="ms-btn-group wishlist"
+                              title="Wishlist"
+                              ><img
+                                src="assets/img/icons/pro_wishlist.svg"
+                                class="svg_img pro_svg"
+                                alt=""
+                            /></a>
+                            <a
+                              href="#"
+                              class="ms-btn-group quickview"
+                              data-link-action="quickview"
+                              title="Quick view"
+                              data-bs-toggle="modal"
+                              data-bs-target="#ms_quickview_modal"
+                              ><img
+                                src="assets/img/icons/quickview.svg"
+                                class="svg_img pro_svg"
+                                alt=""
+                            /></a>
+                            <a
+                              href="javascript:void(0)"
+                              class="ms-btn-group compare"
+                              title="Compare"
+                              ><img
+                                src="assets/img/icons/compare.svg"
+                                class="svg_img pro_svg"
+                                alt=""
+                            /></a>
+                            <a
+                              href="javascript:void(0)"
+                              title="Add To Cart"
+                              class="ms-btn-group add-to-cart"
+                              ><img
+                                src="assets/img/icons/pro_cart.svg"
+                                class="svg_img pro_svg"
+                                alt=""
+                            /></a>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="ms-pro-content">
+                        <a href="shop-left-sidebar-col-3.html">
+                          <h6 class="ms-pro-stitle">Tuber root</h6>
+                        </a>
+                        <h5 class="ms-pro-title">
+                          <a href="product-left-sidebar.html">Onion - Hybrid</a>
+                        </h5>
+                        <div class="ms-pro-rat-price">
+                          <span class="ms-pro-rating">
+                            <i class="msicon msi-star fill"></i>
+                            <i class="msicon msi-star fill"></i>
+                            <i class="msicon msi-star fill"></i>
+                            <i class="msicon msi-star"></i>
+                            <i class="msicon msi-star"></i>
+                            <span class="qty">10 kg</span>
+                          </span>
+                          <span class="ms-price">
+                            <span class="new-price">$25.00</span>
+                            <span class="old-price">$30.00</span>
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="owl-item cloned active" style="width: 242px">
+                  <div class="ms-product-content">
+                    <div class="ms-product-inner">
+                      <div class="ms-pro-image-outer">
+                        <div class="ms-pro-image">
+                          <a href="product-left-sidebar.html" class="image">
+                            <span class="label veg">
+                              <span class="dot"></span>
+                            </span>
+                            <img
+                              class="main-image"
+                              src="assets/img/product-images/25_1.jpg"
+                              alt="Product"
+                            />
+                            <img
+                              class="hover-image"
+                              src="assets/img/product-images/25_1.jpg"
+                              alt="Product"
+                            />
+                          </a>
+                          <span class="flags">
+                            <span class="new">New</span>
+                          </span>
+                          <div class="ms-pro-actions">
+                            <a
+                              href="javascript:void(0)"
+                              class="ms-btn-group wishlist"
+                              title="Wishlist"
+                              ><img
+                                src="assets/img/icons/pro_wishlist.svg"
+                                class="svg_img pro_svg"
+                                alt=""
+                            /></a>
+                            <a
+                              href="#"
+                              class="ms-btn-group quickview"
+                              data-link-action="quickview"
+                              title="Quick view"
+                              data-bs-toggle="modal"
+                              data-bs-target="#ms_quickview_modal"
+                              ><img
+                                src="assets/img/icons/quickview.svg"
+                                class="svg_img pro_svg"
+                                alt=""
+                            /></a>
+                            <a
+                              href="javascript:void(0)"
+                              class="ms-btn-group compare"
+                              title="Compare"
+                              ><img
+                                src="assets/img/icons/compare.svg"
+                                class="svg_img pro_svg"
+                                alt=""
+                            /></a>
+                            <a
+                              href="javascript:void(0)"
+                              title="Add To Cart"
+                              class="ms-btn-group add-to-cart"
+                              ><img
+                                src="assets/img/icons/pro_cart.svg"
+                                class="svg_img pro_svg"
+                                alt=""
+                            /></a>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="ms-pro-content">
+                        <a href="shop-left-sidebar-col-3.html">
+                          <h6 class="ms-pro-stitle">Fresh fruit</h6>
+                        </a>
+                        <h5 class="ms-pro-title">
+                          <a href="product-left-sidebar.html">Lichi</a>
+                        </h5>
+                        <div class="ms-pro-rat-price">
+                          <span class="ms-pro-rating">
+                            <i class="msicon msi-star fill"></i>
+                            <i class="msicon msi-star fill"></i>
+                            <i class="msicon msi-star fill"></i>
+                            <i class="msicon msi-star fill"></i>
+                            <i class="msicon msi-star fill"></i>
+                            <span class="qty">500 g</span>
+                          </span>
+                          <span class="ms-price">
+                            <span class="new-price">$25.00</span>
+                            <span class="old-price">$35.00</span>
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="owl-item cloned" style="width: 242px">
+                  <div class="ms-product-content">
+                    <div class="ms-product-inner">
+                      <div class="ms-pro-image-outer">
+                        <div class="ms-pro-image">
+                          <a href="product-left-sidebar.html" class="image">
+                            <span class="label veg">
+                              <span class="dot"></span>
+                            </span>
+                            <img
+                              class="main-image"
+                              src="assets/img/product-images/2_1.jpg"
+                              alt="Product"
+                            />
+                            <img
+                              class="hover-image"
+                              src="assets/img/product-images/2_2.jpg"
+                              alt="Product"
+                            />
+                          </a>
+                          <span class="flags">
+                            <span class="sale">Sale</span>
+                          </span>
+                          <div class="ms-pro-actions">
+                            <a
+                              href="javascript:void(0)"
+                              class="ms-btn-group wishlist"
+                              title="Wishlist"
+                              ><img
+                                src="assets/img/icons/pro_wishlist.svg"
+                                class="svg_img pro_svg"
+                                alt=""
+                            /></a>
+                            <a
+                              href="#"
+                              class="ms-btn-group quickview"
+                              data-link-action="quickview"
+                              title="Quick view"
+                              data-bs-toggle="modal"
+                              data-bs-target="#ms_quickview_modal"
+                              ><img
+                                src="assets/img/icons/quickview.svg"
+                                class="svg_img pro_svg"
+                                alt=""
+                            /></a>
+                            <a
+                              href="javascript:void(0)"
+                              class="ms-btn-group compare"
+                              title="Compare"
+                              ><img
+                                src="assets/img/icons/compare.svg"
+                                class="svg_img pro_svg"
+                                alt=""
+                            /></a>
+                            <a
+                              href="javascript:void(0)"
+                              title="Add To Cart"
+                              class="ms-btn-group add-to-cart"
+                              ><img
+                                src="assets/img/icons/pro_cart.svg"
+                                class="svg_img pro_svg"
+                                alt=""
+                            /></a>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="ms-pro-content">
+                        <a href="shop-left-sidebar-col-3.html">
+                          <h6 class="ms-pro-stitle">Dried Fruits</h6>
+                        </a>
+                        <h5 class="ms-pro-title">
+                          <a href="product-left-sidebar.html"
+                            >Dates Value Pouch</a
+                          >
+                        </h5>
+                        <div class="ms-pro-rat-price">
+                          <span class="ms-pro-rating">
+                            <i class="msicon msi-star fill"></i>
+                            <i class="msicon msi-star fill"></i>
+                            <i class="msicon msi-star fill"></i>
+                            <i class="msicon msi-star"></i>
+                            <i class="msicon msi-star"></i>
+                          </span>
+                          <span class="ms-price">
+                            <span class="new-price">$78.00</span>
+                            <span class="old-price">$85.00</span>
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="owl-item cloned" style="width: 242px">
+                  <div class="ms-product-content">
+                    <div class="ms-product-inner">
+                      <div class="ms-pro-image-outer">
+                        <div class="ms-pro-image">
+                          <a href="product-left-sidebar.html" class="image">
+                            <span class="label nonveg">
+                              <span class="dot"></span>
+                            </span>
+                            <img
+                              class="main-image"
+                              src="assets/img/product-images/19_1.jpg"
+                              alt="Product"
+                            />
+                            <img
+                              class="hover-image"
+                              src="assets/img/product-images/19_1.jpg"
+                              alt="Product"
+                            />
+                          </a>
+                          <div class="ms-pro-actions">
+                            <a
+                              href="javascript:void(0)"
+                              class="ms-btn-group wishlist"
+                              title="Wishlist"
+                              ><img
+                                src="assets/img/icons/pro_wishlist.svg"
+                                class="svg_img pro_svg"
+                                alt=""
+                            /></a>
+                            <a
+                              href="#"
+                              class="ms-btn-group quickview"
+                              data-link-action="quickview"
+                              title="Quick view"
+                              data-bs-toggle="modal"
+                              data-bs-target="#ms_quickview_modal"
+                              ><img
+                                src="assets/img/icons/quickview.svg"
+                                class="svg_img pro_svg"
+                                alt=""
+                            /></a>
+                            <a
+                              href="javascript:void(0)"
+                              class="ms-btn-group compare"
+                              title="Compare"
+                              ><img
+                                src="assets/img/icons/compare.svg"
+                                class="svg_img pro_svg"
+                                alt=""
+                            /></a>
+                            <a
+                              href="javascript:void(0)"
+                              title="Add To Cart"
+                              class="ms-btn-group add-to-cart"
+                              ><img
+                                src="assets/img/icons/pro_cart.svg"
+                                class="svg_img pro_svg"
+                                alt=""
+                            /></a>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="ms-pro-content">
+                        <a href="shop-left-sidebar-col-3.html">
+                          <h6 class="ms-pro-stitle">Eggs</h6>
+                        </a>
+                        <h5 class="ms-pro-title">
+                          <a href="product-left-sidebar.html"
+                            >Farm Eggs - Brown</a
+                          >
+                        </h5>
+                        <div class="ms-pro-rat-price">
+                          <span class="ms-pro-rating">
+                            <i class="msicon msi-star fill"></i>
+                            <i class="msicon msi-star fill"></i>
+                            <i class="msicon msi-star"></i>
+                            <i class="msicon msi-star"></i>
+                            <i class="msicon msi-star"></i>
+                            <span class="qty">3 pcs</span>
+                          </span>
+                          <span class="ms-price">
+                            <span class="new-price">$3.00</span>
+                            <span class="old-price">$5.00</span>
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="owl-item cloned" style="width: 242px">
+                  <div class="ms-product-content">
+                    <div class="ms-product-inner">
+                      <div class="ms-pro-image-outer">
+                        <div class="ms-pro-image">
+                          <a href="product-left-sidebar.html" class="image">
+                            <span class="label veg">
+                              <span class="dot"></span>
+                            </span>
+                            <img
+                              class="main-image"
+                              src="assets/img/product-images/24_1.jpg"
+                              alt="Product"
+                            />
+                            <img
+                              class="hover-image"
+                              src="assets/img/product-images/24_1.jpg"
+                              alt="Product"
+                            />
+                          </a>
+                          <span class="flags">
+                            <span class="new">New</span>
+                          </span>
+                          <div class="ms-pro-actions">
+                            <a
+                              href="javascript:void(0)"
+                              class="ms-btn-group wishlist"
+                              title="Wishlist"
+                              ><img
+                                src="assets/img/icons/pro_wishlist.svg"
+                                class="svg_img pro_svg"
+                                alt=""
+                            /></a>
+                            <a
+                              href="#"
+                              class="ms-btn-group quickview"
+                              data-link-action="quickview"
+                              title="Quick view"
+                              data-bs-toggle="modal"
+                              data-bs-target="#ms_quickview_modal"
+                              ><img
+                                src="assets/img/icons/quickview.svg"
+                                class="svg_img pro_svg"
+                                alt=""
+                            /></a>
+                            <a
+                              href="javascript:void(0)"
+                              class="ms-btn-group compare"
+                              title="Compare"
+                              ><img
+                                src="assets/img/icons/compare.svg"
+                                class="svg_img pro_svg"
+                                alt=""
+                            /></a>
+                            <a
+                              href="javascript:void(0)"
+                              title="Add To Cart"
+                              class="ms-btn-group add-to-cart"
+                              ><img
+                                src="assets/img/icons/pro_cart.svg"
+                                class="svg_img pro_svg"
+                                alt=""
+                            /></a>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="ms-pro-content">
+                        <a href="shop-left-sidebar-col-3.html">
+                          <h6 class="ms-pro-stitle">Fresh Fruit</h6>
+                        </a>
+                        <h5 class="ms-pro-title">
+                          <a href="product-left-sidebar.html">Cherry</a>
+                        </h5>
+                        <div class="ms-pro-rat-price">
+                          <span class="ms-pro-rating">
+                            <i class="msicon msi-star fill"></i>
+                            <i class="msicon msi-star fill"></i>
+                            <i class="msicon msi-star"></i>
+                            <i class="msicon msi-star"></i>
+                            <i class="msicon msi-star"></i>
+                            <span class="qty">1 kg</span>
+                          </span>
+                          <span class="ms-price">
+                            <span class="new-price">$20.00</span>
+                            <span class="old-price">$21.00</span>
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="owl-item cloned" style="width: 242px">
+                  <div class="ms-product-content">
+                    <div class="ms-product-inner">
+                      <div class="ms-pro-image-outer">
+                        <div class="ms-pro-image">
+                          <a href="product-left-sidebar.html" class="image">
+                            <span class="label veg">
+                              <span class="dot"></span>
+                            </span>
+                            <img
+                              class="main-image"
+                              src="assets/img/product-images/17_1.jpg"
+                              alt="Product"
+                            />
+                            <img
+                              class="hover-image"
+                              src="assets/img/product-images/17_1.jpg"
+                              alt="Product"
+                            />
+                          </a>
+                          <div class="ms-pro-actions">
+                            <a
+                              href="javascript:void(0)"
+                              class="ms-btn-group wishlist"
+                              title="Wishlist"
+                              ><img
+                                src="assets/img/icons/pro_wishlist.svg"
+                                class="svg_img pro_svg"
+                                alt=""
+                            /></a>
+                            <a
+                              href="#"
+                              class="ms-btn-group quickview"
+                              data-link-action="quickview"
+                              title="Quick view"
+                              data-bs-toggle="modal"
+                              data-bs-target="#ms_quickview_modal"
+                              ><img
+                                src="assets/img/icons/quickview.svg"
+                                class="svg_img pro_svg"
+                                alt=""
+                            /></a>
+                            <a
+                              href="javascript:void(0)"
+                              class="ms-btn-group compare"
+                              title="Compare"
+                              ><img
+                                src="assets/img/icons/compare.svg"
+                                class="svg_img pro_svg"
+                                alt=""
+                            /></a>
+                            <a
+                              href="javascript:void(0)"
+                              title="Add To Cart"
+                              class="ms-btn-group add-to-cart"
+                              ><img
+                                src="assets/img/icons/pro_cart.svg"
+                                class="svg_img pro_svg"
+                                alt=""
+                            /></a>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="ms-pro-content">
+                        <a href="shop-left-sidebar-col-3.html">
+                          <h6 class="ms-pro-stitle">Tuber root</h6>
+                        </a>
+                        <h5 class="ms-pro-title">
+                          <a href="product-left-sidebar.html"
+                            >Ginger - Organic</a
+                          >
+                        </h5>
+                        <div class="ms-pro-rat-price">
+                          <span class="ms-pro-rating">
+                            <i class="msicon msi-star fill"></i>
+                            <i class="msicon msi-star fill"></i>
+                            <i class="msicon msi-star"></i>
+                            <i class="msicon msi-star"></i>
+                            <i class="msicon msi-star"></i>
+                            <span class="qty">100 g</span>
+                          </span>
+                          <span class="ms-price">
+                            <span class="new-price">$2.00</span>
+                            <span class="old-price">$3.00</span>
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Related product section End -->
