@@ -13,6 +13,7 @@ import { RegisterComponent } from '../components/register/register.component';
 import { PaymentMethodComponent } from '../components/payment-method/payment-method.component';
 import { CheckoutComponent } from '../components/checkout/checkout.component';
 import { PrivacyPolicyComponent } from '../components/privacy-policy/privacy-policy.component';
+import { NewProductsComponent } from '../components/new-products/new-products.component';
 
 export const routes: Routes = [
     {path: '', component:HomeComponent},
@@ -33,5 +34,5 @@ export const routes: Routes = [
     {path: 'payment-method',component:PaymentMethodComponent},
     {path: 'checkout',component:CheckoutComponent},
     {path: 'privacy-policy',component:PrivacyPolicyComponent},
-
+    {path: 'new-products',component:NewProductsComponent},
 ];

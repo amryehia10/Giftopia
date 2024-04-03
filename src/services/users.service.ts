@@ -6,11 +6,9 @@ import { BaseService } from './Base.service';
 @Injectable({
   providedIn: 'root'
 })
-export class UserService extends BaseService {
+export class UserService {
 
-  private URL = `${this.Base_URL}/users`;
-
-  constructor(http: HttpClient) { super(http) }
+  constructor(private http: HttpClient) {}
 
   registerUser(userData: any): Observable<any> {
     return this.http.post<any>('http://localhost:3000/users', userData);

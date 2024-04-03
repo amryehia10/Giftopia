@@ -13,7 +13,17 @@ html, body { height: 100%; } */
   margin-top: -5vh;
 } */
 
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; 
+.backgroundColor{
+  background-image: url('/assets/img/bg/beige-flowers.jpg');
+  background-size: 100% 90%;
+  background-size: cover;
+  background-attachment: fixed;
+
+  background-color: rgb(255, 182, 109);
+}
+
+body { 
+  margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; 
   width: 100%;
   height: 100%;
   position: relative;

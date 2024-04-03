@@ -1,0 +1,29 @@
+<section class="section-products backgroundColor">
+    <div class="container">
+      <div class="row front">
+        <div class="col-md-8 col-lg-6">
+          <div class="header">
+            <h1>New Arrivals</h1>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-6 col-sm-6 col-md-4 col-lg-4 col-xl-3" *ngFor="let product of newProducts">
+          <div class="single-product">
+            <div class="part-1">
+              <img class="section-products img-fluid" src="{{ product.images[0].url }}" alt="product">
+              <ul>
+                <!--TODO-->
+                <li><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
+                <li><a href="#"><i class="fas fa-heart"></i></a></li>
+              </ul>
+            </div>
+            <div class="part-2">
+              <h3 class="product-title">{{ product.name }}</h3>
+              <h4 class="product-price">{{ product.price | currency:"L.E" }}</h4>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>

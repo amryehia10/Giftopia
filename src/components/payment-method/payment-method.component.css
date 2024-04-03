@@ -9,7 +9,7 @@
     margin-right: auto;
     margin-top: 10vh;
     margin-bottom: 10vh;
-    height: 57vh;
+    min-height: 57vh;
     font-size: large;
     font-family: Arial, sans-serif;
     color: #000000;
@@ -71,4 +71,21 @@
 
   .proceed-button-credit:hover {
     background-color: #218838;
+  }
+
+
+  input,
+select,
+textarea {
+  height: auto;
+  margin-bottom: 15px;
+  margin-top: 15px;
+}
+
+.CreditCardBox {
+    background-color: rgba(196, 196, 196, 0.316);
+    border: 3.5px rgb(75, 44, 0) groove;
+    padding: 15px;
+    margin-top: 15px;
+    margin-bottom: 15px;
   }
