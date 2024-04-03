@@ -1,5 +1,5 @@
 .container {
-  /* background-image: url('/assets/img/bg/Giftopia_Background.jpg'); */
+  background-image: url('/assets/img/bg/Giftopia_Background.jpg');
   background-size: 100% 100%;
   background-attachment: fixed;
   min-height: 105vh;
