@@ -42,29 +42,37 @@ export class HeaderComponent {
 
   openCartSidebar() {
     this.isCartSidebarVisible = true;
+    document.body.classList.add('popup-open');
   }
 
   onCloseCartSidebar() {
     this.isCartSidebarVisible = false;
+    document.body.classList.remove('popup-open');
   }
 
   openCategorySidebar() {
     this.isCategorySidebarVisible = true;
+    document.body.classList.add('popup-open');
   }
 
   onCloseCategorySidebar() {
     this.isCategorySidebarVisible = false;
+    document.body.classList.remove('popup-open');
   }
 
   openWishlistSidebar() {
     this.isWishlistSidebarVisible = true;
+    document.body.classList.add('popup-open');
   }
 
   onCloseWishlistSidebar() {
     this.isWishlistSidebarVisible = false;
+    document.body.classList.remove('popup-open');
   }
 
   togelMenuSideBar() {
     this.isMenuSideBarVisible = !this.isMenuSideBarVisible;
+    if (this.isMenuSideBarVisible) document.body.classList.add('popup-open');
+    else document.body.classList.remove('popup-open');
   }
 }
