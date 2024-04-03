@@ -1,4 +1,4 @@
-export interface ProductModel {
+type ProductModel = {
     _id: string,
     desc: string,
     name: string,
