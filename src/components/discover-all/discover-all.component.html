@@ -9,15 +9,15 @@
             </div>
         </div>
         <div class="row">
-            @for(cat of categories; track cat.id; let i = $index){
-            <h3 class="catprds">{{cat.categoryName}}</h3>
-            @for (prd of discoveredProducts; track prd.id) {
-                @if(prd.cat == cat.categoryName) {
+            @for(cat of categories; track cat._id; let i = $index){
+            <h3 class="catprds">{{cat.name}}</h3>
+            @for (prd of discoveredProducts; track prd._id) {
+            @if(prd.cat[0] == cat.name) {
             <!-- Single Product -->
             <div class="col-6 col-sm-6 col-md-4 col-lg-4 col-xl-3">
                 <div class="single-product">
                     <div class="part-1">
-                        <img class="section-products img-fluid" src="{{prd.images[0].url}}" alt="product">
+                        <img class="section-products img-fluid" src="{{prd.images[0]}}" alt="product">
                         <ul>
                             <!--TODO-->
                             <li><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
@@ -27,17 +27,17 @@
                     <div class="part-2">
                         <h3 class="product-title">{{prd.name}}</h3>
                         @if(prd.discount > 0){
-                            <h4 class="product-old-price">{{prd.price | currency:"L.E"}}</h4>
-                            <h4 class="product-price">{{prd.price - (prd.price * prd.discount) | currency:"L.E"}}</h4>
+                        <h4 class="product-old-price">{{prd.price | currency:"L.E"}}</h4>
+                        <h4 class="product-price">{{prd.price - (prd.price * prd.discount) | currency:"L.E"}}</h4>
                         } @else {
-                            <h4 class="product-price">{{prd.price | currency:"L.E"}}</h4>
+                        <h4 class="product-price">{{prd.price | currency:"L.E"}}</h4>
                         }
                     </div>
                 </div>
             </div>
-        }
-    }
-        }
+            }
+            }
+            }
         </div>
     </div>
 </section>

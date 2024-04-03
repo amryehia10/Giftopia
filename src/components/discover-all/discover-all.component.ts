@@ -4,6 +4,7 @@ import { Component, OnInit } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { CategoryService } from '../../services/category.service';
 import { ProductService } from '../../services/product.service';
+import { GeneralMethods } from '../../functions';
 
 @Component({
   selector: 'app-discover-all',
@@ -13,39 +14,35 @@ import { ProductService } from '../../services/product.service';
   templateUrl: './discover-all.component.html',
   styleUrl: './discover-all.component.css'
 })
-export class DiscoverAllComponent implements OnInit  {
-  products: any;
-  categories: any;
+export class DiscoverAllComponent implements OnInit {
   catNames: string[] = [];
-  discoveredProducts: {id:number, name: string, price:number, desc:string, cat:number, images: { url: string }[], discount:number}[] = [];
-  constructor(private prdService:ProductService, private catService: CategoryService) {}
+  products: ProductModel[] = [];
+  categories: CategoryModel[] = [];
+  discoveredProducts: ProductModel[] = [];
+  constructor(private prdService: ProductService, private catService: CategoryService) { }
 
-  ngOnInit() { 
+  async ngOnInit() {
     this.prdService.getAllProducts().subscribe({
       next: (data) => {
-        this.products = data;
+        this.products = GeneralMethods.CastProducts(data);
         this.getDiscoveredProducts()
       },
-      error: (err) => {
-        console.log(err);
-      }
+      error: (err) => console.log(err)
     })
 
     this.catService.getCategory().subscribe({
       next: (data) => {
-        this.categories = data;
+        this.categories = GeneralMethods.CastCategories(data);
         this.populatecatNames();
         this.getDiscoveredProducts();
       },
-      error: (err) => {
-        console.log(err);
-      }
+      error: (err) => console.log(err)
     })
   }
 
   populatecatNames(): void {
     for (let cat of this.categories) {
-      this.catNames.push(cat.categoryName);
+      this.catNames.push(cat.name);
     }
   }
 
@@ -53,19 +50,19 @@ export class DiscoverAllComponent implements OnInit  {
     if (!this.products || !this.categories || this.catNames.length === 0) {
       return;
     }
-    
+
     this.products.sort((a: any, b: any) => {
       const discountA = parseInt(a.discount);
       const discountB = parseInt(b.discount);
       return discountB - discountA;
     });
+    
     let counter = 0;
-    for(let cat = 0; cat < this.catNames.length; cat++) {
-      for(let prd of this.products) {
-        if(this.catNames[cat] == prd.cat && counter < 8){
+    for (let cat = 0; cat < this.catNames.length; cat++) {
+      for (let prd of this.products) {
+        if (this.catNames[cat].toLowerCase() == prd.cat[0].toLowerCase() && counter < 8) {
           counter++;
-          let discount = parseInt(prd.discount);
-          prd.discount = discount / 100;
+          prd.discount = prd.discount / 100;
           this.discoveredProducts.push(prd);
         }
       }

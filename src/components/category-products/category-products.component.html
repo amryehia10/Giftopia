@@ -1,7 +1,7 @@
 <div class="container">
     <div class="row">
         <div class="col-12">
-            <button class="btn btn-primary my-3" (click)="toggleSort()">Sort by Price: {{btnSortToggle}}</button>
+            <button type="button" class="btn btn-primary my-3" (click)="toggleSort()">Sort by Price: {{btnSortToggle}}</button>
             <div class="d-flex flex-wrap row bg-dark">
                 @for (prd of products; track prd._id) {
                 <div class="card mb-4 col-sm-4">

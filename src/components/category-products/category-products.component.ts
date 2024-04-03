@@ -1,8 +1,8 @@
+import { ActivatedRoute } from '@angular/router';
+import { GeneralMethods } from '../../functions';
 import { Component, OnInit } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
-import { ActivatedRoute } from '@angular/router';
 import { ProductService } from '../../services/product.service';
-import { GeneralMethods } from '../../functions';
 
 @Component({
   selector: 'app-category-products',
