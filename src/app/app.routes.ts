@@ -10,6 +10,7 @@ import { TermsConditionsComponent } from '../components/terms-conditions/terms-c
 import { TrackOrderComponent } from '../components/track-order/track-order.component';
 import { CartComponent } from '../components/cart/cart.component';
 import { RegisterComponent } from '../components/register/register.component';
+import { PaymentMethodComponent } from '../components/payment-method/payment-method.component';
 
 export const routes: Routes = [
     {path: '', component:HomeComponent},
@@ -27,4 +28,5 @@ export const routes: Routes = [
     {path: 'register',component:RegisterComponent},
     {path: 'track-order',component:TrackOrderComponent},
     {path: 'cart',component:CartComponent},
+    {path: 'payment-method',component:PaymentMethodComponent}
 ];
