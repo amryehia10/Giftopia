@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { CategoryService } from '../../services/category.service';
 import { HttpClientModule } from '@angular/common/http';
+import { GeneralMethods } from '../../functions';
 
 @Component({
   selector: 'app-footer',
@@ -12,11 +13,14 @@ import { HttpClientModule } from '@angular/common/http';
   styleUrl: './footer.component.css',
 })
 export class FooterComponent implements OnInit {
-  Categories: any;
+  Categories: CategoryModel[]=[];
   constructor(private service: CategoryService) {}
   ngOnInit(): void {
     this.service
       .getCategory()
-      .subscribe({ next: (data) => (this.Categories = data) });
+      .subscribe({ 
+        next: (data) => (this.Categories = GeneralMethods.CastCategories(data)),
+        error:(error)=> console.log(error)
+      });
   }
 }

@@ -1,13 +1,13 @@
 import { CommonModule } from '@angular/common';
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { ActivatedRoute, RouterModule } from '@angular/router';
-import { ProductsService } from '../../services/products.service';
+import { ProductService } from '../../services/product.service';
 
 @Component({
   selector: 'app-product',
   standalone: true,
   imports: [CommonModule, RouterModule],
-  providers: [ProductsService],
+  providers: [ProductService],
   templateUrl: './product.component.html',
   styleUrls: ['./product.component.css'],
 })
@@ -23,7 +23,7 @@ export class ProductComponent implements OnInit {
     | undefined;
 
   constructor(
-    private productService: ProductsService,
+    private service: ProductService,
     private route: ActivatedRoute
   ) {
     setInterval(() => {
@@ -41,7 +41,7 @@ export class ProductComponent implements OnInit {
   ngOnInit(): void {
     const prdID = Number(this.route.snapshot.paramMap.get('id'));
     console.log('ngOnInit called');
-    this.productService.getSingleProduct(prdID).subscribe({
+    this.service.getProductByID(prdID).subscribe({
       next: (data) => {
         this.product = data;
         this.calculateProductRatings();

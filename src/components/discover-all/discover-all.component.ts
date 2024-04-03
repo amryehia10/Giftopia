@@ -2,14 +2,14 @@ import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { ProductsService } from '../../services/products.service';
 import { CategoryService } from '../../services/category.service';
+import { ProductService } from '../../services/product.service';
 
 @Component({
   selector: 'app-discover-all',
   standalone: true,
   imports: [CommonModule, RouterModule, HttpClientModule],
-  providers: [ProductsService, CategoryService],
+  providers: [ProductService, CategoryService],
   templateUrl: './discover-all.component.html',
   styleUrl: './discover-all.component.css'
 })
@@ -18,10 +18,10 @@ export class DiscoverAllComponent implements OnInit  {
   categories: any;
   catNames: string[] = [];
   discoveredProducts: {id:number, name: string, price:number, desc:string, cat:number, images: { url: string }[], discount:number}[] = [];
-  constructor(private productService:ProductsService, private categoryService: CategoryService) {}
+  constructor(private prdService:ProductService, private catService: CategoryService) {}
 
   ngOnInit() { 
-    this.productService.getproducts().subscribe({
+    this.prdService.getAllProducts().subscribe({
       next: (data) => {
         this.products = data;
         this.getDiscoveredProducts()
@@ -31,7 +31,7 @@ export class DiscoverAllComponent implements OnInit  {
       }
     })
 
-    this.categoryService.getCategory().subscribe({
+    this.catService.getCategory().subscribe({
       next: (data) => {
         this.categories = data;
         this.populatecatNames();

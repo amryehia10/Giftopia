@@ -5,13 +5,13 @@ import { HttpClient } from '@angular/common/http';
 @Injectable({
   providedIn: 'root'
 })
-export class ProductsService extends BaseService {
+export class ProductService extends BaseService {
   // private URL = `${this.JSON_URL}/products`;
   private URL = `${this.BASE_URL}/product`;
 
   constructor(http: HttpClient) { super(http) }
 
-  getproducts() {
+  getAllProducts() {
     return this.http.get(this.URL);
   }
   

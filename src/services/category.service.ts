@@ -7,7 +7,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class CategoryService extends BaseService {
   //  private  URL = `${this.Base_URL}/category`
-   private  URL = `http://localhost:7050/category`
+   private  URL = `${this.BASE_URL}/category`
   
   constructor(http: HttpClient) {super(http);}
 

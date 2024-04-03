@@ -1,42 +1,28 @@
 import { Component, OnInit } from '@angular/core';
-import { CatProductsService } from '../../services/cat-products.service';
 import { HttpClientModule } from '@angular/common/http';
-import { ProductsService } from '../../services/products.service';
 import { ActivatedRoute } from '@angular/router';
+import { ProductService } from '../../services/product.service';
+import { GeneralMethods } from '../../functions';
 
 @Component({
   selector: 'app-category-products',
   standalone: true,
   imports: [HttpClientModule],
-  providers: [CatProductsService, ProductsService],
+  providers: [ProductService],
   templateUrl: './category-products.component.html',
   styleUrl: './category-products.component.css'
 })
 export class CategoryProductsComponent implements OnInit {
-  products: any;
+  products: ProductModel[] = [];
 
-  constructor(private router: ActivatedRoute, private service: ProductsService/*CatProductsService*/) { }
+  constructor(private router: ActivatedRoute, private service: ProductService) { }
 
   ngOnInit(): void {
-    // this.service.getCategoryProducts("5").subscribe({next:(data)=>{console.log(data)}});
-    const catName = this.router.snapshot.params["name"];
-    console.log(catName);
-    this.service.getproducts().subscribe({
-      next: (data) => {
-        console.log(typeof data);
-        this.products = data;//.filter(prd => prd.cat.includes("accessories"));      
-          console.log(  this.products);
-
-      },
-      error: (error) => {
-        console.error('There was an error!', error);
-      }
+    this.service.getProductsByCategory(this.router.snapshot.params["name"]).subscribe({
+      next: (data) => this.products = GeneralMethods.CastProducts(data), 
+      error: (error) => console.error('There was an error!', error)
     });
   }
-
-  
-
-
 
   sortByPrice() {
 

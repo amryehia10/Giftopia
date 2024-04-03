@@ -41,11 +41,9 @@ import { SideBarWishlistComponent } from '../components/side-bar-wishlist/side-b
 export class AppComponent {
   title = 'Giftopia';
 
-  constructor(private router: Router) {}
+  constructor(private router: Router) { }
 
   isLoginPage(): boolean {
-    var pageLogin =
-      this.router.url === '/login' || this.router.url === '/register';
-    return pageLogin;
+    return this.router.url === '/login' || this.router.url === '/register';
   }
 }

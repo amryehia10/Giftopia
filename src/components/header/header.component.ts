@@ -7,6 +7,7 @@ import { SideBarWishlistComponent } from '../side-bar-wishlist/side-bar-wishlist
 import { SideBarMenuComponent } from '../side-bar-menu/side-bar-menu.component';
 import { CategoryService } from '../../services/category.service';
 import { HttpClientModule } from '@angular/common/http';
+import { GeneralMethods } from '../../functions';
 
 @Component({
   selector: 'app-header',
@@ -30,14 +31,17 @@ export class HeaderComponent {
   isWishlistSidebarVisible: boolean = false;
   isMenuSideBarVisible: boolean = false;
 
-  Categories: Category[] = [];
+  Categories: CategoryModel[] = [];
 
   constructor(private service: CategoryService) {}
 
   ngOnInit(): void {
     this.service
       .getCategory()
-      .subscribe({ next: (data) => (this.Categories = data as Category[]) });
+      .subscribe({ 
+        next: (data) => (this.Categories = GeneralMethods.CastCategories(data)), 
+        error:(error)=> console.log(error) 
+      });
   }
 
   openCartSidebar() {

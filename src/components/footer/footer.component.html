@@ -5,11 +5,7 @@
         <div class="row m-minus-991">
           <div class="col-sm-12 col-lg-3 ms-footer-cat">
             <div class="ms-footer-widget ms-footer-company">
-              <img
-                src="assets/img/logo/logo_transparent.png"
-                class="ms-footer-logo"
-                alt="footer logo"
-              />
+              <img src="assets/img/logo/logo_transparent.png" class="ms-footer-logo" alt="footer logo" />
               <p class="ms-footer-detail">
                 Giftopia is the biggest market for gifts. Get your gifts needs
                 from our store.
@@ -19,16 +15,12 @@
           <div class="col-sm-12 col-lg-2 ms-footer-info">
             <div class="ms-footer-widget">
               <h4 class="ms-footer-heading">Categories</h4>
-              <div
-                class="ms-footer-links ms-footer-dropdown"
-                style="display: block"
-              >
+              <div class="ms-footer-links ms-footer-dropdown" style="display: block">
                 <ul class="align-items-center">
-                  @for (cat of Categories; track cat.id) {
+                  @for (cat of Categories; track cat._id) {
                   <li class="ms-footer-link">
-                    <a routerLink="/category/{{ cat.categoryName }}">{{
-                      cat.categoryName
-                    }}</a>
+                    <!-- <a routerLink="/category/{{ cat.name.toLowerCase() }}">{{cat.name}}</a> -->
+                    <a href="/category/{{cat.name.toLowerCase()}}">{{cat.name}}</a><!-- To Update Screen with new category -->
                   </li>
                   }
                 </ul>
@@ -38,10 +30,7 @@
           <div class="col-sm-12 col-lg-2 ms-footer-account">
             <div class="ms-footer-widget">
               <h4 class="ms-footer-heading">Company</h4>
-              <div
-                class="ms-footer-links ms-footer-dropdown"
-                style="display: block"
-              >
+              <div class="ms-footer-links ms-footer-dropdown" style="display: block">
                 <ul class="align-items-center">
                   <li class="ms-footer-link">
                     <a routerLink="/about">About us</a>
@@ -59,10 +48,7 @@
           <div class="col-sm-12 col-lg-2 ms-footer-service">
             <div class="ms-footer-widget">
               <h4 class="ms-footer-heading">Account</h4>
-              <div
-                class="ms-footer-links ms-footer-dropdown"
-                style="display: block"
-              >
+              <div class="ms-footer-links ms-footer-dropdown" style="display: block">
                 <ul class="align-items-center">
                   <li class="ms-footer-link">
                     <a routerLink="/login">Sign In</a>
@@ -81,49 +67,27 @@
             <div class="ms-footer-contact">
               <div class="ms-footer-widget">
                 <h4 class="ms-footer-heading">Contact</h4>
-                <div
-                  class="ms-footer-links ms-footer-dropdown"
-                  style="display: block"
-                >
+                <div class="ms-footer-links ms-footer-dropdown" style="display: block">
                   <ul class="align-items-center">
                     <li class="ms-footer-link ms-foo-location">
-                      <span
-                        ><img
-                          src="assets/img/icons/foo-location.svg"
-                          class="svg_img foo_svg"
-                          style="
+                      <span><img src="assets/img/icons/foo-location.svg" class="svg_img foo_svg" style="
                             filter: invert(80%) sepia(10%) saturate(50%)
                               hue-rotate(0deg) brightness(70%) contrast(100%);
-                          "
-                          alt=""
-                      /></span>
+                          " alt="" /></span>
                       <p>ITI, Smart Village, 6th October, Egypt</p>
                     </li>
                     <li class="ms-footer-link ms-foo-call">
-                      <span
-                        ><img
-                          src="assets/img/icons/foo-wp.svg"
-                          class="svg_img foo_svg"
-                          style="
+                      <span><img src="assets/img/icons/foo-wp.svg" class="svg_img foo_svg" style="
                             filter: invert(80%) sepia(10%) saturate(50%)
                               hue-rotate(0deg) brightness(70%) contrast(100%);
-                          "
-                          alt="" /></span
-                      ><a href="tel:+201099027885">+201099027885</a>
+                          " alt="" /></span><a href="tel:+201099027885">+201099027885</a>
                     </li>
                     <li class="ms-footer-link ms-foo-mail">
-                      <span
-                        ><img
-                          src="assets/img/icons/foo-mail.svg"
-                          class="svg_img foo_svg"
-                          style="
+                      <span><img src="assets/img/icons/foo-mail.svg" class="svg_img foo_svg" style="
                             filter: invert(80%) sepia(10%) saturate(50%)
                               hue-rotate(0deg) brightness(70%) contrast(100%);
-                          "
-                          alt="" /></span
-                      ><a href="mailto:amr.yehia.zakaria@gmail.com"
-                        >amr.yehia.zakaria&commat;gmail.com</a
-                      >
+                          " alt="" /></span><a
+                        href="mailto:amr.yehia.zakaria@gmail.com">amr.yehia.zakaria&commat;gmail.com</a>
                     </li>
                   </ul>
                 </div>

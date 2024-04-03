@@ -8,22 +8,25 @@
         </div>
       </div>
       <div class="row">
-        <div class="col-6 col-sm-6 col-md-4 col-lg-4 col-xl-3" *ngFor="let product of newProducts">
-          <div class="single-product">
-            <div class="part-1">
-              <img class="section-products img-fluid" src="{{ product.images[0].url }}" alt="product">
-              <ul>
-                <!--TODO-->
-                <li><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
-                <li><a href="#"><i class="fas fa-heart"></i></a></li>
-              </ul>
-            </div>
-            <div class="part-2">
-              <h3 class="product-title">{{ product.name }}</h3>
-              <h4 class="product-price">{{ product.price | currency:"L.E" }}</h4>
+        @for (prd of Products; track prd._id) {
+          <div class="col-6 col-sm-6 col-md-4 col-lg-4 col-xl-3">
+            <div class="single-product">
+              <div class="part-1">
+                <img class="section-products img-fluid" src="{{ prd.images[0] }}" alt="product">
+                <ul>
+                  <!--TODO-->
+                  <li><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
+                  <li><a href="#"><i class="fas fa-heart"></i></a></li>
+                </ul>
+              </div>
+              <div class="part-2">
+                <h3 class="product-title">{{ prd.name }}</h3>
+                <h4 class="product-price">{{ prd.price | currency:"L.E" }}</h4>
+              </div>
             </div>
           </div>
-        </div>
+        }
+        
       </div>
     </div>
   </section>

@@ -1,4 +1,4 @@
-@if(categories && products) {
+@if(categories.length > 1 && products) {
     <section class="ms-listing-section listing padding-tb-30 backgroundColor">
         <div class="container">
             <div class="row">
@@ -12,34 +12,34 @@
                     <div class="row">
                         <div class="col-md-6">
                             <div class="ms-list-block">
-                                <h4 class="ms-list-title">{{categories[0].categoryName}}
+                                <h4 class="ms-list-title">{{categories[0].name}}
                                     <span class="label veg">
                                         <span class="dot"></span>
                                     </span>
                                 </h4>
                                 <ul>
-                                    @for (prd of firstprdList; track prd.id; let i = $index) {
+                                    @for (prd of firstprdList; track prd._id; let i = $index) {
                                         
-                                    <li class="ms-list-item"><a routerLink="products/{{prd.id}}">{{prd.name}}<span>: {{prd.discount}}%
+                                    <li class="ms-list-item"><a routerLink="products/{{prd._id}}">{{prd.name}}<span>: {{prd.discount}}%
                                                 Off</span></a><img class="ms-list-img"
-                                                src="{{prd.images[0].url}}" alt="product"></li>
+                                                src="{{prd.images[0]}}" alt="product"></li>
                                     }
                                 </ul>
                             </div>
                         </div>
                         <div class="col-md-6 m-t-767">
                             <div class="ms-list-block">
-                                <h4 class="ms-list-title">{{categories[1].categoryName}}
+                                <h4 class="ms-list-title">{{categories[1].name}}
                                     <span class="label veg">
                                         <span class="dot"></span>
                                     </span>
                                 </h4>
                                 <ul>
-                                    @for (prd of secondprdList; track prd.id; let i = $index) {
+                                    @for (prd of secondprdList; track prd._id; let i = $index) {
     
-                                        <li class="ms-list-item"><a routerLink="products/{{prd.id}}">{{prd.name}}<span>: {{prd.discount}}%
+                                        <li class="ms-list-item"><a routerLink="products/{{prd._id}}">{{prd.name}}<span>: {{prd.discount}}%
                                                     Off</span></a><img class="ms-list-img"
-                                                    src="{{prd.images[0].url}}" alt="product"></li>
+                                                    src="{{prd.images[0]}}" alt="product"></li>
                                     }
                                 </ul>
                             </div>
