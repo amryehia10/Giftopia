@@ -1,0 +1,74 @@
+.payment-card {
+    border: 2px solid #fa0202;
+    border-radius: 10px;
+    background-color: bisque;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 40%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10vh;
+    margin-bottom: 10vh;
+    height: 57vh;
+    font-size: large;
+    font-family: Arial, sans-serif;
+    color: #000000;
+  }
+
+  p{
+    font-size: large;
+    font-family: Arial, sans-serif;
+    color: #000000;
+  }
+
+ h3{
+    font-weight: bold;
+    font-family: Arial, sans-serif;
+    color: #000000;
+  }
+  
+  .payment-method h3 {
+    margin-bottom: 10px;
+  }
+  
+  .payment-method select {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 100%;
+    margin-bottom: 3vh;
+  }
+  
+  .selected-method p {
+    margin-bottom: 10px;
+  }
+  
+  .proceed-button {
+    padding: 10px 20px;
+    background-color: #28a745;
+    color: #fff;
+    border: 2px solid black;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .proceed-button:hover {
+    background-color: #218838;
+  }
+
+  .proceed-button-credit {
+    padding: 10px 20px;
+    background-color: #28a745;
+    color: #fff;
+    border: 2px solid black;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 5.2vh;
+  }
+
+  .proceed-button-credit:hover {
+    background-color: #218838;
+  }

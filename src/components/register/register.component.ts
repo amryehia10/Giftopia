@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { UserService } from '../../services/users.service';
 
 @Component({
   selector: 'app-register',
@@ -10,6 +11,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
   styleUrls: ['./register.component.css']
 })
 export class RegisterComponent {
+
+  constructor(private userService: UserService) {}
+
   currentPage: number = 1;
   userData: any = {
     name: '',
@@ -51,9 +55,17 @@ export class RegisterComponent {
     }
     else
     {
-      alert('Sucessfully Registered!');
-    }
-    // Registration logic here
+      this.userService.registerUser(this.userData).subscribe({
+        next: response => {
+          alert('Successfully Registered!');
+          // Optionally, you can navigate to another page or perform any other action
+        },
+        error: error => {
+          console.error('Error registering user:', error);
+          alert('Error registering user. Please try again later.');
+        }
+      });      
+     }
   }
 
   imageUrl: string | ArrayBuffer | null = null;

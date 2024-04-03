@@ -10,6 +10,7 @@ import { TermsConditionsComponent } from '../components/terms-conditions/terms-c
 import { TrackOrderComponent } from '../components/track-order/track-order.component';
 import { CartComponent } from '../components/cart/cart.component';
 import { RegisterComponent } from '../components/register/register.component';
+import { PaymentMethodComponent } from '../components/payment-method/payment-method.component';
 import { CheckoutComponent } from '../components/checkout/checkout.component';
 import { PrivacyPolicyComponent } from '../components/privacy-policy/privacy-policy.component';
 import { CategoryPageComponent } from '../pages/category-page/category-page.component';
@@ -30,6 +31,7 @@ export const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'track-order', component: TrackOrderComponent },
+  { path: 'payment-method', component: PaymentMethodComponent },
   { path: 'cart', component: CartComponent },
   { path: 'checkout', component: CheckoutComponent },
   { path: 'privacy-policy', component: PrivacyPolicyComponent },

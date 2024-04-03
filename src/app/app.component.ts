@@ -43,9 +43,9 @@ export class AppComponent {
 
   constructor(private router: Router) {}
 
-  // isLoginPage(): boolean {
-  //   console.log('Current route:', this.router.url);
-  //   var pageLogin = this.router.url === '/login' || this.router.url === '/register';
-  //   return pageLogin;
-  // }
+  isLoginPage(): boolean {
+    console.log('Current route:', this.router.url);
+    var pageLogin = this.router.url === '/login' || this.router.url === '/register';
+    return pageLogin;
+  }
 }
