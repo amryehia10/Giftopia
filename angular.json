@@ -18,7 +18,7 @@
             "browser": "src/main.ts",
             "polyfills": ["zone.js"],
             "tsConfig": "tsconfig.app.json",
-            "assets": ["src/favicon.ico", "src/assets"],
+            "assets": ["src/favicon.ico", "src/assets/"],
             "styles": [
               "src/assets/css/vendor/msicons.min.css",
               "src/assets/css/plugins/swiper-bundle.min.css",
@@ -30,7 +30,6 @@
               "src/assets/css/plugins/nouislider.css",
               "node_modules/bootstrap/dist/css/bootstrap.min.css",
               "src/assets/css/demo-1.css",
-              "src/assets/css/responsive.css",
               "src/assets/css/responsive.css",
               "src/styles.css"
             ],
