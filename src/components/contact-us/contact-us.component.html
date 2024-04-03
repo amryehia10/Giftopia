@@ -1,19 +1,41 @@
 <div class="container mt-5">
     <h2>Contact Us</h2>
-    <form>
+    <form [formGroup]="myFormGroup">
       <div class="mb-3">
         <label for="name" class="form-label">Name</label>
-        <input type="text" class="form-control" id="name" placeholder="Enter your name">
+        <input type="text" formControlName="name" class="form-control" id="name" placeholder="Enter your name">
+        @if (!isNameValid) {
+          <p class="m-0 pt-0 ps-3 fst-italic fw-bolder">
+              {{validator.name}}
+          </p>
+          }
       </div>
       <div class="mb-3">
         <label for="email" class="form-label">Email</label>
-        <input type="email" class="form-control" id="email" placeholder="Enter your email">
+        <input type="email" formControlName="email" class="form-control" id="email" placeholder="Enter your email">
+        @if (!isEmailValid) {
+          <p class="m-0 pt-0 ps-3 fst-italic fw-bolder">
+              {{validator.email}}
+          </p>
+          }
       </div>
       <div class="mb-3">
         <label for="message" class="form-label">Message</label>
-        <textarea class="form-control" id="message" rows="3" placeholder="Your message"></textarea>
+        <textarea formControlName="message" class="form-control" id="message" rows="3" placeholder="Your message"></textarea>
+        @if (!isMessageValid) {
+          <p class="m-0 pt-0 ps-3 fst-italic fw-bolder">
+              {{validator.message}}
+          </p>
+          }
       </div>
-      <button type="button" class="btn btn-primary">Submit</button>
+     <div class="d-flex">
+       <button type="button" (click)="onSubmit()" class="btn btn-primary">Submit</button>
+       @if (isSubmitted) {
+         <p class="m-0 pt-0 ps-3 fst-italic fw-bolder text-success">
+           Your Message is Submitted Successfully
+          </p>
+        }
+      </div>
     </form>
   </div>
   

@@ -23,6 +23,7 @@ export class ContactService extends BaseService {
   }
 
   addNewTicket(ticket: any) {
+    console.log(ticket);
     return this.http.post(this.URL, ticket);
   }
 }
