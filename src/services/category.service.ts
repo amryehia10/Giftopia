@@ -1,3 +1,4 @@
+import { Observable } from 'rxjs';
 import { Injectable } from '@angular/core';
 import { BaseService } from './Base.service';
 import { HttpClient } from '@angular/common/http';
@@ -7,11 +8,11 @@ import { HttpClient } from '@angular/common/http';
 })
 export class CategoryService extends BaseService {
   //  private  URL = `${this.Base_URL}/category`
-   private  URL = `${this.BASE_URL}/category`
-  
-  constructor(http: HttpClient) {super(http);}
+  private URL = `${this.BASE_URL}/category`
 
-  getCategory() {
+  constructor(http: HttpClient) { super(http); }
+
+  getCategory(): Observable<Object> {
     return this.http.get(this.URL);
   }
 }

@@ -1,3 +1,4 @@
+import { Observable } from 'rxjs';
 import { Injectable } from '@angular/core';
 import { BaseService } from './Base.service';
 import { HttpClient } from '@angular/common/http';
@@ -11,15 +12,15 @@ export class ProductService extends BaseService {
 
   constructor(http: HttpClient) { super(http) }
 
-  getAllProducts() {
+  getAllProducts(): Observable<Object> {
     return this.http.get(this.URL);
   }
-  
-  getProductsByCategory(catID:string) {
+
+  getProductsByCategory(catID: string): Observable<Object> {
     return this.http.get(`${this.URL}/category/${catID}`);
   }
 
-  getProductByID(Pid:number) {
+  getProductByID(Pid: number): Observable<Object> {
     return this.http.get(`${this.URL}/${Pid}`);
   }
 }
