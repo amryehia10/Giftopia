@@ -1,45 +1,45 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
-import { RouterModule } from '@angular/router';
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, RouterModule } from '@angular/router';
+import { ProductsService } from '../../services/products.service';
 
 @Component({
   selector: 'app-product',
   standalone: true,
   imports: [CommonModule,RouterModule],
+  providers: [ProductsService,],
   templateUrl: './product.component.html',
   styleUrls: ['./product.component.css',]
 })
-export class ProductComponent {
-  product = {
-    name: 'Crunchy Potato Chips',
-    description: 'any text',
-    price: 120,
-    quantity: 100,
-    category: 'Accessories',
-    discount: 0,
-    images: [
-      { url: 'https://miro.medium.com/v2/resize:fit:1400/1*5um9WLqV5UHYt4I0JQfqRA.jpeg' },
-      { url: 'https://jerrysantiquesandestates.com/wp-content/uploads/2023/07/The-History-and-Significance-of-Antiques_-What-Makes-Them-Valuable.jpg' },
-    ],
-    reviews: [
-      { userid: 'user123', stars: 3, reviewDescription: 'Great taste!' },
-      { userid: 'user456', stars: 2, reviewDescription: 'Ya3 taste!' },
-      { userid: 'user789', stars: 5, reviewDescription: 'GOAT taste!' },
-    ],
-    ratings: 0, // initialize ratings property
-  };
-
+export class ProductComponent implements OnInit {
+  product:any;
   filledStarsArray: any;
   emptyStarsArray: any;
+  discount:any;
 
-  constructor() {
-    this.calculateProductRatings();
-    this.calculateStarArrays();
+  constructor(private productService: ProductsService,
+    private route: ActivatedRoute) {
+    
+  }
+  ngOnInit(): void {
+    const prdID = Number(this.route.snapshot.paramMap.get('id'));
+    console.log('ngOnInit called')
+    this.productService.getSingleProduct(prdID).subscribe({
+      next: (data) => {
+        this.product = data;
+        this.calculateProductRatings();
+        this.calculateStarArrays();
+        this.discount = parseInt(this.product["discount"]) / 100;
+      },
+      error: (err) => {
+        console.log(err);
+      }
+    });
   }
 
   calculateProductRatings() {
     const { reviews } = this.product;
-    const sumOfStars = reviews.reduce((sum, review) => sum + review.stars, 0);
+    const sumOfStars = reviews.reduce((sum: number, review: any) => sum + review.stars, 0);
     const averageStars = sumOfStars / reviews.length;
     this.product.ratings = averageStars >= 0.5 ? Math.ceil(averageStars) : Math.floor(averageStars);
   }
@@ -58,5 +58,4 @@ export class ProductComponent {
       reviewsSection.scrollIntoView({ behavior: 'smooth' });
     }
   }
-  
 }

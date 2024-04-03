@@ -9,24 +9,25 @@
           <div class="header-top-social">
             <ul class="mb-0">
               <li class="list-inline-item">
-                <a target="_blank" href=""><i class="msicon msi-phone"></i></a
-                >+20 123 456 7891
+                <a target="_blank" href="tel:+20 122 088 5744"
+                  ><i class="msicon msi-phone"> +20 122 088 5744</i>
+                </a>
               </li>
               <li class="list-inline-item">
-                <a
-                  ><i class="msicon msi-whatsapp"></i></a
-                >+201234567891
+                <a target="_blank" href="tel:+20 120 549 0492"
+                  ><i class="msicon msi-whatsapp"> +20 120 549 0492</i></a
+                >
               </li>
             </ul>
           </div>
         </div>
         <!-- Header Top social End -->
         <!-- Header Top Message Start -->
-        <div class="col text-center header-top-center">
+        <!-- <div class="col text-center header-top-center" style="display: block">
           <div class="header-top-message">
             World's Fastest Online Shopping Destination
           </div>
-        </div>
+        </div> -->
         <!-- Header Top Message End -->
         <!-- Header Top Language Currency -->
         <div class="col header-top-right d-none d-lg-block">
@@ -40,24 +41,25 @@
                 <li class="active">
                   <a class="dropdown-item">English</a>
                 </li>
-                <li><a class="dropdown-item">Italiano</a></li>
+                <!-- <li><a class="dropdown-item">Arabic</a></li> -->
               </ul>
             </div>
             <!-- Language End -->
             <!-- Currency Start -->
             <div class="header-top-lan-curr header-top-curr dropdown">
               <button class="dropdown-toggle" data-bs-toggle="dropdown">
-                Egyptian Pound <i class="msicon msi-angle-down" aria-hidden="true"></i>
+                Egyptian Pound
+                <i class="msicon msi-angle-down" aria-hidden="true"></i>
               </button>
               <ul class="dropdown-menu">
                 <li class="active">
-                  <a class="dropdown-item">USD $</a>
+                  <a class="dropdown-item">Egyptian Pound</a>
                 </li>
-                <li><a class="dropdown-item">EUR €</a></li>
+                <!-- <li><a class="dropdown-item">EUR €</a></li> -->
               </ul>
             </div>
             <!-- Currency End -->
-            <a class="ms-help" >Help?</a>
+            <!-- <a class="ms-help">Help?</a> -->
             <a class="ms-help" routerLink="/track-order">Track Order?</a>
           </div>
         </div>
@@ -79,7 +81,7 @@
             </div>
             <div class="right-icons">
               <!-- Header User Start -->
-              <a href="login.html" class="ms-header-btn ms-header-user">
+              <a routerLink="login" class="ms-header-btn ms-header-user">
                 <div class="header-icon">
                   <img
                     src="assets/img/icons/user.svg"
@@ -90,7 +92,10 @@
               </a>
               <!-- Header User End -->
               <!-- Header Wishlist Start -->
-              <a href="javascript:void(0)" class="ms-header-btn ms-wish-toggle">
+              <a
+                routerLink="javascript:void(0)"
+                class="ms-header-btn ms-wish-toggle"
+              >
                 <div class="header-icon">
                   <img
                     src="assets/img/icons/wishlist.svg"
@@ -102,14 +107,13 @@
               </a>
               <!-- Header Wishlist End -->
               <!-- Header Cart Start -->
-              <a href="javascript:void(0)" class="ms-header-btn ms-cart-toggle">
+              <a routerLink="cart" class="ms-header-btn ms-cart-toggle">
                 <div class="header-icon">
                   <img
                     src="assets/img/icons/pro_cart.svg"
                     class="svg_img header_svg"
                     alt=""
                   />
-                  <span class="main-label-note-new"></span>
                 </div>
                 <span class="ms-header-count ms-cart-count">3</span>
               </a>
@@ -131,8 +135,10 @@
           <!-- Header Logo Start -->
           <div class="align-self-center ms-header-logo">
             <div class="header-logo">
-              <a href="index.html"
-                ><img src="assets/img/logo/logo_transparent.png" alt="Site Logo"
+              <a routerLink="/"
+                ><img
+                  src="assets/img/logo/logo_transparent.png"
+                  alt="Site Logo"
               /></a>
             </div>
           </div>
@@ -142,21 +148,6 @@
           <div class="align-self-center ms-header-search">
             <div class="header-search">
               <form class="ms-search-group-form" action="#">
-                <div class="ms-search-select-inner">
-                  <select
-                    class="ms-search-cat selectpicker"
-                    multiple
-                    data-live-search="true"
-                    data-live-search-placeholder="Search category"
-                    data-actions-box="true"
-                  >
-                    <option>Dairy Products</option>
-                    <option>Fast Food</option>
-                    <option>Bakery</option>
-                    <option>veg</option>
-                    <option>Non-veg</option>
-                  </select>
-                </div>
                 <input
                   class="form-control ms-search-bar"
                   placeholder="Search Products..."
@@ -180,7 +171,7 @@
               <!-- Header User Start -->
               <div class="ms-acc-drop">
                 <a
-                  href="javascript:void(0)"
+                  routerLink="javascript:void(0)"
                   class="ms-header-btn ms-header-user dropdown-toggle ms-user-toggle"
                   title="Account"
                 >
@@ -198,18 +189,21 @@
                 </a>
                 <ul class="ms-dropdown-menu">
                   <li>
-                    <a class="dropdown-item" href="register">Register</a>
+                    <a class="dropdown-item" routerLink="/register">Register</a>
                   </li>
                   <li>
-                    <a class="dropdown-item" href="checkout.html">Checkout</a>
+                    <a class="dropdown-item" routerLink="/checkout">Checkout</a>
                   </li>
-                  <li><a class="dropdown-item" href="login">Login</a></li>
+                  <li>
+                    <a class="dropdown-item" routerLink="/login">Login</a>
+                  </li>
                 </ul>
               </div>
               <!-- Header User End -->
               <!-- Header wishlist Start -->
               <a
-                href="javascript:void(0)"
+                (click)="openWishlistSidebar()"
+                routerLink="javascript:void(0)"
                 class="ms-header-btn ms-wish-toggle"
                 title="Wishlist"
               >
@@ -228,9 +222,11 @@
                 </div>
               </a>
               <!-- Header wishlist End -->
+
               <!-- Header Cart Start -->
               <a
-                routerLink="cart"
+                (click)="openCartSidebar()"
+                routerLink="javascript:void(0)"
                 class="ms-header-btn ms-cart-toggle"
                 title="Cart"
               >
@@ -240,7 +236,7 @@
                     class="svg_img header_svg"
                     alt=""
                   />
-                  <span class="main-label-note-new"></span>
+                  <!-- <span class="main-label-note-new"></span> -->
                 </div>
                 <div class="ms-btn-desc">
                   <span class="ms-btn-title">Cart</span>
@@ -265,7 +261,7 @@
         <!-- Category Toggle -->
         <div class="col ms-category-icon-block">
           <div class="ms-category-menu">
-            <div class="ms-category-toggle">
+            <div class="ms-category-toggle" (click)="openCategorySidebar()">
               <img
                 src="assets/img/icons/category-icon.svg"
                 class="svg_img header_svg svg_cat"
@@ -279,214 +275,55 @@
         <div id="ms-main-menu-desk" class="d-none d-lg-block sticky-nav">
           <div class="position-relative nav-desk">
             <div class="row">
-              <div class="col-md-12 align-self-center">
+              <div class="col-md-12 align-self-end">
                 <div class="ms-main-menu">
-                  <ul>
+                  <ul style="justify-content: end">
                     <li class="non-drop"><a routerLink="/home">Home</a></li>
-                    <li class="dropdown drop-list position-static">
-                      <a href="javascript:void(0)" class="dropdown-arrow"
+
+                    <li class="dropdown drop-list">
+                      <a routerLink="/category" class="dropdown-arrow"
                         >Categories<i class="msicon msi-angle-right"></i
                       ></a>
-                      <ul class="mega-menu d-block">
-                        <li class="d-flex">
-                          <span class="bg"></span>
-                          <ul class="d-block">
-                            <li class="menu_title">
-                              <a href="javascript:void(0)">Classic</a>
-                            </li>
-                            <li>
-                              <a href="shop-left-sidebar-col-3.html"
-                                >Left sidebar 3 column</a
-                              >
-                            </li>
-                            <li>
-                              <a href="shop-left-sidebar-col-4.html"
-                                >Left sidebar 4 column</a
-                              >
-                            </li>
-                            <li>
-                              <a href="shop-right-sidebar-col-3.html"
-                                >Right sidebar 3 column</a
-                              >
-                            </li>
-                            <li>
-                              <a href="shop-right-sidebar-col-4.html"
-                                >Right sidebar 4 column</a
-                              >
-                            </li>
-                            <li>
-                              <a href="shop-full-width.html"
-                                >Full width 4 column</a
-                              >
-                            </li>
-                          </ul>
-                          <ul class="d-block">
-                            <li class="menu_title">
-                              <a href="javascript:void(0)">Banner</a>
-                            </li>
-                            <li>
-                              <a href="shop-banner-left-sidebar-col-3.html"
-                                >left sidebar 3 column</a
-                              >
-                            </li>
-                            <li>
-                              <a href="shop-banner-left-sidebar-col-4.html"
-                                >left sidebar 4 column</a
-                              >
-                            </li>
-                            <li>
-                              <a href="shop-banner-right-sidebar-col-3.html"
-                                >right sidebar 3 column</a
-                              >
-                            </li>
-                            <li>
-                              <a href="shop-banner-right-sidebar-col-4.html"
-                                >right sidebar 4 column</a
-                              >
-                            </li>
-                            <li>
-                              <a href="shop-banner-full-width.html"
-                                >Full width 4 column</a
-                              >
-                            </li>
-                          </ul>
-                          <ul class="d-block">
-                            <li class="menu_title">
-                              <a href="javascript:void(0)">Columns</a>
-                            </li>
-                            <li>
-                              <a href="shop-full-width-col-3.html"
-                                >3 Columns full width</a
-                              >
-                            </li>
-                            <li>
-                              <a href="shop-full-width-col-4.html"
-                                >4 Columns full width</a
-                              >
-                            </li>
-                            <li>
-                              <a href="shop-full-width-col-5.html"
-                                >5 Columns full width</a
-                              >
-                            </li>
-                            <li>
-                              <a href="shop-full-width-col-6.html"
-                                >6 Columns full width</a
-                              >
-                            </li>
-                            <li>
-                              <a href="shop-banner-full-width-col-3.html"
-                                >Banner 3 Columns</a
-                              >
-                            </li>
-                          </ul>
-                          <ul class="d-block">
-                            <li class="menu_title">
-                              <a href="javascript:void(0)">List</a>
-                            </li>
-                            <li>
-                              <a href="shop-list-left-sidebar.html"
-                                >Shop left sidebar</a
-                              >
-                            </li>
-                            <li>
-                              <a href="shop-list-right-sidebar.html"
-                                >Shop right sidebar</a
-                              >
-                            </li>
-                            <li>
-                              <a href="shop-list-banner-left-sidebar.html"
-                                >Banner left sidebar</a
-                              >
-                            </li>
-                            <li>
-                              <a href="shop-list-banner-right-sidebar.html"
-                                >Banner right sidebar</a
-                              >
-                            </li>
-                            <li>
-                              <a href="shop-list-full-col-2.html"
-                                >Full width 2 columns</a
-                              >
-                            </li>
-                          </ul>
-                        </li>
-                      </ul>
-                    </li>
-                    <li class="dropdown drop-list">
-                      <a href="javascript:void(0)" class="dropdown-arrow"
-                        >Products<i class="msicon msi-angle-right"></i
-                      ></a>
                       <ul class="sub-menu">
+                        @for (cat of Categories; track cat.id) {
                         <li>
-                          <a href="product-left-sidebar.html"
-                            >Product left sidebar</a
-                          >
+                          <a routerLink="/category/{{ cat.categoryName }}">{{
+                            cat.categoryName
+                          }}</a>
                         </li>
-                        <li>
-                          <a href="product-right-sidebar.html"
-                            >Product right sidebar</a
-                          >
-                        </li>
-                        <li>
-                          <a href="product-full-width.html"
-                            >product full width</a
-                          >
-                        </li>
+                        }
                       </ul>
                     </li>
-                    <li class="dropdown drop-list">
-                      <a href="javascript:void(0)" class="dropdown-arrow"
-                        >Blog<i class="msicon msi-angle-right"></i
-                      ></a>
-                      <ul class="sub-menu">
-                        <li>
-                          <a href="blog-left-sidebar.html">left sidebar</a>
-                        </li>
-                        <li>
-                          <a href="blog-right-sidebar.html">right sidebar</a>
-                        </li>
-                        <li><a href="blog-full-width.html">Full Width</a></li>
-                        <li>
-                          <a href="blog-detail-left-sidebar.html"
-                            >Detail left sidebar</a
-                          >
-                        </li>
-                        <li>
-                          <a href="blog-detail-right-sidebar.html"
-                            >Detail right sidebar</a
-                          >
-                        </li>
-                        <li>
-                          <a href="blog-detail-full-width.html"
-                            >Detail Full Width</a
-                          >
-                        </li>
-                      </ul>
+                    <!-- Products -->
+                    <li class="non-drop">
+                      <a routerLink="/discoverAll" class="dropdown-arrow"
+                        >Products</a
+                      >
                     </li>
+                    <!-- Others -->
                     <li class="dropdown drop-list">
-                      <a href="javascript:void(0)" class="dropdown-arrow"
+                      <a routerLink="javascript:void(0)" class="dropdown-arrow"
                         >Others<i class="msicon msi-angle-right"></i
                       ></a>
                       <ul class="sub-menu">
                         <li><a routerLink="/about">About Us</a></li>
-                        <li><a routerLink="/contact" >Contact Us</a></li>
-                        <li><a routerLink="cart">Cart</a></li>
-                        <li><a href="checkout">Checkout</a></li>
-                        <li><a href="faq.html">FAQ</a></li>
-                        <li><a href="login">Login</a></li>
-                        <li><a href="register">Register</a></li>
+                        <li><a routerLink="/contact">Contact Us</a></li>
+                        <li><a routerLink="/cart">Cart</a></li>
+                        <li><a routerLink="/checkout">Checkout</a></li>
+                        <li><a routerLink="/login">Login</a></li>
+                        <li><a routerLink="/register">Register</a></li>
                         <li><a routerLink="/track-order">Track Order</a></li>
                         <li>
                           <a routerLink="/terms-condition">Terms Condition</a>
                         </li>
                         <li>
-                          <a href="privacy-policy">Privacy Policy</a>
+                          <a routerLink="/privacy-policy">Privacy Policy</a>
                         </li>
                       </ul>
                     </li>
+                    <!-- Discover -->
                     <li class="non-drop">
-                      <a href="discover.html"
+                      <a routerLink="/discoverAll"
                         ><img
                           src="assets/img/icons/discover.svg"
                           class="svg_img"
@@ -501,297 +338,10 @@
           </div>
         </div>
         <!-- Main Menu End -->
-
-        <div class="col ms-location-block">
-          <div class="ms-location-menu">
-            <div class="ms-location-toggle">
-              <img
-                src="assets/img/icons/location.svg"
-                class="svg_img header_svg svg_loc"
-                alt="icon"
-              />
-              <span
-                class="ms-location-title d-1199 ms-location"
-                id="ms_location"
-              ></span>
-              <i class="msicon msi-angle-down d-1199" aria-hidden="true"></i>
-            </div>
-            <div class="ms-location-content">
-              <div class="ms-location-dropdown">
-                <div class="row ms-location-wrapper">
-                  <ul class="loc-grid">
-                    <li class="loc-list current">
-                      <img
-                        src="assets/img/icons/location.svg"
-                        class="svg_img header_svg svg_loc"
-                        alt="icon"
-                      /><span class="ms-detail-current">current Location</span>
-                    </li>
-                    <li class="loc-list">
-                      <img
-                        src="assets/img/icons/location.svg"
-                        class="svg_img header_svg svg_loc"
-                        alt="icon"
-                      /><span class="ms-detail">rajkot, in</span>
-                    </li>
-                    <li class="loc-list">
-                      <img
-                        src="assets/img/icons/location.svg"
-                        class="svg_img header_svg svg_loc"
-                        alt="icon"
-                      /><span class="ms-detail">Mountain View, us</span>
-                    </li>
-                    <li class="loc-list">
-                      <img
-                        src="assets/img/icons/location.svg"
-                        class="svg_img header_svg svg_loc"
-                        alt="icon"
-                      /><span class="ms-detail">Birmingham, UK</span>
-                    </li>
-                    <li class="loc-list">
-                      <img
-                        src="assets/img/icons/location.svg"
-                        class="svg_img header_svg svg_loc"
-                        alt="icon"
-                      /><span class="ms-detail">Jakarta, id</span>
-                    </li>
-                    <li class="loc-list">
-                      <img
-                        src="assets/img/icons/location.svg"
-                        class="svg_img header_svg svg_loc"
-                        alt="icon"
-                      /><span class="ms-detail">lima, pe</span>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
       </div>
     </div>
   </div>
   <!-- Header menu End -->
-
-  <!-- Mobile Menu sidebar Start -->
-  <div class="ms-mobile-menu-overlay"></div>
-  <div id="ms-mobile-menu" class="ms-mobile-menu">
-    <div class="ms-menu-title">
-      <span class="menu_title">My Menu</span>
-      <button class="ms-close-menu">×</button>
-    </div>
-    <div class="ms-menu-inner">
-      <div class="ms-menu-content">
-        <div class="ms-mobile-search">
-          <form>
-            <input type="text" name="search" placeholder="Search.." />
-            <button class="search_submit" type="submit">
-              <img
-                src="assets/img/icons/search.svg"
-                class="svg_img search_svg"
-                alt=""
-              />
-            </button>
-          </form>
-        </div>
-        <ul>
-          <li><a href="index.html">Home</a></li>
-
-          <li>
-            <a href="javascript:void(0)">Categories</a>
-            <ul class="sub-menu">
-              <li>
-                <a href="javascript:void(0)">Classic Variation</a>
-                <ul class="sub-menu">
-                  <li>
-                    <a href="shop-left-sidebar-col-3.html"
-                      >Left sidebar 3 column</a
-                    >
-                  </li>
-                  <li>
-                    <a href="shop-left-sidebar-col-4.html"
-                      >Left sidebar 4 column</a
-                    >
-                  </li>
-                  <li>
-                    <a href="shop-right-sidebar-col-3.html"
-                      >Right sidebar 3 column</a
-                    >
-                  </li>
-                  <li>
-                    <a href="shop-right-sidebar-col-4.html"
-                      >Right sidebar 4 column</a
-                    >
-                  </li>
-                  <li>
-                    <a href="shop-full-width.html">Full width 4 column</a>
-                  </li>
-                </ul>
-              </li>
-              <li>
-                <a href="javascript:void(0)">Classic Variation</a>
-                <ul class="sub-menu">
-                  <li>
-                    <a href="shop-banner-left-sidebar-col-3.html"
-                      >Banner left sidebar 3 column</a
-                    >
-                  </li>
-                  <li>
-                    <a href="shop-banner-left-sidebar-col-4.html"
-                      >Banner left sidebar 4 column</a
-                    >
-                  </li>
-                  <li>
-                    <a href="shop-banner-right-sidebar-col-3.html"
-                      >Banner right sidebar 3 column</a
-                    >
-                  </li>
-                  <li>
-                    <a href="shop-banner-right-sidebar-col-4.html"
-                      >Banner right sidebar 4 column</a
-                    >
-                  </li>
-                  <li>
-                    <a href="shop-banner-full-width.html"
-                      >Banner Full width 4 column</a
-                    >
-                  </li>
-                </ul>
-              </li>
-              <li>
-                <a href="javascript:void(0)">Columns Variation</a>
-                <ul class="sub-menu">
-                  <li>
-                    <a href="shop-full-width-col-3.html"
-                      >3 Columns full width</a
-                    >
-                  </li>
-                  <li>
-                    <a href="shop-full-width-col-4.html"
-                      >4 Columns full width</a
-                    >
-                  </li>
-                  <li>
-                    <a href="shop-full-width-col-5.html"
-                      >5 Columns full width</a
-                    >
-                  </li>
-                  <li>
-                    <a href="shop-full-width-col-6.html"
-                      >6 Columns full width</a
-                    >
-                  </li>
-                  <li>
-                    <a href="shop-banner-full-width-col-3.html"
-                      >Banner 3 Columns</a
-                    >
-                  </li>
-                </ul>
-              </li>
-              <li>
-                <a href="javascript:void(0)">List Variation</a>
-                <ul class="sub-menu">
-                  <li>
-                    <a href="shop-list-left-sidebar.html">Shop left sidebar</a>
-                  </li>
-                  <li>
-                    <a href="shop-list-right-sidebar.html"
-                      >Shop right sidebar</a
-                    >
-                  </li>
-                  <li>
-                    <a href="shop-list-banner-left-sidebar.html"
-                      >Banner left sidebar</a
-                    >
-                  </li>
-                  <li>
-                    <a href="shop-list-banner-right-sidebar.html"
-                      >Banner right sidebar</a
-                    >
-                  </li>
-                  <li>
-                    <a href="shop-list-full-col-2.html">Full width 2 columns</a>
-                  </li>
-                </ul>
-              </li>
-            </ul>
-          </li>
-          <li>
-            <a href="javascript:void(0)">Products</a>
-            <ul class="sub-menu">
-              <li>
-                <a href="product-left-sidebar.html">Product left sidebar</a>
-              </li>
-              <li>
-                <a href="product-right-sidebar.html">Product right sidebar</a>
-              </li>
-              <li><a href="product-full-width.html">product-full-width</a></li>
-            </ul>
-          </li>
-          <li class="dropdown">
-            <a href="javascript:void(0)">Blog</a>
-            <ul class="sub-menu">
-              <li><a href="blog-left-sidebar.html">Blog left sidebar</a></li>
-              <li><a href="blog-right-sidebar.html">Blog right sidebar</a></li>
-              <li>
-                <a href="blog-detail-left-sidebar.html"
-                  >Blog detail left sidebar</a
-                >
-              </li>
-              <li>
-                <a href="blog-detail-right-sidebar.html"
-                  >Blog detail right sidebar</a
-                >
-              </li>
-              <li><a href="blog-full-width.html">Blog full width</a></li>
-              <li>
-                <a href="blog-detail-full-width.html">Blog detail full width</a>
-              </li>
-            </ul>
-          </li>
-          <li>
-            <a href="javascript:void(0)">Others</a>
-            <ul class="sub-menu">
-              <li><a href="about-us.html">About Us</a></li>
-              <li><a routerLink="/contact">Contact Us</a></li>
-              <li><a href="cart.html">Cart</a></li>
-              <li><a href="checkout.html">Checkout</a></li>
-              <li><a href="compare.html">Compare</a></li>
-              <li><a href="faq.html">FAQ</a></li>
-              <li><a href="login.html">Login</a></li>
-              <li><a href="register.html">Register</a></li>
-              <li><a routerLink="/track-order">Track Order</a></li>
-              <li><a href="terms-condition.html">Terms Condition</a></li>
-              <li><a href="privacy-policy.html">Privacy Policy</a></li>
-            </ul>
-          </li>
-        </ul>
-      </div>
-      <div class="header-res-lan-curr">
-        <!-- Social Start -->
-        <div class="header-res-social">
-          <div class="header-top-social">
-            <ul class="mb-0">
-              <li class="list-inline-item">
-                <a href="#"><i class="msicon msi-facebook"></i></a>
-              </li>
-              <li class="list-inline-item">
-                <a href="#"><i class="msicon msi-twitter"></i></a>
-              </li>
-              <li class="list-inline-item">
-                <a href="#"><i class="msicon msi-instagram"></i></a>
-              </li>
-              <li class="list-inline-item">
-                <a href="#"><i class="msicon msi-linkedin"></i></a>
-              </li>
-            </ul>
-          </div>
-        </div>
-        <!-- Social End -->
-      </div>
-    </div>
-  </div>
-  <!-- Mobile Menu sidebar End -->
 
   <!-- Header responsive Bottom  Start -->
   <div class="ms-header-bottom d-lg-none">
@@ -801,16 +351,20 @@
           <!-- Header Logo Start -->
           <div class="col ms-header-logo">
             <div class="header-logo">
-              <a href="index.html">
-                <img src="assets/img/logo/logo.png" alt="Site Logo" />
+              <a routerLink="/">
+                <img
+                  src="assets/img/logo/logo_transparent.png"
+                  alt="Site Logo"
+                />
               </a>
             </div>
           </div>
           <!-- Header Logo End -->
           <!-- Header menu Start -->
           <a
-            href="javascript:void(0)"
-            class="ms-header-btn ms-site-menu-icon d-lg-none"
+            routerLink="javascript:void(0)"
+            class="ms-header-btn ms-site-menu-icon d-lg-none d-flex"
+            (click)="togelMenuSideBar()"
           >
             <img src="assets/img/icons/menu.svg" class="svg_img" alt="menu" />
           </a>
@@ -822,3 +376,27 @@
   <!-- Header responsive Bottom  End -->
 </header>
 <!-- Header End  -->
+
+<app-side-bar-cart
+  [isCartSidebarVisible]="isCartSidebarVisible"
+  (closeCartSidebar)="onCloseCartSidebar()"
+>
+</app-side-bar-cart>
+
+<app-side-bar-category
+  [isCategorySidebarVisible]="isCategorySidebarVisible"
+  (closeCategorySidebar)="onCloseCategorySidebar()"
+>
+</app-side-bar-category>
+
+<app-side-bar-wishlist
+  [isWishlistSidebarVisible]="isWishlistSidebarVisible"
+  (closeWishlistSidebar)="onCloseWishlistSidebar()"
+>
+</app-side-bar-wishlist>
+
+<app-side-bar-menu
+  [isMenuSideBarVisible]="isMenuSideBarVisible"
+  (closeMenuSideBar)="togelMenuSideBar()"
+>
+</app-side-bar-menu>

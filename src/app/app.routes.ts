@@ -11,6 +11,8 @@ import { TrackOrderComponent } from '../components/track-order/track-order.compo
 import { CartComponent } from '../components/cart/cart.component';
 import { RegisterComponent } from '../components/register/register.component';
 import { PaymentMethodComponent } from '../components/payment-method/payment-method.component';
+import { CheckoutComponent } from '../components/checkout/checkout.component';
+import { PrivacyPolicyComponent } from '../components/privacy-policy/privacy-policy.component';
 
 export const routes: Routes = [
     {path: '', component:HomeComponent},
@@ -28,5 +30,8 @@ export const routes: Routes = [
     {path: 'register',component:RegisterComponent},
     {path: 'track-order',component:TrackOrderComponent},
     {path: 'cart',component:CartComponent},
-    {path: 'payment-method',component:PaymentMethodComponent}
+    {path: 'payment-method',component:PaymentMethodComponent},
+    {path: 'checkout',component:CheckoutComponent},
+    {path: 'privacy-policy',component:PrivacyPolicyComponent},
+
 ];

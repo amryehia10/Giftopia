@@ -1,0 +1,59 @@
+.ms-ser-inner {
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    padding: 30px;
+    -webkit-transition: all 0.3s ease 0s;
+    transition: all 0.3s ease 0s;
+    cursor: pointer;
+    border: 1px solid #eee;
+    height: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    text-align: center;
+    background-color: #fff;
+    border-radius: 3px;
+}
+
+.ms-ser-inner:hover .ms-service-image svg {
+    stroke-dashoffset: 0;
+    -webkit-transition: fill 0.5s, stroke-dashoffset 6s, -webkit-transform 0.3s;
+    transition: fill 0.5s, stroke-dashoffset 6s, -webkit-transform 0.3s;
+    transition: transform 0.3s, fill 0.5s, stroke-dashoffset 6s;
+    transition: transform 0.3s, fill 0.5s, stroke-dashoffset 6s, -webkit-transform 0.3s;
+}
+
+.ms-ser-inner .ms-service-image {
+    margin-bottom: 15px;
+}
+
+.ms-ser-inner .ms-service-image img {
+    width: 50px;
+    height: 50px;
+}
+
+.ms-service-desc h3 {
+    font-size: 18px;
+    font-weight: 700;
+    color: #17181c;
+    letter-spacing: 0.6px;
+    margin-bottom: 10px;
+}
+
+.ms-service-desc p {
+    margin: 0;
+    font-size: 14px;
+    color: #777;
+    line-height: 1.5;
+    letter-spacing: 0.5px;
+}

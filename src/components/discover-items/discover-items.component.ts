@@ -19,8 +19,8 @@ export class DiscoverItemsComponent implements OnInit {
   products: any;
   categories: any;
   catNames: string[] = [];
-  firstprdList: {id:string, name: string, price:number, desc:string, cat:string[], img:string, discount:number}[] = [];
-  secondprdList: {id:string, name: string, price:number, desc:string, cat:string[], img:string, discount:number}[] = [];
+  firstprdList: {id:string, name: string, price:number, desc:string, cat:string[], images: { url: string }[], discount:number}[] = [];
+  secondprdList: {id:string, name: string, price:number, desc:string, cat:string[], images: { url: string }[], discount:number}[] = [];
   constructor(private productService:ProductsService, private categoryService: CategoryService) {}
 
   ngOnInit(): void { 

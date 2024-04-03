@@ -18,9 +18,8 @@
             "browser": "src/main.ts",
             "polyfills": ["zone.js"],
             "tsConfig": "tsconfig.app.json",
-            "assets": ["src/favicon.ico", "src/assets"],
+            "assets": ["src/favicon.ico", "src/assets/"],
             "styles": [
-              "@angular/material/prebuilt-themes/deeppurple-amber.css",
               "src/assets/css/vendor/msicons.min.css",
               "src/assets/css/plugins/swiper-bundle.min.css",
               "src/assets/css/plugins/bootstrap.css",
@@ -35,20 +34,7 @@
               "src/styles.css"
             ],
             "scripts": [
-              "src/assets/js/plugins/jquery-3.5.1.min.js",
-              "src/assets/js/plugins/popper.min.js",
-              "src/assets/js/plugins/bootstrap.bundle.min.js",
-              "src/assets/js/plugins/bootstrap-select.min.js",
-              "src/assets/js/plugins/swiper-bundle.min.js",
-              "src/assets/js/plugins/fontawesome.js",
-              "src/assets/js/plugins/owl.carousel.min.js",
-              "src/assets/js/plugins/countdownTimer.js",
-              "src/assets/js/plugins/infiniteslidev2.js",
-              "src/assets/js/plugins/jquery.zoom.min.js",
-              "src/assets/js/plugins/slick.min.js",
-              "src/assets/js/plugins/nouislider.js",
-              "src/assets/js/main.js",
-              "src/assets/js/demo-1.js"
+              "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
             ]
           },
           "configurations": {

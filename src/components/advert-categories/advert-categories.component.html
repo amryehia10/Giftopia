@@ -1,59 +1,171 @@
 @if(adsCategories) {
 
 <section class="section ms-hero m-t-30">
-    <div class="container">
-        <div class="ms-main-content">
-            <!-- Hero Slider Start -->
-            <div class="ms-slider-content">
-                <div class="ms-main-slider">
-                    <div class="ms-slider swiper-container main-slider-nav main-slider-dot">
-                        <!-- Main slider  -->
-                        <div class="swiper-wrapper">
-                            <div class="ms-slide-item swiper-slide d-flex slide-1"
-                                style="background: url('{{ adsCategories[0].categoryImage }}') no-repeat center center; background-size: cover;">
-                                <div class="ms-slide-content slider-animation">
-                                    <h1 class="ms-slide-title">{{adsCategories[0].categoryName}}</h1>
-                                    <div class="ms-slide-desc">
-                                        <a routerLink="{{adsCategories[0].categoryName|lowercase}}" class="ms-btn-2">Shop Now <i
-                                                class="msicon msi-angle-double-right" aria-hidden="true"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+  <div class="container">
+    <div class="ms-main-content">
+      <!-- Hero Slider Start -->
+      <div class="ms-slider-content">
+        <div class="ms-main-slider">
+          <div
+            class="ms-slider swiper-container main-slider-nav main-slider-dot"
+          >
+            <!-- Main slider  -->
+            <div class="swiper-wrapper">
+              <div
+                class="ms-slide-item swiper-slide d-flex slide-1"
+                style="
+                background: 
+                url('{{
+                  adsCategories[0].categoryImage
+                }}') no-repeat center center; background-size: cover;"
+              >
+                <div class="ms-slide-content slider-animation">
+                  <h1 class="ms-slide-title">
+                    {{ adsCategories[0].categoryName }}
+                  </h1>
+                  <div class="ms-slide-desc">
+                    <a
+                      routerLink="{{
+                        adsCategories[0].categoryName | lowercase
+                      }}"
+                      class="ms-btn-2"
+                      >Shop Now
+                      <i
+                        class="msicon msi-angle-double-right"
+                        aria-hidden="true"
+                      ></i
+                    ></a>
+                  </div>
                 </div>
+              </div>
             </div>
-            <!-- Hero Banner 1 Start -->
-
-            <div class="ms-banner-content align-self-center">
-                <div class="ms-slider-grid-item grid-img-4"
-                    style="background: url('{{ adsCategories[1].categoryImage }}') no-repeat center center; background-size: cover;">
-                    <div class="ms-detail">
-                        <h3 class="grid-animation"><span
-                                class="ms-grid-sub-title">{{adsCategories[1].categoryName}}</span></h3>
-                        <a routerLink="{{adsCategories[1].categoryName|lowercase}}" class="ms-btn-2">Shop Now <i
-                                class="msicon msi-angle-double-right" aria-hidden="true"></i></a>
-                    </div>
-                </div>
-            </div>
-            <!-- Hero Banner 2 Start -->
-            <div class="ms-banner-content align-self-center">
-                <div class="ms-slider-grid-item grid-img-5"
-                    style="background: url('{{ adsCategories[2].categoryImage }}') no-repeat center center; background-size: cover;">
-                    <div class="ms-detail">
-                        <h3 class="grid-animation"><span
-                                class="ms-grid-sub-title">{{adsCategories[2].categoryName}}</span></h3>
-                        <a routerLink="{{adsCategories[2].categoryName|lowercase}}" class="ms-btn-2">Shop Now <i
-                                class="msicon msi-angle-double-right" aria-hidden="true"></i></a>
-                    </div>
-                </div>
-            </div>
+          </div>
         </div>
+      </div>
+      <!-- Hero Banner 1 Start -->
+
+      <div class="ms-banner-content align-self-center">
+        <div
+          class="ms-slider-grid-item grid-img-4"
+          style="background: url('{{
+            adsCategories[1].categoryImage
+          }}') no-repeat center center; background-size: cover;"
+        >
+          <div class="ms-detail">
+            <h3 class="grid-animation">
+              <span class="ms-grid-sub-title">{{
+                adsCategories[1].categoryName
+              }}</span>
+            </h3>
+            <a
+              routerLink="{{ adsCategories[1].categoryName | lowercase }}"
+              class="ms-btn-2"
+              >Shop Now
+              <i class="msicon msi-angle-double-right" aria-hidden="true"></i
+            ></a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Hero Banner 2 Start -->
+      <div class="ms-banner-content align-self-center">
+        <div
+          class="ms-slider-grid-item grid-img-5"
+          style="background: url('{{
+            adsCategories[2].categoryImage
+          }}') no-repeat center center; background-size: cover;"
+        >
+          <div class="ms-detail">
+            <h3 class="grid-animation">
+              <span class="ms-grid-sub-title">{{
+                adsCategories[2].categoryName
+              }}</span>
+            </h3>
+            <a
+              routerLink="{{ adsCategories[2].categoryName | lowercase }}"
+              class="ms-btn-2"
+              >Shop Now
+              <i class="msicon msi-angle-double-right" aria-hidden="true"></i
+            ></a>
+          </div>
+        </div>
+      </div>
+      <!-- Hero Banner 3 Start -->
+      <div class="ms-banner-content align-self-center">
+        <div
+          class="ms-slider-grid-item grid-img-5"
+          style="background: url('{{
+            adsCategories[3].categoryImage
+          }}') no-repeat center center; background-size: cover;"
+        >
+          <div class="ms-detail">
+            <h3 class="grid-animation">
+              <span class="ms-grid-sub-title">{{
+                adsCategories[3].categoryName
+              }}</span>
+            </h3>
+            <a
+              routerLink="{{ adsCategories[3].categoryName | lowercase }}"
+              class="ms-btn-2"
+              >Shop Now
+              <i class="msicon msi-angle-double-right" aria-hidden="true"></i
+            ></a>
+          </div>
+        </div>
+      </div>
+      <!-- Hero Banner 4 Start -->
+      <div class="ms-banner-content align-self-center">
+        <div
+          class="ms-slider-grid-item grid-img-5"
+          style="background: url('{{
+            adsCategories[4].categoryImage
+          }}') no-repeat center center; background-size: cover;"
+        >
+          <div class="ms-detail">
+            <h3 class="grid-animation">
+              <span class="ms-grid-sub-title">{{
+                adsCategories[4].categoryName
+              }}</span>
+            </h3>
+            <a
+              routerLink="{{ adsCategories[4].categoryName | lowercase }}"
+              class="ms-btn-2"
+              >Shop Now
+              <i class="msicon msi-angle-double-right" aria-hidden="true"></i
+            ></a>
+          </div>
+        </div>
+      </div>
+      <!-- Hero Banner 5 Start -->
+
+      <div class="ms-banner-content align-self-center">
+        <div
+          class="ms-slider-grid-item grid-img-4"
+          style="background: url('{{
+            adsCategories[5].categoryImage
+          }}') no-repeat center center; background-size: cover;"
+        >
+          <div class="ms-detail">
+            <h3 class="grid-animation">
+              <span class="ms-grid-sub-title">{{
+                adsCategories[5].categoryName
+              }}</span>
+            </h3>
+            <a
+              routerLink="{{ adsCategories[5].categoryName | lowercase }}"
+              class="ms-btn-2"
+              >Shop Now
+              <i class="msicon msi-angle-double-right" aria-hidden="true"></i
+            ></a>
+          </div>
+        </div>
+      </div>
     </div>
+  </div>
 </section>
-<br>
+<br />
 } @else {
-<div class="alert alert-danger">
-    <p>Loading.............</p>
+<div class="alert alert-danger m-5">
+  <p>Loading.............</p>
 </div>
 }
