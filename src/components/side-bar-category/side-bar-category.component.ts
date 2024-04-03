@@ -13,7 +13,5 @@ export class SideBarCategoryComponent {
 
   onCloseCategorySidebar() {
     this.closeCategorySidebar.emit();
-
-    console.log("onCloseCategorySidebar");
   }
 }

@@ -24,7 +24,7 @@ export class DiscoverItemsComponent implements OnInit {
   secondprdList: ProductModel[] = [];
   constructor(private prdService: ProductService, private catService: CategoryService) { }
 
-  ngOnInit(): void {
+  async ngOnInit(): Promise<void> {
     this.prdService.getAllProducts().subscribe({
       next: (data) => this.products = GeneralMethods.CastProducts(data),
       error: (err) => console.log(err)
@@ -36,34 +36,25 @@ export class DiscoverItemsComponent implements OnInit {
         this.populatecatNamess();
         this.getProductsOfCat();
       },
-      error: (err) => {
-        console.log(err);
-      }
+      error: (err) => console.log(err)
     });
+
   }
 
   populatecatNamess(): void {
-    for (let i = 0; i < 2; i++) {
-      this.catNames.push(this.categories[i].name);
-    }
+    for (let i = 0; i < 2; i++) { this.catNames.push(this.categories[i].name); }
   }
 
   getProductsOfCat() {
-    let counter = 0;
+    let counter = -1;
     for (let prd of this.products) {
-      if (this.catNames[0] == prd.cat[0] && counter < 8) {
-        counter++;
-        this.firstprdList.push(prd);
-      }
+      if (this.catNames[0].toLowerCase() == prd.cat[0].toLowerCase() && ++counter < 8) { this.firstprdList.push(prd); }
     }
 
-    counter = 0;
+    counter = -1;
 
     for (let prd of this.products) {
-      if (this.catNames[1] == prd.cat[0] && counter < 8) {
-        counter++;
-        this.secondprdList.push(prd);
-      }
+      if (this.catNames[1].toLowerCase() == prd.cat[0].toLowerCase() && ++counter < 8) { this.secondprdList.push(prd); }
     }
   }
 }
