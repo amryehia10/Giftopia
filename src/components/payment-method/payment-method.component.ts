@@ -1,10 +1,11 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-payment-method',
   standalone: true,
-  imports: [CommonModule],
+  imports: [FormsModule, CommonModule],
   templateUrl: './payment-method.component.html',
   styleUrl: './payment-method.component.css'
 })
@@ -13,6 +14,7 @@ export class PaymentMethodComponent {
   price: number = 100;
   shippingCost: number = 50;
   totalPrice: number = this.price + this.shippingCost;
+  creditCardNumber: string = "";
 
   constructor() {}
 

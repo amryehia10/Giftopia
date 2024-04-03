@@ -12,7 +12,7 @@ import { UserService } from '../../services/users.service';
 })
 export class RegisterComponent {
 
-  constructor(private userService: UserService) {}
+  //constructor(private userService: UserService) {}
 
   currentPage: number = 1;
   userData: any = {
@@ -55,16 +55,16 @@ export class RegisterComponent {
     }
     else
     {
-      this.userService.registerUser(this.userData).subscribe({
-        next: response => {
-          alert('Successfully Registered!');
-          // Optionally, you can navigate to another page or perform any other action
-        },
-        error: error => {
-          console.error('Error registering user:', error);
-          alert('Error registering user. Please try again later.');
-        }
-      });      
+      // this.userService.registerUser(this.userData).subscribe({
+      //   next: response => {
+      //     alert('Successfully Registered!');
+      //     // Optionally, you can navigate to another page or perform any other action
+      //   },
+      //   error: error => {
+      //     console.error('Error registering user:', error);
+      //     alert('Error registering user. Please try again later.');
+      //   }
+      // });      
      }
   }
 
