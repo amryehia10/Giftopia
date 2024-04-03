@@ -1,0 +1,103 @@
+@if (isMenuSideBarVisible) {
+<!-- Mobile Menu sidebar Start -->
+<div class="ms-mobile-menu-overlay"></div>
+<div id="ms-mobile-menu" class="ms-mobile-menu ms-menu-open">
+  <div class="ms-menu-title">
+    <span class="menu_title">My Menu</span>
+    <button class="ms-close-menu" (click)="onCloseMenuSideBar()">×</button>
+  </div>
+  <div class="ms-menu-inner">
+    <div class="ms-menu-content">
+      <div class="ms-mobile-search">
+        <form>
+          <input type="text" name="search" placeholder="Search.." />
+          <button class="search_submit" type="submit">
+            <img
+              src="assets/img/icons/search.svg"
+              class="svg_img search_svg"
+              alt=""
+            />
+          </button>
+        </form>
+      </div>
+      <ul>
+        <li><a (click)="onCloseMenuSideBar()" routerLink="/">Home</a></li>
+        <li>
+          <a (click)="onCloseMenuSideBar()" routerLink="/category"
+            >Categories</a
+          >
+        </li>
+        <li>
+          <a (click)="onCloseMenuSideBar()" routerLink="/discoverAll"
+            >Products</a
+          >
+        </li>
+        <li class="text-center mt-3">Others</li>
+        <hr />
+        <li>
+          <a (click)="onCloseMenuSideBar()" routerLink="/about">About Us</a>
+        </li>
+        <li>
+          <a (click)="onCloseMenuSideBar()" routerLink="/contact">Contact Us</a>
+        </li>
+        <li><a (click)="onCloseMenuSideBar()" routerLink="/cart">Cart</a></li>
+        <li>
+          <a (click)="onCloseMenuSideBar()" routerLink="/checkout">Checkout</a>
+        </li>
+        <li><a (click)="onCloseMenuSideBar()" routerLink="/login">Login</a></li>
+        <li>
+          <a (click)="onCloseMenuSideBar()" routerLink="/register">Register</a>
+        </li>
+        <li>
+          <a (click)="onCloseMenuSideBar()" routerLink="/track-order"
+            >Track Order</a
+          >
+        </li>
+        <li>
+          <a (click)="onCloseMenuSideBar()" routerLink="/terms-condition"
+            >Terms Condition</a
+          >
+        </li>
+        <li>
+          <a (click)="onCloseMenuSideBar()" routerLink="/privacy-policy"
+            >Privacy Policy</a
+          >
+        </li>
+      </ul>
+    </div>
+    <div class="header-res-lan-curr">
+      <!-- Social Start -->
+      <div class="header-res-social">
+        <div class="header-top-social">
+          <ul class="mb-0">
+            <li class="list-inline-item">
+              <a (click)="onCloseMenuSideBar()" routerLink="#"
+                ><i class="msicon msi-facebook"></i
+              ></a>
+            </li>
+            <li class="list-inline-item">
+              <a (click)="onCloseMenuSideBar()" routerLink="#"
+                ><i class="msicon msi-twitter"></i
+              ></a>
+            </li>
+            <li class="list-inline-item">
+              <a (click)="onCloseMenuSideBar()" routerLink="#"
+                ><i class="msicon msi-instagram"></i
+              ></a>
+            </li>
+            <li class="list-inline-item">
+              <a (click)="onCloseMenuSideBar()" routerLink="#"
+                ><i class="msicon msi-linkedin"></i
+              ></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <!-- Social End -->
+    </div>
+  </div>
+</div>
+<!-- Mobile Menu sidebar End -->
+
+<div class="ms-side-menu-overlay" (click)="onCloseMenuSideBar()"></div>
+}

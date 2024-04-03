@@ -1,0 +1,159 @@
+.container {
+    background-color: pink;
+    border: 2px groove rgb(51, 22, 59);
+    border-radius: 2%;
+  }
+  
+  h1 {  
+    font-size: 3rem;
+    color: #ff69b4;
+    text-shadow: 2px 2px 4px rgba(99, 23, 98, 0.3);
+    margin-top: 100px;
+}
+
+.front{
+    background-image: url('/assets/img/bg/Violet_Giftbox_Background_cropped.jpg');
+    background-size: 100% 100%;
+    background-size: cover;
+    overflow: hidden;
+    height: 40vh;
+    width: auto;
+    margin-bottom: 50px;
+    margin-top: 30px;
+}
+
+/* Reset anchor styles */
+a, a:hover {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Section container styles */
+.section-products {
+    padding: 10px 0 54px;
+    margin-top: -10px;
+}
+
+/* Header styles */
+.section-products .header {
+    margin-bottom: 50px;
+    text-align: center;
+}
+
+.section-products .header h1 {
+    font-size: 4rem;
+    color: #7400a5;
+    text-shadow: 2px 2px 4px rgb(255, 0, 200);
+    margin-top: 100px;
+    animation: rotateHeader 2s linear infinite;
+}
+
+@keyframes rotateHeader {
+    0% {
+        transform: rotate(-5deg);
+    }
+    50% {
+        transform: rotate(5deg);
+    }
+    100% {
+        transform: rotate(-5deg);
+    }
+}
+
+
+.section-products .header h3 {
+    font-size: 1.5rem;
+    color: #C08B5C;
+    font-weight: 500;
+}
+
+/* Single product styles */
+.section-products .single-product {
+    margin-bottom: 40px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+    border: 2px groove #b001a247;
+    box-shadow: 1 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.section-products .single-product:hover {
+    transform: translateY(-5px);
+}
+
+/* Product image styles */
+.section-products .single-product .part-1 {
+    position: relative;
+    bottom: -10px;
+    overflow: hidden;
+    height: 300px;
+    padding-bottom: 20px;
+}
+
+.section-products .single-product .part-1 img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease-in-out;
+}
+
+.section-products .single-product:hover .part-1 img {
+    transform: scale(1.1);
+}
+
+/* Product info styles */
+.section-products .single-product .part-2 {
+    padding: 20px;
+    background-color: #fff;
+}
+
+.section-products .single-product .part-2 .product-title {
+    font-weight: bold;
+    font-size: 1.2rem;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.section-products .single-product .part-2 .product-price {
+    font-size: 1.1rem;
+    color: #ee0000;
+    font-weight: bold;
+}
+
+/* Add to cart and favorite icon styles */
+.section-products .single-product ul {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.section-products .single-product:hover ul {
+    opacity: 1;
+}
+
+.section-products .single-product ul li {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.section-products .single-product ul li a {
+    display: block;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    background-color: #c93dd3;
+    color: #fff;
+    border-radius: 50%;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.section-products .single-product ul li a:hover {
+    background-color: #4c1863;
+}

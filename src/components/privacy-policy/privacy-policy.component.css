@@ -1,0 +1,34 @@
+.ms-terms-conditions .ms-common-wrapper,
+.ms-privacy-policy .ms-common-wrapper {
+    padding: 30px;
+    border: 1px solid #eee;
+    max-width: 1140px;
+    margin: 0 auto;
+    background-color: #fff;
+    border-radius: 3px;
+}
+
+.ms-terms-conditions .ms-cms-block h5,
+.ms-privacy-policy .ms-cms-block h5 {
+    margin-bottom: 10px;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.ms-terms-conditions .ms-cms-block p,
+.ms-privacy-policy .ms-cms-block p {
+    margin-bottom: 30px;
+    color: #777;
+    font-size: 14px;
+}
+
+.ms-terms-conditions .ms-cms-block p b,
+.ms-privacy-policy .ms-cms-block p b {
+    font-weight: 500;
+    color: #3e9172;
+}
+
+.ms-terms-conditions .ms-cms-block:last-child p,
+.ms-privacy-policy .ms-cms-block:last-child p {
+    margin-bottom: 0;
+}

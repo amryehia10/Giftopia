@@ -1,0 +1,59 @@
+@if(categories.length > 1 && products) {
+<section class="ms-listing-section listing padding-tb-30 backgroundColor">
+    <div class="container">
+        <div class="row">
+            <div class="section-title">
+                <h2>Discover <span> Items</span></h2>
+                <span class="title-link">
+                    <a routerLink="/discoverAll">Discover All<i class="msicon msi-angle-double-right"></i></a>
+                </span>
+            </div>
+            <div class="ms-listing">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="ms-list-block">
+                            <h4 class="ms-list-title">{{categories[0].name}}
+                                <span class="label veg">
+                                    <span class="dot"></span>
+                                </span>
+                            </h4>
+                            <ul>
+                                @for (prd of firstprdList; track prd._id; let i = $index) {
+
+                                <!-- <li>sadjskd</li> -->
+                                <li class="ms-list-item"><a routerLink="products/{{prd._id}}">{{prd.name}}<span>:
+                                            {{prd.discount}}%
+                                            Off</span></a><img class="ms-list-img" src="{{prd.images[0]}}"
+                                        alt="product"></li>
+                                }
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-6 m-t-767">
+                        <div class="ms-list-block">
+                            <h4 class="ms-list-title">{{categories[1].name}}
+                                <span class="label veg">
+                                    <span class="dot"></span>
+                                </span>
+                            </h4>
+                            <ul>
+                                @for (prd of secondprdList; track prd._id; let i = $index) {
+
+                                <li class="ms-list-item"><a routerLink="products/{{prd._id}}">{{prd.name}}<span>:
+                                            {{prd.discount}}%
+                                            Off</span></a><img class="ms-list-img" src="{{prd.images[0]}}"
+                                        alt="product"></li>
+                                }
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+} @else {
+<div class="alert alert-danger">
+    <p>Loading...........</p>
+</div>
+}

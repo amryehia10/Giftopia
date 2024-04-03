@@ -1,0 +1,40 @@
+<div class="container">
+  <div class="loginForm row justify-content-center">
+    <div class="col-md-6 mt-5 mb-5">
+      <div class="card">
+        <div class="text-center">
+          <div class="card-header">
+            Login
+          </div>
+        </div>
+        <div class="card-body">
+          <form [formGroup]="MyValid" (ngSubmit)="Add()" novalidate>
+            <div class="form-group mb-4">
+              <label for="email">Email address</label>
+              <input type="email" class="form-control" id="email" placeholder="Enter email" formControlName="email">
+                @if(!emailValid){
+                <p class="validation">Email is not in correct format !</p>
+              }
+            </div>
+            <div class="form-group mb-4">
+              <label for="password">Password</label>
+              <input type="password" class="form-control" id="password" placeholder="Enter password" formControlName="password">
+                @if(!passwordValid){
+                <p class="validation">Password should atleast have 8 characters !</p>
+              }
+            </div>
+            <div class="gift text-center">
+              <button type="submit" class="giftBtn btn btn-primary">
+                <img class="wrapper" src="assets/img/icons/wrapper.png" alt="Gift Icon">
+                Submit
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="foot text-center">
+    <p>Dont have an account yet? <a href="/register">Register Now</a></p>
+  </div>
+</div>

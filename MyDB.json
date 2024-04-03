@@ -1,0 +1,885 @@
+{
+  "products": [
+    {
+      "name": "ring",
+      "price": 250,
+      "desc": "Lorem ipsum dolor sit amet consectetur adipisicing elit",
+      "cat": ["Accessories"],
+      "images": [
+        {
+          "url": "/assets/img/categories/games.jpg"
+        },
+        {
+          "url": "/assets/img/categories/antiques.jpg"
+        }
+      ],
+      "id": "1",
+      "discount": "30",
+      "reviews": [
+        {
+          "userid": "user123",
+          "stars": 3,
+          "reviewDescription": "Great taste!"
+        },
+        {
+          "userid": "user456",
+          "stars": 2,
+          "reviewDescription": "Ya3 taste!"
+        },
+        {
+          "userid": "user789",
+          "stars": 5,
+          "reviewDescription": "GOAT taste!"
+        }
+      ],
+      "quantity": 10,
+      "ratings": 0,
+      "createdAt" : "2024-04-03"
+    },
+    {
+      "name": "watch",
+      "price": 250,
+      "desc": "Lorem ipsum dolor sit amet consectetur adipisicing elit",
+      "cat": ["Accessories"],
+      "images": [
+        {
+          "url": "/assets/img/categories/games.jpg"
+        },
+        {
+          "url": "/assets/img/categories/antiques.jpg"
+        }
+      ],
+      "id": "2",
+      "discount": "30",
+      "reviews": [
+        {
+          "userid": "user123",
+          "stars": 3,
+          "reviewDescription": "Great taste!"
+        },
+        {
+          "userid": "user456",
+          "stars": 2,
+          "reviewDescription": "Ya3 taste!"
+        },
+        {
+          "userid": "user789",
+          "stars": 5,
+          "reviewDescription": "GOAT taste!"
+        }
+      ],
+      "quantity": 10,
+      "ratings": 0,
+      "createdAt" : "2024-04-03"
+    },
+    {
+      "name": "watch",
+      "price": 250,
+      "desc": "Lorem ipsum dolor sit amet consectetur adipisicing elit",
+      "cat": ["Antiques"],
+      "images": [
+        {
+          "url": "/assets/img/categories/games.jpg"
+        },
+        {
+          "url": "/assets/img/categories/antiques.jpg"
+        }
+      ],
+      "id": "3",
+      "discount": "30",
+      "reviews": [
+        {
+          "userid": "user123",
+          "stars": 3,
+          "reviewDescription": "Great taste!"
+        },
+        {
+          "userid": "user456",
+          "stars": 2,
+          "reviewDescription": "Ya3 taste!"
+        },
+        {
+          "userid": "user789",
+          "stars": 5,
+          "reviewDescription": "GOAT taste!"
+        }
+      ],
+      "quantity": 10,
+      "ratings": 0,
+      "createdAt" : "2024-04-03"
+    },
+    {
+      "name": "controller",
+      "price": 250,
+      "desc": "Lorem ipsum dolor sit amet consectetur adipisicing elit",
+      "cat": ["Games"],
+      "images": [
+        {
+          "url": "/assets/img/categories/games.jpg"
+        },
+        {
+          "url": "/assets/img/categories/antiques.jpg"
+        }
+      ],
+      "id": "4",
+      "discount": "30",
+      "reviews": [
+        {
+          "userid": "user123",
+          "stars": 3,
+          "reviewDescription": "Great taste!"
+        },
+        {
+          "userid": "user456",
+          "stars": 2,
+          "reviewDescription": "Ya3 taste!"
+        },
+        {
+          "userid": "user789",
+          "stars": 5,
+          "reviewDescription": "GOAT taste!"
+        }
+      ],
+      "quantity": 10,
+      "ratings": 0,
+      "createdAt" : "2024-04-03"
+    },
+    {
+      "name": "ring",
+      "price": 300,
+      "desc": "Lorem ipsum dolor sit amet consectetur adipisicing elit",
+      "cat": ["Accessories"],
+      "images": [
+        {
+          "url": "/assets/img/categories/games.jpg"
+        },
+        {
+          "url": "/assets/img/categories/antiques.jpg"
+        }
+      ],
+      "id": "5",
+      "discount": "30",
+      "reviews": [
+        {
+          "userid": "user123",
+          "stars": 3,
+          "reviewDescription": "Great taste!"
+        },
+        {
+          "userid": "user456",
+          "stars": 2,
+          "reviewDescription": "Ya3 taste!"
+        },
+        {
+          "userid": "user789",
+          "stars": 5,
+          "reviewDescription": "GOAT taste!"
+        }
+      ],
+      "quantity": 10,
+      "ratings": 0,
+      "createdAt" : "2024-04-03"
+    },
+    {
+      "name": "watch",
+      "price": 250,
+      "desc": "Lorem ipsum dolor sit amet consectetur adipisicing elit",
+      "cat": ["Antiques"],
+      "images": [
+        {
+          "url": "/assets/img/categories/games.jpg"
+        },
+        {
+          "url": "/assets/img/categories/antiques.jpg"
+        }
+      ],
+      "id": "6",
+      "discount": "30",
+      "reviews": [
+        {
+          "userid": "user123",
+          "stars": 3,
+          "reviewDescription": "Great taste!"
+        },
+        {
+          "userid": "user456",
+          "stars": 2,
+          "reviewDescription": "Ya3 taste!"
+        },
+        {
+          "userid": "user789",
+          "stars": 5,
+          "reviewDescription": "GOAT taste!"
+        }
+      ],
+      "quantity": 10,
+      "ratings": 0,
+      "createdAt" : "2024-04-03"
+    },
+    {
+      "name": "controller",
+      "price": 250,
+      "desc": "Lorem ipsum dolor sit amet consectetur adipisicing elit",
+      "cat": ["Games"],
+      "images": [
+        {
+          "url": "/assets/img/categories/games.jpg"
+        },
+        {
+          "url": "/assets/img/categories/antiques.jpg"
+        }
+      ],
+      "id": "7",
+      "discount": "30",
+      "reviews": [
+        {
+          "userid": "user123",
+          "stars": 3,
+          "reviewDescription": "Great taste!"
+        },
+        {
+          "userid": "user456",
+          "stars": 2,
+          "reviewDescription": "Ya3 taste!"
+        },
+        {
+          "userid": "user789",
+          "stars": 5,
+          "reviewDescription": "GOAT taste!"
+        }
+      ],
+      "quantity": 10,
+      "ratings": 0,
+      "createdAt" : "2024-04-03"
+    },
+    {
+      "name": "ring",
+      "price": 250,
+      "desc": "Lorem ipsum dolor sit amet consectetur adipisicing elit",
+      "cat": ["Accessories"],
+      "images": [
+        {
+          "url": "/assets/img/categories/games.jpg"
+        },
+        {
+          "url": "/assets/img/categories/antiques.jpg"
+        }
+      ],
+      "id": "8",
+      "discount": "30",
+      "reviews": [
+        {
+          "userid": "user123",
+          "stars": 3,
+          "reviewDescription": "Great taste!"
+        },
+        {
+          "userid": "user456",
+          "stars": 2,
+          "reviewDescription": "Ya3 taste!"
+        },
+        {
+          "userid": "user789",
+          "stars": 5,
+          "reviewDescription": "GOAT taste!"
+        }
+      ],
+      "quantity": 10,
+      "ratings": 0
+    },
+    {
+      "name": "ring",
+      "price": 250,
+      "desc": "Lorem ipsum dolor sit amet consectetur adipisicing elit",
+      "cat": ["Accessories"],
+      "images": [
+        {
+          "url": "/assets/img/categories/games.jpg"
+        },
+        {
+          "url": "/assets/img/categories/antiques.jpg"
+        }
+      ],
+      "id": "9",
+      "discount": "30",
+      "reviews": [
+        {
+          "userid": "user123",
+          "stars": 3,
+          "reviewDescription": "Great taste!"
+        },
+        {
+          "userid": "user456",
+          "stars": 2,
+          "reviewDescription": "Ya3 taste!"
+        },
+        {
+          "userid": "user789",
+          "stars": 5,
+          "reviewDescription": "GOAT taste!"
+        }
+      ],
+      "quantity": 10,
+      "ratings": 0,
+      "createdAt" : "2024-04-03"
+    },
+    {
+      "name": "ring",
+      "price": 250,
+      "desc": "Lorem ipsum dolor sit amet consectetur adipisicing elit",
+      "cat": ["Accessories"],
+      "images": [
+        {
+          "url": "/assets/img/categories/games.jpg"
+        },
+        {
+          "url": "/assets/img/categories/antiques.jpg"
+        }
+      ],
+      "id": "10",
+      "discount": "30",
+      "reviews": [
+        {
+          "userid": "user123",
+          "stars": 3,
+          "reviewDescription": "Great taste!"
+        },
+        {
+          "userid": "user456",
+          "stars": 2,
+          "reviewDescription": "Ya3 taste!"
+        },
+        {
+          "userid": "user789",
+          "stars": 5,
+          "reviewDescription": "GOAT taste!"
+        }
+      ],
+      "quantity": 10,
+      "ratings": 0
+    },
+    {
+      "name": "controller",
+      "price": 250,
+      "desc": "Lorem ipsum dolor sit amet consectetur adipisicing elit",
+      "cat": ["Games"],
+      "images": [
+        {
+          "url": "/assets/img/categories/games.jpg"
+        },
+        {
+          "url": "/assets/img/categories/antiques.jpg"
+        }
+      ],
+      "id": "11",
+      "discount": "30",
+      "reviews": [
+        {
+          "userid": "user123",
+          "stars": 3,
+          "reviewDescription": "Great taste!"
+        },
+        {
+          "userid": "user456",
+          "stars": 2,
+          "reviewDescription": "Ya3 taste!"
+        },
+        {
+          "userid": "user789",
+          "stars": 5,
+          "reviewDescription": "GOAT taste!"
+        }
+      ],
+      "quantity": 10,
+      "ratings": 0
+    },
+    {
+      "name": "controller",
+      "price": 250,
+      "desc": "Lorem ipsum dolor sit amet consectetur adipisicing elit",
+      "cat": ["Games"],
+      "images": [
+        {
+          "url": "/assets/img/categories/games.jpg"
+        },
+        {
+          "url": "/assets/img/categories/antiques.jpg"
+        }
+      ],
+      "id": "12",
+      "discount": "30",
+      "reviews": [
+        {
+          "userid": "user123",
+          "stars": 3,
+          "reviewDescription": "Great taste!"
+        },
+        {
+          "userid": "user456",
+          "stars": 2,
+          "reviewDescription": "Ya3 taste!"
+        },
+        {
+          "userid": "user789",
+          "stars": 5,
+          "reviewDescription": "GOAT taste!"
+        }
+      ],
+      "quantity": 10,
+      "ratings": 0
+    },
+    {
+      "name": "controller",
+      "price": 250,
+      "desc": "Lorem ipsum dolor sit amet consectetur adipisicing elit",
+      "cat": ["Games"],
+      "images": [
+        {
+          "url": "/assets/img/categories/games.jpg"
+        },
+        {
+          "url": "/assets/img/categories/antiques.jpg"
+        }
+      ],
+      "id": "13",
+      "discount": "30",
+      "reviews": [
+        {
+          "userid": "user123",
+          "stars": 3,
+          "reviewDescription": "Great taste!"
+        },
+        {
+          "userid": "user456",
+          "stars": 2,
+          "reviewDescription": "Ya3 taste!"
+        },
+        {
+          "userid": "user789",
+          "stars": 5,
+          "reviewDescription": "GOAT taste!"
+        }
+      ],
+      "quantity": 10,
+      "ratings": 0
+    },
+    {
+      "name": "watch",
+      "price": 250,
+      "desc": "Lorem ipsum dolor sit amet consectetur adipisicing elit",
+      "cat": ["Antiques"],
+      "images": [
+        {
+          "url": "/assets/img/categories/games.jpg"
+        },
+        {
+          "url": "/assets/img/categories/antiques.jpg"
+        }
+      ],
+      "id": "14",
+      "discount": "30",
+      "reviews": [
+        {
+          "userid": "user123",
+          "stars": 3,
+          "reviewDescription": "Great taste!"
+        },
+        {
+          "userid": "user456",
+          "stars": 2,
+          "reviewDescription": "Ya3 taste!"
+        },
+        {
+          "userid": "user789",
+          "stars": 5,
+          "reviewDescription": "GOAT taste!"
+        }
+      ],
+      "quantity": 10,
+      "ratings": 0
+    },
+    {
+      "name": "watch",
+      "price": 250,
+      "desc": "Lorem ipsum dolor sit amet consectetur adipisicing elit",
+      "cat": ["Antiques"],
+      "images": [
+        {
+          "url": "/assets/img/categories/games.jpg"
+        },
+        {
+          "url": "/assets/img/categories/antiques.jpg"
+        }
+      ],
+      "id": "15",
+      "discount": "30",
+      "reviews": [
+        {
+          "userid": "user123",
+          "stars": 3,
+          "reviewDescription": "Great taste!"
+        },
+        {
+          "userid": "user456",
+          "stars": 2,
+          "reviewDescription": "Ya3 taste!"
+        },
+        {
+          "userid": "user789",
+          "stars": 5,
+          "reviewDescription": "GOAT taste!"
+        }
+      ],
+      "quantity": 10,
+      "ratings": 0
+    },
+    {
+      "name": "ring",
+      "price": 250,
+      "desc": "Lorem ipsum dolor sit amet consectetur adipisicing elit",
+      "cat": ["Accessories"],
+      "images": [
+        {
+          "url": "/assets/img/categories/games.jpg"
+        },
+        {
+          "url": "/assets/img/categories/antiques.jpg"
+        }
+      ],
+      "id": "16",
+      "discount": "30",
+      "reviews": [
+        {
+          "userid": "user123",
+          "stars": 3,
+          "reviewDescription": "Great taste!"
+        },
+        {
+          "userid": "user456",
+          "stars": 2,
+          "reviewDescription": "Ya3 taste!"
+        },
+        {
+          "userid": "user789",
+          "stars": 5,
+          "reviewDescription": "GOAT taste!"
+        }
+      ],
+      "quantity": 10,
+      "ratings": 0
+    },
+    {
+      "name": "ring",
+      "price": 250,
+      "desc": "Lorem ipsum dolor sit amet consectetur adipisicing elit",
+      "cat": ["Accessories"],
+      "images": [
+        {
+          "url": "/assets/img/categories/games.jpg"
+        },
+        {
+          "url": "/assets/img/categories/antiques.jpg"
+        }
+      ],
+      "id": "17",
+      "discount": "30",
+      "reviews": [
+        {
+          "userid": "user123",
+          "stars": 3,
+          "reviewDescription": "Great taste!"
+        },
+        {
+          "userid": "user456",
+          "stars": 2,
+          "reviewDescription": "Ya3 taste!"
+        },
+        {
+          "userid": "user789",
+          "stars": 5,
+          "reviewDescription": "GOAT taste!"
+        }
+      ],
+      "quantity": 10,
+      "ratings": 0
+    },
+    {
+      "name": "ring",
+      "price": 250,
+      "desc": "Lorem ipsum dolor sit amet consectetur adipisicing elit",
+      "cat": ["Accessories"],
+      "images": [
+        {
+          "url": "/assets/img/categories/games.jpg"
+        },
+        {
+          "url": "/assets/img/categories/antiques.jpg"
+        }
+      ],
+      "id": "18",
+      "discount": "30",
+      "reviews": [
+        {
+          "userid": "user123",
+          "stars": 3,
+          "reviewDescription": "Great taste!"
+        },
+        {
+          "userid": "user456",
+          "stars": 2,
+          "reviewDescription": "Ya3 taste!"
+        },
+        {
+          "userid": "user789",
+          "stars": 5,
+          "reviewDescription": "GOAT taste!"
+        }
+      ],
+      "quantity": 10,
+      "ratings": 0
+    },
+    {
+      "name": "watch",
+      "price": 250,
+      "desc": "Lorem ipsum dolor sit amet consectetur adipisicing elit",
+      "cat": ["Antiques"],
+      "images": [
+        {
+          "url": "/assets/img/categories/games.jpg"
+        },
+        {
+          "url": "/assets/img/categories/antiques.jpg"
+        }
+      ],
+      "id": "19",
+      "discount": "30",
+      "reviews": [
+        {
+          "userid": "user123",
+          "stars": 3,
+          "reviewDescription": "Great taste!"
+        },
+        {
+          "userid": "user456",
+          "stars": 2,
+          "reviewDescription": "Ya3 taste!"
+        },
+        {
+          "userid": "user789",
+          "stars": 5,
+          "reviewDescription": "GOAT taste!"
+        }
+      ],
+      "quantity": 10,
+      "ratings": 0
+    },
+    {
+      "name": "watch",
+      "price": 250,
+      "desc": "Lorem ipsum dolor sit amet consectetur adipisicing elit",
+      "cat": ["Antiques"],
+      "images": [
+        {
+          "url": "/assets/img/categories/games.jpg"
+        },
+        {
+          "url": "/assets/img/categories/antiques.jpg"
+        }
+      ],
+      "id": "20",
+      "discount": "30",
+      "reviews": [
+        {
+          "userid": "user123",
+          "stars": 3,
+          "reviewDescription": "Great taste!"
+        },
+        {
+          "userid": "user456",
+          "stars": 2,
+          "reviewDescription": "Ya3 taste!"
+        },
+        {
+          "userid": "user789",
+          "stars": 5,
+          "reviewDescription": "GOAT taste!"
+        }
+      ],
+      "quantity": 10,
+      "ratings": 0
+    },
+    {
+      "name": "watch",
+      "price": 250,
+      "desc": "Lorem ipsum dolor sit amet consectetur adipisicing elit",
+      "cat": ["Antiques"],
+      "images": [
+        {
+          "url": "/assets/img/categories/games.jpg"
+        },
+        {
+          "url": "/assets/img/categories/antiques.jpg"
+        }
+      ],
+      "id": "21",
+      "discount": "30",
+      "reviews": [
+        {
+          "userid": "user123",
+          "stars": 3,
+          "reviewDescription": "Great taste!"
+        },
+        {
+          "userid": "user456",
+          "stars": 2,
+          "reviewDescription": "Ya3 taste!"
+        },
+        {
+          "userid": "user789",
+          "stars": 5,
+          "reviewDescription": "GOAT taste!"
+        }
+      ],
+      "quantity": 10,
+      "ratings": 0
+    },
+    {
+      "name": "controller",
+      "price": 250,
+      "desc": "Lorem ipsum dolor sit amet consectetur adipisicing elit",
+      "cat": ["Games"],
+      "images": [
+        {
+          "url": "/assets/img/categories/games.jpg"
+        },
+        {
+          "url": "/assets/img/categories/antiques.jpg"
+        }
+      ],
+      "id": "22",
+      "discount": "30",
+      "reviews": [
+        {
+          "userid": "user123",
+          "stars": 3,
+          "reviewDescription": "Great taste!"
+        },
+        {
+          "userid": "user456",
+          "stars": 2,
+          "reviewDescription": "Ya3 taste!"
+        },
+        {
+          "userid": "user789",
+          "stars": 5,
+          "reviewDescription": "GOAT taste!"
+        }
+      ],
+      "quantity": 10,
+      "ratings": 0
+    },
+    {
+      "name": "controller",
+      "price": 250,
+      "desc": "Lorem ipsum dolor sit amet consectetur adipisicing elit",
+      "cat": ["Games"],
+      "images": [
+        {
+          "url": "/assets/img/categories/games.jpg"
+        },
+        {
+          "url": "/assets/img/categories/antiques.jpg"
+        }
+      ],
+      "id": "23",
+      "discount": "30",
+      "reviews": [
+        {
+          "userid": "user123",
+          "stars": 3,
+          "reviewDescription": "Great taste!"
+        },
+        {
+          "userid": "user456",
+          "stars": 2,
+          "reviewDescription": "Ya3 taste!"
+        },
+        {
+          "userid": "user789",
+          "stars": 5,
+          "reviewDescription": "GOAT taste!"
+        }
+      ],
+      "quantity": 10,
+      "ratings": 0
+    },
+    {
+      "name": "controller",
+      "price": 250,
+      "desc": "Lorem ipsum dolor sit amet consectetur adipisicing elit",
+      "cat": ["Games"],
+      "images": [
+        {
+          "url": "/assets/img/categories/games.jpg"
+        },
+        {
+          "url": "/assets/img/categories/antiques.jpg"
+        }
+      ],
+      "id": "24",
+      "discount": "30",
+      "reviews": [
+        {
+          "userid": "user123",
+          "stars": 3,
+          "reviewDescription": "Great taste!"
+        },
+        {
+          "userid": "user456",
+          "stars": 2,
+          "reviewDescription": "Ya3 taste!"
+        },
+        {
+          "userid": "user789",
+          "stars": 5,
+          "reviewDescription": "GOAT taste!"
+        }
+      ],
+      "quantity": 10,
+      "ratings": 0
+    }
+  ],
+  "users": [],
+  "categories": [
+    {
+      "categoryName": "Accessories",
+      "categoryImage": "/assets/img/categories/accessories.jpeg",
+      "id": "accessories"
+    },
+    {
+      "categoryName": "Games",
+      "categoryImage": "/assets/img/categories/games.jpg",
+      "id": "games"
+    },
+    {
+      "categoryName": "Antiques",
+      "categoryImage": "/assets/img/categories/antiques.jpg",
+      "id": "antiques"
+    },
+    {
+      "categoryName": "Fashion",
+      "categoryImage": "/assets/img/categories/fashion.jpg",
+      "id": "fashion"
+    },
+    {
+      "categoryName": "Mobile Phones",
+      "categoryImage": "/assets/img/categories/mobile_phones.jpg",
+      "id": "mobile_phones"
+    },
+    {
+      "categoryName": "Laptops",
+      "categoryImage": "/assets/img/categories/laptops.jpg",
+      "id": "laptops"
+    }
+  ]
+}

@@ -1,0 +1,39 @@
+<div class="container mt-5">
+  <h2>Contact Us</h2>
+  <form [formGroup]="myFormGroup">
+    <div class="mb-3">
+      <label for="name" class="form-label">Name</label>
+      <input type="text" formControlName="name" class="form-control" id="name" placeholder="Enter your name">
+      @if (!isNameValid) {
+      <p class="m-0 pt-0 ps-3 fst-italic fw-bolder">
+        {{validator.name}}
+      </p>
+      }
+    </div>
+    <div class="mb-3">
+      <label for="email" class="form-label">Email</label>
+      <input type="email" formControlName="email" class="form-control" id="email" placeholder="Enter your email">
+      @if (!isEmailValid) {
+      <p class="m-0 pt-0 ps-3 fst-italic fw-bolder">
+        {{validator.email}}
+      </p>
+      }
+    </div>
+    <div class="mb-3">
+      <label for="message" class="form-label">Message</label>
+      <textarea formControlName="message" class="form-control" id="message" rows="3"
+        placeholder="Your message"></textarea>
+      @if (!isMessageValid) {
+      <p class="m-0 pt-0 ps-3 fst-italic fw-bolder">
+        {{validator.message}}
+      </p>
+      }
+    </div>
+    <button type="button" (click)="onSubmit()" class="btn btn-primary">Submit</button>
+    @if (isSubmitted) {
+      <p class="m-0 pt-0 ps-3 fst-italic fw-bolder text-success ">
+        Your Message is Submitted...
+      </p>
+      }
+  </form>
+</div>
