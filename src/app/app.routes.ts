@@ -12,24 +12,25 @@ import { CartComponent } from '../components/cart/cart.component';
 import { RegisterComponent } from '../components/register/register.component';
 import { CheckoutComponent } from '../components/checkout/checkout.component';
 import { PrivacyPolicyComponent } from '../components/privacy-policy/privacy-policy.component';
+import { CategoryPageComponent } from '../pages/category-page/category-page.component';
 
 export const routes: Routes = [
-    {path: '', component:HomeComponent},
-    {path: 'home', component:HomeComponent},
-    {path: 'home/:name',component:CategoryProductsComponent},
-    {path: 'discoverAll', component:DiscoverAllComponent},
-    {path: 'products/:id', component:ProductComponent},
-    {path: 'home/products/:id', component:ProductComponent},
-    {path: 'category/:name',component:CategoryProductsComponent},
-    {path: 'about',component:AboutUsComponent},
-    {path: 'contact',component:ContactUsComponent},
-    {path: 'terms-condition',component:TermsConditionsComponent},
-    // {path: ':name',component:CategoryProductsComponent},/** any data goto same page */
-    {path: 'login',component:LoginComponent},
-    {path: 'register',component:RegisterComponent},
-    {path: 'track-order',component:TrackOrderComponent},
-    {path: 'cart',component:CartComponent},
-    {path: 'checkout',component:CheckoutComponent},
-    {path: 'privacy-policy',component:PrivacyPolicyComponent},
-
+  { path: '', component: HomeComponent },
+  { path: 'home', component: HomeComponent },
+  { path: 'home/:name', component: CategoryProductsComponent },
+  { path: 'discoverAll', component: DiscoverAllComponent },
+  { path: 'products/:id', component: ProductComponent },
+  { path: 'home/products/:id', component: ProductComponent },
+  { path: 'category', component: CategoryPageComponent },
+  { path: 'category/:name', component: CategoryProductsComponent },
+  { path: 'about', component: AboutUsComponent },
+  { path: 'contact', component: ContactUsComponent },
+  { path: 'terms-condition', component: TermsConditionsComponent },
+  // {path: ':name',component:CategoryProductsComponent},/** any data goto same page */
+  { path: 'login', component: LoginComponent },
+  { path: 'register', component: RegisterComponent },
+  { path: 'track-order', component: TrackOrderComponent },
+  { path: 'cart', component: CartComponent },
+  { path: 'checkout', component: CheckoutComponent },
+  { path: 'privacy-policy', component: PrivacyPolicyComponent },
 ];
