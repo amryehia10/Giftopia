@@ -14,6 +14,7 @@ import { CheckoutComponent } from '../components/checkout/checkout.component';
 import { PrivacyPolicyComponent } from '../components/privacy-policy/privacy-policy.component';
 import { OurServicesComponent } from '../components/our-services/our-services.component';
 import { SideBarWishlistComponent } from '../components/side-bar-wishlist/side-bar-wishlist.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @Component({
   selector: 'app-root',
@@ -34,7 +35,9 @@ import { SideBarWishlistComponent } from '../components/side-bar-wishlist/side-b
     SideBarWishlistComponent,
     PrivacyPolicyComponent,
     OurServicesComponent,
+    HttpClientModule
   ],
+  providers:[HttpClientModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
 })

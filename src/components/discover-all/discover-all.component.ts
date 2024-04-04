@@ -5,6 +5,7 @@ import { RouterModule } from '@angular/router';
 import { CategoryService } from '../../services/category.service';
 import { ProductService } from '../../services/product.service';
 import { GeneralMethods } from '../../functions';
+import { catchError, combineLatest, map } from 'rxjs';
 
 @Component({
   selector: 'app-discover-all',
@@ -21,21 +22,19 @@ export class DiscoverAllComponent implements OnInit {
   discoveredProducts: ProductModel[] = [];
   constructor(private prdService: ProductService, private catService: CategoryService) { }
 
-  async ngOnInit() {
-    this.prdService.getAllProducts().subscribe({
-      next: (data) => {
-        this.products = GeneralMethods.CastProducts(data);
-        this.getDiscoveredProducts()
-      },
-      error: (err) => console.log(err)
-    })
+  ngOnInit() {
 
-    this.catService.getCategory().subscribe({
-      next: (data) => {
-        this.categories = GeneralMethods.CastCategories(data);
+    return combineLatest([this.prdService.getAllProducts(), this.catService.getCategory()]).pipe(
+      map((data)=>{
+        const [products,categories] = data
+        this.products = GeneralMethods.CastProducts(products);
+        this.categories = GeneralMethods.CastCategories(categories); 
+      }),
+      map(()=>{
         this.populatecatNames();
         this.getDiscoveredProducts();
-      },
+      })
+    ).subscribe({
       error: (err) => console.log(err)
     })
   }
@@ -47,6 +46,8 @@ export class DiscoverAllComponent implements OnInit {
   }
 
   getDiscoveredProducts() {
+    console.log(this.products,this.categories,this.catNames)
+
     if (!this.products || !this.categories || this.catNames.length === 0) {
       return;
     }
