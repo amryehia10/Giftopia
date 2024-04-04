@@ -20,7 +20,7 @@ export const routes: Routes = [
     {path: '', component:HomeComponent},
     {path: 'home', component:HomeComponent},
     {path: 'home/:name',component:CategoryProductsComponent},
-    {path: 'discoverAll', component:DiscoverAllComponent,resolve: discoverAllResolver},
+    {path: 'discoverAll', component:DiscoverAllComponent,resolve: {data:discoverAllResolver}},
     {path: 'products/:id', component:ProductComponent},
     {path: 'home/products/:id', component:ProductComponent},
     {path: 'category/:name',component:CategoryProductsComponent},

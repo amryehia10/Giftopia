@@ -10,11 +10,11 @@ import { GeneralMethods } from '../../functions';
   providedIn: 'root'
 })
 export class DiscoverAllService {
-  catNames: BehaviorSubject<any> = new BehaviorSubject([]);
-  products:  BehaviorSubject<any> = new BehaviorSubject([]);
-  categories:  BehaviorSubject<any> = new BehaviorSubject([]);
-  discoveredProducts:  BehaviorSubject<any> = new BehaviorSubject([]);
-  // constructor(private prdService: ProductService, private catService: CategoryService) { }
+  catNames: BehaviorSubject<string[]> = new BehaviorSubject<string[]>([]);
+  products:  BehaviorSubject<ProductModel[]> = new BehaviorSubject<ProductModel[]>([]);
+  categories:  BehaviorSubject<CategoryModel[]> = new BehaviorSubject<CategoryModel[]>([]);
+  discoveredProducts:  BehaviorSubject<ProductModel[]> = new BehaviorSubject<ProductModel[]>([]);
+  constructor(private prdService: ProductService, private catService: CategoryService) { }
   getData():Observable<any>{
     return combineLatest([this.prdService.getAllProducts(), this.catService.getCategory()]).pipe(
       map((data)=>{
