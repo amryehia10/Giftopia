@@ -14,12 +14,13 @@ import { PaymentMethodComponent } from '../components/payment-method/payment-met
 import { CheckoutComponent } from '../components/checkout/checkout.component';
 import { PrivacyPolicyComponent } from '../components/privacy-policy/privacy-policy.component';
 import { NewProductsComponent } from '../components/new-products/new-products.component';
+import { discoverAllResolver } from '../components/discover-all/discover-all.resolver';
 
 export const routes: Routes = [
     {path: '', component:HomeComponent},
     {path: 'home', component:HomeComponent},
     {path: 'home/:name',component:CategoryProductsComponent},
-    {path: 'discoverAll', component:DiscoverAllComponent},
+    {path: 'discoverAll', component:DiscoverAllComponent,resolve: {data:discoverAllResolver}},
     {path: 'products/:id', component:ProductComponent},
     {path: 'home/products/:id', component:ProductComponent},
     {path: 'category/:name',component:CategoryProductsComponent},
