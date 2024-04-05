@@ -1,18 +1,39 @@
-<div class="container">
-    <div class="row">
-        <div class="col-12">
-            <button type="button" class="btn btn-primary my-3" (click)="toggleSort()">Sort by Price: {{btnSortToggle}}</button>
-            <div class="d-flex flex-wrap row bg-dark">
+<section class="section-products backgroundColor">
+    <div class="container">
+        <button type="button" (click)="toggleSort()">Sort by Price: {{btnSortToggle}}</button>
+        <div class="row">
                 @for (prd of products; track prd._id) {
-                <div class="card mb-4 col-sm-4">
-                    <img [src]="prd.images[0]" class="card-img-top" alt="{{ prd.name }}">
-                    <div class="card-body">
-                        <h5 class="card-title">{{ prd.name }}</h5>
-                        <p class="card-text">${{ prd.price }}</p>
+                <!-- Single Product -->
+                    <div class="col-6 col-sm-6 col-md-4 col-lg-4 col-xl-3">
+                        <div class="single-product">
+                            <div class="part-1">
+                                <img class="section-products img-fluid" src="{{ prd.images[0] }}" alt="product" width="200"/>
+                                <ul>
+                                    <!--TODO-->
+                                    <li>
+                                        <a href="#"><i class="fas fa-shopping-cart"></i></a>
+                                    </li>
+                                    <li>
+                                        <a href="#"><i class="fas fa-heart"></i></a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="part-2">
+                                <h3 class="product-title">{{ prd.name }}</h3>
+                                @if(prd.discount > 0){
+                                <h4 class="product-old-price">
+                                    {{ prd.price | currency : "L.E" }}
+                                </h4>
+                                <h4 class="product-price">
+                                    {{ prd.price - prd.price * prd.discount /100 | currency : "L.E" }}
+                                </h4>
+                                } @else {
+                                <h4 class="product-price">{{ prd.price | currency : "L.E" }}</h4>
+                                }
+                            </div>
+                        </div>
                     </div>
-                </div>
-                }
-            </div>
+                } 
         </div>
     </div>
-</div>
+</section>

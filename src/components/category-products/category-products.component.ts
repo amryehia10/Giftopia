@@ -3,11 +3,12 @@ import { GeneralMethods } from '../../functions';
 import { Component, OnInit } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { ProductService } from '../../services/product.service';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-category-products',
   standalone: true,
-  imports: [HttpClientModule],
+  imports: [HttpClientModule,CommonModule],
   providers: [ProductService],
   templateUrl: './category-products.component.html',
   styleUrl: './category-products.component.css'
