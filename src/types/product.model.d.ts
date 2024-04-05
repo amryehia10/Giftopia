@@ -10,5 +10,6 @@ type ProductModel = {
     numberOfRates: number,
     cat: string[]
     images: string[],
+    createdAt: string
 }
 
