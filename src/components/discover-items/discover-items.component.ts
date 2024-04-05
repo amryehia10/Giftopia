@@ -24,25 +24,24 @@ export class DiscoverItemsComponent implements OnInit {
   secondprdList: ProductModel[] = [];
   constructor(private prdService: ProductService, private catService: CategoryService) { }
 
-  async ngOnInit(): Promise<void> {
+  ngOnInit(): void {
     this.catService.getCategory().subscribe({
-      next: (data) => {
-        this.categories = GeneralMethods.CastCategories(data);
-        this.populatecatNames();
+      next: async (data) => {
+        this.categories = await GeneralMethods.CastCategories(data);
+        this.populatecatNames();  
+
+        this.prdService.getAllProducts().subscribe({
+          next: (data) => {
+            this.products = GeneralMethods.CastProducts(data);
+            this.getProductsOfCat();
+          },
+          error: (err) => console.log(err)
+        });
       },
       error: (err) => console.log(err)
     });
-    
-    this.prdService.getAllProducts().subscribe({
-          next: (data) => { this.products = GeneralMethods.CastProducts(data)
-          console.log(this.catNames)
-          this.getProductsOfCat();
-        },
-      error: (err) => console.log(err)
-    });
-
-
   }
+  
 
   populatecatNames(): void {
     for (let i = 0; i < 2; i++) { 

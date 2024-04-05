@@ -199,13 +199,7 @@
     <div class="container position-relative">
       <div class="row justify-content-between">
         <!-- Category Toggle -->
-        <div class="col ms-category-icon-block">
-          <div class="ms-category-menu">
-            <div class="ms-category-toggle" (click)="openCategorySidebar()">
-              <img src="assets/img/icons/category-icon.svg" class="svg_img header_svg svg_cat" alt="icon" />
-            </div>
-          </div>
-        </div>
+    
 
         <!-- Main Menu Start -->
         <div id="ms-main-menu-desk" class="d-none d-lg-block sticky-nav">
@@ -285,10 +279,7 @@
           </div>
           <!-- Header Logo End -->
           <!-- Header menu Start -->
-          <a href="javascript:void(0)" class="ms-header-btn ms-site-menu-icon d-lg-none d-flex"
-            (click)="togelMenuSideBar()">
-            <img src="assets/img/icons/menu.svg" class="svg_img" alt="menu" />
-          </a>
+          
           <!-- Header menu End -->
         </div>
       </div>
@@ -300,10 +291,6 @@
 
 <app-side-bar-cart [isCartSidebarVisible]="isCartSidebarVisible" (closeCartSidebar)="onCloseCartSidebar()">
 </app-side-bar-cart>
-
-<app-side-bar-category [isCategorySidebarVisible]="isCategorySidebarVisible"
-  (closeCategorySidebar)="onCloseCategorySidebar()">
-</app-side-bar-category>
 
 <app-side-bar-wishlist [isWishlistSidebarVisible]="isWishlistSidebarVisible"
   (closeWishlistSidebar)="onCloseWishlistSidebar()">

@@ -20,16 +20,13 @@ a:hover {
     color: #444444; 
 }
 
-.section-products .single-product {
-    margin-bottom: 26px;
-}
-
 .section-products .single-product .part-1 {
     position: relative;
     height: 290px;
     max-height: 290px;
     margin-bottom: 20px;
     overflow: hidden;
+
 }
 
 .section-products .single-product .part-1::before {
@@ -74,6 +71,7 @@ a:hover {
     padding: 2px 8px;
     text-transform: uppercase;
     font-size: 0.85rem;
+    
 }
 
 .section-products .single-product .part-1 .new {
@@ -90,6 +88,7 @@ a:hover {
     list-style: none;
     opacity: 0;
     transition: bottom 0.5s, opacity 0.5s;
+    
 }
 
 .section-products .single-product:hover .part-1 ul {
