@@ -4,6 +4,7 @@ import { Component, OnInit } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { ProductService } from '../../services/product.service';
 import { CommonModule } from '@angular/common';
+import { CartService } from '../../services/cart.service';
 
 @Component({
   selector: 'app-category-products',
@@ -17,7 +18,7 @@ export class CategoryProductsComponent implements OnInit {
   btnSortToggle = "Low to High";
   products: ProductModel[] = [];
 
-  constructor(private router: ActivatedRoute, private service: ProductService) { }
+  constructor(private router: ActivatedRoute, private service: ProductService, private CartService: CartService) { }
 
   ngOnInit(): void {
     this.service.getProductsByCategory(this.router.snapshot.params["name"]).subscribe({
@@ -36,4 +37,12 @@ export class CategoryProductsComponent implements OnInit {
       this.btnSortToggle = "Low to High";
     }
   }
+
+  // cartItems: any[] = [];
+
+  addToCart(product: any) {
+    console.log(product);
+    this.CartService.addToCart('user123',product);
+  }
+
 }
