@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { Router, RouterModule } from '@angular/router';
 import { HomeComponent } from '../home/home.component';
 import { PrivacyPolicyComponent } from '../privacy-policy/privacy-policy.component';
+import { CartProductService } from '../../services/cart-product.service';
 
 @Component({
   selector: 'app-cart',
@@ -16,7 +17,8 @@ import { PrivacyPolicyComponent } from '../privacy-policy/privacy-policy.compone
 })
 export class CartComponent {
 
-  constructor(private router: Router) { }
+  constructor(private router: Router, cartProductService: CartProductService) { }
+  
 
   navigateToHome() {
     this.router.navigate(['home']);
