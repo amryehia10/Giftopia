@@ -1,6 +1,6 @@
 <section class="section-products backgroundColor">
     <div class="container">
-        <button type="button" (click)="toggleSort()">Sort by Price: {{btnSortToggle}}</button>
+        <button type="button" (click)="toggleSort()">Sort by Price: <span>{{btnSortToggle}}</span></button>
         <div class="row">
                 @for (prd of products; track prd._id) {
                 <!-- Single Product -->
@@ -26,6 +26,7 @@
                                 <h4 class="product-old-price">
                                     {{ prd.price | currency : "L.E" }}
                                 </h4>
+                                <br>
                                 <h4 class="product-price">
                                     {{ prd.price - prd.price * prd.discount /100 | currency : "L.E" }}
                                 </h4>

@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { CartComponent } from '../cart/cart.component';
 import { SideBarCartComponent } from '../side-bar-cart/side-bar-cart.component';
-import { SideBarCategoryComponent } from '../side-bar-category/side-bar-category.component';
 import { SideBarWishlistComponent } from '../side-bar-wishlist/side-bar-wishlist.component';
 import { SideBarMenuComponent } from '../side-bar-menu/side-bar-menu.component';
 import { CategoryService } from '../../services/category.service';
@@ -17,7 +16,6 @@ import { GeneralMethods } from '../../functions';
     HttpClientModule,
     CartComponent,
     SideBarCartComponent,
-    SideBarCategoryComponent,
     SideBarWishlistComponent,
     SideBarMenuComponent,
   ],

@@ -2,8 +2,12 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router, RouterModule } from '@angular/router';
 import { HomeComponent } from '../home/home.component';
 import { PrivacyPolicyComponent } from '../privacy-policy/privacy-policy.component';
+<<<<<<< HEAD
 import { CartService } from '../../services/cart.service';
 import { GeneralMethods } from '../../functions';
+=======
+import { CartProductService } from '../../services/cart-product.service';
+>>>>>>> 8794af50477ad6365deeffa1295074f026d5fd18
 
 @Component({
   selector: 'app-cart',
@@ -28,6 +32,8 @@ export class CartComponent implements OnInit {
       error: (error) => console.error(error)
     });
   }
+  // constructor(private router: Router, cartProductService: CartProductService) { }
+  
 
   navigateToHome() {
     this.router.navigate(['home']);

@@ -9,7 +9,6 @@ import { CategoryProductsComponent } from '../components/category-products/categ
 import { CartComponent } from '../components/cart/cart.component';
 import { SideBarCartComponent } from '../components/side-bar-cart/side-bar-cart.component';
 import { RegisterComponent } from '../components/register/register.component';
-import { SideBarCategoryComponent } from '../components/side-bar-category/side-bar-category.component';
 import { CheckoutComponent } from '../components/checkout/checkout.component';
 import { PrivacyPolicyComponent } from '../components/privacy-policy/privacy-policy.component';
 import { OurServicesComponent } from '../components/our-services/our-services.component';
@@ -31,7 +30,6 @@ import { HttpClientModule } from '@angular/common/http';
     CartComponent,
     CheckoutComponent,
     SideBarCartComponent,
-    SideBarCategoryComponent,
     SideBarWishlistComponent,
     PrivacyPolicyComponent,
     OurServicesComponent,
