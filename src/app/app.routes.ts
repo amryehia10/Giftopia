@@ -19,7 +19,7 @@ import { discoverAllResolver } from '../components/discover-all/discover-all.res
 export const routes: Routes = [
     {path: '', component:HomeComponent},
     {path: 'home', component:HomeComponent},
-    {path: 'home/:name',component:CategoryProductsComponent},
+    {path: 'home/category/:name',component:CategoryProductsComponent},
     {path: 'discoverAll', component:DiscoverAllComponent,resolve: {data:discoverAllResolver}},
     {path: 'products/:id', component:ProductComponent},
     {path: 'home/products/:id', component:ProductComponent},
@@ -27,7 +27,6 @@ export const routes: Routes = [
     {path: 'about',component:AboutUsComponent},
     {path: 'contact',component:ContactUsComponent},
     {path: 'terms-condition',component:TermsConditionsComponent},
-    // {path: ':name',component:CategoryProductsComponent},/** any data goto same page */
     {path: 'login',component:LoginComponent},
     {path: 'register',component:RegisterComponent},
     {path: 'track-order',component:TrackOrderComponent},

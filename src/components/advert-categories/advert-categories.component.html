@@ -12,11 +12,11 @@
               <div class="ms-slide-item swiper-slide d-flex slide-1"
                 style="background:url('{{adsCategories[0].image}}') no-repeat center center; background-size: cover;">
                 <div class="ms-slide-content slider-animation">
-                  <h1 class="ms-slide-title">
+                  <h1 class="ms-slide-title catName">
                     {{ adsCategories[0].name }}
                   </h1>
                   <div class="ms-slide-desc">
-                    <a routerLink="{{
+                    <a routerLink="category/{{
                         adsCategories[0].name | lowercase
                       }}" class="ms-btn-2">Shop Now
                       <i class="msicon msi-angle-double-right" aria-hidden="true"></i></a>
@@ -34,11 +34,11 @@
           style="background: url('{{adsCategories[1].image}}') no-repeat center center; background-size: cover;">
           <div class="ms-detail">
             <h3 class="grid-animation">
-              <span class="ms-grid-sub-title">{{
+              <span class="ms-grid-sub-title catName">{{
                 adsCategories[1].name
                 }}</span>
             </h3>
-            <a routerLink="{{ adsCategories[1].name | lowercase }}" class="ms-btn-2">Shop Now
+            <a routerLink="category/{{ adsCategories[1].name | lowercase }}" class="ms-btn-2">Shop Now
               <i class="msicon msi-angle-double-right" aria-hidden="true"></i></a>
           </div>
         </div>
@@ -50,11 +50,11 @@
           style="background: url('{{adsCategories[2].image}}') no-repeat center center; background-size: cover;">
           <div class="ms-detail">
             <h3 class="grid-animation">
-              <span class="ms-grid-sub-title">{{
+              <span class="ms-grid-sub-title catName">{{
                 adsCategories[2].name
                 }}</span>
             </h3>
-            <a routerLink="{{ adsCategories[2].name | lowercase }}" class="ms-btn-2">Shop Now
+            <a routerLink="category/{{ adsCategories[2].name | lowercase }}" class="ms-btn-2">Shop Now
               <i class="msicon msi-angle-double-right" aria-hidden="true"></i></a>
           </div>
         </div>
@@ -65,11 +65,11 @@
           style="background: url('{{adsCategories[3].image}}') no-repeat center center; background-size: cover;">
           <div class="ms-detail">
             <h3 class="grid-animation">
-              <span class="ms-grid-sub-title">{{
+              <span class="ms-grid-sub-title catName">{{
                 adsCategories[3].name
                 }}</span>
             </h3>
-            <a routerLink="{{ adsCategories[3].name | lowercase }}" class="ms-btn-2">Shop Now
+            <a routerLink="category/{{ adsCategories[3].name | lowercase }}" class="ms-btn-2">Shop Now
               <i class="msicon msi-angle-double-right" aria-hidden="true"></i></a>
           </div>
         </div>
@@ -80,9 +80,9 @@
           style="background: url('{{adsCategories[4].image}}') no-repeat center center; background-size: cover;">
           <div class="ms-detail">
             <h3 class="grid-animation">
-              <span class="ms-grid-sub-title">{{adsCategories[4].name}}</span>
+              <span class="ms-grid-sub-title catName">{{adsCategories[4].name}}</span>
             </h3>
-            <a routerLink="{{ adsCategories[4].name | lowercase }}" class="ms-btn-2">Shop Now
+            <a routerLink="category/{{ adsCategories[4].name | lowercase }}" class="ms-btn-2">Shop Now
               <i class="msicon msi-angle-double-right" aria-hidden="true"></i></a>
           </div>
         </div>
