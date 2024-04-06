@@ -30,7 +30,6 @@ export class CategoryProductsComponent implements OnInit {
   toggleSort() {
     if (this.btnSortToggle === "Low to High") {
       this.products.sort((a, b) => (a.price * (1-(a.discount/100))) - (b.price * (1-(b.discount/100))));
-
       this.btnSortToggle = "High to Low";
     } else {
       this.products.sort((a, b) => (b.price * (1-(b.discount/100))) - (a.price * (1-(a.discount/100))) );
@@ -38,9 +37,26 @@ export class CategoryProductsComponent implements OnInit {
     }
   }
 
-  addToCart(product: any) {
+  async addToCart(product: ProductModel) {
     console.log(product);
-    this.CartService.addToCart('user123',product);
+
+    let productToAdd = {
+      userId: 'user123',
+      productId: [product._id],
+      quantity: [1],
+      total: 1
+    };
+
+    if(product.quantity > 0) {
+      var result = await this.CartService.addToCart('user123', productToAdd);
+
+      // result.forEach((value) => console.log(value));
+      // console.log('-------------------------------------');
+      // console.log(productToAdd);
+      
+    }else {
+      console.log('Product quantity is 0');
+    }
   }
 
 }
