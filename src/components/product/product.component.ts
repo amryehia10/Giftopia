@@ -2,75 +2,54 @@ import { CommonModule } from '@angular/common';
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { ActivatedRoute, RouterModule } from '@angular/router';
 import { ProductService } from '../../services/product.service';
+import { GeneralMethods } from '../../functions';
+import { ProductReviewsComponent } from '../product-reviews/product-reviews.component';
+import { RelatedProductsComponent } from '../related-products/related-products.component';
 
 @Component({
   selector: 'app-product',
   standalone: true,
-  imports: [CommonModule, RouterModule],
+  imports: [CommonModule, RouterModule,ProductReviewsComponent,RelatedProductsComponent],
   providers: [ProductService],
   templateUrl: './product.component.html',
   styleUrls: ['./product.component.css'],
 })
 export class ProductComponent implements OnInit {
-  product: any;
+  product: ProductModel = {
+    _id: "",
+    desc: "",
+    name: "",
+    star: 0,
+    price: 0,
+    quantity: 0,
+    discount: 0,
+    numberOfSellings: 0,
+    numberOfRates: 0,
+    cat: [""],
+    images: [""],
+    createdAt: ""
+}
   filledStarsArray: any;
   emptyStarsArray: any;
-  discount: any;
-  temp = 0;
-
-  @ViewChild('reladedComponetContainer') reladedComponetContainer:
-    | ElementRef
-    | undefined;
 
   constructor(
     private service: ProductService,
     private route: ActivatedRoute
-  ) {
-    setInterval(() => {
-      // this.temp -= 240;
-      const element = this.reladedComponetContainer
-        ?.nativeElement as HTMLHtmlElement;
-      if (element) {
-        // element.style.transform = `translate3d(${this.temp}px, 0px, 0px)`;
-        setTimeout(() => {
-          element.appendChild(element.children[0]);
-        }, 1e3);
-      }
-    }, 2e3);
-  }
+  ) {}
   ngOnInit(): void {
-    const prdID = Number(this.route.snapshot.paramMap.get('id'));
+    const prdID = String(this.route.snapshot.paramMap.get('id'));
     console.log('ngOnInit called');
+    console.log(prdID);
     this.service.getProductByID(prdID).subscribe({
       next: (data) => {
-        this.product = data;
-        this.calculateProductRatings();
+        this.product = GeneralMethods.CastSingleProduct(data);
         this.calculateStarArrays();
-        this.discount = parseInt(this.product['discount']) / 100;
+        console.log(this.product._id);
       },
       error: (err) => {
         console.log(err);
       },
     });
-  }
-
-  calculateProductRatings() {
-    const { reviews } = this.product;
-    const sumOfStars = reviews.reduce(
-      (sum: number, review: any) => sum + review.stars,
-      0
-    );
-    const averageStars = sumOfStars / reviews.length;
-    this.product.ratings =
-      averageStars >= 0.5 ? Math.ceil(averageStars) : Math.floor(averageStars);
-  }
-
-  calculateStarArrays() {
-    const filledStars = Math.floor(this.product.ratings);
-    const emptyStars = 5 - filledStars;
-
-    this.filledStarsArray = Array(filledStars).fill(0);
-    this.emptyStarsArray = Array(emptyStars).fill(0);
   }
 
   scrollToReviews() {
@@ -79,4 +58,24 @@ export class ProductComponent implements OnInit {
       reviewsSection.scrollIntoView({ behavior: 'smooth' });
     }
   }
+
+  calculateStarArrays() {
+    const filledStars = Math.floor(this.product.star);
+    const emptyStars = 5 - filledStars;
+  
+    this.filledStarsArray = Array(filledStars).fill(0);
+    this.emptyStarsArray = Array(emptyStars).fill(0);
+  }
 }
+
+
+// calculateProductRatings() {
+//   const { reviews } = this.product;
+//   const sumOfStars = reviews.reduce(
+//     (sum: number, review: any) => sum + review.stars,
+//     0
+//   );
+//   const averageStars = sumOfStars / reviews.length;
+//   this.product.ratings =
+//     averageStars >= 0.5 ? Math.ceil(averageStars) : Math.floor(averageStars);
+// }

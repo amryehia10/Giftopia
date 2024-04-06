@@ -20,7 +20,7 @@ export class ProductService extends BaseService {
     return this.http.get(`${this.URL}/category/${catID}`);
   }
 
-  getProductByID(Pid: number): Observable<Object> {
+  getProductByID(Pid: string): Observable<Object> {
     return this.http.get(`${this.URL}/${Pid}`);
   }
 }
