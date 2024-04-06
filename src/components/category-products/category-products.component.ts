@@ -50,9 +50,9 @@ export class CategoryProductsComponent implements OnInit {
     if(product.quantity > 0) {
       var result = await this.CartService.addToCart('user123', productToAdd);
 
-      // result.forEach((value) => console.log(value));
-      // console.log('-------------------------------------');
-      // console.log(productToAdd);
+      result.forEach((value) => console.log(value));
+      console.log('-------------------------------------');
+      console.log(productToAdd);
       
     }else {
       console.log('Product quantity is 0');

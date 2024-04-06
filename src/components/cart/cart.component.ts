@@ -17,18 +17,40 @@ import { CartProductService } from '../../services/cart-product.service';
   templateUrl: './cart.component.html',
   styleUrl: './cart.component.css'
 })
-export class CartComponent implements OnInit {
+export class CartComponent /*implements OnInit */{
   cartItems: any[] = [];
 
   constructor(private router: Router, private activatedRouter: ActivatedRoute, private CartService: CartService) { }
 
-  ngOnInit(): void {
-    this.CartService.getAllAtCartByUserId('user123').subscribe({
-      next: (data) => console.log(data),
-      // next: (data) => this.cartItems = GeneralMethods.CastCartItems(data),
-      error: (error) => console.error(error)
-    });
+  // ngOnInit(): void {
+  //   this.CartService.getAllAtCartByUserId('user123').subscribe({
+  //     // next: (data) => console.log(data),
+  //     next: (data) => this.cartItems = GeneralMethods.CastCartItems(data),
+  //     error: (error) => console.error(error)
+  //   });
+  // }
+  // ngOnInit(): void {
+  //   this.CartService.getAllAtCartByUserId('user123').subscribe({
+  //     next: (data) => {
+  //       // Map each element of the array to the CartModel type
+  //       this.cartItems = data.map((item: any) => ({
+  //         userId: item.userId,
+  //         productId: item.productId,
+  //         quantity: item.quantity,
+  //         total: item.total
+  //       }));
+
+  //       console.log(data);
+
+  //     },
+  //     error: (error) => console.error(error)
+  //   });
+  // }
+
+  removeFromCart(item: any) {
+    
   }
+
   // constructor(private router: Router, cartProductService: CartProductService) { }
   
 
