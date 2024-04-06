@@ -29,16 +29,14 @@ export class CategoryProductsComponent implements OnInit {
 
   toggleSort() {
     if (this.btnSortToggle === "Low to High") {
-      this.products.sort((a, b) => a.price - b.price);
+      this.products.sort((a, b) => (a.price * (1-(a.discount/100))) - (b.price * (1-(b.discount/100))));
 
       this.btnSortToggle = "High to Low";
     } else {
-      this.products.sort((a, b) => b.price - a.price );
+      this.products.sort((a, b) => (b.price * (1-(b.discount/100))) - (a.price * (1-(a.discount/100))) );
       this.btnSortToggle = "Low to High";
     }
   }
-
-  // cartItems: any[] = [];
 
   addToCart(product: any) {
     console.log(product);
