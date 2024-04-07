@@ -64,7 +64,7 @@ export class CartComponent /*implements OnInit */{
   getProductById(Pid: any){
     this.ProductService.getProductByID(Pid).subscribe({
       next: (data) => {
-        this.currentProduct= GeneralMethods.CastProduct(data)
+        this.currentProduct= GeneralMethods.CastSingleProduct(data)
       },
       error: (error) => console.error(error)
     })
