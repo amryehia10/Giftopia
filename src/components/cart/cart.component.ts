@@ -6,6 +6,7 @@ import { CartService } from '../../services/cart.service';
 import { GeneralMethods } from '../../functions';
 import { CartProductService } from '../../services/cart-product.service';
 import { ProductService } from '../../services/product.service';
+import { firstValueFrom } from 'rxjs';
 
 @Component({
   selector: 'app-cart',
@@ -18,58 +19,49 @@ import { ProductService } from '../../services/product.service';
   templateUrl: './cart.component.html',
   styleUrl: './cart.component.css'
 })
-export class CartComponent /*implements OnInit */{
+
+export class CartComponent implements OnInit {
   cartItems: any[] = [];
   cartProducts: ProductModel[] = [];
 
   constructor(private router: Router, private activatedRouter: ActivatedRoute, private CartService: CartService, private ProductService: ProductService) { }
+  
+  async ngOnInit(): Promise<void> {
+    try {
+      const data = await firstValueFrom(
+        this.CartService.getAllAtCartByUserId('660c71754ae7f2f3338cca19')
+      );
+      this.cartItems = data["data"].map((item: any) => ({
+        userId: item.userId,
+        productId: item.productId,
+        quantity: item.quantity,
+        total: item.total,
+      }));
 
-  // ngOnInit(): void {
-  //   this.CartService.getAllAtCartByUserId('user123').subscribe({
-  //     // next: (data) => console.log(data),
-  //     next: (data) => this.cartItems = GeneralMethods.CastCartItems(data),
-  //     error: (error) => console.error(error)
-  //   });
-  // }
-  ngOnInit(): void {
-    this.CartService.getAllAtCartByUserId('660c71754ae7f2f3338cca19').subscribe({
-      next: (data) => {
-        this.cartItems = data["data"].map((item: any) => ({
-          userId: item.userId,
-          productId: item.productId,
-          quantity: item.quantity,
-          total: item.total
-        }));
-
-        console.log(this.cartItems);
-      },
-      error: (error) => console.error(error)
-    });
-
-    this.getAllproductsInCart();
+      await this.getAllproductsInCart();
+      console.log(this.cartProducts);
+    } catch (error) {
+      console.error(error);
+    }
   }
 
-  currentProduct:any;
-  getAllproductsInCart() {
+  async getAllproductsInCart(): Promise<void> {
     for (const element of this.cartItems) {
       for (const productId of element.productId) {
-        this.getProductById(productId);
-        this.cartProducts.push(this.currentProduct);
+        await this.getProductById(productId);
       }
-      console.log(this.cartProducts);
     }
-  } 
-
-
-  getProductById(Pid: any){
-    this.ProductService.getProductByID(Pid).subscribe({
-      next: (data) => {
-        this.currentProduct= GeneralMethods.CastSingleProduct(data)
-      },
-      error: (error) => console.error(error)
-    })
   }
 
+  async getProductById(Pid: any): Promise<void> {
+    try {
+      const data = await firstValueFrom(this.ProductService.getProductByID(Pid));
+      const currentProduct = GeneralMethods.CastSingleProduct(data);
+      this.cartProducts.push(currentProduct);
+    } catch (error) {
+      console.error(error);
+    }
+  }
 
   removeFromCart(item: any) {
     
