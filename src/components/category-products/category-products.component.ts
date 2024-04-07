@@ -41,18 +41,18 @@ export class CategoryProductsComponent implements OnInit {
     console.log(product);
 
     let productToAdd = {
-      userId: 'user123',
+      userId: '660c71754ae7f2f3338cca19',
       productId: [product._id],
       quantity: [1],
-      total: 1
+      total: product.price
     };
 
     if(product.quantity > 0) {
-      var result = await this.CartService.addToCart('user123', productToAdd);
+      var result = await this.CartService.addToCart('660c71754ae7f2f3338cca19', productToAdd);
 
-      result.forEach((value) => console.log(value));
-      console.log('-------------------------------------');
-      console.log(productToAdd);
+      // result.forEach((value) => console.log(value));
+      // console.log('-------------------------------------');
+      // console.log(productToAdd);
       
     }else {
       console.log('Product quantity is 0');

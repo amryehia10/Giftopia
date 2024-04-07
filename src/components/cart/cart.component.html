@@ -46,22 +46,22 @@
                                                 </tr>
                                             </thead>
                                             <tbody>
-                                                @for(item of cartItems; track item.userId){
+                                                @for(item of cartProducts; track item.data._id){
                                                     <tr>
                                                         <td data-label="Product" class="ms-cart-pro-name"><a
                                                                 href="product-left-sidebar.html"><img
                                                                     class="ms-cart-pro-img mr-4"
-                                                                    src=itmem.productImage
-                                                                    alt="">zzzz</a></td>
+                                                                    src={{item.productImage}}
+                                                                    alt="">{{item.data.name}}</a></td>
                                                         <td data-label="Price" class="ms-cart-pro-price"><span
-                                                                class="amount">itmem.price</span></td>
+                                                                class="amount">{{item.price}}</span></td>
                                                         <td data-label="Quantity" class="ms-cart-pro-qty"
                                                             style="text-align: center;">
                                                             <div class="cart-qty-plus-minus"><input
                                                                     class="cart-plus-minus" type="text"
-                                                                    name="cartqtybutton" value="item.quantity"></div>
+                                                                    name="cartqtybutton" value="{{item.quantity}}"></div>
                                                         </td>
-                                                        <td data-label="Total" class="ms-cart-pro-subtotal">item.total</td>
+                                                        <td data-label="Total" class="ms-cart-pro-subtotal">{{item.total}}</td>
                                                         <td data-label="Remove" class="ms-cart-pro-remove">
                                                             <a href="javascript:void(0)" (click)="removeFromCart(item)">
                                                                 <i class="msicon msi-trash-o"></i>
