@@ -5,8 +5,15 @@ export class GeneralMethods {
     static CastProducts = (param: any) =>
         (param["data"] as ProductModel[]);
 
-    static CastProduct = (param: any) =>
+    static CastSingleProduct = (param: any) =>
         (param["data"] as ProductModel);
+
+    static CastReviews = (param: any) =>
+        (param["data"] as ReviewModel[]);
+
+    static CastUsers = (param: any) =>
+        (param["data"] as UserModel[]);
+
     // static CastCartItems = (param: any) =>
     //     (param["data"] as CartItemModel[]);
 }
