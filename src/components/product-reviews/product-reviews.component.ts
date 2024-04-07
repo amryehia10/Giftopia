@@ -14,7 +14,6 @@ import { ActivatedRoute, RouterModule } from '@angular/router';
   styleUrl: './product-reviews.component.css'
 })
 export class ProductReviewsComponent implements OnInit{
-  @Input('productId') productId = '';
   reviews: ReviewModel[] = [];
   users: UserModel[] = [];
   userData: UserModel = {
