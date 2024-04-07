@@ -14,6 +14,9 @@ export class GeneralMethods {
     static CastUsers = (param: any) =>
         (param["data"] as UserModel[]);
 
+    static CastUser = (param: any) =>
+        (param["data"] as UserModel);
+
     // static CastCartItems = (param: any) =>
     //     (param["data"] as CartItemModel[]);
 }

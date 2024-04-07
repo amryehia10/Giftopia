@@ -38,8 +38,6 @@ export class ProductComponent implements OnInit {
   ) {}
   ngOnInit(): void {
     const prdID = String(this.route.snapshot.paramMap.get('id'));
-    console.log('ngOnInit called');
-    console.log(prdID);
     this.service.getProductByID(prdID).subscribe({
       next: (data) => {
         this.product = GeneralMethods.CastSingleProduct(data);
