@@ -26,17 +26,30 @@ export class CartComponent implements OnInit {
 
   constructor(private router: Router, private activatedRouter: ActivatedRoute, private CartService: CartService, private ProductService: ProductService) { }
   
-   ngOnInit(): void {
-    const userId = '660c71754ae7f2f3338cca19'; // Replace this with the actual user ID
-    this.CartService.getUserCart(userId).subscribe({
-      next: (data: any) => {
-        this.cartItems = data.data.map((cart: any) => cart.products).flat();
-        console.log(this.cartItems);
-      },
-      error: (error: any) => {
-        console.error(error);
-      }
-    });
+   async ngOnInit(): Promise<void> {
+    const userId = '6613da0131e67deca8b6c269'; 
+
+    try {
+      const data = await firstValueFrom(
+        this.CartService.getUserCart(userId)
+      );
+      console.log(data);
+      
+      this.cartItems = data["data"][0]["products"].map((item: any) => ({
+        _id: item._id,
+        name: item.name ,
+        price: item.price,
+        image: item.image,
+        quantity: item.quantity,
+        discount: item.discount,
+        soldQuantity: item.soldQuantity
+      }));
+
+      console.log(this.cartItems);
+      
+    } catch (error) {
+      console.error('Error fetching user cart:', error);
+    }
   }
 
 
@@ -88,3 +101,35 @@ export class CartComponent implements OnInit {
   }
 
 }
+
+
+
+
+// {
+//   "status": "success",
+//   "data": [
+//     "_id":"660b29b96a460f658ffe0b05",
+//     "userId": "660c71754ae7f2f3338cca19",
+//     "total": 1999,
+//     "products": [
+//       {
+//         "_id": "660b29b96a460f658ffe0b05",
+//         "name": "ACTIV SOCKS PACKAGE",
+//         "price": 100,
+//         "image":"https://m.media-amazon.com/images/I/61pgqHzrRmL._AC_SX569_.jpg",
+//         "quantity": 20,
+//         "discount": 20,
+//         "soldQuantity": 120
+//       },
+//       {
+//         "_id": "660b29b96a460f658ffe0b05",
+//         "name": "ACTIV SOCKS PACKAGE",
+//         "price": 100,
+//         "image":"https://m.media-amazon.com/images/I/61pgqHzrRmL._AC_SX569_.jpg",
+//         "quantity": 20,
+//         "discount": 20,
+//         "soldQuantity": 120
+//       }
+//   ],
+// }
+    

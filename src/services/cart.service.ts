@@ -16,14 +16,11 @@ export class CartService extends BaseService {
         return this.http.get(`${this.URL}/${userId}`);
     }
 
-    updateCartProducts(userId: string, cartData: any): Observable<any> {
-        return this.http.put(`${this.URL}/${userId}`, cartData);
+    updateCartProducts(cartData: any): Observable<any> {
+        return this.http.put(`${this.URL}`, cartData);
     }
 
     // addToCart(userId: string, cartData: any): Observable<any> {
     //     return this.http.post(`${this.URL}/${userId}`, cartData);
     // }
 }
-
-// getUserCart
-// updateCartProducts
