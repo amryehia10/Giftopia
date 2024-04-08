@@ -15,25 +15,31 @@ import { CheckoutComponent } from '../components/checkout/checkout.component';
 import { PrivacyPolicyComponent } from '../components/privacy-policy/privacy-policy.component';
 import { NewProductsComponent } from '../components/new-products/new-products.component';
 import { discoverAllResolver } from '../components/discover-all/discover-all.resolver';
+import { LogoutComponent } from '../components/logout/logout.component';
 
 export const routes: Routes = [
-    {path: '', component:HomeComponent},
-    {path: 'home', component:HomeComponent},
-    {path: 'home/:name',component:CategoryProductsComponent},
-    {path: 'discoverAll', component:DiscoverAllComponent,resolve: {data:discoverAllResolver}},
-    {path: 'products/:id', component:ProductComponent},
-    {path: 'home/products/:id', component:ProductComponent},
-    {path: 'category/:name',component:CategoryProductsComponent},
-    {path: 'about',component:AboutUsComponent},
-    {path: 'contact',component:ContactUsComponent},
-    {path: 'terms-condition',component:TermsConditionsComponent},
-    // {path: ':name',component:CategoryProductsComponent},/** any data goto same page */
-    {path: 'login',component:LoginComponent},
-    {path: 'register',component:RegisterComponent},
-    {path: 'track-order',component:TrackOrderComponent},
-    {path: 'cart',component:CartComponent},
-    {path: 'payment-method',component:PaymentMethodComponent},
-    {path: 'checkout',component:CheckoutComponent},
-    {path: 'privacy-policy',component:PrivacyPolicyComponent},
-    {path: 'new-products',component:NewProductsComponent},
+  { path: '', component: HomeComponent },
+  { path: 'home', component: HomeComponent },
+  { path: 'home/:name', component: CategoryProductsComponent },
+  {
+    path: 'discoverAll',
+    component: DiscoverAllComponent,
+    resolve: { data: discoverAllResolver },
+  },
+  { path: 'products/:id', component: ProductComponent },
+  { path: 'home/products/:id', component: ProductComponent },
+  { path: 'category/:name', component: CategoryProductsComponent },
+  { path: 'about', component: AboutUsComponent },
+  { path: 'contact', component: ContactUsComponent },
+  { path: 'terms-condition', component: TermsConditionsComponent },
+  // {path: ':name',component:CategoryProductsComponent},/** any data goto same page */
+  { path: 'login', component: LoginComponent },
+  { path: 'logout', component: LogoutComponent },
+  { path: 'register', component: RegisterComponent },
+  { path: 'track-order', component: TrackOrderComponent },
+  { path: 'cart', component: CartComponent },
+  { path: 'payment-method', component: PaymentMethodComponent },
+  { path: 'checkout', component: CheckoutComponent },
+  { path: 'privacy-policy', component: PrivacyPolicyComponent },
+  { path: 'new-products', component: NewProductsComponent },
 ];

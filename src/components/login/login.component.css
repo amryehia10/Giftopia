@@ -1,7 +1,4 @@
 .container {
-  background-image: url('/assets/img/bg/Giftopia_Background.jpg');
-  background-size: 100% 100%;
-  background-attachment: fixed;
   min-height: 105vh;
   min-width: 100%;
   margin-top: -5vh;
@@ -18,62 +15,34 @@ input {
 
 .card {
   background-color: rgba(255, 255, 255, 0.279);
-  border: 3.5px black groove;
+  border: 1px solid #17181c23;
 }
 
 .card-header {
   font-weight: bold;
   font-size: 27px;
-  color: orangered;
-  font-family: cursive;
-  text-shadow: -2px -2px 0 #000, 1px -1px 0 #dfe204, -1px 1px 0 #000,
-    1px 1px 0 #dfe204;
-  letter-spacing: 2px;
+  color: #17181c;
 }
 
 .form-group {
-  font-weight: bold;
   font-size: 20px;
-  color: rgb(255, 149, 0);
-  font-family: cursive;
-  text-shadow: -1.5px -1.5px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
-    1px 1px 0 #000;
-  letter-spacing: 3px;
+  color: #17181c;
 }
 
 .validation {
   margin-left: 10px;
   font-size: 15px;
-  font-family: cursive;
-  color: rgb(113, 0, 0);
-  text-shadow: -0.5px -0.5px 0 #ff5c5c, 0.5px -0.5px 0 #ff5c5c,
-    -0.5px 0.5px 0 #ff5c5c, 0.5px 0.5px 0 #ff5c5c;
-  letter-spacing: 1px;
 }
-
-.foot {
-  font-weight: bold;
+.error {
+  color: #e64949;
+}
+.sucess {
+  color: #198754;
 }
 
 .giftBtn {
   padding-top: 15px;
-  font-weight: bold;
-  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
-    1px 1px 0 #000;
-  background-color: orange;
-  border: 2px red groove;
-  border-top-left-radius: 50%;
-  border-top-right-radius: 50%;
-  position: relative;
-}
-
-.giftBtn:hover {
-  text-shadow: -1.5px -1.5px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
-    1.5px 1.5px 0 #000;
-  background-color: rgb(255, 190, 39);
-  border: 2px rgb(255, 66, 66) groove;
-  border-top-left-radius: 0%;
-  border-top-right-radius: 0%;
+  width: 100%;
 }
 
 .wrapper {
@@ -83,8 +52,4 @@ input {
   height: 30px;
   width: 71px;
   pointer-events: none;
-}
-
-.giftBtn:hover .wrapper {
-  opacity: 0;
 }

@@ -9,11 +9,14 @@
           <div class="header-top-social">
             <ul class="mb-0">
               <li class="list-inline-item">
-                <a target="_blank" href="tel:+20 122 088 5744"><i class="msicon msi-phone"> +20 122 088 5744</i>
+                <a target="_blank" href="tel:+20 122 088 5744"
+                  ><i class="msicon msi-phone"> +20 122 088 5744</i>
                 </a>
               </li>
               <li class="list-inline-item">
-                <a target="_blank" href="tel:+20 120 549 0492"><i class="msicon msi-whatsapp"> +20 120 549 0492</i></a>
+                <a target="_blank" href="tel:+20 120 549 0492"
+                  ><i class="msicon msi-whatsapp"> +20 120 549 0492</i></a
+                >
               </li>
             </ul>
           </div>
@@ -65,33 +68,74 @@
         <div class="col header-top-res d-lg-none">
           <div class="ms-header-bottons">
             <!-- Category Toggle -->
-            <div class="col ms-category-icon-block">
+            <div
+              class="col ms-category-icon-block"
+              (click)="openCategorySidebar()"
+            >
               <div class="ms-category-menu">
                 <div class="ms-category-toggle">
-                  <img src="assets/img/icons/category-icon.svg" class="svg_img header_svg svg_cat" alt="icon" />
+                  <img
+                    src="assets/img/icons/category-icon.svg"
+                    class="svg_img header_svg svg_cat"
+                    alt="icon"
+                  />
                 </div>
               </div>
             </div>
             <div class="right-icons">
+              @if (!user) {
               <!-- Header User Start -->
               <a routerLink="login" class="ms-header-btn ms-header-user">
                 <div class="header-icon">
-                  <img src="assets/img/icons/user.svg" class="svg_img header_svg" alt="" />
+                  <img
+                    src="assets/img/icons/user.svg"
+                    class="svg_img header_svg"
+                    alt=""
+                  />
                 </div>
               </a>
               <!-- Header User End -->
-              <!-- Header Wishlist Start -->
-              <a href="javascript:void(0)" class="ms-header-btn ms-wish-toggle">
+              }@else{
+              <!-- Header Profile Start -->
+              <a routerLink="profile" class="ms-header-btn ms-header-user">
                 <div class="header-icon">
-                  <img src="assets/img/icons/wishlist.svg" class="svg_img header_svg" alt="" />
+                  <img
+                    src="assets/img/icons/user.svg"
+                    class="svg_img header_svg"
+                    alt=""
+                  />
+                </div>
+              </a>
+              <!-- Header Profile End -->
+              }
+              <!-- Header Wishlist Start -->
+              <a
+                href="javascript:void(0)"
+                class="ms-header-btn ms-wish-toggle"
+                (click)="openWishlistSidebar()"
+              >
+                <div class="header-icon">
+                  <img
+                    src="assets/img/icons/wishlist.svg"
+                    class="svg_img header_svg"
+                    alt=""
+                  />
                 </div>
                 <span class="ms-header-count ms-wishlist-count">3</span>
               </a>
               <!-- Header Wishlist End -->
               <!-- Header Cart Start -->
-              <a routerLink="cart" class="ms-header-btn ms-cart-toggle">
+              <a
+                href="javascript:void(0)"
+                class="ms-header-btn ms-cart-toggle"
+                (click)="openCartSidebar()"
+              >
                 <div class="header-icon">
-                  <img src="assets/img/icons/pro_cart.svg" class="svg_img header_svg" alt="" />
+                  <img
+                    src="assets/img/icons/pro_cart.svg"
+                    class="svg_img header_svg"
+                    alt=""
+                  />
                 </div>
                 <span class="ms-header-count ms-cart-count">3</span>
               </a>
@@ -106,14 +150,18 @@
   <!-- Header Top  End -->
 
   <!-- Header Bottom  Start -->
-  <div class="ms-header-bottom d-none d-lg-block    ">
+  <div class="ms-header-bottom d-none d-lg-block">
     <div class="container position-relative">
       <div class="row">
         <div class="ms-flex">
           <!-- Header Logo Start -->
           <div class="align-self-center ms-header-logo">
             <div class="header-logo">
-              <a routerLink="/"><img src="assets/img/logo/logo_transparent.png" alt="Site Logo" /></a>
+              <a routerLink="/"
+                ><img
+                  src="assets/img/logo/logo_transparent.png"
+                  alt="Site Logo"
+              /></a>
             </div>
           </div>
           <!-- Header Logo End -->
@@ -122,10 +170,17 @@
           <div class="align-self-center ms-header-search">
             <div class="header-search">
               <form class="ms-search-group-form" action="#">
-                <input class="form-control ms-search-bar" placeholder="Search Products..." type="text" />
+                <input
+                  class="form-control ms-search-bar"
+                  placeholder="Search Products..."
+                  type="text"
+                />
                 <button class="search_submit" type="submit">
-                  <img src="assets/img/icons/search.svg" class="svg_img search_svg" alt="" />
-                  
+                  <img
+                    src="assets/img/icons/search.svg"
+                    class="svg_img search_svg"
+                    alt=""
+                  />
                 </button>
               </form>
             </div>
@@ -136,11 +191,19 @@
           <div class="align-self-center">
             <div class="ms-header-bottons">
               <!-- Header User Start -->
+              @if(!user){
               <div class="ms-acc-drop">
-                <a href="javascript:void(0)" class="ms-header-btn ms-header-user dropdown-toggle ms-user-toggle"
-                  title="Account">
+                <a
+                  href="javascript:void(0)"
+                  class="ms-header-btn ms-header-user dropdown-toggle ms-user-toggle"
+                  title="Account"
+                >
                   <div class="header-icon">
-                    <img src="assets/img/icons/user.svg" class="svg_img header_svg" alt="" />
+                    <img
+                      src="assets/img/icons/user.svg"
+                      class="svg_img header_svg"
+                      alt=""
+                    />
                   </div>
                   <div class="ms-btn-desc">
                     <span class="ms-btn-title">Account</span>
@@ -159,30 +222,76 @@
                   </li>
                 </ul>
               </div>
+              }@else {
+              <div class="ms-acc-drop">
+                <a
+                  routerLink="profile"
+                  class="ms-header-btn ms-header-user dropdown-toggle ms-user-toggle"
+                  title="Account"
+                >
+                  <div class="header-icon">
+                    <img
+                      src="assets/img/icons/user.svg"
+                      class="svg_img header_svg"
+                      alt=""
+                    />
+                  </div>
+                  <div class="ms-btn-desc">
+                    <span class="ms-btn-title">Account</span>
+                    <span class="ms-btn-stitle">{{ user.name }}</span>
+                  </div>
+                </a>
+                <ul class="ms-dropdown-menu">
+                  <li>
+                    <a class="dropdown-item" routerLink="/logout">Logout</a>
+                  </li>
+                </ul>
+              </div>
+              }
               <!-- Header User End -->
               <!-- Header wishlist Start -->
-              <a (click)="openWishlistSidebar()" href="javascript:void(0)" class="ms-header-btn ms-wish-toggle"
-                title="Wishlist">
+              <a
+                (click)="openWishlistSidebar()"
+                href="javascript:void(0)"
+                class="ms-header-btn ms-wish-toggle"
+                title="Wishlist"
+              >
                 <div class="header-icon">
-                  <img src="assets/img/icons/wishlist.svg" class="svg_img header_svg" alt="" />
+                  <img
+                    src="assets/img/icons/wishlist.svg"
+                    class="svg_img header_svg"
+                    alt=""
+                  />
                 </div>
                 <div class="ms-btn-desc">
                   <span class="ms-btn-title">Wishlist</span>
-                  <span class="ms-btn-stitle"><b class="ms-wishlist-count">3</b>-items</span>
+                  <span class="ms-btn-stitle"
+                    ><b class="ms-wishlist-count">3</b>-items</span
+                  >
                 </div>
               </a>
               <!-- Header wishlist End -->
 
               <!-- Header Cart Start -->
-              <a (click)="openCartSidebar()" href="javascript:void(0)" class="ms-header-btn ms-cart-toggle"
-                title="Cart">
+              <a
+                (click)="openCartSidebar()"
+                href="javascript:void(0)"
+                class="ms-header-btn ms-cart-toggle"
+                title="Cart"
+              >
                 <div class="header-icon">
-                  <img src="assets/img/icons/cart_5.svg" class="svg_img header_svg" alt="" />
+                  <img
+                    src="assets/img/icons/cart_5.svg"
+                    class="svg_img header_svg"
+                    alt=""
+                  />
                   <!-- <span class="main-label-note-new"></span> -->
                 </div>
                 <div class="ms-btn-desc">
                   <span class="ms-btn-title">Cart</span>
-                  <span class="ms-btn-stitle"><b class="ms-cart-count">3</b>-items</span>
+                  <span class="ms-btn-stitle"
+                    ><b class="ms-cart-count">3</b>-items</span
+                  >
                 </div>
               </a>
               <!-- Header Cart End -->
@@ -199,10 +308,14 @@
     <div class="container position-relative">
       <div class="row justify-content-between">
         <!-- Category Toggle -->
-        <div class="col ms-category-icon-block">
+        <div class="col ms-category-icon-block" (click)="openCategorySidebar()">
           <div class="ms-category-menu">
-            <div class="ms-category-toggle" (click)="openCategorySidebar()">
-              <img src="assets/img/icons/category-icon.svg" class="svg_img header_svg svg_cat" alt="icon" />
+            <div class="ms-category-toggle">
+              <img
+                src="assets/img/icons/category-icon.svg"
+                class="svg_img header_svg svg_cat"
+                alt="icon"
+              />
             </div>
           </div>
         </div>
@@ -217,13 +330,17 @@
                     <li class="non-drop"><a routerLink="/">Home</a></li>
 
                     <li class="dropdown drop-list">
-                      <a routerLink="/category" class="dropdown-arrow">Categories<i
-                          class="msicon msi-angle-right"></i></a>
+                      <a routerLink="/category" class="dropdown-arrow"
+                        >Categories<i class="msicon msi-angle-right"></i
+                      ></a>
                       <ul class="sub-menu">
                         @for (cat of Categories; track cat._id) {
                         <li>
                           <!-- <a routerLink="/category/{{ cat.name.toLowerCase() }}">{{cat.name}}</a> -->
-                          <a  href="/category/{{cat.name.toLowerCase()}}">{{cat.name}}</a> <!-- To Update Screen with new category -->
+                          <a href="/category/{{ cat.name.toLowerCase() }}">{{
+                            cat.name
+                          }}</a>
+                          <!-- To Update Screen with new category -->
                         </li>
                         }
                       </ul>
@@ -252,11 +369,20 @@
                       </ul>
                     </li> -->
                     <!-- Discover -->
-                    <li class="non-drop"><a routerLink="/about">About Us</a></li>
-                    <li class="non-drop"><a routerLink="/contact">Contact Us</a></li>
                     <li class="non-drop">
-                      <a routerLink="/discoverAll"><img src="assets/img/icons/discover.svg" class="svg_img"
-                          alt="discover" />Discover</a>
+                      <a routerLink="/about">About Us</a>
+                    </li>
+                    <li class="non-drop">
+                      <a routerLink="/contact">Contact Us</a>
+                    </li>
+                    <li class="non-drop">
+                      <a routerLink="/discoverAll"
+                        ><img
+                          src="assets/img/icons/discover.svg"
+                          class="svg_img"
+                          alt="discover"
+                        />Discover</a
+                      >
                     </li>
                   </ul>
                 </div>
@@ -279,14 +405,20 @@
           <div class="col ms-header-logo">
             <div class="header-logo">
               <a routerLink="/">
-                <img src="assets/img/logo/logo_transparent.png" alt="Site Logo" />
+                <img
+                  src="assets/img/logo/logo_transparent.png"
+                  alt="Site Logo"
+                />
               </a>
             </div>
           </div>
           <!-- Header Logo End -->
           <!-- Header menu Start -->
-          <a href="javascript:void(0)" class="ms-header-btn ms-site-menu-icon d-lg-none d-flex"
-            (click)="togelMenuSideBar()">
+          <a
+            href="javascript:void(0)"
+            class="ms-header-btn ms-site-menu-icon d-lg-none d-flex"
+            (click)="togelMenuSideBar()"
+          >
             <img src="assets/img/icons/menu.svg" class="svg_img" alt="menu" />
           </a>
           <!-- Header menu End -->
@@ -298,16 +430,26 @@
 </header>
 <!-- Header End  -->
 
-<app-side-bar-cart [isCartSidebarVisible]="isCartSidebarVisible" (closeCartSidebar)="onCloseCartSidebar()">
+<app-side-bar-cart
+  [isCartSidebarVisible]="isCartSidebarVisible"
+  (closeCartSidebar)="onCloseCartSidebar()"
+>
 </app-side-bar-cart>
 
-<app-side-bar-category [isCategorySidebarVisible]="isCategorySidebarVisible"
-  (closeCategorySidebar)="onCloseCategorySidebar()">
+<app-side-bar-category
+  [isCategorySidebarVisible]="isCategorySidebarVisible"
+  (closeCategorySidebar)="onCloseCategorySidebar()"
+>
 </app-side-bar-category>
 
-<app-side-bar-wishlist [isWishlistSidebarVisible]="isWishlistSidebarVisible"
-  (closeWishlistSidebar)="onCloseWishlistSidebar()">
+<app-side-bar-wishlist
+  [isWishlistSidebarVisible]="isWishlistSidebarVisible"
+  (closeWishlistSidebar)="onCloseWishlistSidebar()"
+>
 </app-side-bar-wishlist>
 
-<app-side-bar-menu [isMenuSideBarVisible]="isMenuSideBarVisible" (closeMenuSideBar)="togelMenuSideBar()">
+<app-side-bar-menu
+  [isMenuSideBarVisible]="isMenuSideBarVisible"
+  (closeMenuSideBar)="togelMenuSideBar()"
+>
 </app-side-bar-menu>

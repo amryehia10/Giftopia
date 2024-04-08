@@ -44,10 +44,20 @@
         <li>
           <a (click)="onCloseMenuSideBar()" routerLink="/checkout">Checkout</a>
         </li>
+        @if(!user){
+
         <li><a (click)="onCloseMenuSideBar()" routerLink="/login">Login</a></li>
         <li>
           <a (click)="onCloseMenuSideBar()" routerLink="/register">Register</a>
         </li>
+        } @else {
+        <li>
+          <a (click)="onCloseMenuSideBar()" routerLink="/profile">Profile</a>
+        </li>
+        <li>
+          <a (click)="onCloseMenuSideBar()" routerLink="/logout">Logout</a>
+        </li>
+        }
         <li>
           <a (click)="onCloseMenuSideBar()" routerLink="/track-order"
             >Track Order</a
