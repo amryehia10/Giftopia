@@ -20,12 +20,27 @@ import { firstValueFrom } from 'rxjs';
   styleUrl: './cart.component.css'
 })
 
-export class CartComponent /*implements OnInit*/ {
+export class CartComponent implements OnInit {
   cartItems: any[] = [];
-  cartProducts: ProductModel[] = [];
+  // cartProducts: ProductModel[] = [];
 
   constructor(private router: Router, private activatedRouter: ActivatedRoute, private CartService: CartService, private ProductService: ProductService) { }
   
+   ngOnInit(): void {
+    const userId = '660c71754ae7f2f3338cca19'; // Replace this with the actual user ID
+    this.CartService.getUserCart(userId).subscribe({
+      next: (data: any) => {
+        this.cartItems = data.data.map((cart: any) => cart.products).flat();
+        console.log(this.cartItems);
+      },
+      error: (error: any) => {
+        console.error(error);
+      }
+    });
+  }
+
+
+  //#region "Old ngOnInit"
   // async ngOnInit(): Promise<void> {
   //   try {
   //     const data = await firstValueFrom(
@@ -45,23 +60,24 @@ export class CartComponent /*implements OnInit*/ {
   //   }
   // }
 
-  async getAllproductsInCart(): Promise<void> {
-    for (const element of this.cartItems) {
-      for (const productId of element.productId) {
-        await this.getProductById(productId);
-      }
-    }
-  }
+  // async getAllproductsInCart(): Promise<void> {
+  //   for (const element of this.cartItems) {
+  //     for (const productId of element.productId) {
+  //       await this.getProductById(productId);
+  //     }
+  //   }
+  // }
 
-  async getProductById(Pid: any): Promise<void> {
-    try {
-      const data = await firstValueFrom(this.ProductService.getProductByID(Pid));
-      const currentProduct = GeneralMethods.CastSingleProduct(data);
-      this.cartProducts.push(currentProduct);
-    } catch (error) {
-      console.error(error);
-    }
-  }
+  // async getProductById(Pid: any): Promise<void> {
+  //   try {
+  //     const data = await firstValueFrom(this.ProductService.getProductByID(Pid));
+  //     const currentProduct = GeneralMethods.CastSingleProduct(data);
+  //     this.cartProducts.push(currentProduct);
+  //   } catch (error) {
+  //     console.error(error);
+  //   }
+  // }
+  //#endregion
 
   removeFromCart(item: any) {
     
