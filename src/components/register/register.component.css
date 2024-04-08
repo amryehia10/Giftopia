@@ -1,7 +1,4 @@
 .container {
-  background-image: url('/assets/img/bg/Giftopia_Background.jpg');
-  background-size: 100% 100%;
-  background-attachment: fixed;
   min-height: 105vh;
   min-width: 100%;
   margin-top: -5vh;
@@ -10,13 +7,15 @@
 
 .loginForm {
   margin-top: 15vh;
-  width: 50%;
+  width: 70%;
   margin-left: auto;
   margin-right: auto;
   display: flex;
   justify-content: center;
-  padding: 20px;
-  margin-bottom: 10vh;
+  flex-direction: column;
+  border: 1px solid #922c19;
+  border-radius: 7px;
+  overflow: hidden;
 }
 
 input,
@@ -27,44 +26,24 @@ textarea {
   margin-top: 15px;
 }
 
-.card {
-  background-color: rgba(255, 255, 255, 0.279);
-  border: 3.5px black groove;
-}
-
 .card-header {
-  font-weight: 700;
+  background-color: #f8f8f8;
   font-size: 25px;
-  color: orangered;
-  font-family: cursive;
-  text-shadow: -1.5px -1.5px 0 #000, 0.5px -0.5px 0 #999b00, -1.5px 1.5px 0 #000,
-    0.5px 0.5px 0 #999b00;
-  letter-spacing: 2px;
-  margin: auto;
+  font-weight: bold;
+  width: 100%;
+  text-align: center;
+  padding: 10px;
+  color: #922c19;
 }
 
 .form-group {
-  font-weight: bold;
   font-size: 20px;
-  color: rgb(255, 149, 0);
-  font-family: cursive;
-  text-shadow: -1.5px -1.5px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
-    1px 1px 0 #000;
-  letter-spacing: 3px;
-}
-
-.validation {
-  margin-left: 10px;
-  font-size: 15px;
-  font-family: cursive;
-  color: rgb(113, 0, 0);
-  text-shadow: -0.5px -0.5px 0 #ff5c5c, 0.5px -0.5px 0 #ff5c5c,
-    -0.5px 0.5px 0 #ff5c5c, 0.5px 0.5px 0 #ff5c5c;
-  letter-spacing: 1px;
+  color: #17181c;
+  padding: 0 20px;
 }
 
 hr {
-  color: black;
+  color: #17181c;
   background-color: rgb(192, 0, 0);
   height: 2px;
   width: 90%;
@@ -73,78 +52,38 @@ hr {
   margin-bottom: 20px;
 }
 
-.foot {
-  font-weight: bold;
-}
-
 .giftBtn {
-  margin-top: 10px;
-  margin-bottom: 15px;
-  font-weight: bold;
-  font-size: medium;
-  background-color: orange;
-  border: 2px red groove;
-  position: relative;
-  min-width: 160px;
-  min-height: 40px;
-  margin-left: auto;
-  margin-right: auto;
+  color: #ddd;
+  background-color: #922c19;
+  border: 1px solid #ddd;
 }
-
 .giftBtn:hover {
-  background-color: rgb(255, 190, 39);
-  border: 2px rgb(255, 66, 66) groove;
-  border-top-left-radius: 0%;
-  border-top-right-radius: 0%;
+  background-color: #772617;
 }
-
-.wrapper {
-  position: absolute;
-  top: 0;
-  left: 8px;
-  height: 30px;
-  width: 71px;
-  pointer-events: none;
+.giftBtn:active {
+  border: 1px solid #a07c75;
 }
-
-.giftBtn:hover .wrapper {
-  opacity: 0;
-}
-
 .button-container {
   display: flex;
+  padding: 10px;
+  gap: 10px;
+  margin-top: 10px;
+}
+@media screen and (max-width: 700px) {
+  .button-container {
+    flex-direction: column;
+  }
 }
 
-.button-container button {
-  margin-top: 50px;
-  margin-right: 120px;
+.btn-secondary {
+  background-color: #a8a8a8;
 }
-
-.regBtn {
-  background-color: blue;
-  color: white;
-  border: 2px black solid;
-}
-
-.regBtn:hover {
-  background-color: rgb(69, 69, 255);
-  color: white;
-  border: 2px black solid;
+.btn-secondary:hover {
+  background-color: #7a7a7a;
 }
 
 .removeBtn {
-  background-color: rgb(199, 0, 0);
-  color: white;
-  border: 2px black solid;
-  scale: 0.9;
-  margin: auto;
-  margin-bottom: 15px;
-}
-
-.removeBtn:hover {
-  background-color: rgb(228, 1, 1);
-  color: white;
-  border: 2px black solid;
+  margin: 10px;
 }
 
 .input-container {
@@ -182,6 +121,7 @@ label.radio-label {
   width: 140px;
   height: 100px;
   border: 2px solid black;
+  margin: 10px;
 }
 
 .enlarge-image {
@@ -208,7 +148,7 @@ label.radio-label {
   top: 10px;
   right: 10px;
   background-color: transparent;
-  color: white;
+  color: #17181c;
   border: none;
   cursor: pointer;
 }
@@ -223,4 +163,15 @@ label.radio-label {
   .loginForm {
     width: 90%;
   }
+}
+
+.validation {
+  margin-left: 10px;
+  font-size: 15px;
+}
+.error {
+  color: #e64949;
+}
+.sucess {
+  color: #198754;
 }
