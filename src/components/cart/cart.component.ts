@@ -20,30 +20,30 @@ import { firstValueFrom } from 'rxjs';
   styleUrl: './cart.component.css'
 })
 
-export class CartComponent implements OnInit {
+export class CartComponent /*implements OnInit*/ {
   cartItems: any[] = [];
   cartProducts: ProductModel[] = [];
 
   constructor(private router: Router, private activatedRouter: ActivatedRoute, private CartService: CartService, private ProductService: ProductService) { }
   
-  async ngOnInit(): Promise<void> {
-    try {
-      const data = await firstValueFrom(
-        this.CartService.getAllAtCartByUserId('660c71754ae7f2f3338cca19')
-      );
-      this.cartItems = data["data"].map((item: any) => ({
-        userId: item.userId,
-        productId: item.productId,
-        quantity: item.quantity,
-        total: item.total,
-      }));
+  // async ngOnInit(): Promise<void> {
+  //   try {
+  //     const data = await firstValueFrom(
+  //       this.CartService.getAllAtCartByUserId('660c71754ae7f2f3338cca19')
+  //     );
+  //     this.cartItems = data["data"].map((item: any) => ({
+  //       userId: item.userId,
+  //       productId: item.productId,
+  //       quantity: item.quantity,
+  //       total: item.total,
+  //     }));
 
-      await this.getAllproductsInCart();
-      console.log(this.cartProducts);
-    } catch (error) {
-      console.error(error);
-    }
-  }
+  //     await this.getAllproductsInCart();
+  //     console.log(this.cartProducts);
+  //   } catch (error) {
+  //     console.error(error);
+  //   }
+  // }
 
   async getAllproductsInCart(): Promise<void> {
     for (const element of this.cartItems) {

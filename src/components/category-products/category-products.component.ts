@@ -41,14 +41,12 @@ export class CategoryProductsComponent implements OnInit {
     console.log(product);
 
     let productToAdd = {
-      userId: '660c71754ae7f2f3338cca19',
-      productId: [product._id],
-      quantity: [1],
-      total: product.price
+      _id: product._id,
+      soldQuantity: 2
     };
 
     if(product.quantity > 0) {
-      var result = await this.CartService.addToCart('660c71754ae7f2f3338cca19', productToAdd);
+      var result = await this.CartService.updateCartProducts('660c71754ae7f2f3338cca19', productToAdd);
 
       // result.forEach((value) => console.log(value));
       // console.log('-------------------------------------');
@@ -58,5 +56,7 @@ export class CategoryProductsComponent implements OnInit {
       console.log('Product quantity is 0');
     }
   }
+
+
 
 }
