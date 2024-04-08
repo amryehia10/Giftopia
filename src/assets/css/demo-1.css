@@ -464,29 +464,7 @@ input {
   background-color: #fff;
 }
 
-.section-title {
-  padding-bottom: 15px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: start;
-  -ms-flex-pack: start;
-  justify-content: flex-start;
-  z-index: 5;
-}
-.section-title h2 {
-  margin-bottom: 0;
-  font-size: 26px;
-  line-height: 38px;
-  font-weight: 500;
-  color: #17181c;
-  position: relative;
-  display: inline;
-  padding: 0;
-  text-transform: capitalize;
-  line-height: 1;
-  font-family: "Poppins, sans-serif";
-}
+
 .section-title h2 span {
   color: #C08B5C;
 }
@@ -5831,143 +5809,6 @@ body.ms-menu-open:before {
   border-radius: 3px;
 }
 
-/**===== Start Listing | Discover Section ====**/
-.ms-listing-section .section-title {
-  margin-bottom: 15px;
-  -webkit-box-pack: justify;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-}
-
-.ms-listing .ms-list-block:not(:last-child) {
-  margin-bottom: 30px;
-}
-.ms-listing .ms-list-block .ms-list-title {
-  margin-bottom: 15px;
-  position: relative;
-  text-transform: uppercase;
-  font-size: 16px;
-  font-weight: 600;
-  display: inline-block;
-  color: #17181c;
-}
-.ms-listing .ms-list-block .ms-list-title .label {
-  width: 11px;
-  height: 11px;
-  position: absolute;
-  top: 4px;
-  right: -20px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  opacity: 0.5;
-  border-radius: 3px;
-}
-.ms-listing .ms-list-block .ms-list-title .label .dot {
-  width: 5px;
-  height: 5px;
-  display: block;
-  border-radius: 50%;
-}
-.ms-listing .ms-list-block .ms-list-title .veg {
-  border: 1px solid #C08B5C;
-  border-radius: 3px;
-}
-.ms-listing .ms-list-block .ms-list-title .veg .dot {
-  background-color: #C08B5C;
-}
-.ms-listing .ms-list-block .ms-list-title .non-veg {
-  border: 1px solid #ff9898;
-}
-.ms-listing .ms-list-block .ms-list-title .non-veg .dot {
-  background-color: #ff9898;
-}
-.ms-listing .ms-list-block ul {
-  margin: -5px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-flow: wrap;
-  flex-flow: wrap;
-}
-.ms-listing .ms-list-block ul li {
-  -webkit-transition: all 0.3s ease-in-out;
-  transition: all 0.3s ease-in-out;
-  margin: 5px;
-  display: -webkit-inline-box;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  border: 1px solid #eee;
-  position: relative;
-  -webkit-box-flex: 1;
-  -ms-flex: 1 1 auto;
-  flex: 1 1 auto;
-  border-radius: 3px;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  background-color: #f5f4f9;
-}
-.ms-listing .ms-list-block ul li:hover {
-  border: 1px solid #C08B5C;
-}
-.ms-listing .ms-list-block ul li:hover img {
-  display: block;
-  opacity: 1;
-  border: 1px solid transparent !important;
-}
-.ms-listing .ms-list-block ul li a {
-  -webkit-transition: all 0.3s ease-in-out;
-  transition: all 0.3s ease-in-out;
-  width: 100%;
-  padding: 15px 20px 15px 10px;
-  color: #777;
-  font-weight: 400;
-  font-size: 15px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  text-transform: capitalize;
-  display: flex;
-  -webkit-box-pack: justify;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-  -webkit-box-ordinal-group: 3;
-  -ms-flex-order: 2;
-  order: 2;
-}
-.ms-listing .ms-list-block ul li a span {
-  -webkit-transition: all 0.3s ease-in-out;
-  transition: all 0.3s ease-in-out;
-  margin-left: 15px;
-  color: #999;
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 23px;
-}
-.ms-listing .ms-list-block ul li .ms-list-img {
-  -webkit-transition: all 0.3s ease-in-out;
-  transition: all 0.3s ease-in-out;
-  width: 35px;
-  height: 35px;
-  margin: 0 10px;
-  position: relative;
-  display: block;
-  border: 1px solid #eee;
-  border-radius: 3px;
-  z-index: 1;
-}
-
 /*-------------------------------------------------
    Demo 1 Page CSS
 ---------------------------------------------------*/
@@ -7443,4 +7284,3 @@ section.ms-instagram-section {
     width: 35px;
   }
 }
-/*# sourceMappingURL=demo-1.css.map */

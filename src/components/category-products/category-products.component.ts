@@ -3,11 +3,13 @@ import { GeneralMethods } from '../../functions';
 import { Component, OnInit } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { ProductService } from '../../services/product.service';
+import { CommonModule } from '@angular/common';
+import { CartService } from '../../services/cart.service';
 
 @Component({
   selector: 'app-category-products',
   standalone: true,
-  imports: [HttpClientModule],
+  imports: [HttpClientModule,CommonModule],
   providers: [ProductService],
   templateUrl: './category-products.component.html',
   styleUrl: './category-products.component.css'
@@ -16,7 +18,7 @@ export class CategoryProductsComponent implements OnInit {
   btnSortToggle = "Low to High";
   products: ProductModel[] = [];
 
-  constructor(private router: ActivatedRoute, private service: ProductService) { }
+  constructor(private router: ActivatedRoute, private service: ProductService, private CartService: CartService) { }
 
   ngOnInit(): void {
     this.service.getProductsByCategory(this.router.snapshot.params["name"]).subscribe({
@@ -27,12 +29,34 @@ export class CategoryProductsComponent implements OnInit {
 
   toggleSort() {
     if (this.btnSortToggle === "Low to High") {
-      this.products.sort((a, b) => a.price - b.price);
-
+      this.products.sort((a, b) => (a.price * (1-(a.discount/100))) - (b.price * (1-(b.discount/100))));
       this.btnSortToggle = "High to Low";
     } else {
-      this.products.sort((a, b) => b.price - a.price );
+      this.products.sort((a, b) => (b.price * (1-(b.discount/100))) - (a.price * (1-(a.discount/100))) );
       this.btnSortToggle = "Low to High";
     }
   }
+
+  async addToCart(product: ProductModel) {
+    console.log(product);
+
+    let productToAdd = {
+      userId: '660c71754ae7f2f3338cca19',
+      productId: [product._id],
+      quantity: [1],
+      total: product.price
+    };
+
+    if(product.quantity > 0) {
+      var result = await this.CartService.addToCart('660c71754ae7f2f3338cca19', productToAdd);
+
+      // result.forEach((value) => console.log(value));
+      // console.log('-------------------------------------');
+      // console.log(productToAdd);
+      
+    }else {
+      console.log('Product quantity is 0');
+    }
+  }
+
 }

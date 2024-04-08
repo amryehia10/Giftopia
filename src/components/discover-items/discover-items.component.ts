@@ -24,37 +24,47 @@ export class DiscoverItemsComponent implements OnInit {
   secondprdList: ProductModel[] = [];
   constructor(private prdService: ProductService, private catService: CategoryService) { }
 
-  async ngOnInit(): Promise<void> {
-    this.prdService.getAllProducts().subscribe({
-      next: (data) => this.products = GeneralMethods.CastProducts(data),
-      error: (err) => console.log(err)
-    });
-
+  ngOnInit(): void {
     this.catService.getCategory().subscribe({
-      next: (data) => {
-        this.categories = GeneralMethods.CastCategories(data);
-        this.populatecatNamess();
-        this.getProductsOfCat();
+      next: async (data) => {
+        this.categories = await GeneralMethods.CastCategories(data);
+        this.populatecatNames();  
+
+        this.prdService.getAllProducts().subscribe({
+          next: (data) => {
+            this.products = GeneralMethods.CastProducts(data);
+            this.getProductsOfCat();
+          },
+          error: (err) => console.log(err)
+        });
       },
       error: (err) => console.log(err)
     });
-
   }
+  
 
-  populatecatNamess(): void {
-    for (let i = 0; i < 2; i++) { this.catNames.push(this.categories[i].name); }
+  populatecatNames(): void {
+    for (let i = 0; i < 2; i++) { 
+      this.catNames.push(this.categories[i].name);
+    }
   }
 
   getProductsOfCat() {
-    let counter = -1;
+    let counter = 0;
     for (let prd of this.products) {
-      if (this.catNames[0].toLowerCase() == prd.cat[0].toLowerCase() && ++counter < 8) { this.firstprdList.push(prd); }
+      if (this.catNames[0].toLowerCase() == prd.cat[0].toLowerCase() && counter < 8 && prd.discount > 0) { 
+        this.firstprdList.push(prd);
+        counter++; 
+      }
     }
 
-    counter = -1;
+    counter = 0;
 
     for (let prd of this.products) {
-      if (this.catNames[1].toLowerCase() == prd.cat[0].toLowerCase() && ++counter < 8) { this.secondprdList.push(prd); }
+      if (this.catNames[1].toLowerCase() == prd.cat[0].toLowerCase() && counter < 8  && prd.discount > 0) { 
+        this.secondprdList.push(prd); 
+        counter++;
+      }
     }
   }
 }

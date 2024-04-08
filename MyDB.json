@@ -849,7 +849,12 @@
       "ratings": 0
     }
   ],
-  "users": [],
+  "users": [
+    {
+      "id": "user123",
+      "password": "123456"
+    }
+  ],
   "categories": [
     {
       "categoryName": "Accessories",

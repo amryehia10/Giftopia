@@ -1,0 +1,22 @@
+<section class="ms-new-product padding-tb-30">
+  <div class="container">
+    <div class="section-title-2">
+      <h2 class="ms-title">Related <span>Products</span></h2>
+      <p>Browse The Collection of Related Products</p>
+    </div>
+
+    <div class="row">
+      <!-- Start of ngFor loop -->
+      <div class="col-12 col-sm-6 col-md-4 col-lg-3" *ngFor="let product of relatedProducts.slice(0, 4)">
+        <div class="card mb-4">
+          <a [routerLink]="'/products/' + product._id" (click)="refreshPage()"><img src="{{ product.images[0] }}" class="card-img-top" alt="Product Image"></a>
+          <div class="card-body">
+            <a [routerLink]="'/products/' + product._id" (click)="refreshPage()"><h5 class="card-title">{{ product.name }}</h5></a>
+            <p class="card-text">Price: £{{ product.price }}</p>
+          </div>
+        </div>
+      </div>
+      <!-- End of ngFor loop -->
+    </div>
+  </div>
+</section>

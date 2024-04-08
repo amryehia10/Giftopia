@@ -8,7 +8,8 @@ type ProductModel = {
     discount: number,
     numberOfSellings: number,
     numberOfRates: number,
-    cat: string[]
+    cat: string[],
     images: string[],
+    createdAt: string
 }
 

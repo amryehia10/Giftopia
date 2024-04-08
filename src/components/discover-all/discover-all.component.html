@@ -32,13 +32,14 @@
                                 <h3 class="product-title">{{ prd.name }}</h3>
                                 @if(prd.discount > 0){
                                 <h4 class="product-old-price">
-                                    {{ prd.price | currency : "L.E" }}
+                                    {{ prd.price | currency : "L.E " }}
                                 </h4>
+                                <br>
                                 <h4 class="product-price">
-                                    {{ prd.price - prd.price * prd.discount | currency : "L.E" }}
+                                    {{ prd.price - prd.price * prd.discount | currency : "L.E " }}
                                 </h4>
                                 } @else {
-                                <h4 class="product-price">{{ prd.price | currency : "L.E" }}</h4>
+                                <h4 class="product-price">{{ prd.price | currency : "L.E " }}</h4>
                                 }
                             </div>
                         </div>
