@@ -12,15 +12,15 @@ export class CartService extends BaseService {
 
     constructor(http: HttpClient) { super(http) }
 
-    getAllAtCartByUserId(userId: string): Observable<any> {
+    getUserCart(userId: string): Observable<any> {
         return this.http.get(`${this.URL}/${userId}`);
     }
 
-    updateCart(cartId: string, cartData: any): Observable<any> {
-        return this.http.put(`${this.URL}/${cartId}`, cartData);
+    updateCartProducts(cartData: any): Observable<any> {
+        return this.http.put(`${this.URL}`, cartData);
     }
 
-    addToCart(userId: string, cartData: any): Observable<any> {
-        return this.http.post(`${this.URL}/${userId}`, cartData);
-    }
+    // addToCart(userId: string, cartData: any): Observable<any> {
+    //     return this.http.post(`${this.URL}/${userId}`, cartData);
+    // }
 }
