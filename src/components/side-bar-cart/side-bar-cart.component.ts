@@ -24,6 +24,8 @@ export class SideBarCartComponent implements OnInit {
   cartItems: any[] = [];
   totalPrice: number = 0;
 
+  newCartProducts: {productId: string, soldQuantity: number}[] = [];
+
   constructor(private router: Router, private activatedRouter: ActivatedRoute, private CartService: CartService, private ProductService: ProductService) { }
   
    async ngOnInit(): Promise<void> {
@@ -44,6 +46,10 @@ export class SideBarCartComponent implements OnInit {
         discount: item.discount,
         soldQuantity: item.soldQuantity
       }));
+      this.newCartProducts = data["data"][0]["products"].map((item: any) => ({
+        productId: item._id,
+        soldQuantity: item.soldQuantity
+      }))
 
       this.totalPrice = data["data"][0]["total"];
       console.log(this.cartItems);
@@ -55,8 +61,31 @@ export class SideBarCartComponent implements OnInit {
   }
 
   
-  removeFromCart(item: any) {
-    
+  async removeFromCart(product: ProductModel, $event: any):Promise<void> {
+    console.log(product);
+
+    //hide product
+    const li = $event.target.closest('li');
+    li.style.display = 'none';
+
+    //remove product from cart
+    this.newCartProducts = this.newCartProducts.filter(item => item.productId !== product._id);
+
+    let newCart = {
+      userId: '6613da0131e67deca8b6c269',
+      items: this.newCartProducts
+    };
+
+    if(product.quantity > 0) {
+      var result = await this.CartService.updateCartProducts(newCart);
+
+      result.forEach((value) => console.log(value));
+      console.log('-------------------------------------');
+      console.log(newCart);
+      
+    }else {
+      console.log('Product quantity is 0');
+    }
   }  
 
   onCloseCartSidebar() {
