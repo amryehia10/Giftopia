@@ -87,7 +87,7 @@ export class CategoryProductsComponent implements OnInit {
 
     this.cartProducts.push({
       productId: product._id,
-      soldQuantity: 2
+      soldQuantity: 1
     });
 
     let newCart = {

@@ -10,42 +10,20 @@
                             class="svg_img pro_svg" alt="close"></a>
                 </div>
                 <ul class="ms-cart-pro-items">
-                    <li>
-                        <a href="product-left-sidebar.html" class="ms-pro-img"><img src="assets/img/product-images/25_1.jpg"
-                                alt="product"></a>
-                        <div class="ms-pro-content">
-                            <a href="product-left-sidebar.html" class="cart-pro-title">Fresh Lichi</a>
-                            <span class="cart-price"><span>$25.00</span> x 1 kg</span>
-                            <div class="qty-plus-minus">
-                                <input class="qty-input" type="text" name="ms-qtybtn" value="1">
+                    @for(item of cartItems; track item._id){
+                        <li>
+                            <a href="product-left-sidebar.html" class="ms-pro-img"><img src="{{item.image}}"
+                                    alt="product"></a>
+                            <div class="ms-pro-content">
+                                <a href="product-left-sidebar.html" class="cart-pro-title">{{item.name}}</a>
+                                <span class="cart-price">${{item.price}}</span>
+                                <div class="qty-plus-minus">
+                                    <input class="qty-input" type="text" name="ms-qtybtn" value="{{item.soldQuantity}}">
+                                </div>
+                                <a href="javascript:void(0)" (click)="removeFromCart(item)" class="remove">×</a>
                             </div>
-                            <a href="javascript:void(0)" class="remove">×</a>
-                        </div>
-                    </li>
-                    <li>
-                        <a href="product-left-sidebar.html" class="ms-pro-img"><img src="assets/img/product-images/17_1.jpg"
-                                alt="product"></a>
-                        <div class="ms-pro-content">
-                            <a href="product-left-sidebar.html" class="cart-pro-title">Ginger - Organic</a>
-                            <span class="cart-price"><span>$5.00</span> x 1 250g</span>
-                            <div class="qty-plus-minus">
-                                <input class="qty-input" type="text" name="ms-qtybtn" value="1">
-                            </div>
-                            <a href="javascript:void(0)" class="remove">×</a>
-                        </div>
-                    </li>
-                    <li>
-                        <a href="product-left-sidebar.html" class="ms-pro-img"><img src="assets/img/product-images/2_1.jpg"
-                                alt="product"></a>
-                        <div class="ms-pro-content">
-                            <a href="product-left-sidebar.html" class="cart-pro-title">Dates Value Pack Pouch</a>
-                            <span class="cart-price"><span>$59.00</span> x 1 pack</span>
-                            <div class="qty-plus-minus">
-                                <input class="qty-input" type="text" name="ms-qtybtn" value="1">
-                            </div>
-                            <a href="javascript:void(0)" class="remove">×</a>
-                        </div>
-                    </li>
+                        </li>
+                    }
                 </ul>
             </div>
             <div class="ms-cart-bottom">
@@ -53,16 +31,8 @@
                     <table class="table cart-table">
                         <tbody>
                             <tr>
-                                <td class="text-left">Sub-Total :</td>
-                                <td class="text-right">$300.00</td>
-                            </tr>
-                            <tr>
-                                <td class="text-left">VAT (20%) :</td>
-                                <td class="text-right">$60.00</td>
-                            </tr>
-                            <tr>
                                 <td class="text-left">Total :</td>
-                                <td class="text-right primary-color">$360.00</td>
+                                <td class="text-right primary-color">${{totalPrice}}</td>
                             </tr>
                         </tbody>
                     </table>
