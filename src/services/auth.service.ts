@@ -22,7 +22,10 @@ export class AuthService {
     return { data, error };
   }
 
-  // add logout
+  getCurrentToken() {
+    return localStorage.getItem('token');
+  }
+
   logout() {
     localStorage.removeItem('token');
   }

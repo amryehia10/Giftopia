@@ -1,6 +1,10 @@
 import { lastValueFrom } from 'rxjs';
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpErrorResponse } from '@angular/common/http';
+import {
+  HttpClient,
+  HttpErrorResponse,
+  HttpHeaders,
+} from '@angular/common/http';
 
 interface HttpServiceResponse {
   data: { [key: string]: any } | null;
@@ -13,6 +17,10 @@ interface HttpServiceResponse {
 })
 export class HttpService {
   constructor(private provider: HttpClient) {}
+
+  private getToken() {
+    return localStorage.getItem('token');
+  }
 
   async get(url: string): Promise<HttpServiceResponse> {
     return this.handleRequest(this.provider.get(url));
@@ -32,6 +40,15 @@ export class HttpService {
 
   private async handleRequest(request: any): Promise<HttpServiceResponse> {
     try {
+      const token = this.getToken();
+
+      if (token) {
+        const headers = new HttpHeaders({
+          Authorization: `${token}`,
+        });
+        request = request.clone({ headers });
+      }
+
       const data = await lastValueFrom<object>(request);
       return { data, error: null, errorRes: null };
     } catch (error) {
@@ -43,3 +60,21 @@ export class HttpService {
     }
   }
 }
+
+/*
+private async handleRequest(request: any): Promise<HttpServiceResponse> {
+
+
+      // Clone the request and add the headers
+      
+    }
+
+    try {
+      const data = await lastValueFrom<object>(request);
+      return { data, error: null, errorRes: null };
+    } catch (error) {
+      // ... your existing error handling logic
+    }
+  }
+
+*/
