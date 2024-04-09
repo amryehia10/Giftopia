@@ -3,8 +3,6 @@ import { ActivatedRoute, Router, RouterModule } from '@angular/router';
 import { HomeComponent } from '../home/home.component';
 import { PrivacyPolicyComponent } from '../privacy-policy/privacy-policy.component';
 import { CartService } from '../../services/cart.service';
-import { GeneralMethods } from '../../functions';
-import { CartProductService } from '../../services/cart-product.service';
 import { ProductService } from '../../services/product.service';
 import { firstValueFrom } from 'rxjs';
 
@@ -22,7 +20,7 @@ import { firstValueFrom } from 'rxjs';
 
 export class CartComponent implements OnInit {
   cartItems: any[] = [];
-  // cartProducts: ProductModel[] = [];
+  newCartProducts: {productId: string, soldQuantity: number}[] = [];
 
   constructor(private router: Router, private activatedRouter: ActivatedRoute, private CartService: CartService, private ProductService: ProductService) { }
   
@@ -44,6 +42,10 @@ export class CartComponent implements OnInit {
         discount: item.discount,
         soldQuantity: item.soldQuantity
       }));
+      this.newCartProducts = data["data"][0]["products"].map((item: any) => ({
+        productId: item._id,
+        soldQuantity: item.soldQuantity
+      }))
 
       console.log(this.cartItems);
       
@@ -52,6 +54,59 @@ export class CartComponent implements OnInit {
     }
   }
 
+
+  hideProduct(id: any): void {
+    // const itemId = item._id; // Extract item ID from the passed object
+
+    // // Access the clicked "a" element and its parent "tr":
+    // const clickedElement = $event.target as HTMLElement; // Get clicked element (a)
+    // const tableRow = clickedElement.closest('tr'); // Navigate up the DOM tree
+
+    // if (tableRow && tableRow.dataset && tableRow.dataset.itemId) {
+    //   const storedItemId = tableRow.dataset.itemId; // Retrieve stored item ID
+
+    //   if (storedItemId === itemId) {
+    //     // Hide the table row:
+    //     tableRow.style.display = 'none'; // Set display to none for hiding
+    //   } else {
+    //     console.warn("Unexpected item ID mismatch. Hiding might be incorrect.");
+    //   }
+    // } else {
+    //   console.warn("Failed to find table row or data-item-id attribute.");
+    // }
+  }
+
+
+  async removeFromCart(product: ProductModel, $event: any):Promise<void> {
+    console.log(product);
+
+    //hide product
+    const row = $event.target.closest('tr');
+    row.style.display = 'none';
+
+    //remove product from cart
+    this.newCartProducts = this.newCartProducts.filter(item => item.productId !== product._id);
+
+    let newCart = {
+      userId: '6613da0131e67deca8b6c269',
+      items: this.newCartProducts
+    };
+
+    if(product.quantity > 0) {
+      var result = await this.CartService.updateCartProducts(newCart);
+
+      result.forEach((value) => console.log(value));
+      console.log('-------------------------------------');
+      console.log(newCart);
+      
+    }else {
+      console.log('Product quantity is 0');
+    }
+  }
+
+  navigateToHome() {
+    this.router.navigate(['home']);
+  }
 
   //#region "Old ngOnInit"
   // async ngOnInit(): Promise<void> {
@@ -92,44 +147,5 @@ export class CartComponent implements OnInit {
   // }
   //#endregion
 
-  removeFromCart(item: any) {
-    
-  }  
-
-  navigateToHome() {
-    this.router.navigate(['home']);
-  }
 
 }
-
-
-
-
-// {
-//   "status": "success",
-//   "data": [
-//     "_id":"660b29b96a460f658ffe0b05",
-//     "userId": "660c71754ae7f2f3338cca19",
-//     "total": 1999,
-//     "products": [
-//       {
-//         "_id": "660b29b96a460f658ffe0b05",
-//         "name": "ACTIV SOCKS PACKAGE",
-//         "price": 100,
-//         "image":"https://m.media-amazon.com/images/I/61pgqHzrRmL._AC_SX569_.jpg",
-//         "quantity": 20,
-//         "discount": 20,
-//         "soldQuantity": 120
-//       },
-//       {
-//         "_id": "660b29b96a460f658ffe0b05",
-//         "name": "ACTIV SOCKS PACKAGE",
-//         "price": 100,
-//         "image":"https://m.media-amazon.com/images/I/61pgqHzrRmL._AC_SX569_.jpg",
-//         "quantity": 20,
-//         "discount": 20,
-//         "soldQuantity": 120
-//       }
-//   ],
-// }
-    
