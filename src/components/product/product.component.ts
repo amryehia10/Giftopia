@@ -9,44 +9,50 @@ import { RelatedProductsComponent } from '../related-products/related-products.c
 @Component({
   selector: 'app-product',
   standalone: true,
-  imports: [CommonModule, RouterModule,ProductReviewsComponent,RelatedProductsComponent],
+  imports: [
+    CommonModule,
+    RouterModule,
+    ProductReviewsComponent,
+    RelatedProductsComponent,
+  ],
   providers: [ProductService],
   templateUrl: './product.component.html',
   styleUrls: ['./product.component.css'],
 })
 export class ProductComponent implements OnInit {
   product: ProductModel = {
-    _id: "",
-    desc: "",
-    name: "",
+    _id: '',
+    desc: '',
+    name: '',
     star: 0,
     price: 0,
     quantity: 0,
     discount: 0,
     numberOfSellings: 0,
     numberOfRates: 0,
-    cat: [""],
-    images: [""],
-    createdAt: ""
-}
+    cat: [''],
+    images: [''],
+    createdAt: '',
+  };
   filledStarsArray: any;
   emptyStarsArray: any;
+  prdID: string = '';
 
-  constructor(
-    private service: ProductService,
-    private route: ActivatedRoute
-  ) {}
+  constructor(private service: ProductService, private route: ActivatedRoute) {}
   ngOnInit(): void {
-    const prdID = String(this.route.snapshot.paramMap.get('id'));
-    this.service.getProductByID(prdID).subscribe({
-      next: (data) => {
-        this.product = GeneralMethods.CastSingleProduct(data);
-        this.calculateStarArrays();
-        console.log(this.product._id);
-      },
-      error: (err) => {
-        console.log(err);
-      },
+    this.route.paramMap.subscribe((params) => {
+      this.prdID = params.get('id') ?? '';
+
+      this.service.getProductByID(this.prdID).subscribe({
+        next: (data) => {
+          this.product = GeneralMethods.CastSingleProduct(data);
+          this.calculateStarArrays();
+          console.log(this.product._id);
+        },
+        error: (err) => {
+          console.log(err);
+        },
+      });
     });
   }
 
@@ -60,12 +66,11 @@ export class ProductComponent implements OnInit {
   calculateStarArrays() {
     const filledStars = Math.floor(this.product.star);
     const emptyStars = 5 - filledStars;
-  
+
     this.filledStarsArray = Array(filledStars).fill(0);
     this.emptyStarsArray = Array(emptyStars).fill(0);
   }
 }
-
 
 // calculateProductRatings() {
 //   const { reviews } = this.product;
