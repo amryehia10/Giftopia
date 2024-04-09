@@ -5,16 +5,14 @@
         class="ms-t-review-item"
         *ngFor="let review of reviews; let i = index"
       >
+        <!-- src="https://www.kindpng.com/picc/m/24-248253_user-profile-default-image-png-clipart-png-download.png" -->
         <div class="ms-t-review-avtar">
-          <img
-            src="https://www.kindpng.com/picc/m/24-248253_user-profile-default-image-png-clipart-png-download.png"
-            alt="user"
-          />
+          <img src="{{ apiEndpoint + '/' + users[i]?.image }}" alt="user" />
         </div>
         <div class="ms-t-review-content">
           <div class="ms-t-review-top">
             <div class="ms-t-review-name">
-              {{ users[i].name }}
+              {{ users[i]?.name }}
             </div>
             <div class="ms-t-review-rating">
               <i
