@@ -55,28 +55,6 @@ export class CartComponent implements OnInit {
   }
 
 
-  hideProduct(id: any): void {
-    // const itemId = item._id; // Extract item ID from the passed object
-
-    // // Access the clicked "a" element and its parent "tr":
-    // const clickedElement = $event.target as HTMLElement; // Get clicked element (a)
-    // const tableRow = clickedElement.closest('tr'); // Navigate up the DOM tree
-
-    // if (tableRow && tableRow.dataset && tableRow.dataset.itemId) {
-    //   const storedItemId = tableRow.dataset.itemId; // Retrieve stored item ID
-
-    //   if (storedItemId === itemId) {
-    //     // Hide the table row:
-    //     tableRow.style.display = 'none'; // Set display to none for hiding
-    //   } else {
-    //     console.warn("Unexpected item ID mismatch. Hiding might be incorrect.");
-    //   }
-    // } else {
-    //   console.warn("Failed to find table row or data-item-id attribute.");
-    // }
-  }
-
-
   async removeFromCart(product: ProductModel, $event: any):Promise<void> {
     console.log(product);
 

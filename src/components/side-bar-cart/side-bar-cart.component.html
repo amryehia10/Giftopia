@@ -20,7 +20,7 @@
                                 <div class="qty-plus-minus">
                                     <input class="qty-input" type="text" name="ms-qtybtn" value="{{item.soldQuantity}}">
                                 </div>
-                                <a href="javascript:void(0)" (click)="removeFromCart(item)" class="remove">×</a>
+                                <a href="javascript:void(0)" (click)="removeFromCart(item, $event)" class="remove">×</a>
                             </div>
                         </li>
                     }
