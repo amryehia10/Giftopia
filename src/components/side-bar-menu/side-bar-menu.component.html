@@ -9,16 +9,8 @@
   <div class="ms-menu-inner">
     <div class="ms-menu-content">
       <div class="ms-mobile-search">
-        <form>
-          <input type="text" name="search" placeholder="Search.." />
-          <button class="search_submit" type="submit">
-            <img
-              src="assets/img/icons/search.svg"
-              class="svg_img search_svg"
-              alt=""
-            />
-          </button>
-        </form>
+        <app-search-bar></app-search-bar>
+
       </div>
       <ul>
         <li><a (click)="onCloseMenuSideBar()" routerLink="/">Home</a></li>

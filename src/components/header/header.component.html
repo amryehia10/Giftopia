@@ -72,15 +72,7 @@
               class="col ms-category-icon-block"
               (click)="openCategorySidebar()"
             >
-              <div class="ms-category-menu">
-                <div class="ms-category-toggle">
-                  <img
-                    src="assets/img/icons/category-icon.svg"
-                    class="svg_img header_svg svg_cat"
-                    alt="icon"
-                  />
-                </div>
-              </div>
+              
             </div>
             <div class="right-icons">
               @if (!user) {
@@ -167,24 +159,10 @@
           <!-- Header Logo End -->
 
           <!-- Header Search Start -->
-          <div class="align-self-center ms-header-search">
-            <div class="header-search">
-              <form class="ms-search-group-form" action="#">
-                <input
-                  class="form-control ms-search-bar"
-                  placeholder="Search Products..."
-                  type="text"
-                />
-                <button class="search_submit" type="submit">
-                  <img
-                    src="assets/img/icons/search.svg"
-                    class="svg_img search_svg"
-                    alt=""
-                  />
-                </button>
-              </form>
-            </div>
-          </div>
+          
+              <app-search-bar></app-search-bar>
+            <!-- </div>
+          </div> -->
           <!-- Header Search End -->
 
           <!-- Header Button Start -->
@@ -308,17 +286,7 @@
     <div class="container position-relative">
       <div class="row justify-content-between">
         <!-- Category Toggle -->
-        <div class="col ms-category-icon-block" (click)="openCategorySidebar()">
-          <div class="ms-category-menu">
-            <div class="ms-category-toggle">
-              <img
-                src="assets/img/icons/category-icon.svg"
-                class="svg_img header_svg svg_cat"
-                alt="icon"
-              />
-            </div>
-          </div>
-        </div>
+       
 
         <!-- Main Menu Start -->
         <div id="ms-main-menu-desk" class="d-none d-lg-block sticky-nav">

@@ -8,6 +8,7 @@ import { CategoryService } from '../../services/category.service';
 import { HttpClientModule } from '@angular/common/http';
 import { GeneralMethods } from '../../functions';
 import { AuthService } from '../../services/auth.service';
+import { SearchBarComponent } from './search-bar/search-bar.component';
 
 @Component({
   selector: 'app-header',
@@ -19,6 +20,7 @@ import { AuthService } from '../../services/auth.service';
     SideBarCartComponent,
     SideBarWishlistComponent,
     SideBarMenuComponent,
+    SearchBarComponent
   ],
   providers: [CategoryService],
   templateUrl: './header.component.html',

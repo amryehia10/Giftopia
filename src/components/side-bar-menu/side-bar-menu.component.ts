@@ -1,11 +1,12 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { AuthService } from '../../services/auth.service';
+import { SearchBarComponent } from '../header/search-bar/search-bar.component';
 
 @Component({
   selector: 'app-side-bar-menu',
   standalone: true,
-  imports: [RouterModule],
+  imports: [RouterModule, SearchBarComponent],
   templateUrl: './side-bar-menu.component.html',
   styleUrl: './side-bar-menu.component.css',
 })
