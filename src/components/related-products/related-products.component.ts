@@ -44,14 +44,12 @@ export class RelatedProductsComponent implements OnInit{
         this.prdService.getProductsByCategory(this.product.cat[0]).subscribe({
           next:(data) => {
             this.relatedProducts = GeneralMethods.CastProducts(data);
-            // Remove the current product from the list of related products
             for (let i=0;i<this.relatedProducts.length;i++){
               if (this.relatedProducts[i]._id == prdID){
                 this.relatedProducts.splice(i,1);
                 break;
               }
             }
-            console.log(this.relatedProducts);
           }
         })
       },

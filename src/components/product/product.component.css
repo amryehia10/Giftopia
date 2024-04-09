@@ -14,3 +14,41 @@
   margin-left: 5px;
   font-weight: bold;
 }
+.ms-single-price-stoke {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.ms-single-price {
+  margin-bottom: 10px;
+}
+
+.mrp {
+  color: gray;
+}
+
+.ms-single-stoke {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.ms-single-sku,
+.ms-single-ps-title {
+  margin-right: 10px;
+}
+
+.ms-single-price-stoke,
+.ms-single-stoke {
+  margin-bottom: 10px;
+}
+
+@media screen and (max-width: 767px) {
+  .ms-single-qty {
+    display: flex;
+    flex-direction: column;
+  }
+}

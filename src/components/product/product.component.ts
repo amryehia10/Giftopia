@@ -47,7 +47,6 @@ export class ProductComponent implements OnInit {
         next: (data) => {
           this.product = GeneralMethods.CastSingleProduct(data);
           this.calculateStarArrays();
-          console.log(this.product._id);
         },
         error: (err) => {
           console.log(err);
