@@ -60,21 +60,3 @@ export class HttpService {
     }
   }
 }
-
-/*
-private async handleRequest(request: any): Promise<HttpServiceResponse> {
-
-
-      // Clone the request and add the headers
-      
-    }
-
-    try {
-      const data = await lastValueFrom<object>(request);
-      return { data, error: null, errorRes: null };
-    } catch (error) {
-      // ... your existing error handling logic
-    }
-  }
-
-*/
