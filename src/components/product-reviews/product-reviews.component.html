@@ -44,21 +44,54 @@
         <div class="ms-ratting-star">
           <span>Your rating:</span>
           <div class="ms-t-review-rating">
-            <i class="msicon msi-star fill"></i>
-            <i class="msicon msi-star fill"></i>
-            <i class="msicon msi-star-o"></i>
-            <i class="msicon msi-star-o"></i>
-            <i class="msicon msi-star-o"></i>
+            <i
+              class="msicon msi-star fill"
+              (click)="setUserRate(1)"
+              style="cursor: pointer"
+            ></i>
+            <i
+              class="msicon msi-star{{ userRate >= 2 ? ' fill' : '-o' }}"
+              (click)="setUserRate(2)"
+              style="cursor: pointer"
+            ></i>
+            <i
+              class="msicon msi-star{{ userRate >= 3 ? ' fill' : '-o' }}"
+              (click)="setUserRate(3)"
+              style="cursor: pointer"
+            ></i>
+            <i
+              class="msicon msi-star{{ userRate >= 4 ? ' fill' : '-o' }}"
+              (click)="setUserRate(4)"
+              style="cursor: pointer"
+            ></i>
+            <i
+              class="msicon msi-star{{ userRate >= 5 ? ' fill' : '-o' }}"
+              (click)="setUserRate(5)"
+              style="cursor: pointer"
+            ></i>
           </div>
         </div>
         <div class="ms-ratting-input form-submit">
           <textarea
             name="your-comment"
             placeholder="Enter Your Comment"
+            [(ngModel)]="userComment"
           ></textarea>
-          <button class="ms-btn-2" type="submit" value="Submit">Submit</button>
+          <button class="ms-btn-2" (click)="addReview()">Submit</button>
         </div>
       </form>
     </div>
   </div>
 </div>
+
+<!-- 
+
+{
+    _id: string;
+    userId: string;
+    productId: string;
+    comment: string;
+    rate: number;
+}
+
+ -->
