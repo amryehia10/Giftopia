@@ -1,0 +1,22 @@
+<div class="profile">
+    <h2>Profile</h2>
+    <div class="user-details" *ngIf="userProfile">
+      <div class="avatar">
+        <!--img [src]="userProfile.image ? userProfile.image : 'assets/img/icons/profile_icon.png'" alt="User Avatar"-->
+        <img src="assets/img/icons/profile_icon.png" alt="User Avatar">
+      </div>
+      <div class="info">
+        <p><strong>Name:</strong> {{ userProfile.name }}</p>
+        <p><strong>Email:</strong> {{ userProfile.email }}</p>
+        <p><strong>Age:</strong> {{ userProfile.age }}</p>
+        <p><strong>Gender:</strong> {{ userProfile.gender }}</p>
+        <p><strong>Mobile:</strong>
+            <span *ngFor="let phone of userProfile.phone"> {{ phone }}</span>
+          </p>
+          <p><strong>Address:</strong>
+            <span *ngFor="let address of userProfile.address"> {{ address }}</span>
+          </p>
+      </div>
+    </div>
+  </div>
+  

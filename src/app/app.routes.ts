@@ -16,6 +16,7 @@ import { PrivacyPolicyComponent } from '../components/privacy-policy/privacy-pol
 import { NewProductsComponent } from '../components/new-products/new-products.component';
 import { discoverAllResolver } from '../components/discover-all/discover-all.resolver';
 import { LogoutComponent } from '../components/logout/logout.component';
+import { ProfileComponent } from '../components/profile/profile.component';
 
 export const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -43,4 +44,5 @@ export const routes: Routes = [
   { path: 'logout', component: LogoutComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'cart', component: CartComponent },
+  { path: 'profile', component: ProfileComponent }
 ];
