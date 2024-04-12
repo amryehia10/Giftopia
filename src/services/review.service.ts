@@ -18,8 +18,6 @@ export class ReviewService extends BaseService {
   }
 
   addNewReview(review: any): Observable<Object> {
-    console.log(review);
-
     return this.http.post(this.URL, review);
   }
 }

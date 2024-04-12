@@ -52,17 +52,15 @@ export class ProductReviewsComponent implements OnInit {
       this.prdID = params.get('id') ?? '';
       this.reviewService.getReviewsByProductId(this.prdID).subscribe({
         next: (data) => {
-          this.reviews = GeneralMethods.CastReviews(data);
-          if (this.reviews !== undefined) {
-            this.reviews.forEach(async (review, index) => {
-              this.userService.getUserByID(review.userId).subscribe({
-                next: async (data) => {
-                  this.userData = GeneralMethods.CastUser(data);
-                  this.users.push(this.userData);
-                },
-              });
+          this.reviews = GeneralMethods.CastReviews(data) ?? [];
+          this.reviews.forEach(async (review, index) => {
+            this.userService.getUserByID(review.userId).subscribe({
+              next: async (data) => {
+                this.userData = GeneralMethods.CastUser(data);
+                this.users.push(this.userData);
+              },
             });
-          }
+          });
         },
         error: (err) => console.log(err),
       });
@@ -86,14 +84,25 @@ export class ProductReviewsComponent implements OnInit {
       })
       .subscribe({
         next: (data: any) => {
-          if (data['status'] == 'success')
-            this.reviews.push(data['review'] as ReviewModel);
-          this.userService.getUserByID(this.curruntUser._id).subscribe({
-            next: async (data) => {
-              this.userData = GeneralMethods.CastUser(data);
-              this.users.push(this.userData);
-            },
-          });
+          if (data['status'] == 'success') {
+            //Check if the user already has a review
+            const currentUserReview = this.reviews.findIndex(
+              (review) => review.userId == this.curruntUser._id
+            );
+
+            if (currentUserReview == -1) {
+              this.reviews.push(data['review'] as ReviewModel);
+              this.userService.getUserByID(this.curruntUser._id).subscribe({
+                next: async (data) => {
+                  this.userData = GeneralMethods.CastUser(data);
+                  this.users.push(this.userData);
+                },
+              });
+            } else {
+              this.reviews[currentUserReview] = data['review'] as ReviewModel;
+            }
+          }
+          this.userComment = '';
         },
       });
   }
