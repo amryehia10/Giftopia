@@ -8,13 +8,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class UserService extends BaseService {
   private URL = `${this.BASE_URL}/user`;
-  //private URL = "http://localhost:3000/users";
-
   constructor(http: HttpClient) { super(http) }
-
-  registerUser(userData: any): Observable<Object> {
-    return this.http.post(this.URL, userData);
-  }
 
   getAllUsers(): Observable<Object> {
     return this.http.get(this.URL);
@@ -24,5 +18,4 @@ export class UserService extends BaseService {
     return this.http.get(`${this.URL}/${id}`);
   }
 
-  // You can add more methods here as needed
 }

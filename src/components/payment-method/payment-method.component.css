@@ -1,7 +1,7 @@
 .payment-card {
-    border: 2px solid #fa0202;
+    border: 2px solid #0389cc82;
     border-radius: 10px;
-    background-color: bisque;
+    background-color: rgba(51, 156, 241, 0.008);
     padding: 20px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     width: 40%;
@@ -24,7 +24,7 @@
  h3{
     font-weight: bold;
     font-family: Arial, sans-serif;
-    color: #000000;
+    color: #2796e0;
   }
   
   .payment-method h3 {
@@ -46,7 +46,7 @@
   
   .proceed-button {
     padding: 10px 20px;
-    background-color: #28a745;
+    background-color: #2fd0db;
     color: #fff;
     border: 2px solid black;
     border-radius: 5px;
@@ -55,12 +55,12 @@
   }
   
   .proceed-button:hover {
-    background-color: #218838;
+    background-color: #216688;
   }
 
   .proceed-button-credit {
     padding: 10px 20px;
-    background-color: #28a745;
+    background-color: #2fd0db;
     color: #fff;
     border: 2px solid black;
     border-radius: 5px;
@@ -70,7 +70,7 @@
   }
 
   .proceed-button-credit:hover {
-    background-color: #218838;
+    background-color: #216688;
   }
 
 
