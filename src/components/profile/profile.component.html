@@ -2,8 +2,11 @@
     <h2>Profile</h2>
     <div class="user-details" *ngIf="userProfile">
       <div class="avatar">
-        <!--img [src]="userProfile.image ? userProfile.image : 'assets/img/icons/profile_icon.png'" alt="User Avatar"-->
-        <img src="assets/img/icons/profile_icon.png" alt="User Avatar">
+        @if (userProfile.image != '') {
+          <img src="{{img_URL}}" alt="User Avatar">
+        } @else {
+          <img src="assets/img/icons/profile_icon.png" alt="User Avatar">
+        }
       </div>
       <div class="info">
         <p><strong>Name:</strong> {{ userProfile.name }}</p>
@@ -16,7 +19,9 @@
           <p><strong>Address:</strong>
             <span *ngFor="let address of userProfile.address"> {{ address }}</span>
           </p>
+          <div>
+            <button class="btn btn-primary" type="button" routerLink="/update">Update Profile</button>
+          </div>
       </div>
     </div>
   </div>
-  
