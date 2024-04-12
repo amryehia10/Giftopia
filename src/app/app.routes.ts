@@ -45,5 +45,6 @@ export const routes: Routes = [
   { path: 'register', component: RegisterComponent },
   { path: 'cart', component: CartComponent },
   { path: 'profile', component: ProfileComponent },
-  { path: 'update', component: ProfileComponent }
+  { path: 'update', component: ProfileComponent },
+  { path: 'delete', component: ProfileComponent }
 ];
