@@ -23,8 +23,7 @@ export class SideBarCartComponent implements OnInit {
   @Output() closeCartSidebar = new EventEmitter<void>();
 
   cartItems: any[] = [];
-  totalPrice: number = 0;
-
+  totalAmount: number = 0;
   newCartProducts: {productId: string, soldQuantity: number}[] = [];
 
   constructor(private router: Router, private activatedRouter: ActivatedRoute, private CartService: CartService, private ProductService: ProductService, private authService: AuthService) { }
@@ -50,8 +49,9 @@ export class SideBarCartComponent implements OnInit {
           productId: item._id,
           soldQuantity: item.soldQuantity
         }))
-  
-        console.log(this.cartItems);
+        
+        this.totalAmount = this.cartItems.reduce((total, item) => total + (item.price*item.soldQuantity), 0)
+        console.log(this.totalAmount);
       } 
     } catch (error) {
       console.log("error fetching cart")

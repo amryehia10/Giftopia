@@ -22,7 +22,7 @@ import { AuthService } from '../../services/auth.service';
 export class CartComponent implements OnInit {
   cartItems: any[] = [];
   newCartProducts: {productId: string, soldQuantity: number}[] = [];
-
+  totalAmount: number = 0;
   constructor(private router: Router, private activatedRouter: ActivatedRoute, private CartService: CartService, private ProductService: ProductService, private authService: AuthService) { }
   
    async ngOnInit(): Promise<void> {
@@ -46,8 +46,8 @@ export class CartComponent implements OnInit {
           productId: item._id,
           soldQuantity: item.soldQuantity
         }))
-  
-        console.log(this.cartItems);
+        this.totalAmount = this.cartItems.reduce((total, item) => total + (item.price*item.soldQuantity), 0)
+        console.log(this.totalAmount);
       } 
     } catch (error) {
       console.log("error fetching cart")
