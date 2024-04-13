@@ -12,11 +12,11 @@
                 <ul class="ms-cart-pro-items">
                     @for(item of cartItems; track item._id){
                         <li>
-                            <a href="product-left-sidebar.html" class="ms-pro-img"><img src="{{item.image}}"
+                            <a [routerLink]="'/products/' + item._id" class="ms-pro-img"><img src="{{item.image}}"
                                     alt="product"></a>
                             <div class="ms-pro-content">
-                                <a href="product-left-sidebar.html" class="cart-pro-title">{{item.name}}</a>
-                                <span class="cart-price">L.E{{item.price}}</span>
+                                <a [routerLink]="'/products/' + item._id"class="cart-pro-title">{{item.name}}</a>
+                                <span class="cart-L.E{{item.price}}price"></span>
                                 <div class="qty-plus-minus">
                                     <input class="qty-input" type="text" name="ms-qtybtn" value="{{item.soldQuantity}}">
                                 </div>

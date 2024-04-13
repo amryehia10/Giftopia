@@ -6,6 +6,7 @@ import { ProductService } from '../../services/product.service';
 import { AuthService } from '../../services/auth.service';
 import { firstValueFrom } from 'rxjs';
 import { CartService } from '../../services/cart.service';
+import { WishListService } from '../../services/wish-list.service';
 
 @Component({
   selector: 'app-new-products',
@@ -18,29 +19,21 @@ import { CartService } from '../../services/cart.service';
 export class NewProductsComponent implements OnInit {
   Products: ProductModel[] = [];
   cartProducts: { productId: string; soldQuantity: number }[] = [];
+  wishListItems: any[] = [];
 
-  constructor(private service: ProductService, private authService: AuthService, private CartService: CartService) {}
+  constructor(private service: ProductService, private authService: AuthService, private CartService: CartService, private WishListService:WishListService) {}
 
   ngOnInit(): void {
     this.service.getNewArrivalProducts().subscribe({
       next: (data) => {
         this.Products = GeneralMethods.CastProducts(data);
-       
-        // if (Array.isArray(data)) {
-        //   const twoWeeksAgo = new Date();
-        //   twoWeeksAgo.setDate(twoWeeksAgo.getDate() - 14);
-        //   this.newProducts = data.filter((product: any) => {
-        //     return new Date(product.createdAt) >= twoWeeksAgo;
-        //   });
-        // } else {
-        //   console.error('Received data is not an array:', data);
-        // }
       },
       error: (err) => {
         console.log(err);
       }
     });
     this.getUsersOldCartProducts();
+    this.getUsersOldWishListProducts()
   }
   async getUsersOldCartProducts(): Promise<void> {
     const userId = String(this.authService.getCurrentUser()?._id);
@@ -48,14 +41,10 @@ export class NewProductsComponent implements OnInit {
     try {
       const data = await firstValueFrom(this.CartService.getUserCart(userId));
       if(data.status != 'failed') {
-        console.log('hi')
         this.cartProducts = data['data'][0]['products'].map((item: any) => ({
           productId: item._id,
           soldQuantity: item.soldQuantity,
         }));
-      } else {
-        console.log('fuck')
-
       }
 
 
@@ -63,23 +52,36 @@ export class NewProductsComponent implements OnInit {
     } catch (error) {
       console.error('Error fetching user cart:', error);
     }
+  }
 
-    // await this.CartService.getUserCart(userId).subscribe({
-    //   next: (response) => {
-    //     if (response.status === 'success') {
-    //       console.log(response);
+  async getUsersOldWishListProducts(): Promise<void> {
+    const userId = String(this.authService.getCurrentUser()?._id);
 
-    //       this.oldCartProducts = response.data.products;
-    //       console.log('old', this.oldCartProducts);
+    try {
+      const data = await firstValueFrom(this.WishListService.getUserWishlist(userId));
+      if(data.status != 'failed') {
+        this.wishListItems = data['data'][0]['products'].map((item: any) => (item._id));
+      }
+      console.log('old', this.cartProducts);
+    } catch (error) {
+      console.error('Error fetching user cart:', error);
+    }
+  }
 
-    //     } else {
-    //       console.error('Failed to get user cart:', response);
-    //     }
-    //   },
-    //   error: (error) => {
-    //     console.error('Error fetching user cart:', error);
-    //   }
-    // });
+  async updateWishListProducts(product: ProductModel): Promise<void> {
+    this.wishListItems.push(product._id);
+    
+    console.log(this.wishListItems)
+
+    let newWishList = {
+      userId: String(this.authService.getCurrentUser()?._id),
+      items: this.wishListItems,
+    };
+
+    var result = await this.WishListService.updateWishlist(newWishList);
+    console.log(result)
+    result.forEach((value) => console.log(value));
+    console.log('-------------------------------------');
   }
 
   async updateCartProducts(product: ProductModel): Promise<void> {

@@ -8,6 +8,7 @@ import { RelatedProductsComponent } from '../related-products/related-products.c
 import { CartService } from '../../services/cart.service';
 import { AuthService } from '../../services/auth.service';
 import { firstValueFrom } from 'rxjs';
+import { WishListService } from '../../services/wish-list.service';
 
 @Component({
   selector: 'app-product',
@@ -41,8 +42,9 @@ export class ProductComponent implements OnInit {
   emptyStarsArray: any;
   prdID: string = '';
   cartProducts: { productId: string; soldQuantity: number }[] = [];
+  wishListItems: any[] = [];
 
-  constructor(private service: ProductService, private route: ActivatedRoute, private CartService: CartService, private authService: AuthService) {}
+  constructor(private service: ProductService, private route: ActivatedRoute, private CartService: CartService, private authService: AuthService,  private WishListService:WishListService) {}
   ngOnInit(): void {
     this.route.paramMap.subscribe((params) => {
       this.prdID = params.get('id') ?? '';
@@ -58,6 +60,7 @@ export class ProductComponent implements OnInit {
       });
     });
     this.getUsersOldCartProducts();
+    this.getUsersOldWishListProducts();
   }
 
   async getUsersOldCartProducts(): Promise<void> {
@@ -71,29 +74,40 @@ export class ProductComponent implements OnInit {
           soldQuantity: item.soldQuantity,
         }));
       }
-
-
       console.log('old', this.cartProducts);
     } catch (error) {
       console.error('Error fetching user cart:', error);
     }
+  }
 
-    // await this.CartService.getUserCart(userId).subscribe({
-    //   next: (response) => {
-    //     if (response.status === 'success') {
-    //       console.log(response);
+  async getUsersOldWishListProducts(): Promise<void> {
+    const userId = String(this.authService.getCurrentUser()?._id);
 
-    //       this.oldCartProducts = response.data.products;
-    //       console.log('old', this.oldCartProducts);
+    try {
+      const data = await firstValueFrom(this.WishListService.getUserWishlist(userId));
+      if(data.status != 'failed') {
+        this.wishListItems = data['data'][0]['products'].map((item: any) => (item._id));
+      }
+      console.log('old', this.cartProducts);
+    } catch (error) {
+      console.error('Error fetching user cart:', error);
+    }
+  }
 
-    //     } else {
-    //       console.error('Failed to get user cart:', response);
-    //     }
-    //   },
-    //   error: (error) => {
-    //     console.error('Error fetching user cart:', error);
-    //   }
-    // });
+  async updateWishListProducts(product: ProductModel): Promise<void> {
+    this.wishListItems.push(product._id);
+    
+    console.log(this.wishListItems)
+
+    let newWishList = {
+      userId: String(this.authService.getCurrentUser()?._id),
+      items: this.wishListItems,
+    };
+
+    var result = await this.WishListService.updateWishlist(newWishList);
+    console.log(result)
+    result.forEach((value) => console.log(value));
+    console.log('-------------------------------------');
   }
 
   async updateCartProducts(product: ProductModel): Promise<void> {
