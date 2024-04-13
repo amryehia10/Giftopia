@@ -6,6 +6,7 @@ import { ProductService } from '../../services/product.service';
 import { CommonModule } from '@angular/common';
 import { CartService } from '../../services/cart.service';
 import { firstValueFrom } from 'rxjs';
+import { AuthService } from '../../services/auth.service';
 
 @Component({
   selector: 'app-category-products',
@@ -25,7 +26,8 @@ export class CategoryProductsComponent implements OnInit {
   constructor(
     private router: ActivatedRoute,
     private service: ProductService,
-    private CartService: CartService
+    private CartService: CartService,
+    private authService: AuthService
   ) {}
 
   ngOnInit(): void {
@@ -57,16 +59,17 @@ export class CategoryProductsComponent implements OnInit {
   }
 
   async getUsersOldCartProducts(): Promise<void> {
-    const userId = '6613da0131e67deca8b6c269';
+    const userId = String(this.authService.getCurrentUser()?._id);
 
     try {
       const data = await firstValueFrom(this.CartService.getUserCart(userId));
-      console.log(data);
+      if(data.status != 'failed') {
+        this.cartProducts = data['data'][0]['products'].map((item: any) => ({
+          productId: item._id,
+          soldQuantity: item.soldQuantity,
+        }));
+      }
 
-      this.cartProducts = data['data'][0]['products'].map((item: any) => ({
-        productId: item._id,
-        soldQuantity: item.soldQuantity,
-      }));
 
       console.log('old', this.cartProducts);
     } catch (error) {
@@ -92,24 +95,30 @@ export class CategoryProductsComponent implements OnInit {
   }
 
   async updateCartProducts(product: ProductModel): Promise<void> {
-    console.log(product);
-
-    this.cartProducts.push({
-      productId: product._id,
-      soldQuantity: 1,
-    });
+    const hasProductId = this.cartProducts.findIndex(item => item.productId === product._id);
+    let prdQuantity = 0;
+    if(hasProductId != -1) {
+      prdQuantity = this.cartProducts.find(item => item.productId === product._id)!.soldQuantity;
+      this.cartProducts[hasProductId] = {productId: product._id, soldQuantity: 1 + prdQuantity,};
+    } else {
+      this.cartProducts.push({
+        productId: product._id,
+        soldQuantity: 1
+      });
+    }
+    console.log(this.cartProducts)
 
     let newCart = {
-      userId: '6613da0131e67deca8b6c269',
+      userId: String(this.authService.getCurrentUser()?._id),
       items: this.cartProducts,
     };
 
     if (product.quantity > 0) {
       var result = await this.CartService.updateCartProducts(newCart);
-
+      console.log(result)
       result.forEach((value) => console.log(value));
       console.log('-------------------------------------');
-      console.log(newCart);
+      // console.log(newCart);
     } else {
       console.log('Product quantity is 0');
     }

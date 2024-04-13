@@ -1,10 +1,12 @@
 
 
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, Observable, combineLatest, map } from 'rxjs';
+import { BehaviorSubject, Observable, combineLatest, firstValueFrom, map } from 'rxjs';
 import { ProductService } from '../../services/product.service';
 import { CategoryService } from '../../services/category.service';
 import { GeneralMethods } from '../../functions';
+import { AuthService } from '../../services/auth.service';
+import { CartService } from '../../services/cart.service';
 
 @Injectable({
   providedIn: 'root'
@@ -14,7 +16,8 @@ export class DiscoverAllService {
   products:  BehaviorSubject<ProductModel[]> = new BehaviorSubject<ProductModel[]>([]);
   categories:  BehaviorSubject<CategoryModel[]> = new BehaviorSubject<CategoryModel[]>([]);
   discoveredProducts:  BehaviorSubject<ProductModel[]> = new BehaviorSubject<ProductModel[]>([]);
-  constructor(private prdService: ProductService, private catService: CategoryService) { }
+  cartProducts: { productId: string; soldQuantity: number }[] = [];
+  constructor(private prdService: ProductService, private catService: CategoryService, private authService: AuthService, private CartService: CartService) { }
   getData():Observable<any>{
     return combineLatest([this.prdService.getAllProducts(), this.catService.getCategory()]).pipe(
       map((data)=>{
@@ -26,9 +29,50 @@ export class DiscoverAllService {
       map((data)=>{
         this.populatecatNames();
         this.getDiscoveredProducts();
+        this.getUsersOldCartProducts();
         return data
       })
     )
+  }
+
+  async getUsersOldCartProducts(): Promise<void> {
+    const userId = String(this.authService.getCurrentUser()?._id);
+
+    try {
+      const data = await firstValueFrom(this.CartService.getUserCart(userId));
+      if(data.status != 'failed') {
+        console.log('hi')
+        this.cartProducts = data['data'][0]['products'].map((item: any) => ({
+          productId: item._id,
+          soldQuantity: item.soldQuantity,
+        }));
+      } else {
+        console.log('fuck')
+
+      }
+
+
+      console.log('old', this.cartProducts);
+    } catch (error) {
+      console.error('Error fetching user cart:', error);
+    }
+
+    // await this.CartService.getUserCart(userId).subscribe({
+    //   next: (response) => {
+    //     if (response.status === 'success') {
+    //       console.log(response);
+
+    //       this.oldCartProducts = response.data.products;
+    //       console.log('old', this.oldCartProducts);
+
+    //     } else {
+    //       console.error('Failed to get user cart:', response);
+    //     }
+    //   },
+    //   error: (error) => {
+    //     console.error('Error fetching user cart:', error);
+    //   }
+    // });
   }
   
   private populatecatNames(): void {

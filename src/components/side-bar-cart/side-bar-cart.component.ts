@@ -5,6 +5,7 @@ import { ActivatedRoute, Router, RouterModule } from '@angular/router';
 import { firstValueFrom } from 'rxjs';
 import { CartService } from '../../services/cart.service';
 import { ProductService } from '../../services/product.service';
+import { AuthService } from '../../services/auth.service';
 
 @Component({
   selector: 'app-side-bar-cart',
@@ -26,37 +27,34 @@ export class SideBarCartComponent implements OnInit {
 
   newCartProducts: {productId: string, soldQuantity: number}[] = [];
 
-  constructor(private router: Router, private activatedRouter: ActivatedRoute, private CartService: CartService, private ProductService: ProductService) { }
+  constructor(private router: Router, private activatedRouter: ActivatedRoute, private CartService: CartService, private ProductService: ProductService, private authService: AuthService) { }
   
-   async ngOnInit(): Promise<void> {
-    const userId = '6613da0131e67deca8b6c269'; 
+  async ngOnInit(): Promise<void> {
+    const userId = String(this.authService.getCurrentUser()?._id); 
 
     try {
-      const data = await firstValueFrom(
+      const data = await firstValueFrom( 
         this.CartService.getUserCart(userId)
       );
-      console.log(data);
-      
-      this.cartItems = data["data"][0]["products"].map((item: any) => ({
-        _id: item._id,
-        name: item.name ,
-        price: item.price,
-        image: item.image,
-        quantity: item.quantity,
-        discount: item.discount,
-        soldQuantity: item.soldQuantity
-      }));
-      this.newCartProducts = data["data"][0]["products"].map((item: any) => ({
-        productId: item._id,
-        soldQuantity: item.soldQuantity
-      }))
-
-      this.totalPrice = data["data"][0]["total"];
-      console.log(this.cartItems);
-      console.log('total price',this.totalPrice);
-      
+      if(data.status != 'failed') {
+        this.cartItems = data["data"][0]["products"].map((item: any) => ({
+          _id: item._id,
+          name: item.name ,
+          price: item.price,
+          image: item.image,
+          quantity: item.quantity,
+          discount: item.discount,
+          soldQuantity: item.soldQuantity
+        }));
+        this.newCartProducts = data["data"][0]["products"].map((item: any) => ({
+          productId: item._id,
+          soldQuantity: item.soldQuantity
+        }))
+  
+        console.log(this.cartItems);
+      } 
     } catch (error) {
-      console.error('Error fetching user cart:', error);
+      console.log("error fetching cart")
     }
   }
 
@@ -72,7 +70,7 @@ export class SideBarCartComponent implements OnInit {
     this.newCartProducts = this.newCartProducts.filter(item => item.productId !== product._id);
 
     let newCart = {
-      userId: '6613da0131e67deca8b6c269',
+      userId: String(this.authService.getCurrentUser()?._id),
       items: this.newCartProducts
     };
 

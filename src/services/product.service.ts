@@ -23,4 +23,8 @@ export class ProductService extends BaseService {
   getProductByID(Pid: string): Observable<Object> {
     return this.http.get(`${this.URL}/${Pid}`);
   }
+
+  getNewArrivalProducts(): Observable<object> {
+    return this.http.get(`${this.URL}/date/new-arrival`)
+  }
 }
