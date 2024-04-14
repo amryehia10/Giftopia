@@ -7,11 +7,12 @@ import { styleItemsDirective } from '../../directives/styleItems.directive';
 import { of } from 'rxjs';
 import { GeneralMethods } from '../../functions';
 import { ProductService } from '../../services/product.service';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 @Component({
   selector: 'app-discover-items',
   standalone: true,
-  imports: [HttpClientModule, CommonModule, RouterModule, styleItemsDirective],
+  imports: [HttpClientModule, CommonModule, RouterModule, styleItemsDirective, MatProgressSpinnerModule],
   providers: [ProductService, CategoryService],
   templateUrl: './discover-items.component.html',
   styleUrl: './discover-items.component.css'
