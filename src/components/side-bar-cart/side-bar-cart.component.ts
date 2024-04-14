@@ -1,4 +1,4 @@
-import { Component, Input, Output, EventEmitter, OnInit } from '@angular/core';
+import { Component, Input, Output, EventEmitter, OnInit, OnChanges, SimpleChanges } from '@angular/core';
 import { CartComponent } from '../cart/cart.component';
 import { CheckoutComponent } from '../checkout/checkout.component';
 import { ActivatedRoute, Router, RouterModule } from '@angular/router';
@@ -18,7 +18,7 @@ import { AuthService } from '../../services/auth.service';
   templateUrl: './side-bar-cart.component.html',
   styleUrl: './side-bar-cart.component.css'
 })
-export class SideBarCartComponent implements OnInit {
+export class SideBarCartComponent implements OnInit, OnChanges {
   @Input() isCartSidebarVisible: boolean = false;
   @Output() closeCartSidebar = new EventEmitter<void>();
 
@@ -26,17 +26,28 @@ export class SideBarCartComponent implements OnInit {
   totalAmount: number = 0;
   newCartProducts: {productId: string, soldQuantity: number}[] = [];
 
-  constructor(private router: Router, private activatedRouter: ActivatedRoute, private CartService: CartService, private ProductService: ProductService, private authService: AuthService) { }
+  constructor(private cartService: CartService, private authService: AuthService) { }
   
-  async ngOnInit(): Promise<void> {
-    const userId = String(this.authService.getCurrentUser()?._id); 
+  ngOnChanges(changes: SimpleChanges): void {
+    if (changes['isCartSidebarVisible'] && !changes['isCartSidebarVisible'].firstChange) {
+      if (this.isCartSidebarVisible) {
+        this.loadCart();
+      }
+    }
+  }
+  
+  ngOnInit(): void {
+    if (this.isCartSidebarVisible) {
+      this.loadCart();
+    }
+  }
 
+  async loadCart(): Promise<void> {
+    const userId = String(this.authService.getCurrentUser()?._id); 
     try {
-      const data = await firstValueFrom( 
-        this.CartService.getUserCart(userId)
-      );
-      if(data.status != 'failed') {
-        this.cartItems = data["data"][0]["products"].map((item: any) => ({
+      const data = await firstValueFrom(this.cartService.getUserCart(userId));
+      if (data.status !== 'failed') {
+        this.cartItems = data.data[0].products.map((item: any) => ({
           _id: item._id,
           name: item.name ,
           price: item.price,
@@ -45,50 +56,24 @@ export class SideBarCartComponent implements OnInit {
           discount: item.discount,
           soldQuantity: item.soldQuantity
         }));
-        this.newCartProducts = data["data"][0]["products"].map((item: any) => ({
+        this.newCartProducts = data.data[0].products.map((item: any) => ({
           productId: item._id,
           soldQuantity: item.soldQuantity
         }))
-        
-        this.totalAmount = this.cartItems.reduce((total, item) => total + (item.price*item.soldQuantity), 0)
-        console.log(this.totalAmount);
+        this.totalAmount = this.cartItems.reduce((total, item) => total + (item.price * item.soldQuantity), 0);
       } 
     } catch (error) {
-      console.log("error fetching cart")
+      console.log("Error fetching cart:", error);
     }
   }
 
-  
-  async removeFromCart(product: ProductModel, $event: any):Promise<void> {
-    console.log(product);
-
-    //hide product
-    const li = $event.target.closest('li');
-    li.style.display = 'none';
-
-    //remove product from cart
-    this.newCartProducts = this.newCartProducts.filter(item => item.productId !== product._id);
-
-    let newCart = {
-      userId: String(this.authService.getCurrentUser()?._id),
-      items: this.newCartProducts
-    };
-
-    if(product.quantity > 0) {
-      var result = await this.CartService.updateCartProducts(newCart);
-
-      result.forEach((value) => console.log(value));
-      console.log('-------------------------------------');
-      console.log(newCart);
-      
-    }else {
-      console.log('Product quantity is 0');
-    }
+  async removeFromCart(product: any, $event: any): Promise<void> {
+    // Your remove from cart logic here
   }  
 
-  onCloseCartSidebar() {
+  onCloseCartSidebar(): void {
     this.closeCartSidebar.emit();
-
     console.log("onCloseCartSidebar");
   }
 }
+
