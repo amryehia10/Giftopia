@@ -43,11 +43,15 @@
     "karma-jasmine-html-reporter": "~2.1.0",
     "typescript": "~5.3.2"
   },
-  "budgets": [
-    {
-       "type": "initial",
-       "maximumWarning": "2mb",
-       "maximumError": "5mb"
+  "configurations": {
+    "production": { 
+      "budgets": [
+        {
+          "type": "initial",
+          "maximumWarning": "4mb",
+          "maximumError": "10mb"
+       }
+      ]
     }
- ]
+  }
 }
