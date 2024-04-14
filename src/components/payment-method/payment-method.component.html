@@ -3,7 +3,7 @@
     <h3>Choose Payment Method:</h3>
     <select (change)="selectPaymentMethod($event)">
       <option value="" disabled selected>Select Payment Method</option>
-      <option value="creditCard">Credit Card</option>
+      <option value="creditCard">Card</option>
       <option value="cashOnDelivery">Cash on Delivery</option>
       <!-- Add more payment methods as needed -->
     </select>
@@ -11,7 +11,7 @@
   
   <div *ngIf="selectedMethod" class="selected-method">
     <p>You have selected <strong>{{ selectedMethod }}</strong> as your payment method.</p>
-    <p>Price: <strong>{{ price }}</strong> L.E</p>
+    <p>Price: <strong>{{ totalAmount }}</strong> L.E</p>
     <p>Shipping: <strong>{{ shippingCost }}</strong> L.E</p>
     @if(cashOnDelivery){
         <p class="validation">Cash On Delivery: <b>10</b> L.E</p>

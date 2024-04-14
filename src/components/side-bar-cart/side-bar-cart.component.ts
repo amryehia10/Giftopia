@@ -6,6 +6,7 @@ import { firstValueFrom } from 'rxjs';
 import { CartService } from '../../services/cart.service';
 import { ProductService } from '../../services/product.service';
 import { AuthService } from '../../services/auth.service';
+import { CartDataService } from '../../services/cart-data.service';
 
 @Component({
   selector: 'app-side-bar-cart',
@@ -26,7 +27,7 @@ export class SideBarCartComponent implements OnInit, OnChanges {
   totalAmount: number = 0;
   newCartProducts: {productId: string, soldQuantity: number}[] = [];
 
-  constructor(private cartService: CartService, private authService: AuthService) { }
+  constructor(private cartService: CartService, private authService: AuthService, private cartDataService: CartDataService) { }
   
   ngOnChanges(changes: SimpleChanges): void {
     if (changes['isCartSidebarVisible'] && !changes['isCartSidebarVisible'].firstChange) {
@@ -61,6 +62,8 @@ export class SideBarCartComponent implements OnInit, OnChanges {
           soldQuantity: item.soldQuantity
         }))
         this.totalAmount = this.cartItems.reduce((total, item) => total + (item.price * item.soldQuantity), 0);
+        this.sendTotalAmount(this.totalAmount);
+        this.sendcartItems(this.cartItems);
       } 
     } catch (error) {
       console.log("Error fetching cart:", error);
@@ -99,5 +102,13 @@ export class SideBarCartComponent implements OnInit, OnChanges {
     console.log("onCloseCartSidebar");
   }
   
+  sendTotalAmount(totalAmount: number) {
+    this.cartDataService.setTotalAmount(totalAmount);
+  }
+  
+  sendcartItems(cartItems: any) {
+    this.cartDataService.setCartItems(cartItems);
+  }
+
 }
 
