@@ -6,6 +6,7 @@ import { CartService } from '../../services/cart.service';
 import { ProductService } from '../../services/product.service';
 import { firstValueFrom } from 'rxjs';
 import { AuthService } from '../../services/auth.service';
+import { CartDataService } from '../../services/cart-data.service';
 
 @Component({
   selector: 'app-cart',
@@ -23,7 +24,7 @@ export class CartComponent implements OnInit {
   cartItems: any[] = [];
   newCartProducts: {productId: string, soldQuantity: number}[] = [];
   totalAmount: number = 0;
-  constructor(private router: Router, private activatedRouter: ActivatedRoute, private CartService: CartService, private ProductService: ProductService, private authService: AuthService) { }
+  constructor(private router: Router, private CartService: CartService, private authService: AuthService, private cartDataService: CartDataService) { }
   
    async ngOnInit(): Promise<void> {
     const userId = String(this.authService.getCurrentUser()?._id); 
@@ -47,7 +48,8 @@ export class CartComponent implements OnInit {
           soldQuantity: item.soldQuantity
         }))
         this.totalAmount = this.cartItems.reduce((total, item) => total + (item.price*item.soldQuantity), 0)
-        console.log(this.totalAmount);
+        this.sendTotalAmount(this.totalAmount);
+        this.sendcartItems(this.cartItems);
       } 
     } catch (error) {
       console.log("error fetching cart")
@@ -86,44 +88,16 @@ export class CartComponent implements OnInit {
     this.router.navigate(['home']);
   }
 
-  //#region "Old ngOnInit"
-  // async ngOnInit(): Promise<void> {
-  //   try {
-  //     const data = await firstValueFrom(
-  //       this.CartService.getAllAtCartByUserId('660c71754ae7f2f3338cca19')
-  //     );
-  //     this.cartItems = data["data"].map((item: any) => ({
-  //       userId: item.userId,
-  //       productId: item.productId,
-  //       quantity: item.quantity,
-  //       total: item.total,
-  //     }));
+  navigateToCheckOut() {
+    this.router.navigate(['payment-method']);
+  }
 
-  //     await this.getAllproductsInCart();
-  //     console.log(this.cartProducts);
-  //   } catch (error) {
-  //     console.error(error);
-  //   }
-  // }
-
-  // async getAllproductsInCart(): Promise<void> {
-  //   for (const element of this.cartItems) {
-  //     for (const productId of element.productId) {
-  //       await this.getProductById(productId);
-  //     }
-  //   }
-  // }
-
-  // async getProductById(Pid: any): Promise<void> {
-  //   try {
-  //     const data = await firstValueFrom(this.ProductService.getProductByID(Pid));
-  //     const currentProduct = GeneralMethods.CastSingleProduct(data);
-  //     this.cartProducts.push(currentProduct);
-  //   } catch (error) {
-  //     console.error(error);
-  //   }
-  // }
-  //#endregion
-
-
+  sendTotalAmount(totalAmount: number) {
+    this.cartDataService.setTotalAmount(totalAmount);
+  }
+  
+  sendcartItems(cartItems: any) {
+    this.cartDataService.setCartItems(cartItems);
+  }
+  
 }
