@@ -68,7 +68,30 @@ export class SideBarCartComponent implements OnInit, OnChanges {
   }
 
   async removeFromCart(product: any, $event: any): Promise<void> {
-    // Your remove from cart logic here
+    console.log(product);
+
+    //hide product
+    const row = $event.target.closest('li');
+    row.style.display = 'none';
+
+    //remove product from cart
+    this.newCartProducts = this.newCartProducts.filter(item => item.productId !== product._id);
+
+    let newCart = {
+      userId: String(this.authService.getCurrentUser()?._id),
+      items: this.newCartProducts
+    };
+
+    if(product.quantity > 0) {
+      var result = await this.cartService.updateCartProducts(newCart);
+
+      result.forEach((value) => console.log(value));
+      console.log('-------------------------------------');
+      console.log(newCart);
+
+    }else {
+      console.log('Product quantity is 0');
+    }
   }  
 
   onCloseCartSidebar(): void {
