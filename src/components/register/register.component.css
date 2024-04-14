@@ -13,7 +13,7 @@
   display: flex;
   justify-content: center;
   flex-direction: column;
-  border: 1px solid #922c19;
+  border: 1px solid #2499d8;
   border-radius: 7px;
   overflow: hidden;
 }
@@ -33,7 +33,7 @@ textarea {
   width: 100%;
   text-align: center;
   padding: 10px;
-  color: #922c19;
+  color: #2499d8;
 }
 
 .form-group {
@@ -44,7 +44,7 @@ textarea {
 
 hr {
   color: #17181c;
-  background-color: rgb(192, 0, 0);
+  background-color: #2499d8;
   height: 2px;
   width: 90%;
   margin: 10px auto;
@@ -53,12 +53,12 @@ hr {
 }
 
 .giftBtn {
-  color: #ddd;
-  background-color: #922c19;
-  border: 1px solid #ddd;
+  color: #ffffff;
+  background-color: #2499d8;
+  border: 1px solid #ffffff;
 }
 .giftBtn:hover {
-  background-color: #772617;
+  background-color: #42b1ed;
 }
 .giftBtn:active {
   border: 1px solid #a07c75;
@@ -68,6 +68,8 @@ hr {
   padding: 10px;
   gap: 10px;
   margin-top: 10px;
+  width: 30%;
+  margin: auto;
 }
 @media screen and (max-width: 700px) {
   .button-container {

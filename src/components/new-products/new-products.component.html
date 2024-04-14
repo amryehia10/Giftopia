@@ -32,6 +32,10 @@
           <div class="part-2">
             <a [routerLink]="'/products/' + prd._id"
               ><h3 class="card-title">{{ prd.name }}</h3>
+
+              <p>--STARS RATING--</p>
+
+              
             </a>
             @if(prd.discount > 0){
             <h4 class="product-old-price">
