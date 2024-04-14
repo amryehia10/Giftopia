@@ -98,5 +98,6 @@ export class SideBarCartComponent implements OnInit, OnChanges {
     this.closeCartSidebar.emit();
     console.log("onCloseCartSidebar");
   }
+  
 }
 

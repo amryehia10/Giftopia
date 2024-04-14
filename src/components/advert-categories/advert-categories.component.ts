@@ -1,3 +1,4 @@
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { Component, OnInit } from '@angular/core';
 import { CategoryService } from '../../services/category.service';
 import { HttpClientModule } from '@angular/common/http';
@@ -8,7 +9,7 @@ import { GeneralMethods } from '../../functions';
 @Component({
   selector: 'app-advert-categories',
   standalone: true,
-  imports: [HttpClientModule, CommonModule, RouterModule],
+  imports: [HttpClientModule, CommonModule, RouterModule, MatProgressSpinnerModule],
   providers: [CategoryService],
   templateUrl: './advert-categories.component.html',
   styleUrl: './advert-categories.component.css'
