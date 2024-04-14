@@ -63,7 +63,10 @@ export class SideBarCartComponent implements OnInit, OnChanges {
         }))
         this.totalAmount = this.cartItems.reduce((total, item) => total + (item.price * item.soldQuantity), 0);
         this.sendTotalAmount(this.totalAmount);
-        this.sendcartItems(this.cartItems);
+        this.sendcartItems(this.cartItems.map(item =>({
+          productId: item._id,
+          soldQuantity: item.soldQuantity
+        })));
       } 
     } catch (error) {
       console.log("Error fetching cart:", error);

@@ -1,5 +1,14 @@
 <div class="payment-card">
-<div class="payment-method">
+  <div class="payment-method">
+    <h3>Choose address: </h3>
+    <select (change)="selectAddress($event)">
+      <option value="" disabled selected>Select address</option>
+      @for (add of userData.address; track userId) {
+        <option value="{{add}}">{{add}}</option>
+      }
+    </select>
+  </div>
+  <div class="payment-method">
     <h3>Choose Payment Method:</h3>
     <select (change)="selectPaymentMethod($event)">
       <option value="" disabled selected>Select Payment Method</option>
@@ -20,7 +29,7 @@
     <p>Total Price: <strong>{{ totalPrice }}</strong> L.E</p>
     <br>
     @if(cashOnDelivery){
-        <button class="proceed-button">Proceed</button>
+        <button class="proceed-button" (click)="createOrder()">Proceed</button>
       }
     @if(!cashOnDelivery){
             <!-- Main Credit Card Number Input -->
@@ -74,7 +83,7 @@
       </div>
     </div>
   </div>
-        <button class="proceed-button-credit">Proceed</button>
+        <button class="proceed-button-credit" (click)="createOrder()">Proceed</button>
       }
     <br>
   </div>
