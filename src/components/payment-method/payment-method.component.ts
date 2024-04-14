@@ -10,6 +10,7 @@ import { AuthService } from '../../services/auth.service';
 import { UserService } from '../../services/user.service';
 import { GeneralMethods } from '../../functions';
 import { Router } from '@angular/router';
+import { PaymentService } from '../../services/payment.service';
 @Component({
   selector: 'app-payment-method',
   standalone: true,
@@ -24,6 +25,7 @@ export class PaymentMethodComponent implements OnInit, OnDestroy{
     private orderService: OrderService, 
     private authService: AuthService, 
     private userService: UserService,
+    private paymentService: PaymentService,
     private router: Router
   ) {}
 
@@ -37,7 +39,7 @@ export class PaymentMethodComponent implements OnInit, OnDestroy{
   subscription!: Subscription;
   userChosenAddress: string = '';
   userId = String(this.authService.getCurrentUser()?._id);
-
+  paymentLink: string = '';
   userData: UserModel = {
     _id: '',
     image: '',
@@ -92,6 +94,22 @@ export class PaymentMethodComponent implements OnInit, OnDestroy{
     }
   }
 
+  getPaymentFrame() {
+    const email = this.authService.getCurrentUser()?.email
+    const name = this.authService.getCurrentUser()?.name
+
+    this.paymentService.getPayment({amount: this.totalPrice, email:email, phone: this.userData.phone[0], address: this.selectAddress, name: name}).subscribe({
+      next: (data) =>{
+        this.paymentLink = data.data.data;
+        this.createOrder();
+        window.location.href = this.paymentLink;
+      },
+      error: (err) => {
+        console.log(err);
+      }
+    });
+  }
+
   selectAddress(event:any) {
     this.selectAddress = event.target.value;
   }
@@ -108,7 +126,8 @@ export class PaymentMethodComponent implements OnInit, OnDestroy{
       items: this.cartItems,
       paymentMethod: this.selectedMethod
     }).subscribe();
-    this.router.navigate(['track-order']);
+    if(this.selectedMethod == 'cashOnDelivery')
+      this.router.navigate(['track-order']);
   }
   
 }
