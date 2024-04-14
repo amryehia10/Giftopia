@@ -62,7 +62,7 @@
                         <i class="msicon msi-star-o"></i>
                       </ng-container>
                       <span class="rating-value"
-                        >({{ product.star }} of 5 Stars)</span
+                        >({{ product.star/product.numberOfRates }} of 5 Stars)</span
                       >
                     </div>
                     <span class="ms-read-review" (click)="scrollToReviews()">

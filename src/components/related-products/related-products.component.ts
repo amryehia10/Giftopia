@@ -15,6 +15,8 @@ import { GeneralMethods } from '../../functions';
   styleUrl: './related-products.component.css'
 })
 export class RelatedProductsComponent implements OnInit{
+  filledStarsArray: any;
+  emptyStarsArray: any;
   relatedProducts: ProductModel[] = [];
   product: ProductModel = {
     _id: "",
@@ -50,6 +52,7 @@ export class RelatedProductsComponent implements OnInit{
                 break;
               }
             }
+            console.log(this.relatedProducts);
           }
         })
       },
@@ -58,6 +61,15 @@ export class RelatedProductsComponent implements OnInit{
       },
     });
   }
+
+  // calculateStarArrays(product: ProductModel) {
+  //   const filledStars = Math.floor(product.star/product.numberOfRates);
+  //   const emptyStars = 5 - filledStars;
+
+  //   this.filledStarsArray = Array(filledStars).fill(0);
+  //   this.emptyStarsArray = Array(emptyStars).fill(0);
+  // }
+
   refreshPage() {
     window.location.reload();
   }

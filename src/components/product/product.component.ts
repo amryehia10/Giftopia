@@ -148,7 +148,7 @@ export class ProductComponent implements OnInit {
   }
 
   calculateStarArrays() {
-    const filledStars = Math.floor(this.product.star);
+    const filledStars = Math.floor(this.product.star/this.product.numberOfRates);
     const emptyStars = 5 - filledStars;
 
     this.filledStarsArray = Array(filledStars).fill(0);
