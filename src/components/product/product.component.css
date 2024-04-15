@@ -16,25 +16,23 @@
 }
 .ms-single-price-stoke {
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap; /* Prevent wrapping to ensure inline display */
   justify-content: space-between;
   align-items: center;
 }
 
-.ms-single-price {
-  margin-bottom: 10px;
+.ms-single-price,
+.ms-single-stoke {
+  display: flex;
+  align-items: center;
+  margin-right: 10px; /* Add spacing between the elements */
 }
 
 .mrp {
   color: gray;
 }
 
-.ms-single-stoke {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  margin-top: 10px;
-}
+
 
 .ms-single-sku,
 .ms-single-ps-title {
@@ -50,5 +48,9 @@
   .ms-single-qty {
     display: flex;
     flex-direction: column;
+  }
+  .ms-single-price-stoke {
+    flex-direction: row;
+    flex-wrap: nowrap;
   }
 }

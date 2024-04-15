@@ -67,7 +67,7 @@
                         >
                         } @else {
                           <span class="rating-value"
-                            >({{ 0 }} of 5 Stars)</span
+                            >(0 of 5 Stars)</span
                           >
                         }
                       </div>
@@ -75,7 +75,7 @@
                       |&nbsp;&nbsp;<a>{{ product.numberOfRates }} Ratings</a>
                     </span>
                   </div>
-                  <div class="ms-single-price-stoke">
+                  <div class="ms-single-price-stoke" style="display: flex; align-items: center; justify-content: space-between;">
                     @if(product.discount > 0){
                     <div class="ms-single-price">
                       <div class="final-price">
@@ -99,11 +99,7 @@
                           >{{ product.quantity }} Pieces Left</span
                         >
                       </div>
-                      <div>
-                        <span class="ms-single-ps-title" style="margin-top: 6px"
-                          >IN STOCK</span
-                        >
-                      </div>
+                      
                     </div>
                     <div class="ms-single-stoke">
                       <span class="ms-single-sku"
