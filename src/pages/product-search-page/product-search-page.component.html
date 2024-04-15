@@ -1,0 +1,57 @@
+<section class="section-products backgroundColor">
+  <div class="container">
+    <button type="button" (click)="toggleSort()">
+      Sort by Price: <span>{{ btnSortToggle }}</span>
+    </button>
+    <div class="row">
+      @for (prd of products; track prd._id) {
+      <!-- Single Product -->
+      <div class="col-6 col-sm-6 col-md-4 col-lg-4 col-xl-3">
+        <div class="single-product">
+          <div class="part-1">
+            <a [routerLink]="'/products/' + prd._id"
+              ><img
+                src="{{ prd.images[0] }}"
+                class="card-img-top"
+                alt="Product Image"
+            /></a>
+            <ul>
+              <!--TODO-->
+              <li>
+                <a href="javascript:void(0)" (click)="updateCartProducts(prd)">
+                  <i class="fas fa-shopping-cart"></i>
+                </a>
+              </li>
+              <li>
+                <a
+                  href="javascript:void(0)"
+                  (click)="updateWishListProducts(prd)"
+                  ><i class="fas fa-heart"></i
+                ></a>
+              </li>
+            </ul>
+          </div>
+          <div class="part-2">
+            <a [routerLink]="'/products/' + prd._id"
+              ><h4 class="">{{ prd.name }}</h4>
+            </a>
+            @if(prd.discount > 0){
+            <h4 class="product-old-price">
+              {{ prd.price | currency : "L.E " }}
+            </h4>
+            <br />
+            <h4 class="product-price">
+              {{
+                prd.price - (prd.price * prd.discount) / 100 | currency : "L.E "
+              }}
+            </h4>
+            } @else {
+            <h4 class="product-price">{{ prd.price | currency : "L.E " }}</h4>
+            }
+          </div>
+        </div>
+      </div>
+      }
+    </div>
+  </div>
+</section>

@@ -1,24 +1,39 @@
 <div class="align-self-center ms-header-search">
   <div class="header-search">
     <form class="ms-search-group-form">
-      <input class="form-control ms-search-bar" placeholder="Search Products by name" type="text" #filter 
-      (keydown)="onKeyDown($event)" (input)="getData($event)"/>
-      <button class="search_submit" type="button" (click)="$event.preventDefault">
-        <img src="assets/img/icons/search.svg" class="svg_img search_svg" alt="" />
+      <input
+        class="form-control ms-search-bar"
+        placeholder="Search Products by name"
+        type="text"
+        #filter
+        (keydown)="onKeyDown($event)"
+        (input)="getData($event)"
+        negmo
+      />
+      <button
+        class="search_submit"
+        type="button"
+        (click)="($event.preventDefault)"
+      >
+        <img
+          src="assets/img/icons/search.svg"
+          class="svg_img search_svg"
+          alt=""
+        />
       </button>
     </form>
 
-    
     @if (filteredProducts.length > 0) {
-      <section class="results">
-        <div>
-          <app-search-bar-result
+    <section class="results">
+      <div>
+        <app-search-bar-result
           (clearProducts)="emptyFilteredProducts()"
           *ngFor="let prd of filteredProducts"
-          [productsFound]="prd">
+          [productsFound]="prd"
+        >
         </app-search-bar-result>
       </div>
     </section>
-  }
+    }
   </div>
 </div>

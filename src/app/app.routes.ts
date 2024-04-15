@@ -18,6 +18,7 @@ import { discoverAllResolver } from '../components/discover-all/discover-all.res
 import { LogoutComponent } from '../components/logout/logout.component';
 import { ProfileComponent } from '../components/profile/profile.component';
 import { EditProfileComponent } from '../components/edit-profile/edit-profile.component';
+import { ProductSearchPageComponent } from '../pages/product-search-page/product-search-page.component';
 
 export const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -29,6 +30,7 @@ export const routes: Routes = [
     resolve: { data: discoverAllResolver },
   },
   { path: 'products/:id', component: ProductComponent },
+  { path: 'search-products/:keyword', component: ProductSearchPageComponent },
   { path: 'home/products/:id', component: ProductComponent },
   { path: 'category/:name', component: CategoryProductsComponent },
   { path: 'about', component: AboutUsComponent },
