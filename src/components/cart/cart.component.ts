@@ -94,7 +94,13 @@ export class CartComponent implements OnInit {
   }
 
   navigateToCheckOut() {
-    this.router.navigate(['payment-method']);
+    if (this.authService.getCurrentUser()?.userType != 'customer') {
+      this.router.navigate(['/login']).then(() => {
+        window.location.reload();
+      });
+    } else {
+      this.router.navigate(['payment-method']);
+    }
   }
 
   sendTotalAmount(totalAmount: number) {
