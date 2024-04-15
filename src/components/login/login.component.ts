@@ -53,7 +53,7 @@ export class LoginComponent {
         });
       }
       else if (currentUser.userType == 'admin'){
-        window.location.href = "http://localhost:4040/";
+        window.location.href = "https://giftopia-admin-h8no.onrender.com";
       
 
       }
