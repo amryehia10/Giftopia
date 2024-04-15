@@ -6,6 +6,8 @@ import { ProductService } from '../../services/product.service';
 import { CommonModule } from '@angular/common';
 import { CartService } from '../../services/cart.service';
 import { firstValueFrom } from 'rxjs';
+import { AuthService } from '../../services/auth.service';
+import { WishListService } from '../../services/wish-list.service';
 
 @Component({
   selector: 'app-category-products',
@@ -19,13 +21,15 @@ export class CategoryProductsComponent implements OnInit {
   btnSortToggle = 'Low to High';
   // oldCartProducts = [];
   cartProducts: { productId: string; soldQuantity: number }[] = [];
-
+  wishListItems: any[] = [];
   products: ProductModel[] = [];
 
   constructor(
     private router: ActivatedRoute,
     private service: ProductService,
-    private CartService: CartService
+    private CartService: CartService,
+    private authService: AuthService,
+    private WishListService:WishListService
   ) {}
 
   ngOnInit(): void {
@@ -38,6 +42,7 @@ export class CategoryProductsComponent implements OnInit {
 
     //get old cart products
     this.getUsersOldCartProducts();
+    this.getUsersOldWishListProducts()
   }
 
   toggleSort() {
@@ -57,59 +62,78 @@ export class CategoryProductsComponent implements OnInit {
   }
 
   async getUsersOldCartProducts(): Promise<void> {
-    const userId = '6613da0131e67deca8b6c269';
+    const userId = String(this.authService.getCurrentUser()?._id);
 
     try {
       const data = await firstValueFrom(this.CartService.getUserCart(userId));
-      console.log(data);
-
-      this.cartProducts = data['data'][0]['products'].map((item: any) => ({
-        productId: item._id,
-        soldQuantity: item.soldQuantity,
-      }));
-
+      if(data.status != 'failed') {
+        this.cartProducts = data['data'][0]['products'].map((item: any) => ({
+          productId: item._id,
+          soldQuantity: item.soldQuantity,
+        }));
+      }
       console.log('old', this.cartProducts);
     } catch (error) {
       console.error('Error fetching user cart:', error);
     }
-
-    // await this.CartService.getUserCart(userId).subscribe({
-    //   next: (response) => {
-    //     if (response.status === 'success') {
-    //       console.log(response);
-
-    //       this.oldCartProducts = response.data.products;
-    //       console.log('old', this.oldCartProducts);
-
-    //     } else {
-    //       console.error('Failed to get user cart:', response);
-    //     }
-    //   },
-    //   error: (error) => {
-    //     console.error('Error fetching user cart:', error);
-    //   }
-    // });
   }
 
-  async updateCartProducts(product: ProductModel): Promise<void> {
-    console.log(product);
+  async getUsersOldWishListProducts(): Promise<void> {
+    const userId = String(this.authService.getCurrentUser()?._id);
 
-    this.cartProducts.push({
-      productId: product._id,
-      soldQuantity: 1,
-    });
+    try {
+      const data = await firstValueFrom(this.WishListService.getUserWishlist(userId));
+      if(data.status != 'failed') {
+        this.wishListItems = data['data'][0]['products'].map((item: any) => (item._id));
+      }
+      console.log('old', this.cartProducts);
+    } catch (error) {
+      console.error('Error fetching user cart:', error);
+    }
+  }
+
+  async updateWishListProducts(product: ProductModel): Promise<void> {
+    this.wishListItems.push(product._id);
+    
+    console.log(this.wishListItems)
+
+    let newWishList = {
+      userId: String(this.authService.getCurrentUser()?._id),
+      items: this.wishListItems,
+    };
+
+    var result = await this.WishListService.updateWishlist(newWishList);
+    console.log(result)
+    result.forEach((value) => console.log(value));
+    console.log('-------------------------------------');
+  }
+
+
+  async updateCartProducts(product: ProductModel): Promise<void> {
+    const hasProductId = this.cartProducts.findIndex(item => item.productId === product._id);
+    let prdQuantity = 0;
+    if(hasProductId != -1) {
+      prdQuantity = this.cartProducts.find(item => item.productId === product._id)!.soldQuantity;
+      this.cartProducts[hasProductId] = {productId: product._id, soldQuantity: 1 + prdQuantity,};
+    } else {
+      this.cartProducts.push({
+        productId: product._id,
+        soldQuantity: 1
+      });
+    }
+    console.log(this.cartProducts)
 
     let newCart = {
-      userId: '6613da0131e67deca8b6c269',
+      userId: String(this.authService.getCurrentUser()?._id),
       items: this.cartProducts,
     };
 
     if (product.quantity > 0) {
       var result = await this.CartService.updateCartProducts(newCart);
-
+      console.log(result)
       result.forEach((value) => console.log(value));
       console.log('-------------------------------------');
-      console.log(newCart);
+      // console.log(newCart);
     } else {
       console.log('Product quantity is 0');
     }

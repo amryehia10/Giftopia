@@ -23,14 +23,14 @@
                 </a>
               </li>
               <li>
-                <a href="#"><i class="fas fa-heart"></i></a>
+                <a href="javascript:void(0)" (click)="updateWishListProducts(prd)"><i class="fas fa-heart"></i></a>
               </li>
             </ul>
           </div>
           <div class="part-2">
             <a [routerLink]="'/products/' + prd._id"
-              ><h5 class="card-title">{{ prd.name }}</h5></a
-            >
+              ><h4 class="">{{ prd.name }}</h4>
+            </a>
             @if(prd.discount > 0){
             <h4 class="product-old-price">
               {{ prd.price | currency : "L.E " }}

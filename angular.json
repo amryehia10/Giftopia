@@ -20,6 +20,7 @@
             "tsConfig": "tsconfig.app.json",
             "assets": ["src/favicon.ico", "src/assets/"],
             "styles": [
+              "@angular/material/prebuilt-themes/indigo-pink.css",
               "src/assets/css/vendor/msicons.min.css",
               "src/assets/css/plugins/swiper-bundle.min.css",
               "src/assets/css/plugins/bootstrap.css",
@@ -42,13 +43,13 @@
               "budgets": [
                 {
                   "type": "initial",
-                  "maximumWarning": "500kb",
-                  "maximumError": "1mb"
+                  "maximumWarning": "4mb",
+                  "maximumError": "10mb"
                 },
                 {
                   "type": "anyComponentStyle",
-                  "maximumWarning": "2kb",
-                  "maximumError": "4kb"
+                  "maximumWarning": "4mb",
+                  "maximumError": "10mb"
                 }
               ],
               "outputHashing": "all"
@@ -86,7 +87,7 @@
             "tsConfig": "tsconfig.spec.json",
             "assets": ["src/favicon.ico", "src/assets"],
             "styles": [
-              "@angular/material/prebuilt-themes/deeppurple-amber.css",
+              "@angular/material/prebuilt-themes/indigo-pink.css",
               "src/styles.css"
             ],
             "scripts": []

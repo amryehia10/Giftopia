@@ -53,18 +53,22 @@
                 <div class="single-pro-content">
                   <h5 class="ms-single-title">{{ product.name }}</h5>
                   <div class="ms-single-rating-wrap">
-                    <div class="ms-single-rating">
-                      <ng-container *ngFor="let star of filledStarsArray">
-                        <i class="msicon msi-star fill"></i>
-                      </ng-container>
-
-                      <ng-container *ngFor="let star of emptyStarsArray">
-                        <i class="msicon msi-star-o"></i>
-                      </ng-container>
-                      <span class="rating-value"
-                        >({{ product.star }} of 5 Stars)</span
-                      >
-                    </div>
+                    @if(product.star > 0){
+                      <div class="ms-single-rating">
+                        <ng-container *ngFor="let star of filledStarsArray">
+                          <i class="msicon msi-star fill"></i>
+                        </ng-container>
+  
+                        <ng-container *ngFor="let star of emptyStarsArray">
+                          <i class="msicon msi-star-o"></i>
+                        </ng-container>
+                        <span class="rating-value"
+                          >({{ product.star/product.numberOfRates }} of 5 Stars)</span
+                        >
+                      </div>
+                    } @else {
+                      <div class="ms-single-rating">Not Ratings</div>
+                    }
                     <span class="ms-read-review" (click)="scrollToReviews()">
                       |&nbsp;&nbsp;<a>{{ product.numberOfRates }} Ratings</a>
                     </span>
@@ -122,12 +126,12 @@
                       />
                     </div>
                     <div class="ms-single-cart">
-                      <button class="btn btn-primary ms-btn-2">
+                      <button class="btn btn-primary ms-btn-2" (click)="updateCartProducts(product)">
                         Add To Cart
                       </button>
                     </div>
                     <div class="ms-single-wishlist">
-                      <a class="ms-btn-group wishlist" title="Wishlist">
+                      <a class="ms-btn-group wishlist" title="Wishlist" (click)="updateWishListProducts(product)">
                         <img
                           src="assets/img/icons/wishlist.svg"
                           class="svg_img pro_svg"
@@ -135,22 +139,7 @@
                         />
                       </a>
                     </div>
-                    <div class="ms-single-quickview">
-                      <a
-                        href="#"
-                        class="ms-btn-group quickview"
-                        data-link-action="quickview"
-                        title="Quick view"
-                        data-bs-toggle="modal"
-                        data-bs-target="#ms_quickview_modal"
-                      >
-                        <img
-                          src="assets/img/icons/quickview.svg"
-                          class="svg_img pro_svg"
-                          alt=""
-                        />
-                      </a>
-                    </div>
+                    
                   </div>
                 </div>
               </div>

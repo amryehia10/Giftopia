@@ -1,0 +1,30 @@
+@media (max-width: 767px) {
+    .ms-track-card {
+        padding: 10px;
+        text-align: center;
+    }
+
+    .ms-steps-body {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .ms-step {
+        flex: 0 0 50%;
+        margin-bottom: 20px;
+    }
+
+    .ms-step span {
+        display: block;
+        margin-top: 5px;
+    }
+
+    .ms-step-icon {
+        margin-bottom: 5px;
+    }
+
+    .ms-steps-header {
+        display: none;
+    }
+}

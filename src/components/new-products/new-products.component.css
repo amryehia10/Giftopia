@@ -126,7 +126,7 @@ a, a:hover {
 .section-products .single-product .part-2 {
     padding: 20px;
     background-color: #fff;
-    height: 18vh;
+    height: 26vh;
     width: 30ch;
 }
 
@@ -140,6 +140,20 @@ a, a:hover {
     text-overflow: ellipsis;
     max-width: 100%;
 }
+
+@media screen and (max-width: 576px) {
+    .section-products .single-product .part-2 {
+      width: auto; /* Allow width to adjust based on content */
+      max-width: 100%; /* Ensure it doesn't exceed container width */
+    }
+    
+    .section-products .single-product .part-2 .product-title {
+      font-size: 1rem; /* Adjust font size for smaller screens */
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis; /* Add ellipsis for overflowing text */
+    }
+  }
 
 /* .section-products .single-product .part-2 .product-price {
     font-size: 1.1rem;

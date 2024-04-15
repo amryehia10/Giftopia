@@ -5,6 +5,10 @@ import { ProductService } from '../../services/product.service';
 import { GeneralMethods } from '../../functions';
 import { ProductReviewsComponent } from '../product-reviews/product-reviews.component';
 import { RelatedProductsComponent } from '../related-products/related-products.component';
+import { CartService } from '../../services/cart.service';
+import { AuthService } from '../../services/auth.service';
+import { firstValueFrom } from 'rxjs';
+import { WishListService } from '../../services/wish-list.service';
 
 @Component({
   selector: 'app-product',
@@ -37,8 +41,10 @@ export class ProductComponent implements OnInit {
   filledStarsArray: any;
   emptyStarsArray: any;
   prdID: string = '';
+  cartProducts: { productId: string; soldQuantity: number }[] = [];
+  wishListItems: any[] = [];
 
-  constructor(private service: ProductService, private route: ActivatedRoute) {}
+  constructor(private service: ProductService, private route: ActivatedRoute, private CartService: CartService, private authService: AuthService,  private WishListService:WishListService) {}
   ngOnInit(): void {
     this.route.paramMap.subscribe((params) => {
       this.prdID = params.get('id') ?? '';
@@ -53,6 +59,85 @@ export class ProductComponent implements OnInit {
         },
       });
     });
+    this.getUsersOldCartProducts();
+    this.getUsersOldWishListProducts();
+  }
+
+  async getUsersOldCartProducts(): Promise<void> {
+    const userId = String(this.authService.getCurrentUser()?._id);
+
+    try {
+      const data = await firstValueFrom(this.CartService.getUserCart(userId));
+      if(data.status != 'failed') {
+        this.cartProducts = data['data'][0]['products'].map((item: any) => ({
+          productId: item._id,
+          soldQuantity: item.soldQuantity,
+        }));
+      }
+      console.log('old', this.cartProducts);
+    } catch (error) {
+      console.error('Error fetching user cart:', error);
+    }
+  }
+
+  async getUsersOldWishListProducts(): Promise<void> {
+    const userId = String(this.authService.getCurrentUser()?._id);
+
+    try {
+      const data = await firstValueFrom(this.WishListService.getUserWishlist(userId));
+      if(data.status != 'failed') {
+        this.wishListItems = data['data'][0]['products'].map((item: any) => (item._id));
+      }
+      console.log('old', this.cartProducts);
+    } catch (error) {
+      console.error('Error fetching user cart:', error);
+    }
+  }
+
+  async updateWishListProducts(product: ProductModel): Promise<void> {
+    this.wishListItems.push(product._id);
+    
+    console.log(this.wishListItems)
+
+    let newWishList = {
+      userId: String(this.authService.getCurrentUser()?._id),
+      items: this.wishListItems,
+    };
+
+    var result = await this.WishListService.updateWishlist(newWishList);
+    console.log(result)
+    result.forEach((value) => console.log(value));
+    console.log('-------------------------------------');
+  }
+
+  async updateCartProducts(product: ProductModel): Promise<void> {
+    const hasProductId = this.cartProducts.findIndex(item => item.productId === product._id);
+    let prdQuantity = 0;
+    if(hasProductId != -1) {
+      prdQuantity = this.cartProducts.find(item => item.productId === product._id)!.soldQuantity;
+      this.cartProducts[hasProductId] = {productId: product._id, soldQuantity: 1 + prdQuantity,};
+    } else {
+      this.cartProducts.push({
+        productId: product._id,
+        soldQuantity: 1
+      });
+    }
+    console.log(this.cartProducts)
+
+    let newCart = {
+      userId: String(this.authService.getCurrentUser()?._id),
+      items: this.cartProducts,
+    };
+
+    if (product.quantity > 0) {
+      var result = await this.CartService.updateCartProducts(newCart);
+      console.log(result)
+      result.forEach((value) => console.log(value));
+      console.log('-------------------------------------');
+      // console.log(newCart);
+    } else {
+      console.log('Product quantity is 0');
+    }
   }
 
   scrollToReviews() {
@@ -63,7 +148,7 @@ export class ProductComponent implements OnInit {
   }
 
   calculateStarArrays() {
-    const filledStars = Math.floor(this.product.star);
+    const filledStars = Math.floor(this.product.star/this.product.numberOfRates);
     const emptyStars = 5 - filledStars;
 
     this.filledStarsArray = Array(filledStars).fill(0);

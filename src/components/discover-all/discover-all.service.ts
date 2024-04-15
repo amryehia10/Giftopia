@@ -1,10 +1,13 @@
 
 
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, Observable, combineLatest, map } from 'rxjs';
+import { BehaviorSubject, Observable, combineLatest, firstValueFrom, map } from 'rxjs';
 import { ProductService } from '../../services/product.service';
 import { CategoryService } from '../../services/category.service';
 import { GeneralMethods } from '../../functions';
+import { AuthService } from '../../services/auth.service';
+import { CartService } from '../../services/cart.service';
+import { WishListService } from '../../services/wish-list.service';
 
 @Injectable({
   providedIn: 'root'
@@ -14,7 +17,10 @@ export class DiscoverAllService {
   products:  BehaviorSubject<ProductModel[]> = new BehaviorSubject<ProductModel[]>([]);
   categories:  BehaviorSubject<CategoryModel[]> = new BehaviorSubject<CategoryModel[]>([]);
   discoveredProducts:  BehaviorSubject<ProductModel[]> = new BehaviorSubject<ProductModel[]>([]);
-  constructor(private prdService: ProductService, private catService: CategoryService) { }
+  cartProducts: { productId: string; soldQuantity: number }[] = [];
+  wishListItems: any[] = [];
+  
+  constructor(private prdService: ProductService, private catService: CategoryService, private authService: AuthService, private CartService: CartService, private WishListService: WishListService) { }
   getData():Observable<any>{
     return combineLatest([this.prdService.getAllProducts(), this.catService.getCategory()]).pipe(
       map((data)=>{
@@ -26,9 +32,44 @@ export class DiscoverAllService {
       map((data)=>{
         this.populatecatNames();
         this.getDiscoveredProducts();
+        this.getUsersOldCartProducts();
+        this.getUsersOldWishListProducts();
         return data
       })
     )
+  }
+
+  async getUsersOldCartProducts(): Promise<void> {
+    const userId = String(this.authService.getCurrentUser()?._id);
+
+    try {
+      const data = await firstValueFrom(this.CartService.getUserCart(userId));
+      if(data.status != 'failed') {
+        this.cartProducts = data['data'][0]['products'].map((item: any) => ({
+          productId: item._id,
+          soldQuantity: item.soldQuantity,
+        }));
+      }
+
+
+      console.log('old', this.cartProducts);
+    } catch (error) {
+      console.error('Error fetching user cart:', error);
+    }
+  }
+
+  async getUsersOldWishListProducts(): Promise<void> {
+    const userId = String(this.authService.getCurrentUser()?._id);
+
+    try {
+      const data = await firstValueFrom(this.WishListService.getUserWishlist(userId));
+      if(data.status != 'failed') {
+        this.wishListItems = data['data'][0]['products'].map((item: any) => (item._id));
+      }
+      console.log('old', this.cartProducts);
+    } catch (error) {
+      console.error('Error fetching user cart:', error);
+    }
   }
   
   private populatecatNames(): void {
