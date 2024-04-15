@@ -10,6 +10,8 @@ type ProductModel = {
     numberOfRates: number,
     cat: string[],
     images: string[],
-    createdAt: string
+    createdAt: string,
+    filledStarsArray?: any[];
+    emptyStarsArray?: any[];
 }
 
