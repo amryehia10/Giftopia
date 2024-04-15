@@ -1,0 +1,293 @@
+<div class="container">
+  <form (ngSubmit)="updateUser()" class="loginForm">
+    <div class="card-header">Update Profile</div>
+
+    <!-- Name -->
+    <div class="form-group">
+      <label for="name">Name:</label>
+      <input
+        type="text"
+        id="name"
+        name="name"
+        required
+        minlength="3"
+        [(ngModel)]="user.name"
+        (ngModelChange)="validateForm()"
+        class="form-control"
+      />
+      @if(formMsg['name']){
+      <p class="validation {{ formMsg['name'].type }}">
+        {{ formMsg["name"].msg }}
+      </p>
+      }
+    </div>
+
+    <!-- Email -->
+    <div class="form-group">
+      <label for="email">Email:</label>
+      <input
+        type="email"
+        id="email"
+        name="email"
+        required
+        email
+        [(ngModel)]="user.email"
+        class="form-control"
+        (ngModelChange)="validateForm()"
+      />
+      @if(formMsg['email']){
+      <p class="validation {{ formMsg['email'].type }}">
+        {{ formMsg["email"].msg }}
+      </p>
+      }
+    </div>
+
+    <!-- Password -->
+    <div class="form-group">
+      <label for="password">Password:</label>
+      <input
+        type="password"
+        id="password"
+        name="password"
+        required
+        minlength="8"
+        [(ngModel)]="user.password"
+        class="form-control"
+        (ngModelChange)="validateForm()"
+      />
+      @if(formMsg['password']){
+      <p class="validation {{ formMsg['password'].type }}">
+        {{ formMsg["password"].msg }}
+      </p>
+      }
+    </div>
+
+    <!-- Gender -->
+    <div class="form-group">
+      <label>Gender:</label><br />
+      <label style="display: inline-block; margin: 15px 10px"
+        ><input
+          type="radio"
+          name="gender"
+          value="male"
+          [(ngModel)]="user.gender"
+          (change)="validateForm()"
+        />
+        Male</label
+      >
+      <label
+        ><input
+          type="radio"
+          name="gender"
+          value="female"
+          [(ngModel)]="user.gender"
+          (change)="validateForm()"
+        />
+        Female</label
+      ><br />
+      @if(formMsg['gender']){
+      <p class="validation {{ formMsg['gender'].type }}">
+        {{ formMsg["gender"].msg }}
+      </p>
+      }
+    </div>
+
+    <!-- Age -->
+    <div class="form-group">
+      <label for="age">Age:</label>
+      <input
+        type="number"
+        id="age"
+        name="age"
+        required
+        min="10"
+        max="100"
+        [(ngModel)]="user.age"
+        class="form-control"
+        (ngModelChange)="validateForm()"
+      />
+      @if(formMsg['age']){
+      <p class="validation {{ formMsg['age'].type }}">
+        {{ formMsg["age"].msg }}
+      </p>
+      }
+    </div>
+
+    <!-- Image -->
+    <div class="form-group">
+      <label for="profileImage">Profile Image:</label>
+      <div class="input-with-preview">
+        <input
+          type="file"
+          id="profileImage"
+          name="profileImage"
+          (change)="onFileSelected($event)"
+          (change)="validateForm()"
+          class="form-control"
+          accept=".png, .jpg, .jpeg"
+        />
+        <div class="image-preview" *ngIf="imageDataUrl">
+          <img
+            [src]="imageDataUrl"
+            alt="Profile Image"
+            (click)="toggleEnlargeImage()"
+          />
+        </div>
+      </div>
+      <div
+        class="enlarge-image"
+        *ngIf="enlargeImageVisible"
+        (click)="toggleEnlargeImage()"
+      >
+        <img [src]="imageDataUrl" alt="Profile Image" />
+      </div>
+      @if(formMsg['image']){
+      <p class="validation {{ formMsg['image'].type }}">
+        {{ formMsg["image"].msg }}
+      </p>
+      }
+    </div>
+
+    <!-- Phone -->
+    <!-- Default Phone -->
+    <div class="form-group">
+      <label for="mobileNumber">Mobile Number:</label>
+      <input
+        type="text"
+        id="mobileNumber"
+        name="mobileNumber"
+        required
+        minlength="11"
+        maxlength="13"
+        [(ngModel)]="user.phone[0].number"
+        (ngModelChange)="validateForm()"
+        class="form-control"
+      />
+      @if(formMsg['phone_0']){
+      <p class="validation {{ formMsg['phone_0'].type }}">
+        {{ formMsg["phone_0"].msg }}
+      </p>
+      }
+    </div>
+    <!-- Additional Phone -->
+    <!-- Mapping Phones -->
+    <div class="additional-mobiles">
+      @for (phone of user.phone.slice(1); track phone; let idx = $index) {
+      <div class="form-group">
+        <label for="additionalMobileNumber{{ idx }}"
+          >Mobile Number {{ idx + 2 }}:</label
+        >
+        <div class="input-container">
+          <input
+            type="text"
+            id="additionalMobileNumber{{ idx }}"
+            name="additionalMobileNumber{{ idx }}"
+            required
+            minlength="11"
+            maxlength="13"
+            [(ngModel)]="phone.number"
+            (ngModelChange)="validateForm()"
+            class="form-control"
+          />
+          <button
+            type="button"
+            (click)="removeMobile(idx + 1)"
+            class="removeBtn btn btn-danger"
+          >
+            Remove
+          </button>
+        </div>
+        @if(formMsg['phone_'+ (idx + 1)]){
+        <p class="validation {{ formMsg['phone_' + (idx + 1)].type }}">
+          {{ formMsg["phone_" + (idx + 1)].msg }}
+        </p>
+        }
+      </div>
+      }
+    </div>
+
+    <!-- Add Another Mobile -->
+    @if (user.phone.length < MaxPhone) {
+    <div class="form-group">
+      <button
+        type="button"
+        (click)="addMobile()"
+        class="btn btn-secondary w-100"
+      >
+        Add Another Mobile Number
+      </button>
+    </div>
+    }
+
+    <hr />
+
+    <!-- Address -->
+    <!-- Default Address -->
+    <div class="form-group">
+      <label for="address">Address:</label>
+      <textarea
+        id="address"
+        name="address"
+        required
+        [(ngModel)]="user.address[0].address"
+        (ngModelChange)="validateForm()"
+        class="form-control"
+      ></textarea>
+      @if(formMsg['address_0']){
+      <p class="validation {{ formMsg['address_0'].type }}">
+        {{ formMsg["address_0"].msg }}
+      </p>
+      }
+    </div>
+    <!-- Additional Address -->
+    <!-- Map Addresses -->
+    <div class="additional-addresses">
+      @for (address of user.address.slice(1); track address; let idx = $index) {
+      <div class="form-group">
+        <label for="additionalAddress{{ idx }}">Address {{ idx + 2 }}:</label>
+        <div class="input-container">
+          <textarea
+            id="additionalAddress{{ idx }}"
+            name="additionalAddress{{ idx }}"
+            required
+            [(ngModel)]="address.address"
+            (ngModelChange)="validateForm()"
+            class="form-control"
+          ></textarea>
+          <button
+            type="button"
+            (click)="removeAddress(idx + 1)"
+            class="removeBtn btn btn-danger"
+          >
+            Remove
+          </button>
+        </div>
+        @if(formMsg['address_'+ (idx + 1)]){
+        <p class="validation {{ formMsg['address_' + (idx + 1)].type }}">
+          {{ formMsg["address_" + (idx + 1)].msg }}
+        </p>
+        }
+      </div>
+      }
+    </div>
+
+    <!--  Add Another Address -->
+    @if (user.address.length < MaxAddress) {
+    <div class="form-group">
+      <button
+        type="button"
+        (click)="addAddress()"
+        class="btn btn-secondary w-100"
+      >
+        Add Another Address
+      </button>
+    </div>
+    }
+    <!-- Register Button -->
+    <div class="button-container">
+      <button type="submit" class="w-100 regBtn btn btn-primary giftBtn">
+        Update
+      </button>
+    </div>
+  </form>
+</div>

@@ -1,0 +1,177 @@
+.container {
+  min-height: 105vh;
+  min-width: 100%;
+  margin-top: -5vh;
+  overflow: hidden;
+}
+
+.loginForm {
+  margin-top: 15vh;
+  width: 70%;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  border: 1px solid #922c19;
+  border-radius: 7px;
+  overflow: hidden;
+}
+
+input,
+select,
+textarea {
+  height: auto;
+  margin-bottom: 15px;
+  margin-top: 15px;
+}
+
+.card-header {
+  background-color: #f8f8f8;
+  font-size: 25px;
+  font-weight: bold;
+  width: 100%;
+  text-align: center;
+  padding: 10px;
+  color: #922c19;
+}
+
+.form-group {
+  font-size: 20px;
+  color: #17181c;
+  padding: 0 20px;
+}
+
+hr {
+  color: #17181c;
+  background-color: rgb(192, 0, 0);
+  height: 2px;
+  width: 90%;
+  margin: 10px auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.giftBtn {
+  color: #ddd;
+  background-color: #922c19;
+  border: 1px solid #ddd;
+}
+.giftBtn:hover {
+  background-color: #772617;
+}
+.giftBtn:active {
+  border: 1px solid #a07c75;
+}
+.button-container {
+  display: flex;
+  padding: 10px;
+  gap: 10px;
+  margin-top: 10px;
+}
+@media screen and (max-width: 700px) {
+  .button-container {
+    flex-direction: column;
+  }
+}
+
+.btn-secondary {
+  background-color: #a8a8a8;
+}
+.btn-secondary:hover {
+  background-color: #7a7a7a;
+}
+
+.removeBtn {
+  margin: 10px;
+}
+
+.input-container {
+  display: flex;
+  align-items: center;
+}
+
+.CreditCardBox {
+  background-color: rgba(158, 156, 156, 0.827);
+  border: 3.5px black groove;
+  padding: 15px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+input[type="radio"] {
+  transform: scale(1.5);
+  margin-left: 10px;
+}
+
+label.radio-label {
+  font-size: 18px;
+}
+
+.input-with-preview {
+  display: flex;
+  align-items: center;
+}
+
+.input-with-preview input {
+  margin-right: 10px;
+}
+
+.image-preview img {
+  width: 140px;
+  height: 100px;
+  border: 2px solid black;
+  margin: 10px;
+}
+
+.enlarge-image {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.enlarge-image img {
+  max-width: 90%;
+  max-height: 90%;
+  cursor: pointer;
+}
+
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: transparent;
+  color: #17181c;
+  border: none;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .loginForm {
+    width: 80%;
+  }
+}
+
+@media (max-width: 576px) {
+  .loginForm {
+    width: 90%;
+  }
+}
+
+.validation {
+  margin-left: 10px;
+  font-size: 15px;
+}
+.error {
+  color: #e64949;
+}
+.sucess {
+  color: #198754;
+}

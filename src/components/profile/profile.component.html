@@ -1,27 +1,31 @@
 <div class="profile">
-    <h2>Profile</h2>
-    <div class="user-details" *ngIf="userProfile">
-      <div class="avatar">
-        @if (userProfile.image != '') {
-          <img src="{{img_URL}}" alt="User Avatar">
-        } @else {
-          <img src="assets/img/icons/profile_icon.png" alt="User Avatar">
-        }
-      </div>
-      <div class="info">
-        <p><strong>Name:</strong> {{ userProfile.name }}</p>
-        <p><strong>Email:</strong> {{ userProfile.email }}</p>
-        <p><strong>Age:</strong> {{ userProfile.age }}</p>
-        <p><strong>Gender:</strong> {{ userProfile.gender }}</p>
-        <p><strong>Mobile:</strong>
-            <span *ngFor="let phone of userProfile.phone"> {{ phone }}</span>
-          </p>
-          <p><strong>Address:</strong>
-            <span *ngFor="let address of userProfile.address"> {{ address }}</span>
-          </p>
-          <div>
-            <button class="btn btn-primary" type="button" routerLink="/update">Update Profile</button>
-          </div>
+  <h2>Profile</h2>
+  <div class="user-details w-100" *ngIf="userProfile">
+    <div class="avatar">
+      @if (userProfile.image != '') {
+      <img src="{{ img_URL }}" alt="User Avatar" />
+      } @else {
+      <img src="assets/img/icons/profile_icon.png" alt="User Avatar" />
+      }
+    </div>
+    <div class="info w-100">
+      <p><strong>Name:</strong> {{ userProfile.name }}</p>
+      <p><strong>Email:</strong> {{ userProfile.email }}</p>
+      <p><strong>Age:</strong> {{ userProfile.age }}</p>
+      <p><strong>Gender:</strong> {{ userProfile.gender }}</p>
+      <p>
+        <strong>Mobile:</strong>
+        <span *ngFor="let phone of userProfile.phone"> {{ phone }}</span>
+      </p>
+      <p>
+        <strong>Address:</strong>
+        <span *ngFor="let address of userProfile.address"> {{ address }}</span>
+      </p>
+      <div>
+        <a class="btn btn-primary w-100" routerLink="/edit-profile">
+          Update Profile
+        </a>
       </div>
     </div>
   </div>
+</div>
