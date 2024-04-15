@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { RouterModule } from '@angular/router';
+import { Router, RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { GeneralMethods } from '../../functions';
 import { ProductService } from '../../services/product.service';
@@ -21,7 +21,7 @@ export class NewProductsComponent implements OnInit {
   cartProducts: { productId: string; soldQuantity: number }[] = [];
   wishListItems: any[] = [];
 
-  constructor(private service: ProductService, private authService: AuthService, private CartService: CartService, private WishListService:WishListService) {}
+  constructor(private service: ProductService, private authService: AuthService, private CartService: CartService, private WishListService:WishListService, private router: Router) {}
 
   ngOnInit(): void {
     this.service.getNewArrivalProducts().subscribe({
@@ -86,6 +86,11 @@ export class NewProductsComponent implements OnInit {
   }
 
   async updateWishListProducts(product: ProductModel): Promise<void> {
+    if (this.authService.getCurrentUser()?.userType != 'customer') {
+      this.router.navigate(['/login']).then(() => {
+        window.location.reload();
+      });
+    }
     this.wishListItems.push(product._id);
     
     console.log(this.wishListItems)
@@ -102,6 +107,11 @@ export class NewProductsComponent implements OnInit {
   }
 
   async updateCartProducts(product: ProductModel): Promise<void> {
+    if (this.authService.getCurrentUser()?.userType != 'customer') {
+      this.router.navigate(['/login']).then(() => {
+        window.location.reload();
+      });
+    }
     const hasProductId = this.cartProducts.findIndex(item => item.productId === product._id);
     let prdQuantity = 0;
     if(hasProductId != -1) {

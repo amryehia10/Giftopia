@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { RouterModule } from '@angular/router';
+import { Router, RouterModule } from '@angular/router';
 import { CategoryService } from '../../services/category.service';
 import { ProductService } from '../../services/product.service';
 import { GeneralMethods } from '../../functions';
@@ -22,7 +22,7 @@ import { WishListService } from '../../services/wish-list.service';
 })
 
 export class DiscoverAllComponent {  
-  constructor(public service:DiscoverAllService, private cartProductService: CartProductService, private authService: AuthService, private CartService: CartService, private WishListService: WishListService){}
+  constructor(public service:DiscoverAllService, private cartProductService: CartProductService, private authService: AuthService, private CartService: CartService, private WishListService: WishListService, private router: Router){}
   
   public get categories(){
     return this.service.categories.value 
@@ -41,6 +41,11 @@ export class DiscoverAllComponent {
   }
 
   async updateCartProducts(product: ProductModel): Promise<void> {
+    if (this.authService.getCurrentUser()?.userType != 'customer') {
+      this.router.navigate(['/login']).then(() => {
+        window.location.reload();
+      });
+    }
     const hasProductId = this.cartProducts.findIndex(item => item.productId === product._id);
     let prdQuantity = 0;
     if(hasProductId != -1) {
@@ -71,6 +76,11 @@ export class DiscoverAllComponent {
   }
 
   async updateWishListProducts(product: ProductModel): Promise<void> {
+    if (this.authService.getCurrentUser()?.userType != 'customer') {
+      this.router.navigate(['/login']).then(() => {
+        window.location.reload();
+      });
+    }
     this.wishListItems.push(product._id);
     
     console.log(this.wishListItems)

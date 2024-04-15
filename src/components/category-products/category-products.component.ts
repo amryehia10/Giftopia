@@ -1,4 +1,4 @@
-import { ActivatedRoute, RouterModule } from '@angular/router';
+import { ActivatedRoute, Router, RouterModule } from '@angular/router';
 import { GeneralMethods } from '../../functions';
 import { Component, OnInit } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
@@ -29,7 +29,8 @@ export class CategoryProductsComponent implements OnInit {
     private service: ProductService,
     private CartService: CartService,
     private authService: AuthService,
-    private WishListService:WishListService
+    private WishListService:WishListService,
+    private _router: Router
   ) {}
 
   ngOnInit(): void {
@@ -110,6 +111,11 @@ export class CategoryProductsComponent implements OnInit {
   }
 
   async updateWishListProducts(product: ProductModel): Promise<void> {
+    if (this.authService.getCurrentUser()?.userType != 'customer') {
+      this._router.navigate(['/login']).then(() => {
+        window.location.reload();
+      });
+    }
     this.wishListItems.push(product._id);
     
     console.log(this.wishListItems)
@@ -127,6 +133,11 @@ export class CategoryProductsComponent implements OnInit {
 
 
   async updateCartProducts(product: ProductModel): Promise<void> {
+    if (this.authService.getCurrentUser()?.userType != 'customer') {
+      this._router.navigate(['/login']).then(() => {
+        window.location.reload();
+      });
+    }
     const hasProductId = this.cartProducts.findIndex(item => item.productId === product._id);
     let prdQuantity = 0;
     if(hasProductId != -1) {

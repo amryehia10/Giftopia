@@ -47,12 +47,12 @@ export class LoginComponent {
       if (!currentUser) {
         return alert('Something went wrong !')
       }
-      if (currentUser.type == 'customer') {
+      if (currentUser.userType == 'customer') {
         this.router.navigate(['/']).then(() => {
           window.location.reload();
         });
       }
-      else if (currentUser.type == 'admin'){
+      else if (currentUser.userType == 'admin'){
         window.location.href = "http://localhost:4040/";
       
 

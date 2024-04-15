@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
-import { ActivatedRoute, RouterModule } from '@angular/router';
+import { ActivatedRoute, Router, RouterModule } from '@angular/router';
 import { ProductService } from '../../services/product.service';
 import { GeneralMethods } from '../../functions';
 import { ProductReviewsComponent } from '../product-reviews/product-reviews.component';
@@ -44,7 +44,7 @@ export class ProductComponent implements OnInit {
   cartProducts: { productId: string; soldQuantity: number }[] = [];
   wishListItems: any[] = [];
 
-  constructor(private service: ProductService, private route: ActivatedRoute, private CartService: CartService, private authService: AuthService,  private WishListService:WishListService) {}
+  constructor(private service: ProductService, private route: ActivatedRoute, private CartService: CartService, private authService: AuthService,  private WishListService:WishListService, private router: Router) {}
   ngOnInit(): void {
     this.route.paramMap.subscribe((params) => {
       this.prdID = params.get('id') ?? '';
@@ -95,6 +95,11 @@ export class ProductComponent implements OnInit {
   }
 
   async updateWishListProducts(product: ProductModel): Promise<void> {
+    if (this.authService.getCurrentUser()?.userType != 'customer') {
+      this.router.navigate(['/login']).then(() => {
+        window.location.reload();
+      });
+    }
     this.wishListItems.push(product._id);
     
     console.log(this.wishListItems)
@@ -111,6 +116,11 @@ export class ProductComponent implements OnInit {
   }
 
   async updateCartProducts(product: ProductModel): Promise<void> {
+    if (this.authService.getCurrentUser()?.userType != 'customer') {
+      this.router.navigate(['/login']).then(() => {
+        window.location.reload();
+      });
+    }
     const hasProductId = this.cartProducts.findIndex(item => item.productId === product._id);
     let prdQuantity = 0;
     if(hasProductId != -1) {
