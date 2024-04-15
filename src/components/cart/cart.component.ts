@@ -7,6 +7,7 @@ import { ProductService } from '../../services/product.service';
 import { firstValueFrom } from 'rxjs';
 import { AuthService } from '../../services/auth.service';
 import { CartDataService } from '../../services/cart-data.service';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-cart',
@@ -14,7 +15,8 @@ import { CartDataService } from '../../services/cart-data.service';
   imports: [
     RouterModule,
     HomeComponent,
-    PrivacyPolicyComponent
+    PrivacyPolicyComponent,
+    FormsModule
   ],
   templateUrl: './cart.component.html',
   styleUrl: './cart.component.css'

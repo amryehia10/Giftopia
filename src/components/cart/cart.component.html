@@ -62,7 +62,10 @@
                                                             style="text-align: center;">
                                                             <div class="cart-qty-plus-minus"><input
                                                                     class="cart-plus-minus" type="number"
-                                                                    name="cartqtybutton" value="{{item.soldQuantity}}"></div>
+                                                                    min="1"
+                                                                    name="cartqtybutton" value="{{item.soldQuantity}}"
+                                                                    >
+                                                            </div>
                                                         </td>
                                                         <td data-label="Total" class="ms-cart-pro-subtotal">L.E{{item.price*item.soldQuantity}}</td>
                                                         <td data-label="Remove" class="ms-cart-pro-remove">
