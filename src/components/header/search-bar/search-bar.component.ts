@@ -41,7 +41,6 @@ export class SearchBarComponent implements OnInit {
 
   getData(event: any) {
     this.keyword = event.target.value;
-    console.log(this.keyword);
     if (!event.target.value) {
       this.filteredProducts = [];
       return;
@@ -50,7 +49,7 @@ export class SearchBarComponent implements OnInit {
     this.filteredProducts = this.products.filter((prd) =>
       prd?.name.toLowerCase().includes(event.target.value.toLowerCase())
     );
-    console.log(this.filteredProducts);
+    // console.log(this.filteredProducts);
   }
 
   emptyFilteredProducts() {
