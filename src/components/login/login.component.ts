@@ -43,10 +43,19 @@ export class LoginComponent {
         };
         return;
       }
-      if (this.authService.getCurrentUser()) {
+      const currentUser = this.authService.getCurrentUser();
+      if (!currentUser) {
+        return alert('Something went wrong !')
+      }
+      if (currentUser.type == 'customer') {
         this.router.navigate(['/']).then(() => {
           window.location.reload();
         });
+      }
+      else if (currentUser.type == 'admin'){
+        window.location.href = "http://localhost:4040/";
+      
+
       }
     }
   }
