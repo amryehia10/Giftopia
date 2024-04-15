@@ -17,6 +17,7 @@ import { NewProductsComponent } from '../components/new-products/new-products.co
 import { discoverAllResolver } from '../components/discover-all/discover-all.resolver';
 import { LogoutComponent } from '../components/logout/logout.component';
 import { ProfileComponent } from '../components/profile/profile.component';
+import { EditProfileComponent } from '../components/edit-profile/edit-profile.component';
 
 export const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -36,6 +37,7 @@ export const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'track-order', component: TrackOrderComponent },
+  { path: 'track-order?:text', component: TrackOrderComponent },
   { path: 'cart', component: CartComponent },
   { path: 'payment-method', component: PaymentMethodComponent },
   { path: 'checkout', component: CheckoutComponent },
@@ -45,6 +47,5 @@ export const routes: Routes = [
   { path: 'register', component: RegisterComponent },
   { path: 'cart', component: CartComponent },
   { path: 'profile', component: ProfileComponent },
-  { path: 'update', component: ProfileComponent },
-  { path: 'delete', component: ProfileComponent }
+  { path: 'edit-profile', component: EditProfileComponent },
 ];

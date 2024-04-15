@@ -22,6 +22,13 @@ export class AuthService {
     return { data, error };
   }
 
+  async getUserDetails() {
+    const { data, error } = await this.http.get(
+      `${apiEndpoint}/auth/userDetails`
+    );
+    return { data, error };
+  }
+
   getCurrentToken() {
     return localStorage.getItem('token');
   }
@@ -42,11 +49,35 @@ export class AuthService {
         );
       } else userformData.append(attr, JSON.stringify(user[attr]));
     }
-    const { data, error } = await this.http.post(
+    const { data, error, errorRes } = await this.http.post(
       `${apiEndpoint}/auth/register`,
       userformData
     );
-    if (data) {
+
+    if (data && data['token']) {
+      localStorage.setItem('token', data['token']!);
+    }
+    return { data, error };
+  }
+
+  async update(user: any, id: string = '') {
+    console.log(user);
+
+    const userformData = new FormData();
+    for (let attr in user) {
+      if (attr == 'profileImage' && user[attr] instanceof File) {
+        userformData.append(
+          'profileImage',
+          user?.profileImage,
+          user?.profileImage?.name
+        );
+      } else userformData.append(attr, JSON.stringify(user[attr]));
+    }
+    const { data, error } = await this.http.put(
+      `${apiEndpoint}/auth/user/${id ? id : user._id}`,
+      userformData
+    );
+    if (data && data['token']) {
       localStorage.setItem('token', data['token']!);
     }
     return { data, error };

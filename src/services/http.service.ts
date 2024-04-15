@@ -4,6 +4,7 @@ import {
   HttpClient,
   HttpErrorResponse,
   HttpHeaders,
+  HttpRequest, // Import HttpRequest
 } from '@angular/common/http';
 
 interface HttpServiceResponse {
@@ -23,22 +24,24 @@ export class HttpService {
   }
 
   async get(url: string): Promise<HttpServiceResponse> {
-    return this.handleRequest(this.provider.get(url));
+    return this.handleRequest(new HttpRequest('GET', url));
   }
 
   async post(url: string, body: any = null): Promise<HttpServiceResponse> {
-    return this.handleRequest(this.provider.post(url, body));
+    return this.handleRequest(new HttpRequest('POST', url, body));
   }
 
   async put(url: string, body: any = null): Promise<HttpServiceResponse> {
-    return this.handleRequest(this.provider.put(url, body));
+    return this.handleRequest(new HttpRequest('PUT', url, body));
   }
 
   async delete(url: string): Promise<HttpServiceResponse> {
-    return this.handleRequest(this.provider.delete(url));
+    return this.handleRequest(new HttpRequest('DELETE', url));
   }
 
-  private async handleRequest(request: any): Promise<HttpServiceResponse> {
+  private async handleRequest(
+    request: HttpRequest<any>
+  ): Promise<HttpServiceResponse> {
     try {
       const token = this.getToken();
 
@@ -49,8 +52,8 @@ export class HttpService {
         request = request.clone({ headers });
       }
 
-      const data = await lastValueFrom<object>(request);
-      return { data, error: null, errorRes: null };
+      const data = (await lastValueFrom(this.provider.request(request))) as any;
+      return { data: data['body'], error: null, errorRes: null };
     } catch (error) {
       return {
         data: null,
