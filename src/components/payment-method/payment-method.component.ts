@@ -54,6 +54,11 @@ export class PaymentMethodComponent implements OnInit, OnDestroy{
   };
 
   ngOnInit() {
+    if (!this.authService.getCurrentUser()) {
+      this.router.navigate(['/login']).then(() => {
+        window.location.reload();
+      });
+    }
     this.userService.getUserByID(this.userId).subscribe({
       next: (data) => {
         this.userData = GeneralMethods.CastUser(data);

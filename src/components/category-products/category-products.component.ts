@@ -111,7 +111,7 @@ export class CategoryProductsComponent implements OnInit {
   }
 
   async updateWishListProducts(product: ProductModel): Promise<void> {
-    if (this.authService.getCurrentUser()?.userType != 'customer') {
+    if (!this.authService.getCurrentUser()) {
       this._router.navigate(['/login']).then(() => {
         window.location.reload();
       });
@@ -133,7 +133,7 @@ export class CategoryProductsComponent implements OnInit {
 
 
   async updateCartProducts(product: ProductModel): Promise<void> {
-    if (this.authService.getCurrentUser()?.userType != 'customer') {
+    if (!this.authService.getCurrentUser()) {
       this._router.navigate(['/login']).then(() => {
         window.location.reload();
       });

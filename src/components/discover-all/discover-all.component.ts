@@ -41,7 +41,7 @@ export class DiscoverAllComponent {
   }
 
   async updateCartProducts(product: ProductModel): Promise<void> {
-    if (this.authService.getCurrentUser()?.userType != 'customer') {
+    if (!this.authService.getCurrentUser()) {
       this.router.navigate(['/login']).then(() => {
         window.location.reload();
       });
@@ -76,7 +76,7 @@ export class DiscoverAllComponent {
   }
 
   async updateWishListProducts(product: ProductModel): Promise<void> {
-    if (this.authService.getCurrentUser()?.userType != 'customer') {
+    if (!this.authService.getCurrentUser()) {
       this.router.navigate(['/login']).then(() => {
         window.location.reload();
       });

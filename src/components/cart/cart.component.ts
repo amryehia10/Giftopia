@@ -94,11 +94,11 @@ export class CartComponent implements OnInit {
   }
 
   navigateToCheckOut() {
-    if (this.authService.getCurrentUser()?.userType != 'customer') {
+    if (!this.authService.getCurrentUser()) {
       this.router.navigate(['/login']).then(() => {
         window.location.reload();
       });
-    } else {
+  } else {
       this.router.navigate(['payment-method']);
     }
   }
