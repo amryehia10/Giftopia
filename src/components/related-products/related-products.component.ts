@@ -52,7 +52,7 @@ export class RelatedProductsComponent implements OnInit{
                 break;
               }
             }
-            console.log(this.relatedProducts);
+            this.relatedProducts.forEach((product) => this.calculateStarArrays(product));
           }
         })
       },
@@ -62,13 +62,19 @@ export class RelatedProductsComponent implements OnInit{
     });
   }
 
-  // calculateStarArrays(product: ProductModel) {
-  //   const filledStars = Math.floor(product.star/product.numberOfRates);
-  //   const emptyStars = 5 - filledStars;
-
-  //   this.filledStarsArray = Array(filledStars).fill(0);
-  //   this.emptyStarsArray = Array(emptyStars).fill(0);
-  // }
+  calculateStarArrays(product: ProductModel) {
+    if (product.numberOfRates > 0) {
+      const averageRating = product.star / product.numberOfRates;
+      const filledStars = Math.round(averageRating);
+      const emptyStars = 5 - filledStars;
+  
+      product.filledStarsArray = Array(Math.max(filledStars, 0)).fill(0);
+      product.emptyStarsArray = Array(Math.max(emptyStars, 0)).fill(0);
+    } else {
+      product.filledStarsArray = Array(0).fill(0);
+      product.emptyStarsArray = Array(5).fill(0);
+    }
+  }
 
   refreshPage() {
     window.location.reload();

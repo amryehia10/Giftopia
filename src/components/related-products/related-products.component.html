@@ -22,6 +22,15 @@
             <a [routerLink]="'/products/' + product._id"
               ><h5 class="card-title">{{ product.name }}</h5></a
             >
+            <div class="ms-single-rating">
+              <ng-container *ngFor="let star of product.filledStarsArray">
+                <i class="msicon msi-star fill"  style="margin-top: 3px;"></i>
+              </ng-container>  
+              <ng-container *ngFor="let star of product.emptyStarsArray">
+                <i class="msicon msi-star-o"></i>
+              </ng-container>
+              <span>({{product.numberOfRates}})</span>
+            </div><br>
             <p class="card-text">Price: £{{ product.price }}</p>
           </div>
         </div>
