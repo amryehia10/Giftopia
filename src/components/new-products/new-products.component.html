@@ -32,10 +32,15 @@
           <div class="part-2">
             <a [routerLink]="'/products/' + prd._id"
               ><h3 class="card-title">{{ prd.name }}</h3>
-
-              <p>--STARS RATING--</p>
-
-              
+              <div class="ms-single-rating">
+                <ng-container *ngFor="let star of prd.filledStarsArray">
+                  <i class="msicon msi-star fill"  style="margin-top: 3px;"></i>
+                </ng-container>  
+                <ng-container *ngFor="let star of prd.emptyStarsArray">
+                  <i class="msicon msi-star-o"></i>
+                </ng-container>
+                <span>({{prd.numberOfRates}})</span>
+              </div><br>
             </a>
             @if(prd.discount > 0){
             <h4 class="product-old-price">
