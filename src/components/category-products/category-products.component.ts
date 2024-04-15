@@ -36,13 +36,30 @@ export class CategoryProductsComponent implements OnInit {
     this.service
       .getProductsByCategory(this.router.snapshot.params['name'])
       .subscribe({
-        next: (data) => (this.products = GeneralMethods.CastProducts(data)),
+        next: (data) => {
+          this.products = GeneralMethods.CastProducts(data);
+          this.products.forEach((product) => this.calculateStarArrays(product));
+        },
         error: (error) => console.error(error),
       });
 
     //get old cart products
     this.getUsersOldCartProducts();
     this.getUsersOldWishListProducts()
+  }
+
+  calculateStarArrays(product: ProductModel) {
+    if (product.numberOfRates > 0) {
+      const averageRating = product.star / product.numberOfRates;
+      const filledStars = Math.round(averageRating);
+      const emptyStars = 5 - filledStars;
+  
+      product.filledStarsArray = Array(Math.max(filledStars, 0)).fill(0);
+      product.emptyStarsArray = Array(Math.max(emptyStars, 0)).fill(0);
+    } else {
+      product.filledStarsArray = Array(0).fill(0);
+      product.emptyStarsArray = Array(5).fill(0);
+    }
   }
 
   toggleSort() {
