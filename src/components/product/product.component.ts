@@ -148,11 +148,17 @@ export class ProductComponent implements OnInit {
   }
 
   calculateStarArrays() {
-    const filledStars = Math.floor(this.product.star/this.product.numberOfRates);
-    const emptyStars = 5 - filledStars;
-
-    this.filledStarsArray = Array(filledStars).fill(0);
-    this.emptyStarsArray = Array(emptyStars).fill(0);
+    if (this.product.numberOfRates > 0) {
+      const averageRating = this.product.star / this.product.numberOfRates;
+      const filledStars = Math.round(averageRating);
+      const emptyStars = 5 - filledStars;
+  
+      this.product.filledStarsArray = Array(Math.max(filledStars, 0)).fill(0);
+      this.product.emptyStarsArray = Array(Math.max(emptyStars, 0)).fill(0);
+    } else {
+      this.product.filledStarsArray = Array(0).fill(0);
+      this.product.emptyStarsArray = Array(5).fill(0);
+    }
   }
 }
 

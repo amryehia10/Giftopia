@@ -53,22 +53,24 @@
                 <div class="single-pro-content">
                   <h5 class="ms-single-title">{{ product.name }}</h5>
                   <div class="ms-single-rating-wrap">
-                    @if(product.star > 0){
                       <div class="ms-single-rating">
-                        <ng-container *ngFor="let star of filledStarsArray">
+                        <ng-container *ngFor="let star of product.filledStarsArray">
                           <i class="msicon msi-star fill"></i>
                         </ng-container>
   
-                        <ng-container *ngFor="let star of emptyStarsArray">
+                        <ng-container *ngFor="let star of product.emptyStarsArray">
                           <i class="msicon msi-star-o"></i>
                         </ng-container>
-                        <span class="rating-value"
+                        @if(product.numberOfRates > 0){
+                          <span class="rating-value"
                           >({{ product.star/product.numberOfRates }} of 5 Stars)</span
                         >
+                        } @else {
+                          <span class="rating-value"
+                            >({{ 0 }} of 5 Stars)</span
+                          >
+                        }
                       </div>
-                    } @else {
-                      <div class="ms-single-rating">Not Ratings</div>
-                    }
                     <span class="ms-read-review" (click)="scrollToReviews()">
                       |&nbsp;&nbsp;<a>{{ product.numberOfRates }} Ratings</a>
                     </span>
