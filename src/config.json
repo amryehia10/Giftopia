@@ -1,4 +1,4 @@
 {
-  "apiEndpoint": "https://giftopiabackend.onrender.com",
+  "apiEndpoint": "http://localhost:7050",
   "admin": ""
 }
